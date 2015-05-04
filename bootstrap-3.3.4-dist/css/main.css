@@ -4,10 +4,13 @@
 }
 
 
-
 .navBar {
-    margin-top:30px;
+    margin-top:25px;
     font-family: 'Amatic SC', cursive, Arial, Helvetica, sans-serif;
+}
+
+.navBar a {
+    color: black;
 }
 
 .navBarText {
