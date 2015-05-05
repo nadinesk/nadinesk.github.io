@@ -1,0 +1,56 @@
+---
+layout: post
+title: Bay Area Home Values
+date: 2014-07-24 05:54:13.000000000 -04:00
+categories:
+- Bay Area
+- choropleth maps
+- D3.JS
+- learning programming
+tags:
+- Bay Area
+- choropleth
+- D3
+- data
+- data analysis
+- economics
+- home values
+- programming
+- San Francisco
+- Silicon Valley
+status: publish
+type: post
+published: true
+meta:
+  _publicize_pending: '1'
+  _edit_last: '86243357'
+  _rawhtml_settings: '0,0,0,0'
+  original_post_id: '105'
+  _wp_old_slug: '105'
+author:
+  login: khasachi
+  email: khatsachi@gmail.com
+  display_name: khasachi
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p><!--raw--><br />
+<a href="http://www.khasachi.com/BAZipsComp/BAzips2013.html">http://www.khasachi.com/BAZipsComp/BAzips2013.html</a><br />
+<a href="http://www.khasachi.com/BAZipsComp/BAzips2008.html">http://www.khasachi.com/BAZipsComp/BAzips2008.html</a><br />
+<a href="http://www.khasachi.com/BAZipsComp/BAzips2003.html">http://www.khasachi.com/BAZipsComp/BAzips2003.html</a><br />
+<a href="http://www.khasachi.com/BAZipsComp/BAzips1998.html">http://www.khasachi.com/BAZipsComp/BAzips1998.html</a><br />
+<!--raw--><br />
+These choropleth maps (made with D3!) consist of annual averages for home values by zip code, for the Bay Area's 281 zip codes in its nine counties (San Francisco, San Mateo, Santa Clara, Marin, Napa, Sonoma, Solano, Contra Costa, Alameda), for the specified years (five-year intervals with  2013 as the last year). (Mouseover areas to see zip codes, home values, and county). The color scheme is calculated based on the min and max values of the 2013, to provide a better comparison, rather than the min and max values for each year. I downloaded the zip code data as a shapefile from the <a href="http://www.mtc.ca.gov/maps_and_data/GIS/data.htm">Metropolitan Transportation Commission</a>, and converted to a geojson, using GDAL and running ogr2ogr (apologies if I'm messing up the terminology here - instructions found <a href="http://ben.balter.com/2013/06/26/how-to-convert-shapefiles-to-geojson-for-use-on-github/">here</a>). The data is from Zillow, using the <a href="http://www.zillow.com/research/data/">Zillow Home Value Index</a> (ZHVI) for All Homes. <a href="http://cdn1.blog-media.zillowstatic.com/3/Zillow-Real-Estate-and-Rental-Report-f456cb.pdf"> Zillow's Home Value Index</a> has the most granularity, at the zip code level, and does not include values of distressed homes: "Distressed sales are often reduced in price, and when they make up a larger portion of the market – as they have in recent years – can skew overall values wildly." </p>
+<p>These maps show that zip codes in the area referred to as the Silicon Valley has the highest home values, as does San Francisco. The map darkens in redness from 1998 to 2013. The darkest red, or highest home value in 2013, is zip code 94027, in Atherton, CA in San Mateo County, with a 2013 annual average home value of $4.2 million. The lowest 2013 annual average is $160,575 K in Richmond, CA in Contra Costa County. </p>
+<p>The following table shows annual average home values by county, for the years shown in the maps above: </p>
+<p><a href="http://khasachi.files.wordpress.com/2014/07/untitled.png"><img src="assets/untitled.png?w=300&amp;h=152" alt="Untitled" width="300" height="152" class="alignnone size-medium wp-image-117" /></a></p>
+<p>The following table shows the percentage changes between these five-year intervals by county:</p>
+<p><a href="http://www.khasachi.com/wp-content/uploads/2014/07/Untitled1.png"><img src="assets/Untitled1-300x168.png" alt="Untitled" width="300" height="168" class="alignnone size-medium wp-image-119" /></a></p>
+<p>Interestingly, the biggest increases between years shown are from 1998 to 2003, with the largest increase, 96 percent, in Napa County. The largest increase from years 2008 to 2013 was 14 percent in Santa Clara County, located in the heart of the Silicon Valley. </p>
+<p>(What's left: putting this sucker up on GitHub, along with the geojson file.)</p>
+<p>And just for fun, here is the bigger version of the 2013 map:</p>
+<p><!--raw--><br />
+<a href="http://khasachi.com/BAZipsComp/BAzips2013big.html">http://khasachi.com/BAZipsComp/BAzips2013big.html</a><br />
+<!--raw--></p>

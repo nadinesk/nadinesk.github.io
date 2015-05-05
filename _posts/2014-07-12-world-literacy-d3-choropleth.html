@@ -1,0 +1,31 @@
+---
+layout: post
+title: World Literacy D3 Choropleth
+date: 2014-07-12 17:02:55.000000000 -04:00
+categories:
+- choropleth maps
+- D3.JS
+- learning programming
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _publicize_pending: '1'
+  _edit_last: '86243357'
+  _rawhtml_settings: '0,0,0,0'
+  original_post_id: '96'
+  _wp_old_slug: '96'
+author:
+  login: khasachi
+  email: khatsachi@gmail.com
+  display_name: khasachi
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p><!--raw--><a href="http://www.khasachi.com/wppost/worldliteracy1.html">http://www.khasachi.com/wppost/worldliteracy1.html</a><!--raw--><br />
+This animated world map shows world literacy (<a href="https://www.cia.gov/library/publications/the-world-factbook/fields/2103.html">CIA Factboook data</a>). Literacy rates from lowest to highest are colored from green(lowest), purple (middle), to peach (highest). Light grey indicates no available data. The animation is in the following order: total population, male population, female population. </p>
+<p>The fantastic code was available, and beyond the color scale, I did very little customization -- so it was not difficult to put this together, but I've wanted to make a world map -- and so I did? I took the code straight from <a href="http://bl.ocks.org/rgdonohue" target="#">rgdonohue’s blocks</a> on his <a href="http://bl.ocks.org/rgdonohue/9280446" target="#">animated map</a>. I replaced the provided csv data that had random numbers and years as categories, with literacy data and categories as all, male, and female. </p>
+<p>The map shows what you would expect with higher literacy rates in certain parts of the world, and female literacy rates lower than male ones where the overall population had relatively lower literacy rates. The hardest part of this exercise for me was parsing the large JSON to get country names for the abbreviations provided in the csv. It was fun getting acquainted with JSON again, and I'm looking forward to finding that useful.  </p>

@@ -1,0 +1,215 @@
+---
+layout: post
+title: SKETCH OF ALFRED BARR'S DIAGRAM = "CUBISM AND ABSTRACT ART", 1955
+date: 2014-09-12 21:05:21.000000000 -04:00
+categories:
+- D3.JS
+- learning programming
+tags:
+- Alfred Barr
+- art
+- art history
+- coding
+- d3.js
+- D3JS
+- data visualization
+- learning to code
+- modern art
+- programming
+status: publish
+type: post
+published: true
+meta:
+  _publicize_pending: '1'
+  _rawhtml_settings: '0,0,0,0'
+  _edit_last: '86243357'
+  original_post_id: '198'
+  _wp_old_slug: '198'
+author:
+  login: khasachi
+  email: khatsachi@gmail.com
+  display_name: khasachi
+  first_name: ''
+  last_name: ''
+excerpt: !ruby/object:Hpricot::Doc
+  options: {}
+---
+<p><!--raw--><br />
+<a href="http://www.khasachi.com/BarrDiagram/arcstuff5.html">http://www.khasachi.com/BarrDiagram/arcstuff5.html</a><br />
+<!--raw--><br />
+I used D3.JS to make this example of <a href="http://www.moma.org/learn/resources/archives/archives_highlights_02_1936">Alfred Barr</a>'s"<a href="http://www.artnews.com/wp-content/uploads/2012/10/Cubism-and-Abstract034.jpg">Diagram of Stylistic Evolution from 1890 until 1935: Cubism and Abstract Art</a>" as sketched by artist <a href="http://www.wardshelley.com/">Ward Shelley</a>, shown in <a href="http://www.amazon.com/Design-Information-Introduction-Histories-Visualizations/dp/1592538061">Design for Information</a>. The entire code is <a href="http://bl.ocks.org/nadinesk/0dc8788afeefc0a0b245">here</a>. I used different shapes including: arcs, triangles, rectangles, lines, bezier curves; and six csv files with data for these shapes, to create the diagram. </p>
+<p>I wanted to make this diagram to learn to use basic shapes and D3JS, to have more understanding of the elements and basics, and be able customize visualizations more. Also, I'm fascinated with the evolution of art. I believe that, through this practice, I accomplished gaining a better grasp on the elements and shapes in svgs and how D3Js uses those elements to make data-driven visualizations. (Also, I gained what might be called an intimate relationship with the coordinate system: for example, see the CSV's with coordinates on my code on <a href="http://bl.ocks.org/nadinesk/0dc8788afeefc0a0b245">bl.ocks.org</a>.)</p>
+<p>Here is the code for the different shapes, along with the csv files showing their coordinates and/or size:</p>
+<p><b>Lines:</b><br />
+<code> d3.csv("linedata.csv", function(error, data)    { chart.selectAll("g")<br />
+    .data(data)<br />
+    .enter().append("line")<br />
+    .attr("x1", function(d) { return d.x1; })<br />
+    .attr("y1", function(d) { return d.y1; })<br />
+    .attr("x2", function(d) { return d.x2; })<br />
+    .attr("y2", function(d) { return d.y2; })<br />
+    .attr("stroke-width", 1)<br />
+    .attr("stroke", "black")<br />
+    .style("stroke-dasharray", function(d) { return ( d.dash1 + "," + d.dash2 ); });<br />
+    }) </code><br />
+* csv for Lines:<br />
+<code> arrow,x1,y1,x2,y2,dash1,dash2,id<br />
+1,135,5,110,0,0,0,<br />
+2,282,0,235,5,0,0,<br />
+3,112,140,80,37,0,0,<br />
+4,96,140,20,10,0,0,<br />
+5,123,135,190,40,0,0,<br />
+... etc for 50 lines </code></p>
+<p><b>Bezier Curves:</b><br />
+<code>d3.csv("curvecoords.csv", function(error, data)    {<br />
+   chart.selectAll("g")<br />
+   .data(data)<br />
+   .enter().append("path")<br />
+        .attr("d", function(d) { return d.coords; })<br />
+        .attr("stroke-width", 1)<br />
+        .attr("stroke", "black")<br />
+        .style("fill", "none")<br />
+        .style("stroke-dasharray", function(d) { return ( d.dash1 + "," + d.dash2 ); })</code><br />
+* csv for Bezier Curves:<br />
+<code>curve,coords,dash1,dash2,id<br />
+12,"M-10,97 A-5,10 0 0,0 -3,210",3,3,<br />
+16,"M360,150 A100,60 0 0,1 240,190",0,0,<br />
+16,"M240,190 A100,60 0 0,0 144,205",0,0,<br />
+18,"M386,200 A215,30 0 0,0 170,204",0,0,<br />
+...etc for several more curves</code></p>
+<p><b>Rectangles:</b><br />
+<code>d3.csv("rectData.csv", function(error, data)    {<br />
+chart.selectAll("g" )<br />
+    .data(data)<br />
+    .enter().append("rect")<br />
+    .attr("class", "rect")<br />
+    .attr("x", function(d) { return d.x; })<br />
+    .attr("y", function(d) { return d.y; })<br />
+    .attr("width", function(d) { return d.width; })<br />
+    .attr("height", function(d) { return d.height; })</code><br />
+* csv for Rectangles<br />
+<code>number,x,y,width,height,textX,textY,text<br />
+1,10,-10,100,20,14,3,JAPANESE PRINTS<br />
+2,-20,125,105,20,-18,138,NEAR EASTERN ART<br />
+3,200,157,110,20,207,170,NEGRO SCULPTURE<br />
+4,235,210,115,15,240,220,MACHINE AESTHETIC<br />
+5,120,405,115,35,155,420,MODERN<br />
+5,,,,,140,432,ARCHITECTURE</code></p>
+<p><b>Arcs:</b><br />
+<code>d3.csv("barrData.csv", function(error, data)    {</p>
+<p>var arc = d3.svg.arc()<br />
+    		.innerRadius(function(d)    {return d.iRadius})<br />
+    		.outerRadius(function(d)    {return d.oRadius})<br />
+    	    .startAngle(2.0)<br />
+    	    .endAngle(4.2)<br />
+    		;<br />
+        chart.selectAll("g")<br />
+            .data(data)<br />
+         	.enter().append("path")<br />
+         	.style("fill", function(d, i){<br />
+         		return d.color; })<br />
+         	.attr("d", arc)<br />
+             .attr("transform", function(d) { return "translate(" + d.tranx + "," + d.trany + ")"; });<br />
+        chart.selectAll("g")<br />
+            .data(data)<br />
+            .enter().append("text")<br />
+            .attr("class", "stuff")<br />
+            .attr("transform", function(d) { return "translate(" + (d.lPosx) + "," + (d.lPosy) + ")"; })<br />
+            .text(function(d)   { return d.label; })<br />
+            .attr("text-anchor", "middle") </code><br />
+*csv for Arcs:<br />
+<code>iRadius,oRadius,tranx,trany,label,lPosx,lPosy,color<br />
+30,31,70,9, VAN GOGH,70,20,black<br />
+45,46,188,-5, GAUGIN,188,20,black<br />
+70,71,440,-20, SEURAT,440,32,black<br />
+30,31,10,75, REDON,10,82,black<br />
+30,31,500,70,ROUSSEOU,500,80,black<br />
+35,36,110,160,FAUVISM,110,170,black<br />
+...etc for all the Arcs </code></p>
+<p><b>Downward-Facing Triangles:</b><br />
+<code>d3.csv("triDataDown.csv", function(error, data)    {<br />
+var triangleDown = d3.svg.symbol().type("triangle-down")<br />
+/* triangles for arrow points  */<br />
+   chart.selectAll(".down-points")<br />
+          .data(data)<br />
+        .enter().append("path")<br />
+          .attr("class", "point")<br />
+          .attr("d", triangleDown)<br />
+          .attr("transform", function(d) { return "translate(" + d.dtriTransX + "," + d.dtriTransY + ")"; });  }) </code><br />
+*csv for Downward-Facing Triangles:<br />
+<code>number,dtriTransX,dtriTransY,place<br />
+3,112,145,VG-Fauvism<br />
+4,95,145,JP-Fauvism<br />
+5,123,140,Sm-Fauvism<br />
+6,135,145,Cn-Fauvism<br />
+9,447,180,St-Cubism<br />
+...etc for all downward-facing triangles</code></p>
+<p>And now on to the subject of the diagram: <i>Stylist Evolution from 1890 to 1950: Cubism and Abstract Art</i>. It was awesome to go through this diagram and learn about the different movements, artists, and each of their influences on the descendents (at least Barr's interpretation/analysis of it). I should note that I've never taken an art history class, and so I took this as an opportunity to learn: more explicitly: I'm probably getting a lot wrong with understanding this diagram. </p>
+<p><a href="http://fluxwurx.com/jstudio/wp-content/uploads/2011/01/Cubism-and-Abstract-Art.pdf">This</a> article was a great introduction to understanding the chart. Alfred Barr, who made this diagram, was the first director of the Museum of Modern Art. Barr made this diagram was made for an exhibit he curated there in 1936, called Cubism and Abstract Art. The diagram and the exhibit show abstract art, geometrical and non-geometrical, as the goal. From the article: "<i>Cubism and Abstract Art</i> together with the widespread dissemination of its influential catalogue, establishe dCubism as the central issue of early modernism, abstraction as the goal." (Side note: the non-art sources are in the red rectangles). Also, "These ideas dominated understanding of the early-twentieth developments in modernism for decades." </p>
+<p>For Barr, the exhibit was also political; Barr: "This essay and exhibition might well be dedicated to those painters of squares and circles (and the architects influenced by them) who have suffered at the hands of philistines with political power." </p>
+<p>Here is my attempt at a visual representation of this diagram through examples of the art in each category. I'm leaving out titles and artists out of interest of space and time. Maybe at some point I will write out descriptions of the movements/artists and titles of the paintings and artists, but that is too much time for and I go in order of the categories from left to right, until Cubism, when I follow those down to their different destinations, either non-geometrical or geometrical abstract art. </p>
+<p>My favorite group of art from these categories is strangely Seurat and Rousseou. They are beautiful and so sharp, bright, and at the same time so different. My favorite movement is Bauhaus, because of its heavy and deep influence on modern architecture and inspirational assignation of beauty to everyday objects. </p>
+<p>JAPANESE PRINTS<br />
+<a href="http://khasachi.files.wordpress.com/2014/09/hiroshige16_kanbara.jpg"><img src="assets/hiroshige16_kanbara.jpg?w=300&amp;h=196" alt="Hiroshige16_kanbara" width="300" height="196" class="alignnone size-medium wp-image-210" /></a></p>
+<p><a href="http://khasachi.files.wordpress.com/2014/09/originalforvangoghcopy.jpg"><img src="assets/originalforvangoghcopy.jpg?w=204&amp;h=300" alt="originalforvanGoghcopy" width="204" height="300" class="alignnone size-medium wp-image-211" /></a></p>
+<p>VAN GOGH<br />
+<a href="http://khasachi.files.wordpress.com/2014/09/vangoghcopy.jpg"><img src="assets/vangoghcopy.jpg?w=252&amp;h=300" alt="vanGoghCopy" width="252" height="300" class="alignnone size-medium wp-image-213" /></a></p>
+<p><a href="http://khasachi.files.wordpress.com/2014/09/van_gogh_-_portrait_of_pere_tanguy_1887-8.jpg"><img src="assets/van_gogh_-_portrait_of_pere_tanguy_1887-8.jpg?w=236&amp;h=300" alt="Van_Gogh_-_Portrait_of_Pere_Tanguy_1887-8" width="236" height="300" class="alignnone size-medium wp-image-212" /></a></p>
+<p>SYNTHETISM and GAUGIN<br />
+<a href="http://khasachi.files.wordpress.com/2014/09/1920px-i_raro_te_oviri_-_gauguin.jpg"><br />
+<img src="assets/1920px-i_raro_te_oviri_-_gauguin.jpg?w=300&amp;h=219" alt="1920px-I_raro_te_Oviri_-_Gauguin" width="300" height="219" class="alignnone size-medium wp-image-214" /></a></p>
+<p>CEZANNE<br />
+<a href="http://khasachi.files.wordpress.com/2014/09/800px-paul_cc3a9zanne_014.jpg"><img src="assets/800px-paul_cc3a9zanne_014.jpg?w=225&amp;h=300" alt="800px-Paul_Cézanne_014" width="225" height="300" class="alignnone size-medium wp-image-216" /></a></p>
+<p>NEO-IMPRESSIONISM and SEURAT<br />
+<a href="http://khasachi.files.wordpress.com/2014/09/seurat.jpg"><img src="assets/seurat.jpg?w=300&amp;h=201" alt="seurat" width="300" height="201" class="alignnone size-medium wp-image-217" /></a></p>
+<p>ROUSSEOU<br />
+<a href="http://khasachi.files.wordpress.com/2014/09/1024px-boy_on_the_rocks_-_1985-7_-_henri_rousseau.jpg"><img src="assets/1024px-boy_on_the_rocks_-_1985-7_-_henri_rousseau.jpg?w=248&amp;h=300" alt="1024px-Boy_on_the_Rocks_-_1985-7_-_Henri_Rousseau" width="248" height="300" class="alignnone size-medium wp-image-245" /></a></p>
+<p><a href="http://khasachi.files.wordpress.com/2014/09/henri_rousseau_-_il_sogno.jpg"><img src="assets/henri_rousseau_-_il_sogno.jpg?w=300&amp;h=202" alt="Henri_Rousseau_-_Il_sogno" width="300" height="202" class="alignnone size-medium wp-image-246" /></a></p>
+<p>REDON<br />
+<a href="http://khasachi.files.wordpress.com/2014/09/odilon_redon_006.jpg"><img src="assets/odilon_redon_006.jpg?w=220&amp;h=300" alt="Odilon_Redon_006" width="220" height="300" class="alignnone size-medium wp-image-219" /></a></p>
+<p>NEAR EASTERN ART<br />
+<a href="http://khasachi.files.wordpress.com/2014/09/7906-004-e9d23dbf.jpg"><img src="assets/7906-004-e9d23dbf.jpg?w=300&amp;h=198" alt="adanhis001p4" width="300" height="198" class="alignnone size-medium wp-image-220" /></a></p>
+<p>FAUVISM<br />
+<a href="http://www.khasachi.com/wp-content/uploads/2014/09/interior-with-egyptian-curtain-1948.jpgBlog.jpg"><img src="assets/interior-with-egyptian-curtain-1948.jpgBlog-224x300.jpg" alt="interior-with-egyptian-curtain-1948.jpg!Blog" width="224" height="300" class="alignnone size-medium wp-image-222" /></a></p>
+<p>EXPRESSIONISM<br />
+<a href="http://www.khasachi.com/wp-content/uploads/2014/09/Kandinsky_white.jpg"><img src="assets/Kandinsky_white-246x300.jpg" alt="Kandinsky_white" width="246" height="300" class="alignnone size-medium wp-image-223" /></a></p>
+<p>NEGRO SCULPTURE<br />
+<a href="http://www.khasachi.com/wp-content/uploads/2014/09/gabonart.jpg"><img src="assets/gabonart-193x300.jpg" alt="gabonart" width="193" height="300" class="alignnone size-medium wp-image-224" /></a></p>
+<p>MACHINE AESTHETIC<br />
+<a href="http://www.khasachi.com/wp-content/uploads/2014/09/VillaSavoye.jpg"><img src="assets/VillaSavoye-300x225.jpg" alt="VillaSavoye" width="300" height="225" class="alignnone size-medium wp-image-227" /></a></p>
+<p>BRANCUSI<br />
+<a href="http://khasachi.files.wordpress.com/2014/09/constantin_brancusi_portrait_of_mlle_pogany_1912_philadelphia_museum_of_modern_art_philadelphia.jpg"><img src="assets/constantin_brancusi_portrait_of_mlle_pogany_1912_philadelphia_museum_of_modern_art_philadelphia.jpg?w=231&amp;h=300" alt="Constantin_Brancusi,_Portrait_of_Mlle_Pogany,_1912,_Philadelphia_Museum_of_Modern_Art,_Philadelphia" width="231" height="300" class="alignnone size-medium wp-image-229" /></a></p>
+<p>CUBISM<br />
+<a href="http://khasachi.files.wordpress.com/2014/09/h2_1999-363-11.jpg"><img src="assets/h2_1999.363.11-252x300.jpg" alt="h2_1999.363.11" width="252" height="300" class="alignnone size-medium wp-image-225" /></a></p>
+<p><a href="http://www.khasachi.com/wp-content/uploads/2014/09/Picasso_three_musicians_moma_2006.jpg"><img src="assets/Picasso_three_musicians_moma_2006-300x265.jpg" alt="Picasso_three_musicians_moma_2006" width="300" height="265" class="alignnone size-medium wp-image-226" /></a></p>
+<p>ORPHISM<br />
+<a href="http://khasachi.files.wordpress.com/2014/09/delaunay_champdemars.jpg"><img src="assets/delaunay_champdemars.jpg?w=238&amp;h=300" alt="Delaunay_ChampDeMars" width="238" height="300" class="alignnone size-medium wp-image-230" /></a></p>
+<p>FUTURISM<br />
+<a href="http://khasachi.files.wordpress.com/2014/09/umberto_boccioni_001.jpg"><img src="assets/umberto_boccioni_001.jpg?w=300&amp;h=180" alt="Umberto_Boccioni_001" width="300" height="180" class="alignnone size-medium wp-image-228" /></a></p>
+<p>DADAISM<br />
+<a href="http://www.khasachi.com/wp-content/uploads/2014/09/movements-dadaism-art-duchamp-lhooq-e1382735659373.jpg"><img src="assets/movements-dadaism-art-duchamp-lhooq-e1382735659373-189x300.jpg" alt="movements-dadaism-art-duchamp-lhooq-e1382735659373" width="189" height="300" class="alignnone size-medium wp-image-232" /></a></p>
+<p>SURREALISM<br />
+<a href="http://www.khasachi.com/wp-content/uploads/2014/09/Indefinite_Divisibility.jpg"><img src="assets/Indefinite_Divisibility-254x300.jpg" alt="Indefinite_Divisibility" width="254" height="300" class="alignnone size-medium wp-image-233" /></a></p>
+<p><b><font>NON-GEOMETRICAL ABSTRACT ART</font></b><br />
+<a href="http://www.khasachi.com/wp-content/uploads/2014/09/No_61_Mark_Rothko.jpg"><img src="assets/No_61_Mark_Rothko-240x300.jpg" alt="No_61_Mark_Rothko" width="240" height="300" class="alignnone size-medium wp-image-234" /></a></p>
+<p>-------------<br />
+Cubism to PURISM<br />
+<a href="http://www.khasachi.com/wp-content/uploads/2014/09/76.2553.24_ph_web-1.jpg"><img src="assets/76.2553.24_ph_web-1-300x236.jpg" alt="76.2553.24_ph_web (1)" width="300" height="236" class="alignnone size-medium wp-image-231" /></a></p>
+<p>DE STIJL and NEOPLASTICISM<br />
+<a href="http://www.khasachi.com/wp-content/uploads/2014/09/Mondrian_CompRYB.jpg"><img src="assets/Mondrian_CompRYB-284x300.jpg" alt="Mondrian_CompRYB" width="284" height="300" class="alignnone size-medium wp-image-237" /></a></p>
+<p><a href="http://khasachi.files.wordpress.com/2014/09/rietveld_chair_1.jpg"><img src="assets/rietveld_chair_1.jpg?w=200&amp;h=300" alt="Rietveld_chair_1" width="200" height="300" class="alignnone size-medium wp-image-238" /></a></p>
+<p>BAUHAUS<br />
+<a href="http://www.khasachi.com/wp-content/uploads/2014/09/h2_1983.366.jpg"><img src="assets/h2_1983.366-245x300.jpg" alt="h2_1983.366" width="245" height="300" class="alignnone size-medium wp-image-240" /></a></p>
+<p><a href="http://www.khasachi.com/wp-content/uploads/2014/09/h2_2000.63a-c.jpg"><img src="assets/h2_2000.63a-c-300x193.jpg" alt="h2_2000.63a-c" width="300" height="193" class="alignnone size-medium wp-image-241" /></a></p>
+<p>MODERN ARCHITECTURE<br />
+<a href="http://khasachi.files.wordpress.com/2014/09/fagus_gropius_hauptgebaeude_200705_wiki_front.jpg"><img src="assets/fagus_gropius_hauptgebaeude_200705_wiki_front.jpg?w=300&amp;h=180" alt="Fagus_Gropius_Hauptgebaeude_200705_wiki_front" width="300" height="180" class="alignnone size-medium wp-image-239" /></a></p>
+<p><b>GEOMETRICAL ABSTRACT ART</b><br />
+<a href="http://khasachi.files.wordpress.com/2014/09/h2_1991-402-7.jpg"><img src="assets/h2_1991.402.7-300x292.jpg" alt="h2_1991.402.7" width="300" height="292" class="alignnone size-medium wp-image-247" /></a></p>
+<p>...back up to...</p>
+<p>SUPREMATISM<br />
+<a href="http://www.khasachi.com/wp-content/uploads/2014/09/Black_circle.jpg"><img src="assets/Black_circle-300x296.jpg" alt="Black_circle" width="300" height="296" class="alignnone size-medium wp-image-242" /></a></p>
+<p>CONSTRUCTIVISM<br />
+<a href="http://khasachi.files.wordpress.com/2014/09/1915_dance_by_rodchenko.jpg"><img src="assets/1915_dance_by_rodchenko.jpg?w=183&amp;h=300" alt="1915_Dance_by_Rodchenko" width="183" height="300" class="alignnone size-medium wp-image-243" /></a></p>
+<p><a href="http://www.khasachi.com/wp-content/uploads/2014/09/CRI_75628.jpg"><img src="assets/CRI_75628-151x300.jpg" alt="CRI_75628" width="151" height="300" class="alignnone size-medium wp-image-244" /></a></p>
+<p><b>GEOMETRICAL ABSTRACT ART</b> (again)<br />
+<a href="http://khasachi.files.wordpress.com/2014/09/hb_1972-40-7.jpg"><img src="assets/hb_1972.40.7-300x300.jpg" alt="hb_1972.40.7" width="300" height="300" class="alignnone size-medium wp-image-248" /></a></p>
