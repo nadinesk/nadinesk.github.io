@@ -8,6 +8,8 @@ full_posts: 5
 
   <h1 class="page-heading">Posts</h1>
 
+    {% for post in paginator.posts %}
+    
   <ul class="post-list">
 
       <li>
@@ -20,7 +22,9 @@ full_posts: 5
       </li>
 
   </ul>
-
+{% endfor %}
+    
+    
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>
