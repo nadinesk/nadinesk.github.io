@@ -1,12 +1,18 @@
 .myName {
     font-family: 'Pacifico', cursive;
     font-size: 45px;
+    color: black;
+    font-weight:800;
+    font-style: bold;
 }
 
 
 .navBar {
     margin-top:25px;
     font-family: 'Amatic SC', cursive, Arial, Helvetica, sans-serif;
+    color: black;
+    font-weight:800;
+    font-style: bold;
 }
 
 .navBar a {
@@ -27,11 +33,31 @@
 }
 
 #aboutParagraph {
-    color: #FF69B4;
-    font-weight:400px;
+    color: hotpink;
+    font-weight:900;
     font-style: bold;
     font-size: 1.4em;
     font-family: 'Quicksand', sans-serif, Arial, Helvetica, sans-serif;
+
 }
 
 
+
+.background-photo {
+	
+    
+background: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1)), url(../../images/palmtrees.JPG) no-repeat fixed ;
+
+	-webkit-background-size: 90%; 
+    -moz-background-size: 90%; 
+    -o-background-size: 90%; 
+    background-size: 90%; 
+	
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+    
+    
+}
