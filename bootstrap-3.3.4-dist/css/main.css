@@ -1,18 +1,29 @@
+.body-content {
+    height:100%;
+}
+
+.heading {
+    padding: 40px 0 0;
+}
+
+.heading div {
+       margin: 0px 10px;
+    
+}
+
 .myName {
     font-family: 'Pacifico', cursive;
     font-size: 45px;
-    color: black;
-    font-weight:800;
-    font-style: bold;
+    font-weight:400;    
 }
-
 
 .navBar {
     margin-top:25px;
     font-family: 'Amatic SC', cursive, Arial, Helvetica, sans-serif;
-    color: black;
-    font-weight:800;
-    font-style: bold;
+}
+
+.navBar h2 {
+    font-size: 35px;
 }
 
 .navBar a {
@@ -20,7 +31,14 @@
 }
 
 .navBarText {
-    font-size: 40px;
+    margin: 0px 10px;
+}
+
+.img-circle {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1)),
 }
 
 #imgRound {
@@ -28,13 +46,15 @@
 }
 
 
+
+
 .marginRow {
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 #aboutParagraph {
-    color: hotpink;
-    font-weight:900;
+    color: #FF69B4;
+    font-weight:600;
     font-style: bold;
     font-size: 1.4em;
     font-family: 'Quicksand', sans-serif, Arial, Helvetica, sans-serif;
@@ -42,10 +62,36 @@
 }
 
 
-
-.background-photo {
-	
+@media (max-width: 995px) {
+    .navBarText {
+        margin: 0px;
+    }
     
+    .heading div {
+        margin: 0px;
+    }
+    
+    .photo-row {
+        margin-bottom: 20px;
+    }
+
+    .myName {
+        font-size: 3em;
+    }
+    
+    .navBar h2 {
+        font-size: 3em;
+    }
+    
+    #aboutParagraph {
+        font-size: 2em;
+    }
+    
+
+}
+
+/*
+.background-photo {
 background: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1)), url(../../images/palmtrees.jpg) no-repeat fixed ;
     background: -webkit-linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,1)), url(../../images/palmtrees.jpg) no-repeat fixed ;
 background: (rgba(255,255,255,0.8),rgba(255,255,255,1)), url(../../images/palmtrees.jpg) no-repeat fixed ;
@@ -59,7 +105,5 @@ background: (rgba(255,255,255,0.8),rgba(255,255,255,1)), url(../../images/palmtr
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-
-    
-    
 }
+*/
