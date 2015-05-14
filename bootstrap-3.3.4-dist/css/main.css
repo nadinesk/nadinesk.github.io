@@ -21,6 +21,11 @@
     font-weight:400;    
 }
 
+.myName a {
+    text-decoration: none;
+    color: black;
+}
+
 .navBar {
     margin-top:25px;
     font-family: 'Amatic SC', cursive, Arial, Helvetica, sans-serif;
