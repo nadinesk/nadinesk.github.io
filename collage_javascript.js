@@ -2,12 +2,12 @@
 ;(function( $ ) {
 
 
- $(window).load(function () {
+ 
         $(document).ready(function(){
             collage();
             $('.Collage').collageCaption();
         });
-    });
+ 
 
 
     // Here we apply the actual CollagePlus plugin
