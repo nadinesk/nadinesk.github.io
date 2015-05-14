@@ -16,6 +16,7 @@
             {
                 'fadeSpeed'     : 2000,
                 'targetHeight'  : 200,
+                'allowPartialLastRow' : true
             }
         );
     };
@@ -29,5 +30,7 @@
         if (resizeTimer) clearTimeout(resizeTimer);
         resizeTimer = setTimeout(collage, 200);
     });
+    
+
 
 })( jQuery );
