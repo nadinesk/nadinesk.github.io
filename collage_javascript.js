@@ -16,8 +16,6 @@
             {
                 'fadeSpeed'     : 2000,
                 'targetHeight'  : 200,
-                'effect'        : 'effect-6',
-                'direction'     : 'vertical'
             }
         );
     };
