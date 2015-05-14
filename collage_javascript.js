@@ -15,7 +15,7 @@
         $('.Collage').removeWhitespace().collagePlus(
             {
                 'fadeSpeed'     : 2000,
-                'targetHeight'  : 275,
+                'targetHeight'  : 200,
                 'effect'        : 'effect-6',
                 'direction'     : 'vertical'
             }
