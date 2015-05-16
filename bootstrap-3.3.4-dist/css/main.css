@@ -2,6 +2,7 @@
 
 .body-content {
     height:100%;
+    /* Note: This gradient may render differently in browsers that don't support the unprefixed gradient syntax */
 
 
 }
