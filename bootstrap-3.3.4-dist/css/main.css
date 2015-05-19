@@ -3,8 +3,6 @@
 .body-content {
     height:100%;
     /* Note: This gradient may render differently in browsers that don't support the unprefixed gradient syntax */
-
-
 }
 
 .heading {
@@ -43,6 +41,26 @@
 .navBarText {
     margin: 0px 10px;
 }
+
+.workheader {
+    font-family: 'Raleway', sans-serif;
+    font-size: 3em;
+}
+
+.workline a {
+    transition: all 0.5s linear;
+    color: black;
+    border-bottom: 2px solid #FF69B4;
+}
+
+
+.workline a:hover {
+    text-decoration: none;
+    background-color: #FF69B4;
+    color: white;
+    padding: 0px 15px;
+}
+
 
 .img-circle {
     display: block;
@@ -112,8 +130,7 @@
         width:50px;
     
     }
-
-    
+  
 }
 
 /*
