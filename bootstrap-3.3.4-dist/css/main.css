@@ -104,26 +104,21 @@
 }
 
 
+
+
 @media (max-width: 995px) {
-    .navBarText {
-        margin: 0px;
+    .secondNav {
+        display: block;
+        
+        
     }
     
-    .heading div {
-        margin: 0px;
-    }
-    
-    .photo-row {
-        margin-bottom: 20px;
+
+    .secondNav li {
+        margin-right:10px;
     }
 
-    .myName {
-        font-size: 3em;
-    }
     
-    .navBar h2 {
-        font-size: 3em;
-    }
     
     #aboutParagraph {
         font-size: 2em;
@@ -135,13 +130,41 @@
     }
 }
 
+@media (max-width: 483px) {
+    .secondNav {
+        border-bottom: 1px solid rgba(0,0,0,0.0.10);
+        width:100%;
+        margin-left: 0px;
+    }
+
+
+    
+    
+    #aboutParagraph {
+        font-size: 2em;
+    }
+    
+    .contact-info img {
+        width:50px;
+    
+    }
+}
+
+
 .smallNav {
-    display: block;
+    display: inline-block;
+    list-style-type: none;
+    letter-spacing: .1em;
+    padding: 31px 0 19px;
+    
+}
+
+.secondNav {
+    display: inline-block;
     list-style-type: none;
     letter-spacing: .1em;
     
 }
-
 .nameNav {
     font-family: 'Pacifico', cursive;
     font-size: 20px;
@@ -151,7 +174,7 @@
     position: relative;
     left: 10px;
     margin-top: -1px;
-    padding: 31px 0 19px;
+ 
 }
 
 .navItems {
@@ -161,7 +184,6 @@
     display:inline-block;
     margin-right: 20px;
     margin-top: -1px;
-    padding: 31px 0 19px;
 }
 
 .navItems a {
@@ -189,9 +211,7 @@
 
 .isActive {
     box-shadow: 0px 1px rgba(0,0,0,1);
-
-
-    height: 73px;
+    height: 41px;
     
 
 }
