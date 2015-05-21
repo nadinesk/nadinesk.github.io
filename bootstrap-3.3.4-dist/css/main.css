@@ -74,7 +74,10 @@
 
 
 .marginRow {
-    margin-top: 30px;
+    margin-top: 130px;
+    margin-left: 30px;
+    margin-right: 30px;
+        
 }
 
 #aboutParagraph {
@@ -130,8 +133,71 @@
         width:50px;
     
     }
-  
 }
+
+.smallNav {
+    display: block;
+    list-style-type: none;
+    letter-spacing: .1em;
+    
+}
+
+.nameNav {
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
+    font-weight:400;  
+    display:inline-block;
+    margin-right: 40px;
+    position: relative;
+    left: 10px;
+    margin-top: -1px;
+    padding: 31px 0 19px;
+}
+
+.navItems {
+    font-family: 'Amatic SC', cursive, Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    display:inline-block;
+    margin-right: 20px;
+    margin-top: -1px;
+    padding: 31px 0 19px;
+}
+
+.navItems a {
+    text-decoration: none;
+    color: black;
+}
+
+.navItems a:hover {
+    font-weight: 700;
+    color: black;
+    text-decoration: none;
+}
+
+
+
+.topBar {
+    box-shadow: 0 0 1px rgba(0,0,0,0.15);
+    position: absolute;
+    top: 0;
+    height: 73px;
+    display: block;
+    width: 100%;
+}
+
+
+.isActive {
+    box-shadow: 0px 1px rgba(0,0,0,1);
+
+
+    height: 73px;
+    
+
+}
+
+
+
 
 /*
 .background-photo {
