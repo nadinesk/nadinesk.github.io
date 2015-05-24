@@ -109,8 +109,6 @@
 @media (max-width: 995px) {
     .secondNav {
         display: block;
-        
-        
     }
     
 
@@ -132,11 +130,20 @@
 
 @media (max-width: 483px) {
     .secondNav {
-        border-bottom: 1px solid rgba(0,0,0,0.0.10);
+
         width:100%;
         margin-left: 0px;
+
     }
 
+
+
+
+    
+    .topBar {
+       box-shadow: none;
+    }
+    
 
     
     
@@ -216,6 +223,9 @@
 
 }
 
+.work-content {
+    margin-top: 130px;
+}
 
 
 
