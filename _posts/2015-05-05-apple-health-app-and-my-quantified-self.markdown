@@ -12,7 +12,8 @@ A few days ago, I looked at my phone and noticed a chart showing what looked lik
 * If there were any patterns in how far I walked on certain days of the week  
 
 ### What Happens to Foot Travel in a Bigger City (Even in Winter)
-Also I just moved to NYC at the beginning of February (well, January 30 to be specific), and I was interested to see   
+Also I just moved to NYC at the beginning of February (well, January 30 to be specific), and I was interested to see  
+
 * How the walking distance I covered changed since I moved.   
 
 
@@ -20,8 +21,10 @@ Also I just moved to NYC at the beginning of February (well, January 30 to be sp
 The data from the Health App can't be exported from the app itself, so I downloaded the QS Access, which allowed me to create a table of my steps and miles walked, each day from 10/2/15 (when I got my phone) to 5/28/15 (today). I downloaded the data into Excel and quickly created some charts to get some answers to my questions. 
 
 * How many miles do I walk in an average day? (10/2/14-5/28/15)    
+
 ** 3.67 miles
 * How my walking mileage changed from month-to-month    
+
 ** The average miles I walked per month ranged from 2.56 miles in November 2014, to 4.97 miles in April.   
 ** The number of miles I walked increased by 22% from October 2014 (3.81 mi) to the end of May 2015 (4.63 mi...and counting).   
 ** The largest percentage increase from month-to-month is 23%, from January to February (the month I moved to NYC).   
