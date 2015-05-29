@@ -22,7 +22,7 @@ The data from the Health App can't be exported from the app itself, so I downloa
 
 * How many miles do I walk in an average day? (10/2/14-5/28/15)    
 ** 3.67 miles
-
+..
 * How my walking mileage changed from month-to-month    
 ** The average miles I walked per month ranged from 2.56 miles in November 2014, to 4.97 miles in April.   
 ** The number of miles I walked increased by 22% from October 2014 (3.81 mi) to the end of May 2015 (4.63 mi...and counting).   
