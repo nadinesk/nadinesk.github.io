@@ -5,7 +5,8 @@ date:   2015-05-28 11:21
 categories: health monitoring
 ---
 ### Health App Discovery and Questions
-A few days ago, I looked at my phone and noticed a chart showing what looked like pedometer data. And this is when I discovered that Apple's Health App has been tracking my number of steps since I got my iPhone 6+ in October 2014. Today, I decided to look into that data. I wanted to see:   
+A few days ago, I looked at my phone and noticed a chart showing what looked like pedometer data. And this is when I discovered that Apple's Health App has been tracking my number of steps since I got my iPhone 6+ in October 2014. Today, I decided to look into that data. I wanted to see:  
+
 * How many miles I walk in an average day  
 * How my walking mileage changed from month-to-month  
 * If there were any patterns in how far I walked on certain days of the week  
@@ -22,8 +23,8 @@ The data from the Health App can't be exported from the app itself, so I downloa
 ** 3.67 miles
 * How my walking mileage changed from month-to-month    
 ** The average miles I walked per month ranged from 2.56 miles in November 2014, to 4.97 miles in April.   
-..* The number of miles I walked increased by 22% from October 2014 (3.81 mi) to the end of May 2015 (4.63 mi...and counting).   
-..* The largest percentage increase from month-to-month is 23%, from January to February (the month I moved to NYC).   
+** The number of miles I walked increased by 22% from October 2014 (3.81 mi) to the end of May 2015 (4.63 mi...and counting).   
+** The largest percentage increase from month-to-month is 23%, from January to February (the month I moved to NYC).   
 
 * If there were any patterns in how far I walked on certain days of the week.     
 ..* One pattern only really stands out: overall, in Mountain View, and in NYC, I consistently walked less on Wednesday. Overall, it was the least, at 3.25 miles; and in Mountain View and NYC, it was the second-least, 2.63 mi and 3.88 mi, respectively.   
