@@ -18,7 +18,7 @@ Also I just moved from Mountain View, CA to NYC at the beginning of February (we
 
 
 ### Answers -- My Health App Steps/Miles Data
-The data from the Health App can't be exported from the app itself, so I downloaded the [QS Access](https://itunes.apple.com/us/app/qs-access/id920297614?mt=8), which allowed me to create a table of my steps and miles walked, each day from 10/2/15 (when I got my phone) to 5/28/15 (today). I downloaded the data into Excel and quickly created some charts to get some answers to my questions. 
+The data from the Health App can't be exported from the app itself, so I downloaded [QS Access](https://itunes.apple.com/us/app/qs-access/id920297614?mt=8), which allowed me to create a table of my steps and miles walked, each day from 10/2/15 (when I got my phone) to 5/28/15 (today). I downloaded the data into Excel and quickly created some charts to get some answers to my questions. 
 
 * How many miles I walk on an average day (10/2/14-5/28/15)    
 ** 3.67 miles  
