@@ -1,0 +1,409 @@
+html, header, body, div, p, img, h1, table, ul, li, a, footer {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    
+}
+
+html {
+    line-height; 1px;
+}
+
+div {
+    display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.row {
+    clear: both;
+}
+
+.row::before, .row::after {
+    display: table;
+    content: '';
+}
+
+.row::after {
+    clear: both;
+}
+
+body {
+  background-color: #f7f7f7;
+  -webkit-transition: background-color 1s ease;
+  -moz-transition: background-color 1s ease;
+}
+@media screen and (max-width: 1100px) {
+  /* line 11, ../sass/screen.scss */
+  body {
+    -webkit-text-size-adjust: 70%;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* line 11, ../sass/screen.scss */
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+
+
+
+
+
+
+header {
+    box-sizing: border-box;
+    padding: 0px 1.25rem;
+}
+@media screen and (max-width: 500px) {
+    header {
+        box-sizing: border-box; 
+        padding: 0px 0.625rem;
+    }
+}
+
+header, footer {
+    display: block;
+}
+
+header h1 {
+    font-family: 'Sorts Mill Goudy', serif;
+    font-size: 1.875rem;
+    color: #333333;
+    float: left;
+}
+
+header h1 em {
+    font-style: italic;
+}
+
+header h1 a {
+    color: #333333;
+    text-decoration: none;
+}
+
+header h1 a:hover {
+    text-decoration: underline;
+}
+
+header ul {
+    font-family: 'Pontano Sans', sans-serif;
+    font-weight: 100;
+    color: #cccccc;
+}
+
+header ul li {
+    display: inline;
+    line-height: 1.3;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #cccccc;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color: 0.3s ease;
+}
+
+header ul li a#designing {
+    color: #35a7ce;
+    font-family: 'Sorts Mill Goudy', serif;
+    font-style:italic;
+}
+
+header ul li a#editing {
+    color: #e7574c;
+    font-family: 'Sorts Mill Goudy', serif;
+    font-style:italic;
+}
+
+header ul {
+    float: right;
+    margin-top: 5px;
+    font-family: 'Sorts Mill Goudy', serif;
+    font-size: 1.125rem;
+    color: #bbbbbb;
+}
+
+header li {
+    color: #cccccc;
+}
+
+header li a {
+    color: #bbbbbb;
+}
+
+
+header li a:hover {
+    color: #777777;
+    text-decoration: undrline;
+}
+
+hr {
+    border-color: #e5e5e5;
+    border-left: 0px;
+    border-right: 0px;
+    border-style: solid;
+    -webkit-margin-before: 0.8em;
+    -webkit-margin-after: 0.8em;
+}
+
+
+#home {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+    width: 68.75rem;
+    box-sizing: border-box;
+    padding: 50px;
+    background-color: none;
+    color: #333333;
+    opacity: 1;
+}
+
+@media screen and (max-width: 1100px) {
+    #home {
+        box-sizing: border-box;
+        padding: 10px;
+        width: 100%;
+    }
+}
+
+#home h1 {
+    font-family: 'Sorts Mill Goudy', serif;
+    font-size: 1.875rem;
+    color: #333333;
+    float: left;
+}
+
+#home h1 em {
+    font-style: italic;
+}
+
+#home h1 a {
+    color: #333333;
+    text-decoration: none;
+}
+
+#home h1 a:hover {
+    text-decoration: underline;
+}
+
+#home ul {
+    font-family: 'Pontano Sans', sans-serif;
+    font-weight: 100;
+    color: #cccccc;
+}
+
+#home ul li {
+    display: inline;
+    line-height: 1.3;
+}
+
+#home ul li a {
+    text-decoration: none;
+    color: #cccccc;
+    -webkit-transition: color 0.3s ease;
+    -moz-transitioN: color 0.3s ease;
+}
+
+
+
+#home ul li a#designing {
+    color: #35a7ce;
+    font-family: 'Sorts Mill Goudy', serif;
+}
+
+#home ul li a#editing {
+    color: #e7574c;
+    font-family: 'Sorts Mill Goudy', serif;
+    font-style: italic;
+}
+
+#home h1 {
+    float: left;
+    width: 20%;
+    margin-bottom: 0.625rem;
+}
+@media screen and (max-width: 1010px) {
+    #home h1 {
+        width: 100%;
+    }
+}
+
+#home hr {
+    width: 80%;
+    -webkit-margin-before: 0.8em;
+    -webkit-margin-after: 0.8em;
+}
+@media screen and (max-width: 1010px) {
+    #home hr {
+        float: none;
+        width: 100%;
+    }
+
+}
+
+#home #left-wing {
+    float: left;
+  width: 20%;
+  min-height: 3.125rem;
+  position: relative;
+}
+
+@media screen and (max-width: 980px) {
+    #home #left-wing, #home #right-wing {
+        height: 0px;
+        overflow: hidden;
+        opacity: 0;
+    }
+}
+
+#home #right-wing {
+    margin-left: -1.25rem;
+    padding-left: 1%;
+    box-sizing: border-box;
+}
+
+#home ul {
+    width: 60%;
+    float: left;
+    margin: 3.125rem auto 4.0625rem auto;
+    text-align: center;
+    font-size: 3.3125rem;
+    font-weight: 100;
+}
+@media screen and (max-width: 500px) {
+    #home ul {
+        margin: 0.625rem auto;
+    } 
+}
+@media screen and (max-width: 350px) {
+    #home ul {
+        font-size: 1.75rem;
+    }
+}
+
+#home ul li a#designing {
+    color: #35a7ce;
+    font-family: 'Sorts Mill Goudy', serif;
+    font-style: italic;
+    font-weight: 700;
+}
+
+#home ul li a#editing {
+    color: #e7574c;
+    font-family: 'Sorts Mill Goudy', serif;
+    font-style: italic;
+    font-weight: 700;
+}
+
+#home ul li a:hover#thinking {
+    color: #678c99;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+}
+
+#home ul li a:hover#reading {
+    color: #777777;
+    background: #fef8b6;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+}
+
+#home ul li a:hover#colleting {
+    font-style: italic;
+    font-weight: 100;
+}
+
+#home ul li a:hover#designing {
+    text-decoration: underline;
+}
+
+#home ul li a:hover#editing {
+    background-color: rgba(255, 255, 255, 0.75);
+    text-decoration: underline;
+}
+
+#home ul li a:hover#writing {
+    font-family: 'Sorts Mill Goudy', serif;
+    font-weight: 100;
+    font-size: 3rem;
+    color: #777777;
+}
+
+#home ul li a:hover#making {
+    color: #e5e5e5;
+    background: url("/img/line3.gif") repeat-x;
+    background-position: 0% 50%;
+    -webkit-transition: color 0.3s ease;
+    -moz-transition: color 0.3s ease;
+}
+@media screen and (max-width: 500px) {
+    #home ul li {
+        text-align: center;
+    }
+}
+
+#home p {
+    font-family: 'Sorts Mill Goudy', serif;
+    font-size: 1.25rem;
+    line-height: 1.3;
+}
+
+
+footer {
+    box-sizing: border-box;
+    padding: 0px 1.25rem;
+}
+@media screen and (max-width: 500px) {
+    footer {
+        box-sizing: border-box;
+        padding: 0px 0.625rem;
+    }
+}
+
+footer hr {
+    width: 80%;
+    float: left;
+}
+@media screen and (max-width: 1010px) {
+    footer hr {
+        float: none;
+        width: 100%;
+    }
+
+}
+
+
+footer p {
+    font-family: 'Sorts Mill Goudy', serif;
+    font-size: 1.25rem;
+    text-align: right;
+    line-height: 1.3;
+    width: 20%;
+    float: left;
+}
+@media screen and (max-width: 500px) {
+    footer p {
+        font-size: 1.5625rem;
+    }
+}
+@media screen and (max-width: 1010px) {
+    footer p {
+        float: none;
+        width: 100%;
+    }
+}
+
+
+
+
+
+
