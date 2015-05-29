@@ -41,10 +41,10 @@ Not suprisingly -- or maybe yes, suprisingly, since we moved in the middle of th
 
 The charts! 
 
-![alt text](../charts/milesPerMonth.png)
-![alt text](../charts/milesPerDay.png)
-![alt text](../charts/milesCompBar.png)
-![alt text](../charts/milesCompLine.png)
+![alt text](http://khasachi.com/charts/milesPerMonth.png)
+![alt text](http://khasachi.com/charts/milesPerDay.png)
+![alt text](http://khasachi.com/charts/milesCompBar.png)
+![alt text](http://khasachi.com/charts/milesCompLine.png)
 
 
 
