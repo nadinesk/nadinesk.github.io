@@ -35,7 +35,7 @@ table {
 }
 
 body {
-  background-color: #f7f7f7;
+  <!--background-color: #f7f7f7; -->
   -webkit-transition: background-color 1s ease;
   -moz-transition: background-color 1s ease;
 }
@@ -404,6 +404,13 @@ footer p {
 
 
 
+#parent {
+    text-align:center;
+}
+
+.center {
+    margin: auto;
+}
 
 
 

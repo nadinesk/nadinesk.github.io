@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	
+	<title>Smooth Page Scroll</title>
+	
+	<link rel="stylesheet" href="css/style.css">
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<script>
+	$('a[href^="#"]').on('click', function(event) {
+
+    var target = $( $(this).attr('href') );
+
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: target.offset().top
+        }, 1000);
+    }
+
+});
+	</script>
+</head>
+
+<body>
+<a href="#bottom" id="top">Click to scroll down</a>
+
+<div id="star">&star;</div>
+
+<a href="#top" id="bottom">Click to scroll up</a>
+    
+
+	
+	 <style type="text/css" style="display: none !important;">
+	a {
+  background: #ddd;
+  color: #444;
+  font-family: sans-serif;
+  text-align: center;
+  text-decoration: none;
+  padding: 20px;
+  display: block;
+}
+
+#star {
+  text-align: center;
+  font-size: 100px;
+  line-height: 500px;
+  color: #ddd;
+}
+</style>
+</body>
+
+</html>
