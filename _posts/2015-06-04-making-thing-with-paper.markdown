@@ -12,7 +12,7 @@ I just downloaded the [Paper App](https://www.fiftythree.com/paper), which I'm h
 It's also fun - and helpful - to make wireframes with them. 
 
 Also, I've gone back to work. Here's Zach, post-work during my first week. 
-<img src="images/zachbath.jpg" alt="Zach in the bath" width="450">
+<img src="http://khasachi.com/images/zachbath.jpg" alt="Zach in the bath" width="450">
 
 
 
