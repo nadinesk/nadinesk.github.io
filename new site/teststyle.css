@@ -1,0 +1,163 @@
+
+.test {
+	height: 100%;
+	background-color: white;
+	box-sizing: border-box;
+}
+
+.left-side {
+	height: 100%;
+	background-color: #b61924;
+	color: white;
+}
+
+.right-side {
+	height: 100%;
+	background-color: white;
+	color: #b61924;
+}
+
+.photo-row img {
+	border-radius: 50%;
+}
+
+.photo-col {	
+	margin-left: 40%;
+
+}
+
+.name-row {
+	padding-top: 45%;
+}
+
+.name-col {
+	text-align: center;
+}
+
+.description-row {
+	padding-top: 45%;
+}
+
+
+.description-col {
+		
+	text-align: center;
+}
+
+.right-side-second {
+	height: 100%;
+	background-color: #b61924;
+	color: white;
+
+}
+
+.learn-row {
+	padding-top: 45%;
+}
+
+
+#learn-id a {
+	text-decoration: none;
+	color: #b61924;
+	border-bottom: 1px solid #b61924;
+	transition: all 0.5s linear;
+}
+
+#learn-id a:hover {
+	text-decoration: none;
+    background-color: #b61924;
+    color: white;
+    padding: 0px 15px;
+
+}
+.second-section {
+	height: 100%;
+}
+
+.secondsection-header {
+	padding-top: 2%;
+	text-align: center;
+	color: #b61924;
+	border-top: 1px solid #b61924;
+
+}
+
+.lists-row {
+	padding-top: 2%;
+}
+
+
+.lists-row  ul{
+	
+	list-style-type: none;
+	line-height: 1.8;
+}
+
+.programming-col, .webdev-col, .data-col {
+	border-top: 1px solid white;
+	border-right: 1px solid white;
+	border-bottom: 1px solid white;
+	height: 100%;
+	background-color: #b61924;
+	color: white;
+	font-size: 1.5em;
+
+}
+
+.skills-hl {
+	text-align: center;
+	margin-top: 60px;
+	margin-bottom: 20px;
+	color:  #B4B6FF;
+	text-shadow: 1px 0px white;
+
+}
+
+.skills-hl h2 {
+	font-size: 3em;
+	font-weight: 700;
+}
+
+.table-row {
+	height: 100%;
+	width: 100%;
+}
+
+.circle-skills {
+	width: 200px;
+	height: 200px;
+	margin: 20px;
+	border-radius: 50%;
+	display: inline-block;
+	background: #FFE782;
+	color: #B4B6FF;
+
+}
+
+.circle-skills h3 {
+	padding-top: 35%;
+	max-height: 26px;
+	font-size: 1.1em;
+
+
+}
+
+.skills-section {
+	background-color: #D4C2C0;
+}
+
+
+/*.circle-skill {
+	display: inline-block;
+	float: left;
+	border: 1px solid black;
+	border-radius: 50%;
+	text-align: center;
+	width: 200px;
+	height: 200px;
+	margin: 1.3em;
+}
+
+.circle-skill h3 {
+	margin-top: 45%;
+} */
