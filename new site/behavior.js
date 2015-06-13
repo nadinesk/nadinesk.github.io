@@ -15,10 +15,30 @@ $(function() {
 	    }
 	  });
 
-    
+    $(".sidenavOver").hide();
+//on hover over the a tag with atribute href='#games' 
+$('.container').on({
+    mouseenter: function () {
+        $(".sidenavOff").hide(); //On mouseover, hode the first div
+        $(".sidenavOver").show();
+    },
+    mouseleave: function () {
+        $(".sidenavOff").show();
+    }
 });
 
-$( document ).ready(function() {
-   
-	 $( "toggle" ).effect( "bounce", "slow" ); 
-	  });
+	$("li.javalist")
+		.hover(function() {
+			$("#javaout").fadeOut("fast");
+			$("#showjavadiv").fadeIn("fast");
+
+		},
+		function() {
+			$("#javaout").fadeIn(300);
+			$("#showjavadiv").fadeOut(200);
+		}
+		);
+
+
+});
+

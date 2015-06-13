@@ -1,7 +1,7 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="teststyle.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -17,57 +17,55 @@
 <body>
 
 	<div class="container-fluid test">
-		<div class="row">
-			<div class="col-md-6 left-side">
-				<div class="row name-row">
-					<div class="col-md-12 name-col">
-						<h1>Nadine Khattak Fischoff</h1>
-					</div>
+		<div class="row top-row">
+			<div class="row name-row">
+					<h1 class="name-header">NADINE KHATTAK FISCHOFF</h1>
+			</div>
+			<div class="row learns-row">
+					<p class="learns-makes" id="learnmake-para"><a href="#skills">learns things</a>, makes things</p>
+			</div>
+		</div>
 
-				</div>	
-				
-				
-			</div>
-			<div class="col-md-6 right-side">
-				<div class="row description-row">
-					<div class="col-md-12 description-col">
-						<h1 id="learn-id"> <a href="#skills">can do things</a>, <a> does things</a> </h1>
-						
-					</div>
-				</div>
-			</div>
+		<div class="row second-row">
 		</div>
-		<div class="row skills-section">
+	
+		<div class="row skills-row">
 			<div class="row">
-				<div class="col-md-12 skills-hl">
-					<h2 id="skills" >Skills</h2>
+				<div class="col-md-12 skill-headline">
+					<h2 id="skills">Skills</h2>
 				</div>
 			</div>
-			<div class="row table-row">
-				<table class="first-table" width="100%">
-					<tr>
-						<td align="center">
-							<div id="toggle" class="circle-skills"><h3>Java</h3></div>
-							<div class="circle-skills"><h3>C++</h3></div>
-							<div class="circle-skills"><h3>Objective-C</h3></div>
-							<div class="circle-skills"><h3>HTML, CSS, Javascript</h3></div>
-						</td>
-					</tr>
-				</table>
-			
-				<table class="second-table"width="100%">
-					<tr>
-						<td align="center">
-							<div class="circle-skills"><h3>App Development</h3></div>
-							<div class="circle-skills"><h3>Data Viz</h3></div>
-							<div class="circle-skills"><h3>Cute Curation</h3></div>
-							<div class="circle-skills"><h3>Virality</h3></div>
-						</td>
-					</tr>
-					
-				</table>
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8 skillslist">
+					<ul class="thelistskill">
+						<li class="javalist">
+							<div id="javaout">
+								Java
+							</div>
+							<div id="showjavadiv">coursework, 2014-15</div>
+						</li>
+						
+						<li class="cpluslist">
+							<div id="cplusout">
+								C++
+							</div>
+							<div id="show-cplus-div">coursework, 2014-15</div>
+						</li>
+						<li>Objective-C</li>
+						<li>HTML, CSS, JavaScript</li>
+						<li>App Development</li>
+						<li>Data Viz</li>
+						<li>Cute Curation</li>
+						<li>Virality</li>
+						<li>Government/Policy</li>
+					</ul>
+				</div>
+				<div class="col-md-2"></div>
 			</div>
 		</div>
+	</div>
+		
 
 
 <!--
@@ -91,7 +89,7 @@
 			</div>	
 
 		</div>	-->
-	</div>	 
+ 
 
 <!-- Java, C++, Objective-C, HTML, CSS, Javascript, Data Viz, App Development, Cute Curation, Virality !--> 
 <!--
@@ -147,7 +145,6 @@
 		</div>
 		-->
 
-	</div>
 
 </body>
 
