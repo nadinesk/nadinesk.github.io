@@ -17,11 +17,11 @@
 	transition: font-size 2ms linear
 }
 
-.second-row {
-	background-color: white;
-	padding: 40px;
-	border-bottom: 1px solid #e1e8ed;
-	opacity: 0.5px;
+
+
+.third-row {
+	padding-top:80px;
+	background-color: blue;
 }
 
 .learns-makes {
@@ -50,52 +50,139 @@
 }
 
 .skills-row {
-	background: linear-gradient(45deg, #C7BFD4, #fff);
+	background: linear-gradient(0deg, #C7BFD4, #fff);
 	height: 100%;
+	padding: 30px;
 }
 
-.skill-headline {
+.skillslist {
+	text-align: center;
+
+}
+
+.skills-headline {
 	display: block;
 	color: #667585;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 100;
 	text-rendering: optimizeLegibility;
-	text-align: center;
-	
-	vertical-align: middle;
-	
-	padding-left: 50px;
-
-
+	text-align: right;
 }
 
-.skills-hl h2 {
-	margin: 0px;
-	padding-top: 25%;
+.thelistskill {
+	margin-left: 0;
+	padding-left: -10px;
 }
-
-
 
 .thelistskill li {
 	display: inline-block;
 	list-style-type: none;
-	height: 150px;
-	width: 150px;
+	height: 100px;
+	width: 230px;
 	text-align: center;
-	border-radius: 50%;	
+	border-radius: 10px;	
 	margin: 5px;
 	vertical-align: middle;
 	padding-left: 2px;
 	padding-right: 2px;
-	padding-top: 70px;
-	
+	padding-top: 30px;
 	color: white;
 	background: #C7BFD4;
+
 }
 
 .thelistskill div {
 	display: inline-block;
 
+}
+
+.thelistskill li:hover {
+	
+	color: white;
+	font-weight:500;
+}
+
+.thelistskill .pgmlist:hover {
+	background: url('IMG_034.jpg');
+	background-size: cover;
+}
+
+#showpgmdiv {
+	background: rgba(255, 255, 255, 0.3);
+	
+}
+
+.thelistskill .webdevlist:hover {
+	background: url('Untitled2.png');
+	background-size: cover;
+}
+
+#show-webdev{
+	background: rgba(144, 199, 219, 0.3);
+	border-radius: 5px;
+}
+
+.thelistskill .appdevlist:hover {
+	opacity: 0.9;
+	background: url('Untitled4.png');
+	background-size: cover;
+}
+
+.thelistskill .datavizlist:hover {
+	
+	background: url('Untitled3.png');
+	background-size: cover;
+}
+
+#showdataviz{
+	background: rgba(112, 157, 173, 0.3);
+	border-radius: 5px;
+}
+
+.thelistskill .cutelist:hover {
+	background: url('Untitled5.png');
+
+	background-size: cover;
+}
+
+#show-cute {
+	background: rgba(255, 182, 105, 0.5);
+}
+
+
+#show-appdev {
+	background: rgba(178, 128, 73, 0.8);
+}
+
+.thelistskill .viral-list:hover {
+	background: url('Untitled6.png');
+	background-size: cover;
+}
+
+#show-viral{
+	background: rgba(178, 128, 73, 0.5);
+	border-radius: 5px;
+}
+
+.thelistskill .gov-list:hover {
+	background: url('Untitled7.png');
+	background-size: cover;
+	
+}
+
+#show-gov{
+	background: rgba(178, 128, 73, 0.3);
+	
+}
+
+
+.thelistskill a {
+	color: white;
+	text-decoration: underline;
+}
+
+.thelistskill a:hover {
+	color: white;
 }
 
 #learnmake-para a {
@@ -108,23 +195,218 @@
     background-color: white;
     padding: 0 10px;
     color: #FF9669;
+
 }
 
 
-#showjavadiv, #show-cplus-div {
+#showpgmdiv, #show-webdev, #show-appdev, #showdataviz, #show-cute, #show-viral, #show-gov{
+	margin-top: -10px;
 	display: none;
+}
+
+@media screen and (max-width: 1180px) {
+	.skills-row {
+		height: 100%;
+	}
+
+	.thelistskill li {
+		width: 200;
+	}
+}
+
+@media screen and (max-width: 1060px) {
+	.skills-row {
+		height: 130%;
+	}
+
+	.thelistskill li {
+		width: 200;
+	}
+}
+
+@media screen and (max-width: 990px) {
+	.skills-row {
+		height: 100%;
+	}
+
+	.skills-headline {
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.skills-row {
+		height: 100%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.skills-row {
+		height: 140%;
+	}
+
+
+	.thelistskill li {
+	display: block;
+	list-style-type: none;
+	text-align: center;
+	border-radius: 10px;	
+	
+	vertical-align: middle;
+
+	color: white;
+	background: #C7BFD4;
+}
+
+
+#show-gov, #show-viral, #show-cute, #showdataviz, #show-appdev {
+	text-align: center;
+	font-size: 14px;
+	width: 200px;
+}
+}
+
+
+.anchor-link {
+	position: fixed;
+}
+
+.nav {
+	position: fixed;
+	margin-top:2em;
+}
+
+#menu-toggle {
+	font-size: 28px;
+	padding-left: 5px;
+	width: 30px;
+	color: #B26949;
+	padding-bottom: 0px;
+	margin-bottom: -3px;
+}
+
+
+
+.menu_container, .anchor-link { display: block; }
+  
+  .nav { 
+  		float: left; 
+  		margin-left: 0%; 
+  		width: 70px; 
+  		z-index: 2; 
+  		margin-left: 5px;
+  		color: blue;
+  		display: none;
+  	}
+
+.togglenav {
+	border-radius: 5px;
+	padding-top: 5px;
+	padding-left: 5px;
+	color: white;
+	
+}
+
+.nav li {
+	border-bottom: 1px solid white;
+	padding-top: 5px;
+}
+
+.nav ul:first-child{
+	
+}
+
+
+
+.togglenav a{
+	color: #B26949;
+}
+
+
+
+.togglenav a:hover {
+	text-decoration: none;
+	color: #8DC7DB;
+}
+  
+
+  
+  
+  .nav ul li { display: block; }
+  
+  
+.second-row {
+	text-align: center;
+	background: blue;
+}
+
+#navbar-fixes {
+    top: 0;
+    z-index: 100;
+  	position: fixed;
+  	height: 20px;
+  	width: 100%;
+
+    
+}
+
+.navbar-fixed {
+    top: 0;
+    z-index: 100;
+  	position: fixed;
+  	height: 20px;
+  	width: 100%;
+  	
+}
+
+.allskills {
+	padding-top: 5%;
+}
+
+#nav_bar {
+	border-bottom: 1px solid #e1e8ed;
+	background-color: white;
+	border-radius: 0px;
+	margin-bottom: 0;
+    height: 40px;
 
 
 }
 
-.container {
-    width:100px;
-    height:100px;
-    overflow:hidden;
-    display:block;
+
+
+.nav_links li {
+	display: inline-block;
+	padding-top: 8px;
+    margin-top: 4px;
+ 
 }
-.container div {
-    display:inline-block;
-    position:relative;
-    float:left;
+
+.nav_links li a {
+	padding: 0 15.5px;
+	color: #667585;
+	text-decoration: none;
 }
+
+
+.contact-me {
+	font-family: 'Roboto', sans-serif;
+	height: 35%;
+	padding-top: 3%;
+	padding-bottom: 3%;
+	background: #FFB669;
+	color: #3B535C;
+}
+
+.sayhi {
+	text-align: center;
+}
+.contact-icons {
+	text-align: center;
+
+}
+
+.contact-icons img {
+	margin: 2%;
+}
+

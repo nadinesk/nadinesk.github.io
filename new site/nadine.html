@@ -10,140 +10,122 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
         
         
+        
 
 <script src="behavior.js"></script>
 
 </head>
 <body>
 
-	<div class="container-fluid test">
+	<div class="container-fluid test main-content">
+
 		<div class="row top-row">
+			<!--<div class="menu_container">
+				<!<div class="anchor-link" id="menu-toggle">
+					&#9776
+					<!--<button type="button" class="btn btn-default" aria-label="Left Align">
+  						<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+					</button> 
+				</div>
+				<div class="nav">
+					<ul class="togglenav">
+						<li><a href="http://www.khasachi.com/blog">Blog</a></li>
+						<li><a href="http://www.khasachi.com/photos">Photos</a></li>
+						
+					</ul>
+				</div>
+			</div> -->
+
 			<div class="row name-row">
 					<h1 class="name-header">NADINE KHATTAK FISCHOFF</h1>
 			</div>
 			<div class="row learns-row">
-					<p class="learns-makes" id="learnmake-para"><a href="#skills">learns things</a>, makes things</p>
+					<p class="learns-makes" id="learnmake-para"><a href="#skills">learns things and makes things</a></p>
 			</div>
 		</div>
 
 		<div class="row second-row">
+			<nav id="nav_bar">
+				<ul class='nav_links'>
+					<li><a href="http://www.khasachi.com">about</a></li>
+					<li><a href="http://www.khasachi.com/blog">blog</a></li>
+					<li><a href="http://khasachi.com/photos.html">photos</a></li>
+					<li><a href="#contact">contact</a></li>
+				</ul>
+			</nav>
+
 		</div>
 	
-		<div class="row skills-row">
-			<div class="row">
-				<div class="col-md-12 skill-headline">
-					<h2 id="skills">Skills</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-8 skillslist">
+		<div class="row skills-row" id="skills" >
+			<div class="allskills"  >
+				<div class="col-md-3 skills-headline" ><h2>Learning and Making</h2></div>
+				<div class="col-md-6 skillslist">
 					<ul class="thelistskill">
-						<li class="javalist">
-							<div id="javaout">
-								Java
+						<li class="pgmlist">
+							<div id="pgmout">
+								Programming
 							</div>
-							<div id="showjavadiv">coursework, 2014-15</div>
+							<div id="showpgmdiv">Java, C++, <br> Objective-C</div>
 						</li>
-						
-						<li class="cpluslist">
-							<div id="cplusout">
-								C++
+						<li class="webdevlist">
+							<div id="web-dev">
+								Web <br>
+								Development
 							</div>
-							<div id="show-cplus-div">coursework, 2014-15</div>
+							<div id="show-webdev">HTML, CSS, <br>Javascript</div>
 						</li>
-						<li>Objective-C</li>
-						<li>HTML, CSS, JavaScript</li>
-						<li>App Development</li>
-						<li>Data Viz</li>
-						<li>Cute Curation</li>
-						<li>Virality</li>
-						<li>Government/Policy</li>
+						<li class="appdevlist">
+							<div id="appdevout">
+								App <br>Development
+							</div>
+							<div id="show-appdev">made <a href="https://itunes.apple.com/us/artist/nadine-khattak/id924787458">3 apps</a> in the <br> ITunes store</div>
+						</li>
+						<li class="datavizlist">
+							<div id="datavizout">
+								Data Visualization and <br> Data Management
+							</div>
+							<div id="showdataviz">D3.js, <br>my <a href="http://bl.ocks.org/nadinesk">bl.ocks page</a>;<br>work experience</div>
+						</li>
+						<li class="cutelist">
+							<div id="cuteout">
+								Cute Curation
+							</div>
+							<div id="show-cute">curated the web of cute <a href="http://www.1000cutethings.tumblr.com">here</a>; <br>made own tumblr theme</div>
+						</li>
+						<li class="viral-list">
+							<div id="viral-out">
+								the cutest
+							</div>
+							<div id="show-viral">7K notes on <a href="http://1000cutethings.tumblr.com/post/34327025223/793-halloween-pinata-cookies-these-halloween">this</a>, <a href="http://1000cutethings.tumblr.com/post/42780272718/955-mushroom-lamps-japanese-designer-yukio">this</a>;<br>Buzzfeed 10K views</div>
+						</li>
+						<li class="gov-list">
+							<div id="gov-out">
+								Government, <br>Policy
+							</div>
+							<div id="show-gov">6 yrs of SF city <br>budget work, <br>Masters Public Policy </div>
+						</li>
 					</ul>
 				</div>
-				<div class="col-md-2"></div>
+			</div>	
+		</div>
+
+		<div class="row contact-me">
+			<div class="col-md-12 sayhi" id="contact">
+				<h4>Say Hi</h4>
+			</div>
+			<div class="col-md-12 contact-icons">
+				<a id="mail-img" href="#"><img width="40" src="email-48.png"></img></a>
+				<a id="linked-img" href="#"><img width="50" src="linkedin-white.png"></img></a>
+				<a id="github-img" href="#"><img width="50" src="GitHub-Mark-Light-64px.png"></img></a>
+				<a id="twitter-img" href="#"><img width="50" src="TwitterLogo_white.png"></img></a>
 			</div>
 		</div>
+
 	</div>
 		
 
 
-<!--
-		<div class="row">
-			<div class="row">
-				<div class="col-md-12 skills-hl">
-					<h2>Skills</h2>
-				</div>
-			</div>
 
-			<div class="row skill-row">
-				<div class="circle-skill">
-					<h3>Java</h3>
-				</div>
-				<div class="circle-skill">
-					<h3>Java</h3>
-				</div>
-				<div class="circle-skill">
-					<h3>Java</h3>
-				</div>
-			</div>	
-
-		</div>	-->
- 
-
-<!-- Java, C++, Objective-C, HTML, CSS, Javascript, Data Viz, App Development, Cute Curation, Virality !--> 
-<!--
-		<div class="row">
-			<div class="col-md-6 left-side-second">
-				<div class="row programming-row">
-					<div class="col-md-12 programming-col">
-						<ul>
-							<li>Programming</li>
-								<ul>
-									<li>Java</li>
-										<ul>
-											<li>Intermediate</li>
-											<li>Beginner</li>
-										</ul>
-									<li>C++</li>
-										<ul>
-											<li>Beginner</li>
-										</ul>	
-									<li>Objective-C and X-Code</li>	
-										<ul>
-											<li>Stanford online</li>
-										</ul>
-								</ul>	
-							<li>Web Development (front-end)</li>
-								<ul>	
-									<li>HTML, CSS, Javascript</li>
-											<ul>
-												<li>Lynda.com (good for overview)</li>
-												<li>Udemy (good for bootstrap intro)<li>
-												<li>Treehouse (good for latest CSS and effects/design)<li>
-											</ul>
-								</ul>
-							<li>Data and Data Visualization</li>	
-								<ul>
-									<li>D3.js</li>
-								</ul>
-					
-						</ul>	
-					</div>	
-				</div>
-	
-			</div>
-		
-			<div class="col-md-6 right-side-second">
-				<div class="row learn-row">
-					<div class="col-md-12 learn-col">
-						<h1>learn</h1>
-					</div>
-				</div>
-			</div>
-				
-		</div>
-		-->
 
 
 </body>
