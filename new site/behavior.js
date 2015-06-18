@@ -27,7 +27,7 @@ $('.container').on({
     }
 });
 
-	$("li.pgmlist")
+/**	$("li.pgmlist")
 		.hover(function() {
 			$("#pgmout").hide();
 			$("#showpgmdiv").show();
@@ -90,22 +90,25 @@ $('.container').on({
 			$("#viral-out").show();
 			$("#show-viral").hide();
 		});
-	$("li.gov-list")
+
+	
+	$("#white-email")
 		.hover(function() {
-			$("#gov-out").hide();
-			$("#show-gov").show();
+			$("#white-email").hide();
+			$("#blue-email").show();
 
 		},
 		function() {
-			$("#gov-out").show();
-			$("#show-gov").hide();
+			$("#white-email").show();
+			$("#blue-email").hide();
 		});
 		
 		$("#menu-toggle")
 		.hover(function() {
 			$(".nav").show();
 
-		}); 
+		}); **/
+		
 
 $(document).mouseup(function (e)
 {
@@ -142,7 +145,6 @@ $(document).mouseup(function (e)
     }
   });
 
-
-
+	
 });
 
