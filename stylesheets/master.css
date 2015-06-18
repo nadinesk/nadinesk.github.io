@@ -1,0 +1,13 @@
+.wrapper {
+	font-family: 'Roboto', sans-serif;
+	background: linear-gradient(30deg, #FF9669, #8DDBD1);
+}
+
+
+
+h1 {
+	font-weight: 100;
+	color: white;
+	text-rendering: optimizeLegibility;
+	text-align: center;
+}
