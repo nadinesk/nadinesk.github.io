@@ -6,11 +6,15 @@
 	color: white;
 	display: inline-block;
 	text-align: center;
+}
+
+#heading h1 {
 	margin-top: 10px;
 }
 
 #menu {
 	text-align: center;
+	color: blue;
 }
 #menu ul {
 	list-style-type: none;
