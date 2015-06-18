@@ -5,16 +5,19 @@
 	width: 100%;
 	color: white;
 	display: inline-block;
+	text-align: center;
 }
 
 #menu ul {
 	list-style-type: none;
+	text-align: center;
 
 }
 
 #menu ul li {
 	display: inline-block;
 	float: left;
+	margin: 5px;
 }
 
 
