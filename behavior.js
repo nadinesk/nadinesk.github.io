@@ -27,7 +27,7 @@ $('.container').on({
     }
 });
 
-/**	$("li.pgmlist")
+	$("li.pgmlist")
 		.hover(function() {
 			$("#pgmout").hide();
 			$("#showpgmdiv").show();
@@ -107,7 +107,7 @@ $('.container').on({
 		.hover(function() {
 			$(".nav").show();
 
-		}); **/
+		}); 
 		
 
 $(document).mouseup(function (e)
