@@ -91,23 +91,17 @@ $('.container').on({
 			$("#show-viral").hide();
 		});
 
-	
-	$("#white-email")
+	$("li.gov-list")
 		.hover(function() {
-			$("#white-email").hide();
-			$("#blue-email").show();
+			$("#gov-out").hide();
+			$("#show-gov").show();
 
 		},
 		function() {
-			$("#white-email").show();
-			$("#blue-email").hide();
-		});
-		
-		$("#menu-toggle")
-		.hover(function() {
-			$(".nav").show();
-
-		}); 
+			$("#gov-out").show();
+			$("#show-gov").hide();
+		});	
+	
 		
 
 $(document).mouseup(function (e)
