@@ -9,7 +9,12 @@
 
 #menu ul {
 	list-style-type: none;
+
+}
+
+#menu li {
 	display: inline-block;
+	float: left;
 }
 
 
