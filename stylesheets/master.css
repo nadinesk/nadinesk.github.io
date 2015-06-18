@@ -6,8 +6,12 @@
 	color: white;
 	display: inline-block;
 	text-align: center;
+	margin-top: 10px;
 }
 
+#menu {
+	text-align: center;
+}
 #menu ul {
 	list-style-type: none;
 	text-align: center;
