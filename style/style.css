@@ -62,7 +62,8 @@
 .skills-row {
 	background: linear-gradient(0deg, #C7BFD4, #fff);
 	
-	padding: 60px;
+	padding-top: 60px;
+	padding-bottom: 60px;
 }
 
 .skillslist {
