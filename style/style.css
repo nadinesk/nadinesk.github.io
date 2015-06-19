@@ -1,7 +1,13 @@
+#thehtml, #whole-body
+{
+	height: 100%;
+}
+
 .top-row {
 	font-family: 'Roboto', sans-serif;
-	height: 100%;
 	background: linear-gradient(30deg, #FF9669, #8DDBD1);
+	
+	padding: 30px;
 }
 
 .learns-row p {
@@ -25,6 +31,7 @@
 .third-row {
 	padding-top:80px;
 	background-color: blue;
+
 }
 
 .learns-makes {
@@ -55,7 +62,7 @@
 .skills-row {
 	background: linear-gradient(0deg, #C7BFD4, #fff);
 	
-	padding: 30px;
+	padding: 60px;
 }
 
 .skillslist {
@@ -374,16 +381,23 @@
 .contact-me {
 	font-family: 'Roboto', sans-serif;
 	
-	
-	
 	background: #FFB669;
+	
+	
 	color: #3B535C;
+}
+
+.contact-2 {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #e1e8ed;;
 }
 
 .sayhi {
 	text-align: center;
+	margin-top: 30px;
 }
 .contact-icons {
+	
 	text-align: center;
 
 }
@@ -395,6 +409,8 @@
 #blue-email {
 	display: none;
 }
+
+
 
 
 

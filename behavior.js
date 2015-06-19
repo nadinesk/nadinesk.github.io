@@ -28,9 +28,10 @@ $('.container').on({
 });
 
 	$("li.pgmlist")
-		.hover(function() {
+		.hover(function(e) {
 			$("#pgmout").hide();
 			$("#showpgmdiv").show();
+			e.preventDefault(); 
 
 		},
 		function() {
