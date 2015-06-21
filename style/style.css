@@ -5,8 +5,7 @@
 
 .top-row {
 	font-family: 'Roboto', sans-serif;
-	background: linear-gradient(30deg, #FF9669, #8DDBD1);
-	
+	background: linear-gradient(30deg, #FF9669, #8DDBD1); 
 	padding: 30px;
 }
 
@@ -189,71 +188,6 @@
 	background: rgba(178, 128, 73, 0.3);
 }
 
-/*
-.thelistskill .webdevlist:hover {
-	background: url('../images/Untitled2.png');
-	background-size: cover;
-}
-
-#show-webdev{
-	background: rgba(144, 199, 219, 0.3);
-	border-radius: 5px;
-}
-
-.thelistskill .appdevlist:hover {
-	opacity: 0.9;
-	background: url('../images/Untitled4copy.png');
-	background-size: cover;
-}
-
-.thelistskill .datavizlist:hover {
-	
-	background: url('../images/Untitled3copy.png');
-	background-size: cover;
-}
-
-#showdataviz{
-	background: rgba(112, 157, 173, 0.3);
-	border-radius: 5px;
-}
-
-.thelistskill .cutelist:hover {
-	background: url('../images/Untitled5copy.png');
-
-	background-size: cover;
-}
-
-#show-cute {
-	background: rgba(255, 182, 105, 0.5);
-}
-
-
-#show-appdev {
-	background: rgba(178, 128, 73, 0.8);
-}
-
-.thelistskill .viral-list:hover {
-	background: url('../images/Untitled6copy.png');
-	background-size: cover;
-}
-
-#show-viral{
-	background: rgba(178, 128, 73, 0.5);
-	border-radius: 5px;
-}
-
-.thelistskill .gov-list:hover {
-	background: url('../images/Untitled7copy.png');
-	background-size: cover;
-	
-}
-
-#show-gov{
-	background: rgba(178, 128, 73, 0.3);
-	
-}
-
-*/
 
 
 
@@ -303,6 +237,10 @@
 	.skills-headline {
 		text-align: center;
 	}
+
+	#footercopy {
+		font-size: 8px;
+	}
 }
 
 @media screen and (max-width: 900px) {
@@ -327,14 +265,22 @@
 }
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 740px) {
 	.thelistskill li div:first-child{
 		text-decoration: underline;
 	}
 
 }
 
+@media screen and (max-width: 740px) {
+	.nav_links li a {
+		padding: 0 5px;
+		color: #667585;
+		text-decoration: none;
+		font-size: 20px;
+	}
 
+}
 
 .anchor-link {
 	position: fixed;
@@ -365,7 +311,7 @@
   		z-index: 2; 
   		margin-left: 5px;
   		color: blue;
-  		display: none;
+  		
   	}
 
 .togglenav {
@@ -508,3 +454,4 @@
 #footercopy a {
 	color: white;
 }
+

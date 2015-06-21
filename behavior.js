@@ -28,75 +28,10 @@ $('.container').on({
 });
 	
 
-	/*
-	$("li.webdevlist")
-		.hover(function() {
-			$("#web-dev").hide();
-			$("#show-webdev").show();
-
-		},
-		function() {
-			$("#web-dev").show();
-			$("#show-webdev").hide();
-		});
-
-	$("li.appdevlist")
-		.hover(function() {
-			$("#appdevout").hide();
-			$("#show-appdev").show();
-
-		},
-		function() {
-			$("#appdevout").show();
-			$("#show-appdev").hide();
-		});
-	$("li.datavizlist")
-		.hover(function() {
-			$("#datavizout").hide();
-			$("#showdataviz").show();
-
-		},
-		function() {
-			$("#datavizout").show();
-			$("#showdataviz").hide();
-		});
-
-	$("li.cutelist")
-		.hover(function() {
-			$("#cuteout").hide();
-			$("#show-cute").show();
-
-		},
-		function() {
-			$("#cuteout").show();
-			$("#show-cute").hide();
-		});
-	$("li.viral-list")
-		.hover(function() {
-			$("#viral-out").hide();
-			$("#show-viral").show();
-
-		},
-		function() {
-			$("#viral-out").show();
-			$("#show-viral").hide();
-		});
-
-	$("li.gov-list")
-		.hover(function() {
-			$("#gov-out").hide();
-			$("#show-gov").show();
-
-		},
-		function() {
-			$("#gov-out").show();
-			$("#show-gov").hide();
-		});	
-
-*/
 
 
-if ($(window).width() > 680) {
+
+if ($(window).width() > 740) {
    $("li.pgmlist")
 		.hover(function() {
 			$("#pgmout").hide();
