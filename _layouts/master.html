@@ -1,40 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <title>Nadine Khattak Fischoff- {{ page.title }}</title>
-    <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" media="screen" charset="utf-8"/>
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
-    
-  </head>
+
+  {% include head.html %}
+
   <body>
+
+    {% include header.html %}
+
     <div class="page-content">
       <div class="wrapper">
-        <div id="heading">
-            <div>
-              <h1>NADINE KHATTAK FISCHOFF</h1>
-            </div>
-
-            <div id="menu">
-              <ul id="menu-list">
-                <li><a href="http://www.khasachi.com">Home</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="http://khasachi.com/about/">About</a></li>
-                <li><a href="http://khasachi.com/photos.html">Photoss</a></li>
-              </ul>
-            </div>
-          </div>      
         {{ content }}
       </div>
     </div>
 
+    {% include footer.html %}
 
-    
-    <div id='footer'>
-      Copyright &copy; 2015 Nadine Fischoff. Hosted by <a href='http://github.com/nadinesk' target='_blank'>GitHub</a> and powered by <a href='http://github.com/mojombo/jekyll'>Jekyll</a>.
-    </div>
-    
   </body>
+
 </html>
