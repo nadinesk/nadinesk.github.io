@@ -1,12 +1,21 @@
 # Site settings
 title: Nadine Fischoff
+<<<<<<< HEAD
 email: nadine.khattak@domain.com
+=======
+email: your-email@domain.com
+>>>>>>> 7b4d397496bccc72cb74e5464f6a82105c68c8c4
 description: > # this means to ignore newlines until "baseurl:"
   Nadine Fischoff's blog
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://yourdomain.com" # the base hostname & protocol for your site
+<<<<<<< HEAD
 twitter_username: alcajp
 github_username:  nadinesk
+=======
+twitter_username: jekyllrb
+github_username:  jekyll
+>>>>>>> 7b4d397496bccc72cb74e5464f6a82105c68c8c4
 paginate: 5
 paginate_path: "/blog/page:num/"
 
