@@ -1,7 +1,7 @@
 # Site settings
 title: Nadine Fischoff
 email: nadine.khattak@gmail.com
-description:  > description: > # this means to ignore newlines until "baseurl:"
+description: > # this means to ignore newlines until "baseurl:"
 	-  Write an awesome description for your new site here. You can edit this
 baseurl: "/blog/" # the subpath of your site, e.g. /blog/
 url: "http://www.khasachi.com" # the base hostname & protocol for your site
