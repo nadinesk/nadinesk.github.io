@@ -211,6 +211,7 @@ pre  > code {
 .site-nav {
     float: right;
     line-height: 56px;
+    list-style-type: none;
 }
 .site-nav .menu-icon {
         display: none;
@@ -226,8 +227,8 @@ pre  > code {
        margin-left: 20px; 
 }
   
-@media screen and (max-width: 600px)  
-{	
+@media screen and (max-width: 600px){
+
       .site-nav {
 	        position: absolute;
 	        top: 9px;
@@ -264,7 +265,7 @@ pre  > code {
 
  	.site-nav:hover .trigger {
         	display: block;
-		padding-bottom: 5px;
+		      padding-bottom: 5px;
         }
 
   	.site-nav .page-link {
