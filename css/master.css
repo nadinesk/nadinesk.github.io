@@ -247,7 +247,7 @@ pre  > code {
 	        text-align: right;
       }
 
-        .menu-icon {
+        .site-nav .menu-icon {
 	        display: block;
 	        float: right;
 	        width: 36px;
@@ -257,12 +257,12 @@ pre  > code {
 	        text-align: center;
         }
 	
-	.svg-menu { 
+	.site-nav .menu-icon > svg { 
   		width: 18px; 
   		height: 15px; 
   	}
 
-	.svg-menu path { 
+	.site-nav .menu-icon > svg path { 
   		fill: #424242; 
   	}
 
