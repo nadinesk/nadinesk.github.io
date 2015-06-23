@@ -147,14 +147,13 @@ pre  > code {
     padding-left: 30px;
 }
 
-.wrapper:after {
+
+
+@media screen and (max-width: 800px){
+    .wrapper:after {
         content: "";
         display: table;
         clear: both;
-}
-
-@media screen and (max-width: 800px){
-    .wrapper {
         max-width: -webkit-calc(800px - 30px);
         max-width:         calc(800px – 30px);
         padding-right: 30px / 2;
