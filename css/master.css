@@ -60,13 +60,15 @@ pre > code { border: 0; padding-right: 0; padding-left: 0; }
     padding-right:30px;
     padding-left: 30px;
     @extend %clearfix;
-
-    @include media-query(800px) {
-        max-width: -webkit-calc(800px - (30px));
-        max-width:         calc(800px - (30px));
-        padding-right: 30px / 2;
-        padding-left: 30px/ 2;
-    }
+}
+   
+   @media screen and (max-width: calc(800px-30px))  {
+        .wrapper {
+        	padding-right: 30px / 2;
+        	padding-left: 30px/ 2;	
+        }
+        
+    
 }
 
 /** Clearfix */
