@@ -218,6 +218,9 @@ pre  > code {
 
 .site-nav .nav-list {
     list-style-type: none;    
+}
+
+.nav-list li {
     display: inline-block;
 }
 
