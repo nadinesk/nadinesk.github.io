@@ -382,6 +382,10 @@ pre  > code {
 	margin-bottom: 15px;
     }
 
+.post-list a {
+    color: #9EDEF5;
+}
+
 
 .post-meta {
     font-size: 14px;
