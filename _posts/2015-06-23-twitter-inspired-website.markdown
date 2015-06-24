@@ -4,6 +4,14 @@ title:  "Twitter-Inspired Web Design"
 date:   2015-06-23 11:30
 categories: web development, web design
 ---
+
+Twitter login/home page
+![twitter screen](http://khasachi.com/images/twitterscreen.png)
+
+
+My home page 
+![my screen](http://khasachi.com/images/myscreen.png)
+
 ### Miles and Miles to Go, with a Few Initial Steps
 I've, at least, temporarily committed to a website design I made for my [home page](http://www.khasachi.com), inspired by the current Twitter login/home page. I used this design after several other iterations because it looked the most professional. I am getting back into web development, and this is a work in progress. 
 
@@ -20,14 +28,8 @@ Customizing my blog using Jekyll and Github has been valuable for me. I have lea
 
 It's all been fun and I love it, and I'm really looking forward to making more. 
 
-And so, what I originally came here for 
-
-Here is the Twitter login/home page
-![twitter screen](http://khasachi.com/images/twitterscreen.png)
 
 
-And here is my front page 
-![my screen](http://khasachi.com/images/myscreen.png)
 
 
 
