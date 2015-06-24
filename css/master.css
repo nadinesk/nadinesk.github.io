@@ -282,6 +282,9 @@ pre  > code {
 	        padding: 5px 10px;
         }
 
+    .site-nav .page-link a {
+            color: #B28049;;
+        }
 }
 
 /**
