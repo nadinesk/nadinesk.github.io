@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: white;
+    color: #B28049;;
     text-decoration: none;
 }
 
@@ -231,6 +231,11 @@ pre  > code {
         line-height: 1.5;
 }
 
+
+.site-nav .page-link a {
+    color: white;
+}
+
 .site-nav .page-link:not(:first-child) 
 { 
        margin-left: 20px; 
@@ -299,6 +304,7 @@ pre  > code {
 .footer-heading {
     font-size: 18px;
     margin-bottom: 15px;
+    color: white;
 }
 
 .contact-list,
