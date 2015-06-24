@@ -78,12 +78,12 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: #B28049;;
+    color: #B28049;
     text-decoration: none;
 }
 
 a:visited {
-        color: white;
+        color: #B28049;
         opacity: 1.2;
 }
 
