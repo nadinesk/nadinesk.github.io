@@ -5,7 +5,7 @@ date:   2015-06-23 11:30
 categories: web development, web design
 ---
 ### Miles and Miles to Go, with a Few Initial Steps
-I've, at least, temporarily committed to a website design I made for my home page, inspired by the current Twitter login/home page. I used this design after several other iterations because it looked the most professional. I am getting back into web development, and this is a work in progress. 
+I've, at least, temporarily committed to a website design I made for my [home page](http://www.khasachi.com)home page, inspired by the current Twitter login/home page. I used this design after several other iterations because it looked the most professional. I am getting back into web development, and this is a work in progress. 
 
 ### Responsive Web Design and Web Interactivity 
 
