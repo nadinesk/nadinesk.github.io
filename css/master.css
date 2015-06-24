@@ -204,8 +204,12 @@ pre  > code {
         color: white;
 }
 
+.site-title a:hover {
+    color: white;
+}
+
 .site-title: visited {
-	color: #424242;
+	color: white;
 }
 
 
