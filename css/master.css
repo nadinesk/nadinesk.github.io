@@ -78,17 +78,17 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: #2a7ae2;
+    color: white;
     text-decoration: none;
 }
 
 a:visited {
-        color: #2a7ae2;
+        color: #B28049;
         opacity: 1.2;
 }
 
 a:hover {
-        color: #111;
+        color: #9EDEF5;
         text-decoration: underline;
 }
 
