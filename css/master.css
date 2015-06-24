@@ -386,7 +386,7 @@ pre  > code {
     color: #425D6B;
 }
 
-.post-list span {
+.post-list li {
     color: #85BAD6
 }
 .post-meta {
