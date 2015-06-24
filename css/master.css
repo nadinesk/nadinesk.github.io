@@ -83,12 +83,12 @@ a {
 }
 
 a:visited {
-        color: #B28049;
+        color: white;
         opacity: 1.2;
 }
 
 a:hover {
-        color: #9EDEF5;
+        color: #B28049;
         text-decoration: underline;
 }
 
