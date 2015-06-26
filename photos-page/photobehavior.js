@@ -1,41 +1,6 @@
 $(function() {
-	
-	$(window).load(function() {
-$( ".name-title" ).animate({
-  height: "toggle",
-  opacity: "toggle"
-}, 1000, "linear"
-);
-$(".photo-title").show("puff", 1100);
-$(".menu-title").show("puff", 800);
-	});
 
-$(".menu-title").click(function(){
-	$(".nav-menu")
-		.animate({
-			
-			height: "toggle",
-			width: "toggle",
-		},
-	{	
-		duration: 200, specialEasing: {
-      	width: "linear",
-      	height: "linear"
-  	}
-});
-});	
 
-	$(".name-title").click(function() {	
-	$(this ).effect( "bounce",  { times: 1 },"slow" );
-	});
-
-	$(".menu-title").click(function() {	
-	$(this ).effect( "bounce",  { times: 1 },"slow" );
-	});
-
-	$(".photo-title").hover(function() {	
-		$(this ).effect( "bounce", { times: 3 }, "slow" );
-	});
 
 
 	/*$(window).load(function() {
