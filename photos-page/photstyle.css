@@ -7,7 +7,7 @@ body {
 	min-height: 220px;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 100;
-	background: rgba(158, 222, 255, 0.8);
+	background: linear-gradient(180deg, #9EDEFF, white);
 	
 	
 }
@@ -113,11 +113,13 @@ body {
 .water-circle {
 	fill: white;
 	
-}
+} 
+
+
 
 .design {
 	margin-left: -30px;
-	z-index: 5;
+	
 }
 
 .bubbles, .left-bubbles {
