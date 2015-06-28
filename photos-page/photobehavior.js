@@ -1,7 +1,28 @@
 $(function() {
+	$(window).load(function() {
+		$(".name-title").animate ({
+			height: "toggle",
+			opacity: "toggle"
+		}, 
+		{
+			duration: 900, 
+			easing: "linear"
+		});
+		$(".photo-title").show("puff", 1000);
+		$(".menu-title").show("puff", 800);
+	});
 
+	$(".menu-title").click(function() {	
+		$(".nav-menu" ).toggle();
+	});
 
+	$(".name-title").click(function() {	
+		$(this ).effect( "bounce",  { times: 1 },"slow" );
+	});
 
+	$(".menu-title").click(function() {	
+		$(this ).effect( "bounce",  { times: 1 },"slow" );
+	});
 
 	/*$(window).load(function() {
 		$(".name-title").show("puff", 1000);
