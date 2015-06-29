@@ -6,25 +6,28 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Nadine Khattak, Nadine Fischoff, Nadine burp...</title>
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:290,100' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="photstyle.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-	<!--<script src="photobehavior.js"></script> -->
+	<script src="photobehavior.js"></script> 
 	<script src="circles.js"></script>
 	
 </head>
 
 <body>
 
-<header class="photo-header"> 
+<header class="photo-header" > 
 	
-		<div class="name-title" ><h1>Nadine Khattak Fischoff</h1></div>
-		<div class="photo-title"><h2>Photos</h2></div>
-		<div class="menu-title"><h3>Menu</h3>
+	<div class="menu-title">
 		
-		<nav class="nav-menu">
+			<svg class="menu-svg" height="30" width="35">
+			  <line stroke-linecap = "round" x1="0" y1="5" x2="25" y2="5" />
+			  <line stroke-linecap = "round" x1="0" y1="15" x2="25" y2="15" />
+			  <line stroke-linecap = "round" x1="0" y1="25" x2="25" y2="25"/>
+			</svg>
+			<nav class="nav-menu">
 			<ul> 
 				<li><a href="#">home</a></li>
 				<li><a href="#">blog</a></li>
@@ -32,100 +35,114 @@
 			</ul>
 		</nav>
 		</div>
+		<div class="name-title"><h1 class="my-name" onmouseover="startAnimation();">Nadine Khattak Fischoff</h1></div>
+		<div class="photo-title" ><h2 class="my-photos"  onmouseover="startAnimation();" >Photos</h2></div>
+		
 	
-		<div class="blah">
+		<div class="my-svg">
 			<?xml version="1.0"?>
-			<svg onmouseover="startAnimation();" class="water-circle" width="500" height="300" 
+			<svg onmouseover="startAnimation();" class="water-circle" width="600" height="300" 
 			     version="1.1"
 			     xmlns="http://www.w3.org/2000/svg">
 				
-			    <circle id="circle0" cx="120" cy="30" r="10" height="100">
+			    <circle id="circle0" cx="10" cy="30" r="10" height="100">
 			    </circle>
-			    <circle id="circle1" cx="120" cy="70" r="10" height="100">
+			    <circle id="circle1" cx="10" cy="70" r="10" height="100">
 			    </circle>
-			    <circle id="circle2" cx="120" cy="120" r="10" height="100">
+			    <circle id="circle2" cx="10" cy="120" r="10" height="100">
 			    </circle>
-			    <circle id="circle3" cx="120" cy="190" r="10" height="100">
+			    <circle id="circle3" cx="10" cy="190" r="10" height="100">
 			    </circle>
-			    <circle id="circle4" cx="120" cy="250" r="10" height="100">
+			    <circle id="circle4" cx="10" cy="250" r="10" height="100">
 			    </circle>
 	
 
-				<circle  id="circle5" cx="190" cy="30" r="10" height="100">
+				<circle  id="circle5" cx="80" cy="30" r="10" height="100">
 			    </circle>
-			    <circle id="circle6" cx="190" cy="70" r="10" height="100">
+			    <circle id="circle6" cx="80" cy="70" r="10" height="100">
 			    </circle>
-			    <circle id="circle7" cx="190" cy="120" r="10" height="100">
+			    <circle id="circle7" cx="80" cy="120" r="10" height="100">
 			    </circle>
-			    <circle id="circle8" cx="190" cy="190" r="10" height="100">
+			    <circle id="circle8" cx="80" cy="190" r="10" height="100">
 			    </circle>
-			    <circle id="circle9" cx="190" cy="250" r="10" height="100">
-			    </circle>
-
-			    <circle  id="circle10" cx="260" cy="30" r="10" height="100">
-			    </circle>
-			    <circle id="circle11" cx="260" cy="70" r="10" height="100">
-			    </circle>
-			    <circle id="circle12" cx="260" cy="120" r="10" height="100">
-			    </circle>
-			    <circle id="circle13" cx="260" cy="190" r="10" height="100">
-			    </circle>
-			    <circle id="circle14" cx="260" cy="250" r="10" height="100">
+			    <circle id="circle9" cx="80" cy="250" r="10" height="100">
 			    </circle>
 
-			     <circle  id="circle15" cx="330" cy="30" r="10" height="100">
+			    <circle  id="circle10" cx="150" cy="30" r="10" height="100">
 			    </circle>
-			    <circle id="circle16" cx="330" cy="70" r="10" height="100">
+			    <circle id="circle11" cx="150" cy="70" r="10" height="100">
 			    </circle>
-			    <circle id="circle17" cx="330" cy="120" r="10" height="100">
+			    <circle id="circle12" cx="150" cy="120" r="10" height="100">
 			    </circle>
-			    <circle id="circle18" cx="330" cy="190" r="10" height="100">
+			    <circle id="circle13" cx="150" cy="190" r="10" height="100">
 			    </circle>
-			    <circle id="circle19" cx="330" cy="250" r="10" height="100">
-			    </circle>
-
-				<circle  id="circle20" cx="400" cy="30" r="10" height="100">
-			    </circle>
-			    <circle id="circle21" cx="400" cy="70" r="10" height="100">
-			    </circle>
-			    <circle id="circle22" cx="400" cy="120" r="10" height="100">
-			    </circle>
-			    <circle id="circle23" cx="400" cy="190" r="10" height="100">
-			    </circle>
-			    <circle id="circle24" cx="400" cy="250" r="10" height="100">
+			    <circle id="circle14" cx="150" cy="250" r="10" height="100">
 			    </circle>
 
-				<circle  id="circle25" cx="470" cy="30" r="10" height="100">
+			    <circle  id="circle15" cx="220" cy="30" r="10" height="100">
 			    </circle>
-			    <circle id="circle26" cx="470" cy="70" r="10" height="100">
+			    <circle id="circle16" cx="220" cy="70" r="10" height="100">
 			    </circle>
-			    <circle id="circle27" cx="470" cy="120" r="10" height="100">
+			    <circle id="circle17" cx="220" cy="120" r="10" height="100">
 			    </circle>
-			    <circle id="circle28" cx="470" cy="190" r="10" height="100">
+			    <circle id="circle18" cx="220" cy="190" r="10" height="100">
 			    </circle>
-			    <circle id="circle29" cx="470" cy="250" r="10" height="100">
-			    </circle>
-
-				<circle  id="circle30" cx="540" cy="30" r="10" height="100">
-			    </circle>
-			    <circle id="circle31" cx="540" cy="70" r="10" height="100">
-			    </circle>
-			    <circle id="circle32" cx="540" cy="120" r="10" height="100">
-			    </circle>
-			    <circle id="circle33" cx="540" cy="190" r="10" height="100">
-			    </circle>
-			    <circle id="circle34" cx="540" cy="250" r="10" height="100">
+			    <circle id="circle19" cx="220" cy="250" r="10" height="100">
 			    </circle>
 
-				<circle  id="circle35" cx="610" cy="30" r="10" height="100">
+				<circle  id="circle20" cx="290" cy="30" r="10" height="100">
 			    </circle>
-			    <circle id="circle36" cx="610" cy="70" r="10" height="100">
+			    <circle id="circle21" cx="290" cy="70" r="10" height="100">
 			    </circle>
-			    <circle id="circle37" cx="610" cy="120" r="10" height="100">
+			    <circle id="circle22" cx="290" cy="120" r="10" height="100">
 			    </circle>
-			    <circle id="circle38" cx="610" cy="190" r="10" height="100">
+			    <circle id="circle23" cx="290" cy="190" r="10" height="100">
 			    </circle>
-			    <circle id="circle39" cx="610" cy="250" r="10" height="100">
+			    <circle id="circle24" cx="290" cy="250" r="10" height="100">
+			    </circle>
+
+				<circle  id="circle25" cx="360" cy="30" r="10" height="100">
+			    </circle>
+			    <circle id="circle26" cx="360" cy="70" r="10" height="100">
+			    </circle>
+			    <circle id="circle27" cx="360" cy="120" r="10" height="100">
+			    </circle>
+			    <circle id="circle28" cx="360" cy="190" r="10" height="100">
+			    </circle>
+			    <circle id="circle29" cx="360" cy="250" r="10" height="100">
+			    </circle>
+
+				<circle  id="circle30" cx="440" cy="30" r="10" height="100">
+			    </circle>
+			    <circle id="circle31" cx="440" cy="70" r="10" height="100">
+			    </circle>
+			    <circle id="circle32" cx="440" cy="120" r="10" height="100">
+			    </circle>
+			    <circle id="circle33" cx="440" cy="190" r="10" height="100">
+			    </circle>
+			    <circle id="circle34" cx="440" cy="250" r="10" height="100">
+			    </circle>
+
+				<circle  id="circle35" cx="510" cy="30" r="10" height="100">
+			    </circle>
+			    <circle id="circle36" cx="510" cy="70" r="10" height="100">
+			    </circle>
+			    <circle id="circle37" cx="510" cy="120" r="10" height="100">
+			    </circle>
+			    <circle id="circle38" cx="510" cy="190" r="10" height="100">
+			    </circle>
+			    <circle id="circle39" cx="510" cy="250" r="10" height="100">
+			    </circle>
+
+				<circle id="circle40" cx="580" cy="30" r="10" height="100">
+			    </circle>
+			    <circle id="circle41" cx="580" cy="70" r="10" height="100">
+			    </circle>
+			    <circle id="circle42" cx="580" cy="120" r="10" height="100">
+			    </circle>
+			    <circle id="circle43" cx="580" cy="190" r="10" height="100">
+			    </circle>
+			    <circle id="circle44" cx="580" cy="250" r="10" height="100">
 			    </circle>
 	
 	
@@ -137,11 +154,21 @@
 	
 </header>
 
+<div class="second-row">
+
+	<svg class="arrow-svg" height="30" width="90">
+			  <line stroke-linecap = "round" x1="0" y1="5" x2="35" y2="20" />
+			  <line stroke-linecap = "round" x1="35" y1="20" x2="75" y2="5" />
+			  
+			</svg>
+</div>
+
 <div class="wrapping">
 
 	<div class="wrapping-photo">
 		
-			<!--<img width="500px" src="../images/photos/IMG_031.jpg"></img> -->
+			<img width="500px" src="IMG_034.jpg"></img> 
+			
 		
 	</div>
 </div>

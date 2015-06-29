@@ -1,18 +1,18 @@
 $(function() {
 	$(window).load(function() {
-		$(".name-title").animate ({
+		$(".my-name").animate ({
 			height: "toggle",
 			opacity: "toggle"
 		}, 
 		{
-			duration: 900, 
+			duration: 1000, 
 			easing: "linear"
 		});
-		$(".photo-title").show("puff", 1000);
+		$(".my-photos").show("puff", 1000);
 		$(".menu-title").show("puff", 800);
 	});
 
-	$(".menu-title").click(function() {	
+	$(".menu-svg").click(function() {	
 		$(".nav-menu" ).toggle();
 	});
 
@@ -20,7 +20,7 @@ $(function() {
 		$(this ).effect( "bounce",  { times: 1 },"slow" );
 	});
 
-	$(".menu-title").click(function() {	
+	$(".menu-svg").click(function() {	
 		$(this ).effect( "bounce",  { times: 1 },"slow" );
 	});
 

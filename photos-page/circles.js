@@ -16,7 +16,7 @@ var timerFunction1 = null;
     }
 
     function animate() {
-        for (var i = 0; i < 40; i++)
+        for (var i = 0; i < 45; i++)
         {
         	if (i % 5 == 0)
         	{
@@ -32,7 +32,7 @@ var timerFunction1 = null;
         		circle.setAttribute("cy", newY);	
         	}
 
-        	if ((i==1) || (i==6) || (i==11) || (i==16) || (i==21)|| (i==26) || (i==31) || (i==36))
+        	if ((i==1) || (i==6) || (i==11) || (i==16) || (i==21)|| (i==26) || (i==31) || (i==36) || (i==41))
         	{
         		var circle = document.getElementById("circle" + i);
 	        	var y = circle.getAttribute("cy");
@@ -46,7 +46,7 @@ var timerFunction1 = null;
         		circle.setAttribute("cy", newY);	
         	}
 
-        	if ((i==2) || (i==7) || (i==12) || (i==17) || (i==22)|| (i==27) || (i==32) || (i==37))
+        	if ((i==2) || (i==7) || (i==12) || (i==17) || (i==22)|| (i==27) || (i==32) || (i==37) || (i==42))
         	{
         		var circle = document.getElementById("circle" + i);
 	        	var y = circle.getAttribute("cy");
@@ -60,7 +60,7 @@ var timerFunction1 = null;
         		circle.setAttribute("cy", newY);	
         	}
 
-			if ((i==3) || (i==8) || (i==13) || (i==18) || (i==23)|| (i==28) || (i==33) || (i==38))
+			if ((i==3) || (i==8) || (i==13) || (i==18) || (i==23)|| (i==28) || (i==33) || (i==38) || (i==43))
         	{
         		var circle = document.getElementById("circle" + i);
 	        	var y = circle.getAttribute("cy");
@@ -73,6 +73,8 @@ var timerFunction1 = null;
         		
         		circle.setAttribute("cy", newY);	
         	}
+
+
 
         	
         }
