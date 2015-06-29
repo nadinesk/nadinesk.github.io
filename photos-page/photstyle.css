@@ -4,10 +4,10 @@ body {
 }
 
 .photo-header {
-	min-height: 520px;
+	min-height: 220px;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 100;
-	background: url("circles.svg") no-repeat fixed center;
+	background: linear-gradient(180deg, #9EDEFF, white);
 	
 	
 }
@@ -19,7 +19,7 @@ body {
 
 
 .name-title {
-	display: none;
+	
 	float: left;
 	width: 300px;
 	height: 200px;
@@ -31,6 +31,9 @@ body {
 	color: #818991;
 	font-size: 18px;
 	margin: 60px 10px 60px 100px;
+	z-index: 4;
+	background: blue;
+	
 
 }
 
@@ -40,7 +43,7 @@ body {
 }
 
 .photo-title {
-	display: none;
+	
 	float: left;
 	width: 150px;
 	height: 150px;
@@ -48,9 +51,10 @@ body {
 	text-align: center;
 	
 	border-radius: 50%;
-	
+	background: red;
 	color: white;
-	margin: 90px 10px 60px 20px;
+	margin-left: -150;
+	z-index: 4;
 }
 
 
@@ -59,10 +63,11 @@ body {
 	font-weight: 100;
 	font-size: 24px;
 	padding: 25px;
+	z-index: 1;
 }
 
 .menu-title {
-	display: none;
+	
 	float: left;
 	width: 50px;
 	height: 50px;
@@ -74,6 +79,7 @@ body {
 	color: white;
 	font-family: 'Roboto', sans-serif;
 	margin: 150px 10px 60px 20px;
+	
 }
 
 
@@ -81,6 +87,7 @@ body {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 100;
 	font-size: 14px;
+	z-index: 4;
 }
 
 .nav-menu {
@@ -112,15 +119,16 @@ body {
 
 .water-circle {
 	fill: #E8F3FF;
+	margin-left: -500px;
+	
+	
 	
 } 
 
-
-
-.design {
-	margin-left: -30px;
-	
+.blah {
+	z-index: -1;
 }
+
 
 .bubbles, .left-bubbles {
 	float: left;
