@@ -32,11 +32,9 @@ var timerFunction1 = null;
 
     function startAnimation() {
         if(timerFunction == null) {
-            timerFunction = setInterval(animate, 40);
+            timerFunction = setInterval(animate, 20);
         }
-        if(timerFunction1 == null) {
-            timerFunction1 = setInterval(animate, 40);
-        }
+       
     }
 
     function stopAnimation() {
@@ -47,26 +45,70 @@ var timerFunction1 = null;
     }
 
     function animate() {
-        var i = 0; 
-        for (var i = 0; i <= 14; i++)
+        for (var i = 0; i < 40; i++)
         {
-        
-        if (i <= 4)
-        {
-        	var circle = document.getElementById("circle" + i);
-        var x = circle.getAttribute("cy");
-        var newX = 2 + parseInt(x);
-        
-        if(newX > 200) {
-            newX = 200;
-            
-            clearInterval(timerFunction);
-            timerFunction = null;
+        	if (i % 5 == 0)
+        	{
+        		var circle = document.getElementById("circle" + i);
+	        	var y = circle.getAttribute("cy");
+	        	var newY = 2 + parseInt(y);
+	        	if(newY > 300) {
+	            newY = 30;
+	           	clearInterval(timerFunction);
+	           	timerFunction = null;
+        		}
+        		
+        		circle.setAttribute("cy", newY);	
+        	}
+
+        	if ((i==1) || (i==6) || (i==11) || (i==16) || (i==21)|| (i==26) || (i==31) || (i==36))
+        	{
+        		var circle = document.getElementById("circle" + i);
+	        	var y = circle.getAttribute("cy");
+	        	var newY = 2 + parseInt(y);
+	        	if(newY > 340) {
+	            newY = 70;
+	           	clearInterval(timerFunction);
+	           	timerFunction = null;
+        		}
+        		
+        		circle.setAttribute("cy", newY);	
+        	}
+
+        	if ((i==2) || (i==7) || (i==12) || (i==17) || (i==22)|| (i==27) || (i==32) || (i==37))
+        	{
+        		var circle = document.getElementById("circle" + i);
+	        	var y = circle.getAttribute("cy");
+	        	var newY = 2 + parseInt(y);
+	        	if(newY > 390) {
+	            newY = 120;
+	           	clearInterval(timerFunction);
+	           	timerFunction = null;
+        		}
+        		
+        		circle.setAttribute("cy", newY);	
+        	}
+
+			if ((i==3) || (i==8) || (i==13) || (i==18) || (i==23)|| (i==28) || (i==33) || (i==38))
+        	{
+        		var circle = document.getElementById("circle" + i);
+	        	var y = circle.getAttribute("cy");
+	        	var newY = 2 + parseInt(y);
+	        	if(newY > 460) {
+	            newY = 190;
+	           	clearInterval(timerFunction);
+	           	timerFunction = null;
+        		}
+        		
+        		circle.setAttribute("cy", newY);	
+        	}
+
+        	
         }
-           circle.setAttribute("cy", newX);	   
-           
-           
-        }	
+
+       
+
+    }
 /*
         if (i > 4 && i <= 9)
         {
@@ -104,10 +146,10 @@ var timerFunction1 = null;
         	
         }	*/
 
-    }
+    
         	
         
        
 
      
-    }
+    
