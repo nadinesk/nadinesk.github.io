@@ -56,8 +56,19 @@ body {
 
 
 <script>
+var angle = 1,
+var $cog = $('#cog');
 
+$(window).scroll(function () {
+    $cog.css({'transform': 'rotate(' +angle+'deg)'
+    angle+=6;
+    if(angle==360) {
+        angle=0;
+    }
+    });
+});
 
+/*
 function getRotationDegrees(obj) {
     var matrix = obj.css("-webkit-transform") ||
     obj.css("-moz-transform")    ||
@@ -118,11 +129,11 @@ $(window).scroll(function () {
     
     console.log($cogZero);
 
-    /*$cog.text( "scrollTop:" + $body.scrollTop() ); 
-    $cog2.text( "scrollTop:" + $cog.scrollTop() ); */
+    $cog.text( "scrollTop:" + $body.scrollTop() ); 
+    $cog2.text( "scrollTop:" + $cog.scrollTop() );
 
     
-});
+});*/
 
 
 </script>
