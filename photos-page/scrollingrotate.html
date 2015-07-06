@@ -61,6 +61,7 @@ var $cog = $('#cog')
 
 $(window).scroll(function () {
     $cog.css({'transform': 'rotate(' +angle+'deg)'
+    });
     angle+=6;
     if(angle==360) {
         angle=0;
