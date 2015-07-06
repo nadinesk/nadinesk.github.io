@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<style>
+
+body {
+    background: #ffc;
+    height: 2000px;
+    margin: 0;
+        padding: 0px;
+}
+
+#cog {
+    background: url('photos/sculpture.jpg');
+    background-size: cover;
+    border-radius: 10px;
+    width: 500px;
+    height: 400px;
+    margin-top: 130px;
+    margin-left: 50px;
+    left: 20px;
+    transform: rotate(5deg);
+    transition: all 1s;
+    transition-timing-function: steps(3, start);
+
+}
+
+#cog2 {
+    background: url('photos/onewt.jpg');
+    background-size: cover;
+    border-radius: 10px;
+    width: 500px;
+    height: 400px;
+    margin-top: 130px;
+    margin-left: 50px;
+    left: 20px;
+    transform: rotate(-20deg);
+    transition: all .3s;
+}
+
+</style>
+
+
+
+
+</head>
+
+<body>
+    <div id="cog">
+        
+    </div>
+    <div id="cog2">2</div>
+
+
+<script>
+
+
+function getRotationDegrees(obj) {
+    var matrix = obj.css("-webkit-transform") ||
+    obj.css("-moz-transform")    ||
+    obj.css("-ms-transform")     ||
+    obj.css("-o-transform")      ||
+    obj.css("transform");
+    if(matrix !== 'none') {
+        var values = matrix.split('(')[1].split(')')[0].split(',');
+        var a = values[0];
+        var b = values[1];
+        var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
+    } else { var angle = 0; }
+    return (angle < 0) ? angle + 360 : angle;
+}
+
+
+
+
+var $cog = $('#cog'),
+    $cog2 = $('#cog2'),
+    $body = $(document.body),
+    $cogZero = ($body.scrollTop());
+    bodyHeight = $body.height();
+
+
+$(window).scroll(function () {
+    angle1 = getRotationDegrees($('#cog'));
+    angle2 = getRotationDegrees($('#cog2'));
+    $cogZero = ($body.scrollTop());
+    if ($cogZero <= $body.height())
+    {
+
+        if (((angle1>=0) && (angle1 <= 10))  || ((angle2>=-5) && (angle2 <= 0))) 
+        {
+            $cog.css({
+                'transform': 'rotate('  + $cogZero/40 +  'deg)'
+            });
+            $cog2.css({
+                'transform': 'rotate('   + (-$cogZero/50) +  'deg)'
+            });
+        }
+        if ((angle1>=1) || (angle2 >=1))
+        {
+            $cog.css({
+                'transform': 'rotate(' + $cogZero/40   + 'deg)'
+            });
+            $cog2.css({
+                'transform': 'rotate(' +  -$cogZero/50   + 'deg)'
+            });
+        }
+
+
+
+    }
+                     
+
+    
+    
+    console.log($cogZero);
+
+    /*$cog.text( "scrollTop:" + $body.scrollTop() ); 
+    $cog2.text( "scrollTop:" + $cog.scrollTop() ); */
+
+    
+});
+
+
+</script>
+</body>
+
+
+
+</html>

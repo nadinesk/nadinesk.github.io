@@ -186,34 +186,24 @@ img:hover {
 
 } */
 
-
-
-
-
-
-img {
-	width: 100%;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-	border-radius: 5px;
-
-
+.photo {
+	-ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+    transform: rotate(7deg);
+    width: 500px;
 }
 
-
-
-.left-image {
+.photo img {
 	width: 500px;
-  position: relative;
-  float: left;
-  padding: 20px;
-  margin-right: 4%;
-  margin-bottom: 4%;
 }
 
-.photo:nth-child(even) {
-  margin-right: 0;
-}
 .come-in {
+	-ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
+    transform: rotate(0deg);
+    transition: all 1s ease;
+
+/*.come-in {
   transform: translateY(150px);
 
   animation: come-in 0.8s ease forwards;
@@ -223,6 +213,7 @@ img {
 .come-in:nth-child(odd) {
   animation-duration: 0.6s;
 }
+
 
 .already-visible {
   transform: translateY(0);
@@ -235,7 +226,29 @@ img {
   }
 }
 
-.clearfix: after {
+var $cog = $('#cog'),
+    $body = $(document.body),
+    bodyHeight = $body.height();
+
+$(window).scroll(function () {
+    $cog.css({
+        'transform': 'rotate(' + (7 + -$body.scrollTop() / 83) + 'deg)'
+    });
+    
+    $cog.text( "scrollTop:" + $body.scrollTop() );
+    
+});
+
+
+
+
+*/
+
+.container {
+	margin: 80px;
+}
+
+.clearfix:after {
     content: ".";
     display: block;
     clear: both;
@@ -251,163 +264,3 @@ html[xmlns] .clearfix {
     height: 1%
 }
 
-.container {
-    margin: 0 auto;
-    position: relative;
-    zoom: 1
-}
-.container: after, .container: before {
-    content: " ";
-    display: block;
-    height: 0;
-    overflow: hidden
-}
-.container: after {
-    clear: both
-}
-
-.layout-1 {
-	padding: 0 40px;
-	margin-bottom: 40px!important;
-    margin-top: 40px;
-    z-index: 100;
-    line-height: 30px;
-
- }
-
-.left-col {
-	float: left;
-	width: 50%;
-	padding: 20px;
-}
-
-.right-col {
-	float: right;
-	width: 50%;
-	padding: 20px;
-}
-
-.right-col h2 {
-	font-family: 'Questrial', sans-serif;
-	letter-spacing: 2px;
-}
-
-.right-col img {
-	margin-left: -80px;
-}
-
-.right-col p {
-	line-height: 25px;
-}
-
-i {
-	font-style: italic;
-}
-
-.topic {
-	width: 300px;
-	height: 200px;
-	margin: 30px;
-	background: url('photos/cityatnight1.jpg');
-	background-size: cover;
-	border-radius: 5px;
-}
-
-.topic-header {
-	color: white;
-	opacity: 0.3;
-	padding: 50px;
-	
-}
-
-.right-photo {
-	margin-top: 60px;
-}
-
-.right-image {
-	width: 500px;
-}
-@media (min-width: 1280px) {
-	.container {
-        width: 1280px;
-        padding: 0 40px
-    }
-
-    .layout-6 img {
-    	width: 560px;	
-    }
-    
-}
-
-@media (max-width: 1279px) {
-    .container {
-        width: 1024px;
-        padding: 0 20px
-    }
-
-    .layout-6 img {
-    	width: 460px;
-    }
-}
-
-@media (max-width: 1023px) {
-    .container {
-        width: 768px
-    }
-
-    .layout-1 {
-        margin-bottom: 60px
-    }
-
-	.layout-6 img {
-    	min-width: 370px;
-    }
-}
-
-@media (max-width: 767px) {
-    .container {
-        min-width: 480px
-    }
-
-	#media-cont .layout-1 {
-        padding: 0
-    }
-
-    .layout-1 .shadow: before {
-        height: 100%;
-        top: 10%
-    }
-
-
-	.layout-6 img {
-    	min-width: 370px;
-    }
-}
-
-@media (max-width: 479px) {
-    .container {
-        width: 320px
-    }
-    	.layout-6 img {
-    	min-width: 320px;
-    }
-
-
-}
-
-@media (max-width: 479px) {
-    .container {
-        width: 320px
-    }
-
-            	.layout-6 img {
-    	min-width: 320px;
-    }
-}
-
-
-@media(min-width: 768px) and (max-width: 800px) {
-    .container {
-        width: 740px
-    }
-}
