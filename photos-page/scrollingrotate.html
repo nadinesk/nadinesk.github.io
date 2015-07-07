@@ -62,11 +62,11 @@ var $cog = $('#cog')
 
 
 $(window).scroll(function () {
-    for (angle=3; angle <=30; angle++)
+    for (angle=3; angle <=60; angle++)
     {
     $cog.css({'transform': 'rotate(' +angle+'deg)'});
-           
-            if(angle==30) {
+            angle+=3;
+            if(angle==60) {
             angle-=3;
         }    
     }
