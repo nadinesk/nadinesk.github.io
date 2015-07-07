@@ -201,7 +201,8 @@ img:hover {
 	-ms-transform: rotate(0deg); /* IE 9 */
     -webkit-transform: rotate(0deg); /* Chrome, Safari, Opera */
     transform: rotate(0deg);
-    transition: all 1s ease;
+    animation-duration: 0.8s; 
+}
 
 /*.come-in {
   transform: translateY(150px);
@@ -225,23 +226,6 @@ img:hover {
     transform: translateY(0);
   }
 }
-
-var $cog = $('#cog'),
-    $body = $(document.body),
-    bodyHeight = $body.height();
-
-$(window).scroll(function () {
-    $cog.css({
-        'transform': 'rotate(' + (7 + -$body.scrollTop() / 83) + 'deg)'
-    });
-    
-    $cog.text( "scrollTop:" + $body.scrollTop() );
-    
-});
-
-
-
-
 */
 
 .container {

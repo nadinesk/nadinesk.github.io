@@ -22,9 +22,9 @@ body {
     margin-top: 130px;
     margin-left: 50px;
     left: 20px;
-    transform: rotate(5deg);
-    transition-duration: 1s;
-    transition-timing-function: ease-in-out;
+    transform: rotate(3deg);
+    transition-duration: all 1s;
+    
 
 }
 
@@ -38,7 +38,8 @@ body {
     margin-left: 50px;
     left: 20px;
     transform: rotate(-20deg);
-    transition: all .3s;
+    transition-duration: 1s;
+    transition-timing-function: linear;
 }
 
 </style>
@@ -56,16 +57,23 @@ body {
 
 
 <script>
-var angle = 20;
+var angle = 3;
 var $cog = $('#cog')
 
+
 $(window).scroll(function () {
-    $cog.css({'transform': 'rotate(' +angle+'deg)'
-    });
-    angle+=6;
-    if(angle==360) {
-        angle=0;
+    $cog.css({'transform': 'rotate(' +angle+'deg)'});
+           angle+=3;
+            if(angle==24) {
+            angle-=3;
+            
+            
+   
+    
     }
+
+ 
+    
     });
 
 
