@@ -22,7 +22,7 @@ body {
     margin-top: 130px;
     margin-left: 50px;
     left: 20px;
-    transform: rotate(3deg);
+    transform: rotate(0deg);
     transition-duration: all 1s;
     
 
@@ -50,7 +50,7 @@ body {
 </head>
 
 <body>
-    <div id="cog">
+    <div id="cog" class="blah">
         
     </div>
     <div id="cog2">2</div>
@@ -59,18 +59,30 @@ body {
 <script>
 var angle = 3;
 var $cog = $('#cog')
+var scrollTop =$(window).scrollTop(), 
+    elementOffset = $(".blah").offset().top, 
+    distance = (elementOffset - scrollTop)/$(window).height();
 
 
 $(window).scroll(function () {
-    for (angle=3; angle <=51; angle+3)
-    {
-        $cog.css({'transform': 'rotate(' +angle+'deg)'});
-            angle+=3
-            if (angle==48){
-                angle=3;
-            }
-    }
+var scrollTop =$(window).scrollTop(), 
+    elementOffset = $(".blah").offset().top, 
+        distance = ((elementOffset - scrollTop)/$(window).height()) * 100;
+    console.log(distance);
     
+    if (distance < 5)
+    {
+         $cog.css({
+                'transform': 'rotate('  + 10 +  'deg)'
+            });
+    }
+
+        if (distance >= 6)
+    {
+         $cog.css({
+                'transform': 'rotate('  + 0 +  'deg)'
+            });
+    }
     
     });
 
