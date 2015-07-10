@@ -14,15 +14,17 @@ body {
 }
 
 #cog {
-    background: url('photos/sculpture.jpg');
+    background: url('photos/05.25.13.jpg');
     background-size: cover;
     border-radius: 10px;
-    width: 500px;
-    height: 400px;
+    width: 800px;
+    height: 602px;
     margin-top: 130px;
-    margin-left: 50px;
+    margin-left: auto;
+    margin-right: auto;
     left: 20px;
-    transform: rotate(0deg);
+    transform: rotate(10deg);
+    transform-origin: top left;
     transition-duration: all 1s;
     
 
@@ -61,7 +63,7 @@ var angle = 3;
 var $cog = $('#cog')
 var scrollTop =$(window).scrollTop(), 
     elementOffset = $(".blah").offset().top, 
-    distance = (elementOffset - scrollTop)/$(window).height();
+    distanceInit = ((elementOffset - scrollTop)/$(window).height()) * 100;
 
 
 $(window).scroll(function () {
@@ -70,18 +72,26 @@ var scrollTop =$(window).scrollTop(),
         distance = ((elementOffset - scrollTop)/$(window).height()) * 100;
     console.log(distance);
     
-    if (distance < 5)
-    {
-         $cog.css({
-                'transform': 'rotate('  + 10 +  'deg)'
-            });
-    }
-
-        if (distance >= 6)
+    if (distance < distanceInit+1)
     {
          $cog.css({
                 'transform': 'rotate('  + 0 +  'deg)'
             });
+        $cog.css({
+                'transform-origin': 'top left'
+            });
+    }
+
+        if (distance >= distanceInit-5)
+    {
+         $cog.css({
+                'transform': 'rotate('  + 10 +  'deg)'
+            });
+            
+        $cog.css({
+                'transform-origin': 'top left'
+            });
+        
     }
     
     });
