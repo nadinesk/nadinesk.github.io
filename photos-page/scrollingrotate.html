@@ -9,11 +9,7 @@
 body {
     background: #ffc;
     color: #F49EFF;
-<<<<<<< HEAD
     margin: 20px;   
-=======
-    margin: 20px;	
->>>>>>> 5a9875b0bc3e6e3dfd7276d68c7ad9c20126d473
     padding: 0px;
 }
 
@@ -93,7 +89,6 @@ var distanceTwoInit = ((cog2Offset - scrollTop)/$(window).height()) * 100;
 var distanceThreeInit = ((cog3Offset - scrollTop)/$(window).height()) * 100;
 
 $(window).scroll(function () {
-<<<<<<< HEAD
     var scrollTop =$(window).scrollTop();
 
     var cog1MovingOffset = $("#cog").offset().top;
@@ -106,20 +101,6 @@ $(window).scroll(function () {
             
     console.log(distanceOneInit);
     console.log(distanceOneMove);
-=======
-	var scrollTop =$(window).scrollTop();
-
-	var cog1MovingOffset = $("#cog").offset().top;
-	var cog2MovingOffset = $("#cog2").offset().top;
-	var cog3MovingOffset = $("#cog3").offset().top;
-
-        var distanceOneMove = ((cog1MovingOffset - scrollTop)/$(window).height()) * 100;
-	var distanceTwoMove = ((cog2MovingOffset - scrollTop)/$(window).height()) * 100;
-	var distanceThreeMove = ((cog3MovingOffset - scrollTop)/$(window).height()) * 100;
-	        
-	console.log(distanceOneInit);
-	console.log(distanceOneMove);
->>>>>>> 5a9875b0bc3e6e3dfd7276d68c7ad9c20126d473
     
     if ((distanceOneMove+1) < distanceOneInit)
     {
