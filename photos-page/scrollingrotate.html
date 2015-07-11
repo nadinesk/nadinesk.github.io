@@ -8,18 +8,18 @@
 
 body {
     background: #ffc;
-    height: 2000px;
-    margin: 0;	
+    color: #F49EFF;
+    margin: 20px;	
     padding: 0px;
 }
 
 #cog {
-    background: url('http://khasachi.com/photos-page/photos/05.25.13.jpg');
+    background: url('photos/05.25.13.jpg');
     background-size: cover;
-    border-radius: 10px;
+    border-radius: 2px;
     width: 800px;
     height: 602px;
-    margin-top: 130px;
+    margin-top: 200px;
     margin-left: auto;
     margin-right: auto;
     transform: rotate(10deg);
@@ -29,29 +29,29 @@ body {
 }
 
 #cog2 {
-    background: url('http://khasachi.com/photos-page/photos/06.17.13.JPG');
+    background: url('photos/06.17.13.JPG');
     background-size: cover;
-    border-radius: 10px;
+    border-radius: 2px;
     width: 800px;
     height: 602px;
-    margin-top: 130px;
+    margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
     transform: rotate(-10deg);
-    transition-origin: top right;
+    transform-origin: top right;
     transition: all 1s;}
 
 #cog3 {
-    background: url('http://khasachi.com/photos-page/photos/07.25.13.JPG');
+    background: url('photos/07.25.13.JPG');
     background-size: cover;
-    border-radius: 10px;
+    border-radius: 2px;
     width: 800px;
     height: 602px;
-    margin-top: 130px;
+    margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
     transform: rotate(10deg);
-    transition-origin: top left;
+    transform-origin: top left;
     transition: all 1s;
 /*    transition-duration: 0.5s;
     transition-timing-function: step-end; */
@@ -102,7 +102,7 @@ $(window).scroll(function () {
 	console.log(distanceOneInit);
 	console.log(distanceOneMove);
     
-    if (distanceOneMove < distanceOneInit+1)
+    if ((distanceOneMove+1) < distanceOneInit)
     {
          $cog.css({
                 'transform': 'rotate('  + 0 +  'deg)'
@@ -112,7 +112,7 @@ $(window).scroll(function () {
             });
     }
 
-        if (distanceOneMove >= distanceOneInit-5)
+        if (distanceOneMove > (distanceOneInit-3))
     {
          $cog.css({
                 'transform': 'rotate('  + 10 +  'deg)'
@@ -124,7 +124,7 @@ $(window).scroll(function () {
         
     }
 
-    if (distanceTwoMove < distanceTwoInit+1)
+    if ((distanceTwoMove+1) < distanceTwoInit)
     {
          $cog2.css({
                 'transform': 'rotate('  + 0 +  'deg)'
@@ -134,7 +134,7 @@ $(window).scroll(function () {
             });
     }
 
-        if (distanceTwoMove >= distanceTwoInit-5)
+        if (distanceTwoMove > (distanceTwoInit-3))
     {
          $cog2.css({
                 'transform': 'rotate('  + -10 +  'deg)'
@@ -146,7 +146,7 @@ $(window).scroll(function () {
         
     }
 
-    if (distanceThreeMove < distanceThreeInit+1)
+    if ((distanceThreeMove+1) < distanceThreeInit)
     {
          $cog3.css({
                 'transform': 'rotate('  + 0 +  'deg)'
@@ -156,7 +156,7 @@ $(window).scroll(function () {
             });
     }
 
-        if (distanceThreeMove >= distanceThreeInit-5)
+        if (distanceThreeMove > (distanceThreeInit-3)
     {
          $cog3.css({
                 'transform': 'rotate('  + 10 +  'deg)'
