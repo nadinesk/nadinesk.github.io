@@ -7,22 +7,28 @@
 <style>
 
 body {
-    background: #ffc;
+    background: #BDEC8E;
     color: #F49EFF;
     margin: 20px;   
     padding: 0px;
+}
+
+#photo-1-month {
+    margin-left: auto;
+    margin-right: auto;
+    font-style: Helvetica sans-serif;
 }
 
 #cog {
     background: url('photos/05.25.13.jpg');
     background-size: cover;
     border-radius: 2px;
-    width: 800px;
-    height: 602px;
+    width: 550px;
+    height: 414px;
     margin-top: 200px;
     margin-left: auto;
     margin-right: auto;
-    transform: rotate(10deg);
+    transform: rotate(5deg);
     transform-origin: top left;
     transition: all 1s;    
 
@@ -32,12 +38,12 @@ body {
     background: url('photos/06.17.13.JPG');
     background-size: cover;
     border-radius: 2px;
-    width: 800px;
-    height: 602px;
+    width: 550px;
+    height: 414px;
     margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
-    transform: rotate(-10deg);
+    transform: rotate(-5deg);
     transform-origin: top right;
     transition: all 1s;}
 
@@ -45,17 +51,37 @@ body {
     background: url('photos/07.25.13.JPG');
     background-size: cover;
     border-radius: 2px;
-    width: 800px;
-    height: 602px;
+    width: 550px;
+    height: 414px;
     margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
-    transform: rotate(10deg);
+    transform: rotate(5deg);
     transform-origin: top left;
     transition: all 1s;
+    margin-bottom: 100px;
 /*    transition-duration: 0.5s;
     transition-timing-function: step-end; */
 }
+
+#cog4 {
+    background: url('photos/08.24.13.JPG');
+    background-size: cover;
+    border-radius: 2px;
+    width: 550px;
+    height: 414px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    transform: rotate(-5deg);
+    transform-origin: top left;
+    transition: all 1s;
+    margin-bottom: 100px;
+/*    transition-duration: 0.5s;
+    transition-timing-function: step-end; */
+}
+
+
 
 </style>
 
@@ -65,28 +91,32 @@ body {
 </head>
 
 <body>
-    <div id="cog" >
-        
-    </div>
+    
+    <div id="cog" ></div>
     <div id="cog2"></div>
-
     <div id="cog3"></div>
+    <div id="cog4"></div>
 
 <script>
-var angle = 3;
+$(document).ready(function(){
+    $(this).scrollTop(0);
+    var angle = 3;
 var $cog = $('#cog');
 var $cog2 = $('#cog2');
 var $cog3 = $('#cog3');
+var $cog4 = $('#cog4');
 
 var scrollTop =$(window).scrollTop();
 
 var cog1Offset = $("#cog").offset().top;
 var cog2Offset = $("#cog2").offset().top;
 var cog3Offset = $("#cog3").offset().top;
+var cog4Offset = $("#cog4").offset().top;
 
 var distanceOneInit = ((cog1Offset - scrollTop)/$(window).height()) * 100;
 var distanceTwoInit = ((cog2Offset - scrollTop)/$(window).height()) * 100;
 var distanceThreeInit = ((cog3Offset - scrollTop)/$(window).height()) * 100;
+var distanceFourInit = ((cog4Offset - scrollTop)/$(window).height()) * 100;
 
 $(window).scroll(function () {
     var scrollTop =$(window).scrollTop();
@@ -94,10 +124,12 @@ $(window).scroll(function () {
     var cog1MovingOffset = $("#cog").offset().top;
     var cog2MovingOffset = $("#cog2").offset().top;
     var cog3MovingOffset = $("#cog3").offset().top;
+    var cog4MovingOffset = $("#cog4").offset().top;
 
-        var distanceOneMove = ((cog1MovingOffset - scrollTop)/$(window).height()) * 100;
+    var distanceOneMove = ((cog1MovingOffset - scrollTop)/$(window).height()) * 100;
     var distanceTwoMove = ((cog2MovingOffset - scrollTop)/$(window).height()) * 100;
     var distanceThreeMove = ((cog3MovingOffset - scrollTop)/$(window).height()) * 100;
+    var distanceFourMove = ((cog4MovingOffset - scrollTop)/$(window).height()) * 100;
             
     console.log(distanceOneInit);
     console.log(distanceOneMove);
@@ -115,7 +147,7 @@ $(window).scroll(function () {
         if (distanceOneMove > (distanceOneInit-3))
     {
          $cog.css({
-                'transform': 'rotate('  + 10 +  'deg)'
+                'transform': 'rotate('  + 5 +  'deg)'
             });
             
         $cog.css({
@@ -137,7 +169,7 @@ $(window).scroll(function () {
         if (distanceTwoMove > (distanceTwoInit-3))
     {
          $cog2.css({
-                'transform': 'rotate('  + -10 +  'deg)'
+                'transform': 'rotate('  + -5 +  'deg)'
             });
             
         $cog2.css({
@@ -159,7 +191,7 @@ $(window).scroll(function () {
         if (distanceThreeMove > (distanceThreeInit-3))
     {
          $cog3.css({
-                'transform': 'rotate('  + 10 +  'deg)'
+                'transform': 'rotate('  + 5 +  'deg)'
             });
             
         $cog3.css({
@@ -168,10 +200,38 @@ $(window).scroll(function () {
         
     }
 
+        if ((distanceFourMove+1) < distanceFourInit)
+    {
+         $cog4.css({
+                'transform': 'rotate('  + 0 +  'deg)'
+            });
+        $cog4.css({
+                'transform-origin': 'top right'
+            });
+    }
+
+        if ((distanceFourMove > (distanceFourInit-10)) || ($(window).scrollTop() + $(window).height() > $(document).height() - 100))
+    {
+         $cog4.css({
+                'transform': 'rotate('  + -5 +  'deg)'
+            });
+            
+        $cog4.css({
+                'transform-origin': 'top right'
+            });
+        
+    }
+
+
 
 
     
     });
+
+});
+
+
+
 
 
 /*
