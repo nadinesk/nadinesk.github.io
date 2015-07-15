@@ -13,6 +13,8 @@ body {
     padding: 0px;
 }
 
+
+
 #photo-1-month {
     margin-left: auto;
     margin-right: auto;
@@ -20,18 +22,24 @@ body {
 }
 
 #cog {
+    border-radius: 2px;
     background: url('photos/05.25.13.jpg');
     background-size: cover;
-    border-radius: 2px;
     width: 550px;
     height: 414px;
     margin-top: 200px;
     margin-left: auto;
     margin-right: auto;
-    transform: rotate(5deg);
+    transform: rotate(0deg);
     transform-origin: top left;
-    transition: 0.2s steps(2,end);
+    transition: 1s easeInQuint;    
 
+}
+
+.flipped {
+    opacity: 0.5;
+    
+    transition: 1s ease;
 }
 
 #cog2 {
@@ -43,10 +51,11 @@ body {
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
-    transform: rotate(-5deg);
+    transform: rotate(0deg);
     transform-origin: top right;
-    transition: 0.2s steps(2,end);
+    transition: 0.5s easeInQuint;
 }
+
 
 #cog3 {
     background: url('photos/07.25.13.JPG');
@@ -57,11 +66,11 @@ body {
     margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
-    transform: rotate(5deg);
+    transform: rotate(0deg);
     transform-origin: top left;
     
     margin-bottom: 100px;
-    transition: 0.2s steps(2,end);
+    transition: 0.5s easeInQuint;
 /*    transition-duration: 0.5s;
     transition-timing-function: step-end; */
 }
@@ -77,7 +86,7 @@ body {
     margin-right: auto;
     transform: rotate(-5deg);
     transform-origin: top left;
-    transition: 0.2s steps(2,end);
+    transition: 0.5s easeInQuint;
     margin-bottom: 100px;
 /*    transition-duration: 0.5s;
     transition-timing-function: step-end; */
@@ -94,12 +103,44 @@ body {
 
 <body>
     
-    <div id="cog" ></div>
+        <div id="cog"></div>
+
+    
     <div id="cog2"></div>
     <div id="cog3"></div>
     <div id="cog4"></div>
+</div>
 
 <script>
+
+(function($){
+
+    /**
+     * Copyright 2012, Digital Fusion
+     * Licensed under the MIT license.
+     * http://teamdf.com/jquery-plugins/license/
+     *
+     * @author Sam Sehnert
+     * @desc A small plugin that checks whether elements are within
+     *       the user visible viewport of a web browser.
+     *       only accounts for vertical position, not horizontal.
+     */
+    $.fn.visible = function(partial){
+        
+        var $t              = $(this),
+            $w              = $(window),
+            viewTop         = $w.scrollTop(),
+            viewBottom      = viewTop + $w.height(),
+            _top            = $t.offset().top,
+            _bottom         = _top + $t.height(),
+            compareTop      = partial === true ? _bottom : _top,
+            compareBottom   = partial === true ? _top : _bottom;
+        
+        return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+    };
+    
+})(jQuery);
+
 $(document).ready(function(){
      $(this).scrollTop(0);
 var $cog = $('#cog');
@@ -145,7 +186,17 @@ $(window).scroll(function () {
     /*console.log("static4", cog4Offset);
     console.log("movin4",cog4MovingOffset);*/
     
-    if ((cog1MovingOffset) < cog1Offset)
+    if ($(cog).visible(true))
+    {
+         $cog.css({
+                'transform': 'rotate('  + 5 +  'deg)'
+            });
+        $cog.css({
+                'transform-origin': 'top left'
+            });
+    }
+
+    if ($(cog).visible(false))
     {
          $cog.css({
                 'transform': 'rotate('  + 0 +  'deg)'
@@ -155,19 +206,9 @@ $(window).scroll(function () {
             });
     }
 
-        if (cog1MovingOffset > (cog1Offset/2))
-    {
-         $cog.css({
-                'transform': 'rotate('  + 5 +  'deg)'
-            });
-            
-        $cog.css({
-                'transform-origin': 'top left'
-            });
-        
-    }
+  
 
-    if (cog2MovingOffset < cog2Offset)
+    if ($(cog2).visible(true))
     {
          $cog2.css({
                 'transform': 'rotate('  + -5 +  'deg)'
@@ -177,7 +218,7 @@ $(window).scroll(function () {
             });
     }
 
-        if (cog2MovingOffset < 200)
+    if ($(cog2).visible(false))
     {
          $cog2.css({
                 'transform': 'rotate('  + 0 +  'deg)'
@@ -189,7 +230,7 @@ $(window).scroll(function () {
         
     }
 
-    if (cog3MovingOffset < cog3Offset)
+    if ($(cog3).visible(true))
     {
          $cog3.css({
                 'transform': 'rotate('  + 5 +  'deg)'
@@ -199,7 +240,7 @@ $(window).scroll(function () {
             });
     }
 
-        if ((cog3MovingOffset < 200))
+        if ($(cog3).visible(false))
     {
          $cog3.css({
                 'transform': 'rotate('  + 0 +  'deg)'
@@ -211,7 +252,7 @@ $(window).scroll(function () {
         
     }
 
-        if (cog4MovingOffset < cog4Offset)
+        if ($(cog4).visible(true))
     {
          $cog4.css({
                 'transform': 'rotate('  + -5 +  'deg)'
@@ -221,7 +262,7 @@ $(window).scroll(function () {
             });
     }
 
-       if ((cog4MovingOffset < 200)) /*if (cog4MovingOffset > (cog4Offset/2)) || ($(window).scrollTop() + $(window).height() > $(document).height() - 100)) */
+       if ($(cog4).visible(false))/*if (cog4MovingOffset > (cog4Offset/2)) || ($(window).scrollTop() + $(window).height() > $(document).height() - 100)) */
     {
          $cog4.css({
                 'transform': 'rotate('  + 0 +  'deg)'
@@ -239,78 +280,18 @@ $(window).scroll(function () {
     
     });
 
+
+$($cog).click(function(){
+    $(this).toggleClass("flipped");
+    
+
+});
+
 });
 
 
 
 
-
-/*
-function getRotationDegrees(obj) {
-    var matrix = obj.css("-webkit-transform") ||
-    obj.css("-moz-transform")    ||
-    obj.css("-ms-transform")     ||
-    obj.css("-o-transform")      ||
-    obj.css("transform");
-    if(matrix !== 'none') {
-        var values = matrix.split('(')[1].split(')')[0].split(',');
-        var a = values[0];
-        var b = values[1];
-        var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
-    } else { var angle = 0; }
-    return (angle < 0) ? angle + 360 : angle;
-}
-
-
-
-
-var $cog = $('#cog'),
-    $cog2 = $('#cog2'),
-    $body = $(document.body),
-    $cogZero = ($body.scrollTop());
-    bodyHeight = $body.height();
-
-
-$(window).scroll(function () {
-    angle1 = getRotationDegrees($('#cog'));
-    angle2 = getRotationDegrees($('#cog2'));
-    $cogZero = ($body.scrollTop());
-    if ($cogZero <= $body.height())
-    {
-
-        if (((angle1>=0) && (angle1 <= 10))  || ((angle2>=-5) && (angle2 <= 0))) 
-        {
-            $cog.css({
-                'transform': 'rotate('  + $cogZero/40 +  'deg)'
-            });
-            $cog2.css({
-                'transform': 'rotate('   + (-$cogZero/50) +  'deg)'
-            });
-        }
-        if ((angle1>=1) || (angle2 >=1))
-        {
-            $cog.css({
-                'transform': 'rotate(' + $cogZero/40   + 'deg)'
-            });
-            $cog2.css({
-                'transform': 'rotate(' +  -$cogZero/50   + 'deg)'
-            });
-        }
-
-
-
-    }
-                     
-
-    
-    
-    console.log($cogZero);
-
-    $cog.text( "scrollTop:" + $body.scrollTop() ); 
-    $cog2.text( "scrollTop:" + $cog.scrollTop() );
-
-    
-});*/
 
 
 </script>

@@ -1,13 +1,16 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 
 <style>
 
 body {
-    background: #BDEC8E;
+    background: #BDEC8E; 
+    
     color: #F49EFF;
     margin: 20px;   
     padding: 0px;
@@ -20,7 +23,7 @@ body {
 }
 
 #cog {
-    background: url('photos/05.25.13.jpg');
+    background: url('http://www.khasachi.com/photos-page/photos/05.25.13.jpg'); 
     background-size: cover;
     border-radius: 2px;
     width: 550px;
@@ -30,12 +33,107 @@ body {
     margin-right: auto;
     transform: rotate(5deg);
     transform-origin: top left;
-    transition: 0.2s steps(2,end);
+    transition: 1s easeOutQuint;
+    overflow: hidden;   
+}
+
+
+
+
+.dates {
+    border-radius: 5px;
+    display: none;
+    z-index: 0;
 
 }
 
+.dates-text {
+    background-color:rgba(255,255,255,0.3);
+    padding: 30% 0%;
+    display: none;
+    color: #BDEC8E;
+    z-index: 1;
+}
+
+#cog:hover .dates {
+    -moz-animation-duration: 3s;    
+        -webkit-animation-duration: 3s;
+        -moz-animation-name: slidein;   
+        -webkit-animation-name: slidein;
+        background: white;
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+        font-size: 36px;
+            color: white;
+        opacity: 0.1;
+        margin-top: 50%;
+        display: block;
+        margin-top: 100%;
+        height: 100%;
+        animation-fill-mode: forwards;
+}
+
+#cog:hover .dates-text {
+        -moz-animation-duration: 1s;    
+        -webkit-animation-duration: 1s;
+        -moz-animation-name: slidetext; 
+        -webkit-animation-name: slidetext;
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+        font-size: 36px;
+        display: block;
+        margin-top: 100%;
+        height: 100%;
+        color: #BDEC8E;
+        animation-fill-mode: forwards;
+
+
+}
+
+@-webkit-keyframes slidein {
+        from {
+            overflow: hidden;
+            margin-top: 100%;
+                width:100%;
+            }
+            
+        90% {
+        
+        }
+            
+        to {
+            
+            margin-top: 0%;
+            width:100%;
+
+            
+            }
+        }
+
+@-webkit-keyframes slidetext {
+        from {
+            overflow: hidden;
+            margin-top: 100%;
+                width:100%;
+            }
+            
+        90% {
+        
+        }
+            
+        to {
+            
+            margin-top: 0%;
+            width:100%;
+
+            
+            }
+        }
+
 #cog2 {
-    background: url('photos/06.17.13.JPG');
+   background: url('http://www.khasachi.com/photos-page/photos/06.17.13.JPG'); 
+    
+    
     background-size: cover;
     border-radius: 2px;
     width: 550px;
@@ -45,11 +143,12 @@ body {
     margin-right: auto;
     transform: rotate(-5deg);
     transform-origin: top right;
-    transition: 0.2s steps(2,end);
+    transition: 1s easeOutQuint;
 }
 
 #cog3 {
-    background: url('photos/07.25.13.JPG');
+    background: url('http://www.khasachi.com/photos-page/photos/07.25.13.JPG'); 
+    
     background-size: cover;
     border-radius: 2px;
     width: 550px;
@@ -61,13 +160,13 @@ body {
     transform-origin: top left;
     
     margin-bottom: 100px;
-    transition: 0.2s steps(2,end);
+    transition: 1s easeOutQuint;
 /*    transition-duration: 0.5s;
     transition-timing-function: step-end; */
 }
 
 #cog4 {
-    background: url('photos/08.24.13.JPG');
+    background: url('http://www.khasachi.com/photos-page/photos/08.24.13.JPG');
     background-size: cover;
     border-radius: 2px;
     width: 550px;
@@ -77,10 +176,9 @@ body {
     margin-right: auto;
     transform: rotate(-5deg);
     transform-origin: top left;
-    transition: 0.2s steps(2,end);
+    transition: 1s easeOutQuint;
     margin-bottom: 100px;
-/*    transition-duration: 0.5s;
-    transition-timing-function: step-end; */
+
 }
 
 
@@ -93,8 +191,12 @@ body {
 </head>
 
 <body>
+        <div id="cog" >
+
+        <p class="dates-text">May 25, 2013</p>
+    </div>
     
-    <div id="cog" ></div>
+
     <div id="cog2"></div>
     <div id="cog3"></div>
     <div id="cog4"></div>
@@ -221,7 +323,7 @@ $(window).scroll(function () {
             });
     }
 
-       if ((cog4MovingOffset < 200)) /*if (cog4MovingOffset > (cog4Offset/2)) || ($(window).scrollTop() + $(window).height() > $(document).height() - 100)) */
+                if ((cog4MovingOffset < 200))
     {
          $cog4.css({
                 'transform': 'rotate('  + 0 +  'deg)'
@@ -239,78 +341,15 @@ $(window).scroll(function () {
     
     });
 
+
+
 });
 
 
 
 
 
-/*
-function getRotationDegrees(obj) {
-    var matrix = obj.css("-webkit-transform") ||
-    obj.css("-moz-transform")    ||
-    obj.css("-ms-transform")     ||
-    obj.css("-o-transform")      ||
-    obj.css("transform");
-    if(matrix !== 'none') {
-        var values = matrix.split('(')[1].split(')')[0].split(',');
-        var a = values[0];
-        var b = values[1];
-        var angle = Math.round(Math.atan2(b, a) * (180/Math.PI));
-    } else { var angle = 0; }
-    return (angle < 0) ? angle + 360 : angle;
-}
 
-
-
-
-var $cog = $('#cog'),
-    $cog2 = $('#cog2'),
-    $body = $(document.body),
-    $cogZero = ($body.scrollTop());
-    bodyHeight = $body.height();
-
-
-$(window).scroll(function () {
-    angle1 = getRotationDegrees($('#cog'));
-    angle2 = getRotationDegrees($('#cog2'));
-    $cogZero = ($body.scrollTop());
-    if ($cogZero <= $body.height())
-    {
-
-        if (((angle1>=0) && (angle1 <= 10))  || ((angle2>=-5) && (angle2 <= 0))) 
-        {
-            $cog.css({
-                'transform': 'rotate('  + $cogZero/40 +  'deg)'
-            });
-            $cog2.css({
-                'transform': 'rotate('   + (-$cogZero/50) +  'deg)'
-            });
-        }
-        if ((angle1>=1) || (angle2 >=1))
-        {
-            $cog.css({
-                'transform': 'rotate(' + $cogZero/40   + 'deg)'
-            });
-            $cog2.css({
-                'transform': 'rotate(' +  -$cogZero/50   + 'deg)'
-            });
-        }
-
-
-
-    }
-                     
-
-    
-    
-    console.log($cogZero);
-
-    $cog.text( "scrollTop:" + $body.scrollTop() ); 
-    $cog2.text( "scrollTop:" + $cog.scrollTop() );
-
-    
-});*/
 
 
 </script>
