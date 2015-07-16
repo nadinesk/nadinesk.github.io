@@ -5,22 +5,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
 <style>
 
 body {
     background: #BDEC8E; 
-    
     color: #F49EFF;
-    margin: 20px;   
+    margin: 0px;   
     padding: 0px;
 }
 
-#photo-1-month {
-    margin-left: auto;
-    margin-right: auto;
-    font-style: Helvetica sans-serif;
-}
 
 #cog {
     background: url('http://www.khasachi.com/photos-page/photos/05.25.13.jpg'); 
@@ -33,82 +28,35 @@ body {
     margin-right: auto;
     transform: rotate(4deg);
     transform-origin: top left;
-    transition: 0.2s steps(2,end);
+    transition: 1s easeOutQuint;
     overflow: hidden;   
 }
 
 
-
-
-.dates {
-    border-radius: 5px;
-    display: none;
-    z-index: 0;
-
-}
-
 .dates-text {
-    background-color:rgba(255,255,255,0.3);
+    background-color:rgba(0,0,0,0.3);
     padding: 30% 0%;
     display: none;
-    color: #BDEC8E;
+    color: white;
     z-index: 1;
 }
 
-#cog:hover .dates {
-    -moz-animation-duration: 3s;    
-        -webkit-animation-duration: 3s;
-        -moz-animation-name: slidein;   
-        -webkit-animation-name: slidein;
-        background: white;
-        font-family: 'Raleway', sans-serif;
-        text-align: center;
-        font-size: 36px;
-            color: white;
-        opacity: 0.1;
-        margin-top: 50%;
-        display: block;
-        margin-top: 100%;
-        height: 100%;
-        animation-fill-mode: forwards;
-}
-
 #cog:hover .dates-text {
-        -moz-animation-duration: 1s;    
-        -webkit-animation-duration: 1s;
+        -moz-animation-duration: 0.5s;    
+        -webkit-animation-duration: 0.5s;
         -moz-animation-name: slidetext; 
         -webkit-animation-name: slidetext;
-        font-family: 'Raleway', sans-serif;
+        border-radius: 2px;
+        font-family: 'Open Sans', sans-serif;
         text-align: center;
-        font-size: 36px;
+        font-size: 48px;
         display: block;
         margin-top: 100%;
         height: 100%;
-        color: #BDEC8E;
+        color: white;
         animation-fill-mode: forwards;
-
-
 }
 
-@-webkit-keyframes slidein {
-        from {
-            overflow: hidden;
-            margin-top: 100%;
-                width:100%;
-            }
-            
-        90% {
-        
-        }
-            
-        to {
-            
-            margin-top: 0%;
-            width:100%;
-
-            
-            }
-        }
 
 @-webkit-keyframes slidetext {
         from {
@@ -128,40 +76,130 @@ body {
 
             
             }
-        }
+        }    
 
 #cog2 {
-   background: url('http://www.khasachi.com/photos-page/photos/06.17.13.JPG'); 
-    
-    
+    background: url('http://www.khasachi.com/photos-page/photos/06.17.13.JPG'); 
     background-size: cover;
     border-radius: 2px;
     width: 550px;
     height: 414px;
-    margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
-    transform: rotate(-4deg);
-    transform-origin: top right;
-    transition: 0.2s steps(2,end);
-}
-
-#cog3 {
-    background: url('http://www.khasachi.com/photos-page/photos/07.25.13.JPG'); 
-    
-    background-size: cover;
-    border-radius: 2px;
-    width: 550px;
-    height: 414px;
-    margin-top: 40px;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     transform: rotate(4deg);
     transform-origin: top left;
-    transition: 0.2s steps(2,end);
-/*    transition-duration: 0.5s;
-    transition-timing-function: step-end; */
+    transition: 1s easeOutQuint;
+    overflow: hidden;   
 }
+
+
+.dates-text1 {
+    background-color:rgba(0,0,0,0.3);
+    padding: 30% 0%;
+    display: none;
+    color: white;
+    z-index: 1;
+}
+
+#cog2:hover .dates-text1 {
+        -moz-animation-duration: 0.5s;    
+        -webkit-animation-duration: 0.5s;
+        -moz-animation-name: slidetextOne; 
+        -webkit-animation-name: slidetextOne;
+        border-radius: 2px;
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+        font-size: 48px;
+        display: block;
+        margin-top: 100%;
+        height: 100%;
+        color: white;
+        animation-fill-mode: forwards;
+}
+
+
+@-webkit-keyframes slidetextOne {
+        from {
+            overflow: hidden;
+            margin-top: 100%;
+                width:100%;
+            }
+            
+        90% {
+        
+        }
+            
+        to {
+            
+            margin-top: 0%;
+            width:100%;
+
+            
+            }
+        }   
+
+
+#cog3 {
+    background: url('http://www.khasachi.com/photos-page/photos/07.25.13.JPG'); 
+    background-size: cover;
+    border-radius: 2px;
+    width: 550px;
+    height: 414px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    transform: rotate(4deg);
+    transform-origin: top left;
+    transition: 1s easeOutQuint;
+    overflow: hidden;
+}
+
+.dates-text2 {
+    background-color:rgba(0,0,0,0.3);
+    padding: 30% 0%;
+    display: none;
+    color: white;
+    z-index: 1;
+}
+
+#cog3:hover .dates-text2 {
+        -moz-animation-duration: 0.5s;    
+        -webkit-animation-duration: 0.5s;
+        -moz-animation-name: slidetextTwo; 
+        -webkit-animation-name: slidetextTwo;
+        border-radius: 2px;
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+        font-size: 48px;
+        display: block;
+        margin-top: 100%;
+        height: 100%;
+        color: white;
+        animation-fill-mode: forwards;
+}
+
+
+@-webkit-keyframes slidetextTwo {
+        from {
+            overflow: hidden;
+            margin-top: 100%;
+                width:100%;
+            }
+            
+        90% {
+        
+        }
+            
+        to {
+            
+            margin-top: 0%;
+            width:100%;
+
+            
+            }
+        }   
+
 
 #cog4 {
     background: url('http://www.khasachi.com/photos-page/photos/08.24.13.JPG');
@@ -169,15 +207,61 @@ body {
     border-radius: 2px;
     width: 550px;
     height: 414px;
-    margin-top: 40px;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     transform: rotate(-4deg);
     transform-origin: top left;
-    transition: 0.2s steps(2,end);
+    transition: 1s easeOutQuint;
     margin-bottom: 100px;
-
+    overflow: hidden;
 }
+
+.dates-text3 {
+    background-color:rgba(0,0,0,0.3);
+    padding: 30% 0%;
+    display: none;
+    color: white;
+    z-index: 1;
+}
+
+#cog4:hover .dates-text3 {
+        -moz-animation-duration: 0.5s;    
+        -webkit-animation-duration: 0.5s;
+        -moz-animation-name: slidetextThree; 
+        -webkit-animation-name: slidetextThree;
+        border-radius: 2px;
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+        font-size: 48px;
+        display: block;
+        margin-top: 100%;
+        height: 100%;
+        color: white;
+        animation-fill-mode: forwards;
+}
+
+
+@-webkit-keyframes slidetextThree {
+        from {
+            overflow: hidden;
+            margin-top: 100%;
+                width:100%;
+            }
+            
+        90% {
+        
+        }
+            
+        to {
+            
+            margin-top: 0%;
+            width:100%;
+
+            
+            }
+        }  
+
 
 
 
@@ -190,16 +274,50 @@ body {
 
 <body>
         <div id="cog" >
-
-        <p class="dates-text">May 25, 2013</p>
-    </div>
+            <p class="dates-text">May 25, 2013</p>
+        </div>
     
 
-    <div id="cog2"></div>
-    <div id="cog3"></div>
-    <div id="cog4"></div>
+      <div id="cog2" >
+            <p class="dates-text1">June 17, 2013</p>
+        </div>
+    <div id="cog3">
+        <p class="dates-text2">July 25, 2013</p>
+    </div>
+    <div id="cog4">
+        <p class="dates-text3">August 24, 2013</p>
+    </div>
 
 <script>
+
+(function($){
+
+    /**
+     * Copyright 2012, Digital Fusion
+     * Licensed under the MIT license.
+     * http://teamdf.com/jquery-plugins/license/
+     *
+     * @author Sam Sehnert
+     * @desc A small plugin that checks whether elements are within
+     *       the user visible viewport of a web browser.
+     *       only accounts for vertical position, not horizontal.
+     */
+    $.fn.visible = function(partial){
+        
+        var $t              = $(this),
+            $w              = $(window),
+            viewTop         = $w.scrollTop(),
+            viewBottom      = viewTop + $w.height(),
+            _top            = $t.offset().top,
+            _bottom         = _top + $t.height(),
+            compareTop      = partial === true ? _bottom : _top,
+            compareBottom   = partial === true ? _top : _bottom;
+        
+        return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+    };
+    
+})(jQuery);
+
 $(document).ready(function(){
      $(this).scrollTop(0);
 var $cog = $('#cog');
@@ -245,7 +363,17 @@ $(window).scroll(function () {
     /*console.log("static4", cog4Offset);
     console.log("movin4",cog4MovingOffset);*/
     
-    if ((cog1MovingOffset) < cog1Offset)
+    if ($(cog).visible(true))
+    {
+         $cog.css({
+                'transform': 'rotate('  + 5 +  'deg)'
+            });
+        $cog.css({
+                'transform-origin': 'top left'
+            });
+    }
+
+    if ($(cog).visible(false))
     {
          $cog.css({
                 'transform': 'rotate('  + 0 +  'deg)'
@@ -255,19 +383,7 @@ $(window).scroll(function () {
             });
     }
 
-        if (cog1MovingOffset > (cog1Offset/2))
-    {
-         $cog.css({
-                'transform': 'rotate('  + 5 +  'deg)'
-            });
-            
-        $cog.css({
-                'transform-origin': 'top left'
-            });
-        
-    }
-
-    if (cog2MovingOffset < cog2Offset)
+    if ($(cog2).visible(true))
     {
          $cog2.css({
                 'transform': 'rotate('  + -5 +  'deg)'
@@ -277,7 +393,7 @@ $(window).scroll(function () {
             });
     }
 
-        if (cog2MovingOffset < 200)
+    if ($(cog2).visible(false))
     {
          $cog2.css({
                 'transform': 'rotate('  + 0 +  'deg)'
@@ -289,7 +405,7 @@ $(window).scroll(function () {
         
     }
 
-    if (cog3MovingOffset < cog3Offset)
+    if ($(cog3).visible(true))
     {
          $cog3.css({
                 'transform': 'rotate('  + 5 +  'deg)'
@@ -299,7 +415,7 @@ $(window).scroll(function () {
             });
     }
 
-        if ((cog3MovingOffset < 200))
+        if ($(cog3).visible(false))
     {
          $cog3.css({
                 'transform': 'rotate('  + 0 +  'deg)'
@@ -311,7 +427,7 @@ $(window).scroll(function () {
         
     }
 
-        if (cog4MovingOffset < cog4Offset)
+        if ($(cog4).visible(true))
     {
          $cog4.css({
                 'transform': 'rotate('  + -5 +  'deg)'
@@ -321,7 +437,7 @@ $(window).scroll(function () {
             });
     }
 
-                if ((cog4MovingOffset < 200))
+       if ($(cog4).visible(false))/*if (cog4MovingOffset > (cog4Offset/2)) || ($(window).scrollTop() + $(window).height() > $(document).height() - 100)) */
     {
          $cog4.css({
                 'transform': 'rotate('  + 0 +  'deg)'
@@ -341,9 +457,8 @@ $(window).scroll(function () {
 
 
 
+
 });
-
-
 
 
 
