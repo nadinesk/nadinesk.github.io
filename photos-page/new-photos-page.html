@@ -13,12 +13,72 @@ body {
     color: black;
     margin: 0px;   
     padding: 0px;
+    box-sizing: border-box;
 }
 
 .container {
-    margin: 0px;   
+    margin: 50px 100px;   
     padding: 0px;
 }
+
+.menu-items a {
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.5s ease, padding 0.5s ease;
+}
+
+
+.menu-items a:visited {
+    color: black;
+}
+
+.menu-items a:hover {
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.3);
+    padding: 3px;
+}
+
+.menu-full {
+    position:absolute;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: black;
+    right: 80px;
+    width: 270px;
+}
+
+
+.menu-svg {
+    padding-top: 20px;
+    padding-left: 5px;    
+    float: right;
+}
+
+.menu-list {
+   background-color: rgba(255,255,255,0.3);
+   float:left;
+   padding: 10px;
+   border-radius: 5px;
+   display: none;
+}
+
+.menu-items {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.menu-items li {
+    display: inline-block;
+    padding-right: 5px;
+}
+
+
+li:nth-child(2), li:nth-child(3),li:nth-child(4) {
+    padding-top: 5px;
+}
+
+
+
 
 .clearfix:after {
      visibility: hidden;
@@ -32,12 +92,14 @@ body {
 header {
     margin: 0px;   
     padding: 0px;
-    margin: 50px 100px 0px 100px;
+    
     -moz-animation-duration: 3s;    
     -webkit-animation-duration: 3s;
     -moz-animation-name: slideheader; 
     -webkit-animation-name: slideheader;
     overflow: hidden;
+    
+    
     
     
 }
@@ -83,7 +145,11 @@ header {
 	font-weight: 600;
     font-size: 48px;
     float: left;
+}
 
+.main-header h1 {
+    margin: 50px 0px 0px 0px;
+    letter-spacing: 2px;
 }
 
 .main-header p {
@@ -93,16 +159,19 @@ header {
 
 /* add clearfix to header div because of floating elements*/ 
 .second-header-one {
-	animation-iteration-count: infinite;
 	transition: all 1s;
 	overflow: hidden;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 600;
     text-align: right;
     font-size: 38px;
-    padding: 100px;
+    padding: 80px 0px;
     float: right;
+    letter-spacing: 2px;
+}
 
+.main-header, .second-header-one {
+    margin-top: 30px;
 }
 
 .first-show-text {
@@ -112,8 +181,6 @@ header {
 .second-show-text {
 	display: none;
 }
-
-
 
 
 #cog {
@@ -141,6 +208,8 @@ header {
 	display: none;
 	color: #BDEC8E;
 	z-index: 1;
+    letter-spacing: 2px
+    font-weight: 600;
 }
 
 
@@ -155,14 +224,9 @@ header {
 		height: 100%;
 		color: #BDEC8E;
 		animation-fill-mode: forwards;
-
-
 }
 
-.month-text {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 70px;    
-}
+
 
 .month-text {
     margin: 0px;
@@ -225,7 +289,7 @@ header {
     border-radius: 2px;
     width: 550px;
     height: 414px;
-    margin-top: 50px;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     transform: rotate(-5deg);
@@ -236,6 +300,7 @@ header {
     -webkit-box-shadow: -2px 3px 19px -6px rgba(0,0,0,1);
     -moz-box-shadow: -2px 3px 19px -6px rgba(0,0,0,1);
     box-shadow: -2px 3px 19px -6px rgba(0,0,0,1);
+
 }
 
 #cog3 {
@@ -244,7 +309,7 @@ header {
     border-radius: 2px;
     width: 550px;
     height: 414px;
-    margin-top: 50px;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     transform: rotate(5deg);
@@ -263,7 +328,7 @@ header {
     border-radius: 2px;
     width: 550px;
     height: 414px;
-    margin-top: 50px;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     transform: rotate(-5deg);
@@ -277,7 +342,247 @@ header {
     box-shadow: -2px 3px 19px -6px rgba(0,0,0,1);
 }
 
+.bottom-nav {
+    padding-top: 10px;
+}
 
+.more-months {
+    float: left;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 48px;
+}
+
+.more-months a {
+    text-decoration: none;
+}
+
+.more-months a:visited {
+    color: black;
+}
+
+.more-months h1 {
+    margin: 0px;
+    
+}
+
+.more-months a {
+    transition: color 0.5s ease;
+}
+
+.more-months h1 a:hover{
+    color: white;
+}
+
+.months {
+    display: none;
+}
+
+.arrow {
+    float: right;
+    transition: opacity 0.5s ease;
+}
+
+.arrow:hover {
+    opacity: 0.3;
+}
+
+.arrow-small, .arrow-smaller {
+    display: none;
+}
+
+
+@media screen and (max-width: 850px)
+{
+   
+    .main-header {
+        font-size: 35px;
+        padding: 0px;
+    
+    }
+
+    .second-header-one {
+        float: right;
+        width: 250px;
+        display: block;
+        font-size: 30px;
+
+    }
+}
+
+@media screen and (max-width: 750px)
+{
+    .main-header {
+        font-size: 40px;
+    }
+    .second-header-one {
+        float: left;
+        width: 100%;
+        text-align: center;
+        display: block;
+        font-size: 30px;
+        padding-top: 10px;
+    }
+
+    .main-header {
+        width: 100%;
+        text-align: center;
+    }
+
+    #cog, #cog2, #cog3, #cog4 {
+        width: 450px;
+        height: 338px;
+        border: 30px solid #F4FFFF;
+    }
+
+    .menu-full {
+        right: 45%;
+        
+        font-family: 'Source Sans Pro', sans-serif;
+        color: black;
+        width: 100%;
+    }
+
+    .menu-list {
+        float: right;
+    }
+
+    .more-months {
+        font-size: 30px;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .arrow-small {
+        display: block;
+        float: right;
+        transition: opacity 0.5s ease;
+    }
+
+    .arrow-small:hover {
+        opacity: 0.3;
+    }
+
+
+}
+
+@media screen and (max-width: 650px)
+{
+        .main-header {
+            padding: 0px;
+            margin: 50px 0px 0px;
+        }
+
+        .second-header-one {
+            padding-top: 10px;
+            padding-bottom: 30px;
+            margin-top: 0px;
+        }
+        
+        #cog, #cog2, #cog3, #cog4 {
+            width: 350px;
+            height: 263px;
+            border: 20px solid #F4FFFF;
+            margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 550px)
+{
+        .main-header {
+            padding: 0px;
+            margin: 50px 0px 0px;
+        }
+
+        .second-header-one {
+            padding-top: 10px;
+            padding-bottom: 30px;
+            margin-top: 0px;
+        }
+
+        #cog, #cog2, #cog3, #cog4 {
+            width: 300px;
+            height: 226px;
+            border: 20px solid #F4FFFF;
+            margin-top: 50px;
+        }
+
+        .more-months {
+            font-size: 20px;
+        }
+
+        .arrow-small {
+            display: none;
+        }
+        .arrow-smaller {
+            display: block;
+            float: right;
+            transition: opacity 0.5s ease;
+        }   
+
+        .arrow-smaller:hover {
+            opacity: 0.3;
+        }
+}
+
+@media screen and (max-width: 450px)
+{
+    .menu-full {
+        position:absolute;
+        font-family: 'Source Sans Pro', sans-serif;
+        color: black;
+        right: 50px;
+        width: 270px;
+    }   
+
+    .main-header {
+        font-size: 30px;
+        padding-bottom: 10px;
+        }       
+        
+        .second-header-one {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin: 0px;
+            font-size: 20px;
+        }
+
+        #cog, #cog2, #cog3, #cog4 {
+            width: 200px;
+            height: 150px;
+            border: 15px solid #F4FFFF;
+            margin-top: 30px;
+        }
+
+        #cog4 {
+            margin-bottom: 50px;
+        }
+
+        .month-text {
+            font-size: 40px;
+        }
+
+        .more-months {
+            font-size: 15px;
+        }
+
+        .arrow-small {
+            display: none;
+        }
+
+        .arrow-smaller {
+            display: block;
+            float: right;
+            transition: opacity 0.5s ease;
+        }   
+
+        .arrow-smaller:hover {
+            opacity: 0.3;
+        }
+
+
+}
 
 </style>
 
@@ -288,6 +593,25 @@ header {
 
 <body>
 	<div class="container">
+        <div class="menu-full clearfix">
+            <div class="for-menu-svg">
+                <svg class="menu-svg " height="25" width="50">
+                    <line stroke-linecap="round" x1="0" y1="0" x2="30" y2="0" style="stroke:rgb(255,255,255);stroke-width:4" />
+                    <line stroke-linecap="round" x1="0" y1="7" x2="30" y2="7" style="stroke:rgb(255,255,255);stroke-width:4" />
+                    <line stroke-linecap="round" x1="0" y1="14" x2="30" y2="14" style="stroke:rgb(255,255,255);stroke-width:4" />
+                    Sorry, your browser does not support inline SVG.
+                </svg>
+            </div>
+            <div class="menu-list">
+                <ul class="menu-items ">
+                    <li><a href="http://www.khasachi.com">home</a></li>
+                    <li><a href="http://www.khasachi.com/blog">blog</a></li>
+                    <li><a href="http://www.khasachi.com/photos.html">photos</a></li>
+                    <li><a href="http://www.khasachi.com/about">about</a></li>
+                </ul>
+            </div>
+        </div>
+
 		<header class="for-header clearfix">
 			<div class="main-header">
 				<h1>Photos</h1>
@@ -297,28 +621,91 @@ header {
 				<p class="second-show-text">Month-to-Month</p>
 			</div>
 		</header>
-	
+
+        <div class="photo-section">
     		<div id="cog" >
                 <div class="dates-text">
-                    <p class="month-text">May</p>
+                    <p class="month-text">MAY</p>
                     <p class="day-year-text">25, 2013</p>
                 </div>
             </div>
 	
     		<div id="cog2">
                 <div class="dates-text">
-                    <p class="month-text">June</p>
+                    <p class="month-text">JUNE</p>
                     <p class="day-year-text">17, 2013</p>
                 </div>
-
             </div>
-    		<div id="cog3">
-			<p class="dates-text">July 25, 2013</p>
-		</div>
-	    	<div id="cog4">
-			<p class="dates-text">August 24, 2013</p>
-		</div>
-	</div>
+    		
+            <div id="cog3">
+                <div class="dates-text">
+                    <p class="month-text">JULY</p>
+                    <p class="day-year-text">25, 2013</p>
+                </div>
+            </div>
+	    	
+            <div id="cog4">
+                <div class="dates-text">
+                    <p class="month-text">AUGUST</p>
+                    <p class="day-year-text">24, 2013</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bottom-nav clearfix">
+            <div class="more-months">
+                <h1 class="more"><a href=#>MORE</a></h1>
+                <h1 class="months"><a href=#>MONTHS</a></h1>
+            </div> 
+            <div class="arrow">
+                <a href=#>
+                    <svg class="arrow-svg" height="100" width="150">
+                        <marker id="Triangle"
+                            viewBox="0 0 10 10" 
+                            refX="1" refY="5"
+                            markerWidth="5" 
+                            markerHeight="5"
+                            orient="auto">
+                            <path d="M 0 0 L 10 5 L 0 10 z" />
+                        </marker>
+                        <line stroke-linecap="round" x1="30" y1="70" x2="120" y2="70" marker-end="url(#Triangle)" stroke="black" stroke-width="7"/>
+                    </svg>
+                </a>
+            </div>
+             <div class="arrow-small">
+                <a href=#>
+                    <svg class="arrow-svg" height="100" width="100">
+                        <marker id="Triangle"
+                            viewBox="0 0 10 10" 
+                            refX="1" refY="5"
+                            markerWidth="3" 
+                            markerHeight="3"
+                            orient="auto">
+                            <path d="M 0 0 L 10 5 L 0 10 z" />
+                        </marker>
+                        <line stroke-linecap="round" x1="30" y1="30" x2="80" y2="30" marker-end="url(#Triangle)" stroke="black" stroke-width="7"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="arrow-smaller">
+                <a href=#>
+                    <svg class="arrow-svg" height="50" width="80">
+                        <marker id="Triangle"
+                            viewBox="0 0 10 10" 
+                            refX="1" refY="5"
+                            markerWidth="3" 
+                            markerHeight="3"
+                            orient="auto">
+                            <path d="M 0 0 L 10 5 L 0 10 z" />
+                        </marker>
+                        <line stroke-linecap="round" x1="30" y1="25" x2="60" y2="25" marker-end="url(#Triangle)" stroke="black" stroke-width="5"/>
+                    </svg>
+                </a>
+            </div>
+        
+        </div>
+    </div>
 
 
 <script>
@@ -385,12 +772,12 @@ $(window).scroll(function () {
     var distanceFourMove = ((cog4MovingOffset - scrollTop)/$(window).height()) * 100; */
             
     /*console.log("static1", cog1Offset);
-    console.log("movin1",cog1MovingOffset); */
+    console.log("movin1",cog1MovingOffset); 
     console.log("static2", cog2Offset);
     console.log("movin2",cog2MovingOffset);
     console.log("static offset", $("#cog2").offset().top);
     /*console.log("static3", cog3Offset);
-    console.log("movin3",cog3MovingOffset);*/
+    console.log("movin3",cog3MovingOffset);
     console.log("scrolltop", scrollTopMove); 
     console.log("win height", win);
     /*console.log("static4", cog4Offset);
@@ -493,8 +880,19 @@ setInterval(function() {toggleStuff()}, 1000);
 function toggleStuff() {
     $(".first-show-text").toggle(); 
     $(".second-show-text").toggle(); 
+    $(".more").toggle(); 
+    $(".months").toggle(); 
 }
 
+
+    $(".menu-svg").click(function() {
+        $(this).effect("bounce", { times: 3 }, "slow" );
+        $(".menu-list").toggle();
+    })
+
+function floatHeader() {
+
+}
 
 
 });
