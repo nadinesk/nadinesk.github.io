@@ -5,11 +5,91 @@ body {
     margin: 0px;   
     padding: 0px;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+
 }
 
 .container {
     margin: 50px 100px;   
     padding: 0px;
+}
+
+#active-month {
+    opacity: 3;
+    font-size: 22px;
+
+}
+.month-range-links {
+    -moz-animation-duration: 3s;    
+    -webkit-animation-duration: 3s;
+    -moz-animation-name: slidemonths; 
+    -webkit-animation-name: slidemonths;
+}
+.month-range-links ul {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    
+    text-align: center;    
+}
+
+.active-months {
+    opacity: 1;
+    color: blue;
+}
+.month-range-links ul li {
+    text-decoration: none;
+    display: inline-block;    
+    padding-right: 5px;
+    
+}
+
+
+
+.month-range-links ul li a {
+    text-decoration: none;
+    color: #000;
+    opacity: 0.35;
+    transition: opacity 1s, font-size 0.5s;
+}
+
+.month-range-links ul li a:visited {
+    color: #000;
+
+}
+
+.month-range-links ul li a:hover {
+    opacity: 1;
+    font-size: 22px;
+    
+}
+
+
+
+@-webkit-keyframes slidemonths {
+    0% {
+        filter: alpha(Opacity=0);
+        opacity: 0;
+        
+    }
+    100% {
+        filter: alpha(enabled=false);
+        opacity: 1;
+        
+    }
+}
+@keyframes slidemonths {
+    0% {
+        filter: alpha(Opacity=0);
+        opacity: 0;
+        
+    }
+    100% {
+        filter: alpha(enabled=false);
+        opacity: 1;
+        
+    }
 }
 
 .menu-items a {
@@ -33,15 +113,15 @@ body {
     position:absolute;
     font-family: 'Source Sans Pro', sans-serif;
     color: black;
-    right: 80px;
-    width: 270px;
+    top: 0px;
+    left: 10px;
 }
 
 
 .menu-svg {
     padding-top: 20px;
-    padding-left: 5px;    
-    float: right;
+    
+    
 }
 
 .menu-list {
@@ -59,7 +139,7 @@ body {
 }
 
 .menu-items li {
-    display: inline-block;
+    
     padding-right: 5px;
 }
 
@@ -83,7 +163,6 @@ li:nth-child(2), li:nth-child(3),li:nth-child(4) {
 header {
     margin: 0px;   
     padding: 0px;
-    
     -moz-animation-duration: 3s;    
     -webkit-animation-duration: 3s;
     -moz-animation-name: slideheader; 
@@ -143,6 +222,20 @@ header {
     letter-spacing: 2px;
 }
 
+.main-header a {
+    text-decoration: none;
+    color: black;
+    transition: color ease 1s;
+}
+
+.main-header a:visited {
+    text-decoration: none;
+    color: black;   
+}
+
+.main-header a:hover {
+    color: white;
+}
 .main-header p {
     display: block;
     
@@ -347,6 +440,145 @@ header {
     background-size: cover;
 }
 
+#cog9 {
+    background: url('photos/01.24.14.JPG'); 
+    background-size: cover;
+    background-position: center;
+}
+
+#cog10 {
+    background: url('photos/2.17.14.JPG'); 
+    background-size: cover;
+    background-position: center;
+}
+
+#cog11 {
+    background: url('photos/03.12.14.JPG'); 
+    background-size: cover;
+    background-position: center;
+}
+
+#cog12 {
+    background: url('photos/04.19.14.JPG'); 
+    background-size: cover;
+    background-position: center;
+}
+
+#cog13 {
+    background: url('photos/05.9.14.jpg'); 
+    background-size: cover;
+    
+}
+
+#cog14 {
+    background: url('photos/05.25.14.JPG'); 
+    background-size: cover;
+    background-position: center;
+}
+
+#cog15 {
+    background: url('photos/06.21.14.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+#cog16 {
+    background: url('photos/07.21.14.jpg'); 
+    background-size: cover;
+
+}
+
+#cog17 {
+    background: url('photos/08.08.14.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+#cog18 {
+    background: url('photos/09.12.14.jpg'); 
+    background-size: cover;
+}
+
+#cog19 {
+    background: url('photos/09.28.14.jpg'); 
+    background-size: cover;
+}
+
+#cog20 {
+    background: url('photos/10.20.14.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+#cog21 {
+    background: url('photos/11.29.14.JPG'); 
+    background-size: cover;
+    background-position: center;
+}
+
+#cog22 {
+    background: url('photos/11.7.14.JPG'); 
+    background-size: cover;
+}
+
+#cog23 {
+    background: url('photos/12.3.14.JPG'); 
+    background-size: cover;
+}
+
+#cog24 {
+    background: url('photos/12.14.14.JPG'); 
+    background-size: cover;
+    background-position: center;
+}
+
+#cog25 {
+    background: url('photos/1.29.15.JPG'); 
+    background-size: cover;
+    background-position: center;
+}
+
+#cog26 {
+    background: url('photos/1.30.15 2.JPG'); 
+    background-size: cover;
+    background-position: center;
+}
+
+#cog27 {
+    background: url('photos/02.4.15.JPG'); 
+    background-size: cover;
+    background-position: bottom;
+}
+
+#cog28 {
+    background: url('photos/03.11.15.JPG'); 
+    background-size: cover;
+    background-position: center;
+}
+
+#cog29 {
+    background: url('photos/4.15.15.JPG'); 
+    background-size: cover;
+    background-position: center;
+}
+
+#cog30 {
+    background: url('photos/05.4.15.JPG'); 
+    background-size: cover;
+    background-position: bottom;
+}
+
+#cog31 {
+    background: url('photos/06.08.15.JPG'); 
+    background-size: cover;
+    background-position: bottom;
+}
+
+#cog32 {
+    background: url('photos/06.12.15.JPG'); 
+    background-size: cover;
+    background-position: center;
+}
 
 .bottom-nav {
     padding-top: 10px;
@@ -398,10 +630,34 @@ header {
     opacity: 0.3;
 }
 
-.arrow-small, .arrow-smaller {
+.previous-arrow-small, .previous-arrow-smaller, .arrow-small, .arrow-smaller {
     display: none;
 }
 
+
+.go-top, .go-top-1{
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    opacity: 0.25;
+}
+
+.go-top-1 a, .go-top a {
+    text-decoration: none;
+    color: black;
+}
+
+.go-top-1 a:visited, .go-top a:visited {
+    color: black;
+}
+
+.go-top-1 a:hover, .go-top a:hover {
+    text-decoration: underline;
+}
+
+
+.go-top-1 {
+    margin-top: 70px;
+}
 
 @media screen and (max-width: 850px)
 {
@@ -419,6 +675,11 @@ header {
         font-size: 30px;
 
     }
+
+    .go-top {
+        padding-top: 50px;    
+    }
+    
 }
 
 @media screen and (max-width: 750px)
@@ -446,24 +707,22 @@ header {
         border: 30px solid #F4FFFF;
     }
 
-    .menu-full {
-        right: 45%;
-        
-        font-family: 'Source Sans Pro', sans-serif;
-        color: black;
-        width: 100%;
-    }
 
-    .menu-list {
-        float: right;
-    }
+
+   
 
     .more-months {
         font-size: 30px;
     }
 
-    .arrow {
+    .previous-arrow, .arrow {
         display: none;
+    }
+
+    .previous-arrow-small {
+        display: block;
+        float: left;
+        transition: opacity 0.5s ease;
     }
 
     .arrow-small {
@@ -472,9 +731,16 @@ header {
         transition: opacity 0.5s ease;
     }
 
-    .arrow-small:hover {
-        opacity: 0.3;
-    }
+    .previous-arrow-small:hover, .arrow-small:hover {
+            opacity: 0.3;
+        }
+
+
+.go-top {
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-top: 50px;
+}
 
 
 }
@@ -524,29 +790,30 @@ header {
             font-size: 20px;
         }
 
-        .arrow-small {
+        .previous-arrow-small, .arrow-small {
             display: none;
         }
+        
+        .previous-arrow-smaller {
+            display: block;
+            float: left;
+            transition: opacity 0.5s ease;
+        }
+
         .arrow-smaller {
             display: block;
             float: right;
             transition: opacity 0.5s ease;
         }   
 
-        .arrow-smaller:hover {
+        .previous-arrow-smaller:hover, .arrow-smaller:hover {
             opacity: 0.3;
         }
 }
 
 @media screen and (max-width: 450px)
 {
-    .menu-full {
-        position:absolute;
-        font-family: 'Source Sans Pro', sans-serif;
-        color: black;
-        right: 50px;
-        width: 270px;
-    }   
+   
 
     .main-header {
         font-size: 30px;
@@ -567,9 +834,7 @@ header {
             margin-top: 30px;
         }
 
-        #cog4, #cog8{
-            margin-bottom: 50px;
-        }
+
 
         .month-text {
             font-size: 40px;
@@ -579,9 +844,15 @@ header {
             font-size: 15px;
         }
 
-        .arrow-small {
+        .previous-arrow-small, .arrow-small {
             display: none;
         }
+
+        .previous-arrow-smaller {
+            display: block;
+            float: left;
+            transition: opacity 0.5s ease;
+        }  
 
         .arrow-smaller {
             display: block;
@@ -589,7 +860,7 @@ header {
             transition: opacity 0.5s ease;
         }   
 
-        .arrow-smaller:hover {
+        .previous-arrow-smaller:hover, .arrow-smaller:hover {
             opacity: 0.3;
         }
 
