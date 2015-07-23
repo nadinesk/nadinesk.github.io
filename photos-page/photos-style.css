@@ -384,12 +384,17 @@ header {
     display: none;
 }
 
+.previous-arrow {
+    float: left;
+    transition: opacity 0.5s ease;
+}
+
 .arrow {
     float: right;
     transition: opacity 0.5s ease;
 }
 
-.arrow:hover {
+.previous-arrow:hover, .arrow:hover {
     opacity: 0.3;
 }
 
