@@ -181,29 +181,26 @@ function toggleStuff() {
         $(".menu-list").toggle();
     })
 
-function floatHeader() {
 
-}
 
-if($(window).width() < 750) {
-    $("#cog")
-        .on("click", function(e) {
-            e.stopPropagation();
-            $("#cog p").show(); 
-    }),   
-    $("#cog2")
-        .on("click", function(e) {
-            e.stopPropagation();
-            $("#cog2 p").show(); 
-    });            
-}
-else {
-    alert($(window).width());
-}
-
-console.log($(window).width());
+if($(window).width() < 750) 
+{
+$("#cog")
+    .on("click", function(e) {
+    e.stopPropagation();
+    $("#cog p").toggle();     
+    
+});
+   $("#cog2")
+    .on("click", function(e) {
+    e.stopPropagation();
+    $("#cog2 p").toggle();     
+   
 });
 
+}
+
+});
 
 
 
