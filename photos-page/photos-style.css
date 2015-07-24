@@ -59,7 +59,7 @@ body {
 
 }
 
-.month-range-links ul li a:hover, .month-range-links ul li a:focus {
+.month-range-links ul li a:hover {
     opacity: 1;
     font-size: 22px;
     
@@ -410,8 +410,7 @@ header {
     
 }
 
-.odd-cog:hover .dates-text, .odd-cog-one:hover .dates-text, .even-cog:hover .dates-text, .even-cog-one:hover .dates-text, 
-.odd-cog:focus .dates-text, .odd-cog-one:focus .dates-text, .even-cog:focus .dates-text, .even-cog-one:focus .dates-text  {
+.odd-cog:hover .dates-text, .odd-cog-one:hover .dates-text, .even-cog:hover .dates-text, .even-cog-one:hover .dates-text {
         -moz-animation-duration: 1s;    
         -webkit-animation-duration: 1s;
         -moz-animation-name: slidetext; 
@@ -609,7 +608,7 @@ header {
     transition: color 0.5s ease;
 }
 
-.more-months h1 a:hover, .more-months h1 a:focus {
+.more-months h1 a:hover {
     color: white;
 }
 
@@ -627,7 +626,7 @@ header {
     transition: opacity 0.5s ease;
 }
 
-.previous-arrow:hover, .arrow:hover, .previous-arrow:focus, .arrow:focus {
+.previous-arrow:hover, .arrow:hover {
     opacity: 0.3;
 }
 
@@ -651,7 +650,7 @@ header {
     color: black;
 }
 
-.go-top-1 a:hover, .go-top a:hover, .go-top-1 a:focus, .go-top a:focus{
+.go-top-1 a:hover, .go-top a:hover {
     text-decoration: underline;
 }
 
@@ -732,7 +731,7 @@ header {
         transition: opacity 0.5s ease;
     }
 
-    .previous-arrow-small:hover, .arrow-small:hover, .previous-arrow-small:focus, .arrow-small:focus  {
+    .previous-arrow-small:hover, .arrow-small:hover {
             opacity: 0.3;
         }
 
@@ -807,7 +806,7 @@ header {
             transition: opacity 0.5s ease;
         }   
 
-        .previous-arrow-smaller:hover, .arrow-smaller:hover, .previous-arrow-smaller:focus, .arrow-smaller:focus{
+        .previous-arrow-smaller:hover, .arrow-smaller:hover {
             opacity: 0.3;
         }
 }
