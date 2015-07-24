@@ -192,7 +192,9 @@ if($(window).width() < 750) {
             $("#cog p").show(); 
     });            
 }
-
+else {
+    alert($(window).width());
+}
 
 console.log($(window).width());
 });
