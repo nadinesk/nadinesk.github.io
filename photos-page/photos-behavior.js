@@ -41,14 +41,14 @@ var $cog8 = $('#cog8');
 $(document).ready(function(){
      $("#cog")
     .on("click", function(e) {
-    e.stopPropagation();
+    
     $("#cog p").show();     
     
 });
 
 $("#cog2")
     .on("click", function(e) {
-    e.stopPropagation();
+    
     $("#cog2 p").show();      
 });
      $(this).scrollTop(0);
