@@ -205,7 +205,17 @@ if ($(window).width() <= 750) {
 		}
 
 	}); 
+    $('#cog3').click( function() {
+		if (($("#cog3").width() == 450) &&  ($("#cog3").height() == 338)) {	
+			$('#cog3').animate({ width: "200px" });
+			$('#cog3').animate({ height: "200px" });
+		}
+		else if (($("#cog3").width() == 200) && ($("#cog3").height() == 200)) {
+			$('#cog3').animate({ width: "450px" });
+			$('#cog3').animate({ height: "338px" });
+		}
 
+	}); 
 }
 
 });
