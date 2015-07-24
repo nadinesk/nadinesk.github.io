@@ -182,24 +182,19 @@ function toggleStuff() {
     })
 
 
-
-if($(window).width() < 750) 
-{
 $("#cog")
     .on("click", function(e) {
     e.stopPropagation();
-    $("#cog p").toggle();     
+    $("#cog p").show();     
     
 });
-}
-if($(window).width() < 750)     {
-   $("#cog2")
+
+$("#cog2")
     .on("click", function(e) {
     e.stopPropagation();
-    $("#cog2 p").toggle();      
+    $("#cog2 p").show();      
 });
    
-}   
 
 
 
