@@ -39,19 +39,7 @@ var $cog8 = $('#cog8');
 
 
 $(document).ready(function(){
-     $("#cog")
-    .on("click", function(e) {
-    
-    $("#cog p").show();     
-    
-});
 
-$("#cog2")
-    .on("click", function(e) {
-    
-    $("#cog2 p").show();      
-});
-     $(this).scrollTop(0);
 
 
 var scrollTop =$(window).scrollTop();
@@ -193,6 +181,7 @@ function toggleStuff() {
         $(".menu-list").toggle();
     })
 
+alert($(window).width()); 
 
 
    
