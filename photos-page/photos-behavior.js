@@ -185,7 +185,16 @@ function floatHeader() {
 
 }
 
+if($(window).width() < 750) {
+    $("#cog")
+        .on("click", function(e) {
+            e.stopPropagation();
+            $("#cog p").show(); 
+    });            
+}
 
+
+console.log($(window).width());
 });
 
 
