@@ -190,7 +190,7 @@ if($(window).width() < 750) {
         .on("click", function(e) {
             e.stopPropagation();
             $("#cog p").show(); 
-    });  
+    }),   
     $("#cog2")
         .on("click", function(e) {
             e.stopPropagation();
