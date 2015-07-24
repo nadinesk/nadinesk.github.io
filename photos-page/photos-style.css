@@ -708,6 +708,9 @@ header {
     }
 
 
+	.odd-cog:hover .dates-text, .odd-cog-one:hover .dates-text, .even-cog:hover .dates-text, .even-cog-one:hover .dates-text {
+        display: none;
+	}
 
    
 
