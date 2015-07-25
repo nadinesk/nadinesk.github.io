@@ -733,7 +733,7 @@ header {
     .odd-cog, .odd-cog-one, .even-cog, .even-cog-one {
         width: 400px;
         height: 301px;
-        border: 2px solid #F4FFFF;
+        border: 15px solid #F4FFFF;
 
         
     }
