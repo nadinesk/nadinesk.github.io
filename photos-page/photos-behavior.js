@@ -181,7 +181,7 @@ function toggleStuff() {
         $(".menu-list").toggle();
     })
 
-<<<<<<< HEAD
+
 if($(window).width() < 750) 
 {
     
