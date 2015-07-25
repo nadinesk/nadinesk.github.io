@@ -701,6 +701,11 @@ header {
 
 @media screen and (max-width: 750px)
 {
+   
+.container {
+    margin: 50px 50px;   
+    padding: 0px;
+}
     .main-header {
         font-size: 40px;
     }
