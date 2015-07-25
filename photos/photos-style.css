@@ -351,14 +351,14 @@ header {
     	}
 
 #cog {
-    background: url('http://www.khasachi.com/photos-page/photos/05.25.13.jpg'); 
+    background: url('photos/05.25.13.jpg'); 
     background-size: cover;
   
 }
 
 
 #cog3 {
-    background: url('http://www.khasachi.com/photos-page/photos/07.25.13.JPG'); 
+    background: url('photos/07.25.13.JPG'); 
     background-size: cover;
     
 }
@@ -384,14 +384,14 @@ header {
 }
 
 #cog2 {
-    background: url('http://www.khasachi.com/photos-page/photos/06.17.13.JPG'); 
+    background: url('photos/06.17.13.JPG'); 
     background-size: cover;
 }
 
 
 
 #cog4 {
-    background: url('http://www.khasachi.com/photos-page/photos/08.24.13.JPG'); 
+    background: url('photos/08.24.13.JPG'); 
     background-size: cover;
 }
 
@@ -418,7 +418,7 @@ header {
 }
 
 #cog5 {
-    background: url('http://www.khasachi.com/photos-page/photos/09.24.13.JPG'); 
+    background: url('photos/09.24.13.JPG'); 
     background-size: cover;
     
 }
@@ -438,7 +438,7 @@ header {
 
 
 #cog6 {
-    background: url('http://www.khasachi.com/photos-page/photos/10.19.13.JPG'); 
+    background: url('photos/10.19.13.JPG'); 
     background-size: cover;
 }
 
@@ -449,7 +449,7 @@ header {
 }
 
 #cog8 {
-    background: url('http://www.khasachi.com/photos-page/photos/12.23.13.JPG'); 
+    background: url('photos/12.23.13.JPG'); 
     background-size: cover;
 }
 
@@ -670,6 +670,15 @@ header {
 
 .go-top-1 {
     margin-top: 70px;
+}
+
+.copyright {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: black;
+    opacity: 0.4;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    font-size: 8px;
 }
 
 @media screen and (max-width: 850px)
