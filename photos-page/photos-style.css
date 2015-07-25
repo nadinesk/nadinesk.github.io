@@ -296,6 +296,11 @@ header {
     font-size: 40px;    
 }
 
+.month-phone {
+    display: none;
+    
+    text-align: center;
+}
 
 @-webkit-keyframes slidein {
 		from {

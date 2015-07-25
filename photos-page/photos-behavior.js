@@ -181,7 +181,26 @@ function toggleStuff() {
         $(".menu-list").toggle();
     })
 
-alert($(window).width()); 
+if($(window).width() < 750) 
+{
+    
+    $("#cog")
+    .on("click", function() {
+    $(this).width("300px"); 
+    $(this).height("226px"); 
+    $(".month-phone").toggle(); 
+})
+  if($("#cog").width() < 350) 
+  {
+     $("#cog")
+    .on("click", function() {
+    $(this).width("550px"); 
+    $(this).height("414px"); 
+  }) 
+}
+}
+
+console.log($("#cog").width());
 
 
    
