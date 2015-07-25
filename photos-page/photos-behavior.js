@@ -181,6 +181,7 @@ function toggleStuff() {
         $(".menu-list").toggle();
     })
 
+<<<<<<< HEAD
 if($(window).width() < 750) 
 {
     
@@ -207,6 +208,44 @@ console.log($("#cog").width());
 
 
 
+=======
+if ($(window).width() <= 750) {
+    $('#cog').click( function() {
+		if (($("#cog").width() == 450) &&  ($("#cog").height() == 338)) {	
+			$('#cog').animate({ width: "200px" });
+			$('#cog').animate({ height: "200px" });
+		}
+		else if (($("#cog").width() == 200) && ($("#cog").height() == 200)) {
+			$('#cog').animate({ width: "450px" });
+			$('#cog').animate({ height: "338px" });
+		}
+
+	}); 
+
+    $('#cog2').click( function() {
+		if (($("#cog2").width() == 450) &&  ($("#cog2").height() == 338)) {	
+			$('#cog2').animate({ width: "200px" });
+			$('#cog2').animate({ height: "200px" });
+		}
+		else if (($("#cog2").width() == 200) && ($("#cog2").height() == 200)) {
+			$('#cog2').animate({ width: "450px" });
+			$('#cog2').animate({ height: "338px" });
+		}
+
+	}); 
+    $('#cog3').click( function() {
+		if (($("#cog3").width() == 450) &&  ($("#cog3").height() == 338)) {	
+			$('#cog3').animate({ width: "200px" });
+			$('#cog3').animate({ height: "200px" });
+		}
+		else if (($("#cog3").width() == 200) && ($("#cog3").height() == 200)) {
+			$('#cog3').animate({ width: "450px" });
+			$('#cog3').animate({ height: "338px" });
+		}
+
+	}); 
+}
+>>>>>>> c72f965ef7a1e2246c430b6476e5dc625cc4f317
 
 });
 
