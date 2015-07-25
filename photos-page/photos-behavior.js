@@ -204,11 +204,6 @@ if($(window).width() < 750)
 console.log($("#cog").width());
 
 
-   
-
-
-
-=======
 if ($(window).width() <= 750) {
     $('#cog').click( function() {
 		if (($("#cog").width() == 450) &&  ($("#cog").height() == 338)) {	
@@ -245,7 +240,7 @@ if ($(window).width() <= 750) {
 
 	}); 
 }
->>>>>>> c72f965ef7a1e2246c430b6476e5dc625cc4f317
+
 
 });
 
