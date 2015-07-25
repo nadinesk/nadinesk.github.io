@@ -16,6 +16,10 @@ body {
     padding: 0px;
 }
 
+.photo-section {
+    margin: 0px;
+    padding: 0px;
+}
 #active-month {
     opacity: 3;
     font-size: 22px;
@@ -30,7 +34,7 @@ body {
 .month-range-links ul {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
-    
+    padding-left: 0px;
     text-align: center;    
 }
 
@@ -287,6 +291,7 @@ header {
     padding: 0px;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 80px;    
+
 }
 
 .day-year-text {
@@ -298,8 +303,11 @@ header {
 
 .month-phone {
     display: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 1px 1px #F4FFFF;
     
-    text-align: center;
 }
 
 @-webkit-keyframes slidein {
@@ -670,8 +678,12 @@ header {
     .main-header {
         font-size: 35px;
         padding: 0px;
-    
     }
+
+    .main-header h1 {
+    margin: 5px 0px 0px 0px;
+    letter-spacing: 2px;
+}
 
     .second-header-one {
         float: right;
@@ -692,6 +704,8 @@ header {
     .main-header {
         font-size: 40px;
     }
+
+ 
     .second-header-one {
         float: left;
         width: 100%;
@@ -699,6 +713,11 @@ header {
         display: block;
         font-size: 30px;
         padding-top: 10px;
+        margin: 0px;
+    }
+
+    .second-header-one p {
+        margin: 0px;
     }
 
     .main-header {
@@ -706,21 +725,34 @@ header {
         text-align: center;
     }
 
-    .odd-cog, .odd-cog-one, .even-cog, .even-cog-one{
-        width: 450px;
-        height: 338px;
-        border: 30px solid #F4FFFF;
-    }
+    .odd-cog, .odd-cog-one, .even-cog, .even-cog-one {
+        width: 400px;
+        height: 301px;
+        border: 2px solid #F4FFFF;
 
+        
+    }
 
 	.odd-cog:hover .dates-text, .odd-cog-one:hover .dates-text, .even-cog:hover .dates-text, .even-cog-one:hover .dates-text {
         display: none;
 	}
 
-   
+    .month-phone {
+        display: block;
+        float: left;
+        padding: 0px 10px 0px 0px;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+        .month-phone-may {
+        margin-bottom: 0px;
+    }
 
     .more-months {
         font-size: 30px;
+
+        
     }
 
     .previous-arrow, .arrow {
@@ -757,7 +789,7 @@ header {
 {
         .main-header {
             padding: 0px;
-            margin: 50px 0px 0px;
+            margin: 0px 0px 0px;
         }
 
         .second-header-one {
@@ -769,8 +801,7 @@ header {
          .odd-cog, .odd-cog-one, .even-cog, .even-cog-one {
             width: 350px;
             height: 263px;
-            border: 20px solid #F4FFFF;
-            margin-top: 50px;
+            
     }
 }
 
@@ -778,7 +809,7 @@ header {
 {
         .main-header {
             padding: 0px;
-            margin: 50px 0px 0px;
+            margin: 0px 0px 0px;
         }
 
         .second-header-one {
@@ -787,12 +818,11 @@ header {
             margin-top: 0px;
         }
 
-         .odd-cog, .odd-cog-one, .even-cog, .even-cog-one {
+        .odd-cog, .odd-cog-one, .even-cog, .even-cog-one {
             width: 300px;
             height: 226px;
-            border: 20px solid #F4FFFF;
-            margin-top: 50px;
-        }
+            
+        } 
 
         .more-months {
             font-size: 20px;
@@ -835,12 +865,12 @@ header {
             font-size: 20px;
         }
         
-        .odd-cog, .odd-cog-one, .even-cog, .even-cog-one {
+     /*   .odd-cog, .odd-cog-one, .even-cog, .even-cog-one {
             width: 200px;
             height: 150px;
             border: 15px solid #F4FFFF;
             margin-top: 30px;
-        }
+        } */
 
 
 
