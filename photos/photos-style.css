@@ -681,6 +681,14 @@ header {
     font-size: 8px;
 }
 
+.more-to-come {
+    float: right;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    padding-top: 5px;
+
+}
+
 @media screen and (max-width: 850px)
 {
    
@@ -768,7 +776,7 @@ header {
 
         
     }
-
+/*
     .previous-arrow, .arrow {
         display: none;
     }
@@ -788,7 +796,7 @@ header {
     .previous-arrow-small:hover, .arrow-small:hover {
             opacity: 0.3;
         }
-
+*/
 
 .go-top {
     text-align: center;
@@ -841,7 +849,7 @@ header {
         .more-months {
             font-size: 20px;
         }
-
+/*
         .previous-arrow-small, .arrow-small {
             display: none;
         }
@@ -861,6 +869,7 @@ header {
         .previous-arrow-smaller:hover, .arrow-smaller:hover {
             opacity: 0.3;
         }
+        */
 }
 
 @media screen and (max-width: 450px)
@@ -895,7 +904,7 @@ header {
         .more-months {
             font-size: 15px;
         }
-
+/*
         .previous-arrow-small, .arrow-small {
             display: none;
         }
@@ -915,6 +924,6 @@ header {
         .previous-arrow-smaller:hover, .arrow-smaller:hover {
             opacity: 0.3;
         }
-
+*/
 
 }
