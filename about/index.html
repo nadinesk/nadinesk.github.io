@@ -12,8 +12,9 @@
 
  <style>
  			body {
- 				background: url('circle_pattern.png'); 
-		    	background-repeat: repeat;
+				background-color: rgba(0,187,214,0.7); 	
+ 				/*background: url('circle_pattern.png'); 
+		    		background-repeat: repeat; */
  			}
  			
  			.container {
@@ -39,6 +40,7 @@
 			}
 
 			.image {
+				width: 10%
 				margin-left: 10%;
 				float: left;
 				
@@ -50,7 +52,7 @@
 			}
 
 			.about {
-				width: 50%;
+				width: 70%;
 				margin-top: 20px;
 				margin-left: 20px;
 				float: left;	
@@ -65,7 +67,7 @@
 				color: #824737;
 				line-height: 1.7;
 				letter-spacing: 1.5px;
-				font-size: 1em;
+				font-size: 1.5em;
 
 				
 			}
@@ -79,8 +81,14 @@
 				border-radius: 20px;
 			}
 
-			@media screen and (max-width: 630px)
+			@media screen and (max-width: 850px)
 			{
+				
+				.image {
+					width: 10%;
+					float: left;			
+				}
+				
 				.me-photo img {
 					width: 100px;
 					border-radius: 5px;
@@ -93,15 +101,84 @@
 				}
 
 				.about-para {
-					font-size: 0.9em;
+					font-size: 1.2em;
 
 				}
 
 				.about {
-					width: 60%;
+					width: 80%;
 				}
 
 			}
+
+			@media screen and (max-width: 630px)
+			{
+				
+				.container {
+					margin: 5px
+				}
+
+				.image {
+
+					float: left;			
+				}
+				
+				.me-photo img {
+					width: 100px;
+					border-radius: 5px;
+				}
+
+
+				.image img {
+					width: 40px;
+
+				}
+
+				.about-para {
+					font-size: 1.2em;
+
+				}
+
+				.about {
+					width: 80%;
+				}
+
+			}
+
+			@media screen and (max-width: 350px)
+			{
+				
+				.container, .header {
+					margin: 0px
+				}
+
+				.image {
+					float: left;			
+				}
+
+					
+				.me-photo img {
+					width: 80px;
+					border-radius: 5px;
+				}
+
+
+				.image img {
+					width: 40px;
+
+				}
+
+				.about-para {
+					font-size: 1.2em;
+
+				}
+
+				.about {
+					width: 80%;
+				}
+
+			}
+			
 			
 
  </style>
