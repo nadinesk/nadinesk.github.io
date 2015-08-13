@@ -11,14 +11,110 @@
     <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
 
  <style>
+ 			body {
+ 				background: url('circle_pattern.png'); 
+		    	background-repeat: repeat;
+ 			}
+ 			
+ 			.container {
+ 				
+ 				margin: 5% 20%;
+ 				
+ 				/*background-color: rgba(100,55,55,0.2);  */
+ 				
 
+ 			}
+
+ 			header {
+ 				margin: 5%;
+ 				color: #EF9D9C;
+				font-family: 'Merriweather', serif;
+				font-size: 2.6em;
+				font-weight: 700;
+				letter-spacing: 3px;
+				text-align: center;
+ 			}
+
+
+			.clearfix:after {
+			     visibility: hidden;
+			     display: block;
+			     font-size: 0;
+			     content: " ";
+			     clear: both;
+			     height: 0;
+			}
+
+			.image {
+				margin-left: 20%;
+			}
+
+			.image img {
+				float: left;
+			}
+
+			.about {
+				margin: 80px 40px 0px;
+				float: left;
+	
+			}
+
+			.about-detail {
+				margin: 5px 10%;
+			}
+
+			.about-para {
+				width: 50%;
+				float: left;
+				font-family: 'Oxygen', sans-serif;
+				color: #824737;
+				line-height: 1.7;
+				letter-spacing: 1.5px;
+				
+			}
+
+			.me-photo {
+				width: 40%;
+				float: right;
+			}
+
+			.me-photo img {
+				width: 200px;
+			}
+
+
+			
 
  </style>
 
 </head>
 
 <body>
-	hello, world
+	<div class="container clearfix">
+		<header class="clearfix">
+			
+				<div class="image">
+					<img width="100 px" src='palmtrace2.svg'/>
+				</div>
+				<div class="about">
+					<p class="about-text">About</p>
+				</div>
+			
+		</header>
+
+		<div class="about-detail">
+			<div class="me-photo">
+				<img src="me.png"/>
+			</div>
+			
+			<div class="about-para">
+				<p>Hi, I'm Nadine. I like creating things. I strive to get better so that I can put to (different-sized) devices what I envision. 
+				</p>
+			</div>
+		</div>
+		
+
+	</div>
 
 </body>
 
