@@ -17,22 +17,15 @@
  			}
  			
  			.container {
- 				
  				margin: 5% 20%;
- 				
- 				/*background-color: rgba(100,55,55,0.2);  */
- 				
-
  			}
 
  			header {
- 				margin: 5%;
+ 				
+ 				margin-top: 15%;
+ 				margin-left: 5%;
  				color: #EF9D9C;
-				font-family: 'Merriweather', serif;
-				font-size: 2.6em;
-				font-weight: 700;
 				letter-spacing: 3px;
-				text-align: center;
  			}
 
 
@@ -46,17 +39,21 @@
 			}
 
 			.image {
-				margin-left: 20%;
+				margin-left: 10%;
+				float: left;
+				
+				
 			}
 
 			.image img {
-				float: left;
+				width: 120px;
 			}
 
 			.about {
-				margin: 80px 40px 0px;
-				float: left;
-	
+				width: 50%;
+				margin-top: 20px;
+				margin-left: 20px;
+				float: left;	
 			}
 
 			.about-detail {
@@ -64,25 +61,47 @@
 			}
 
 			.about-para {
-				width: 50%;
-				float: left;
 				font-family: 'Oxygen', sans-serif;
 				color: #824737;
 				line-height: 1.7;
 				letter-spacing: 1.5px;
+				font-size: 1em;
+
 				
 			}
 
 			.me-photo {
-				width: 40%;
-				float: right;
+				text-align: center;
 			}
-
+			
 			.me-photo img {
 				width: 200px;
+				border-radius: 20px;
 			}
 
+			@media screen and (max-width: 630px)
+			{
+				.me-photo img {
+					width: 100px;
+					border-radius: 5px;
+				}
 
+
+				.image img {
+					width: 40px;
+
+				}
+
+				.about-para {
+					font-size: 0.9em;
+
+				}
+
+				.about {
+					width: 60%;
+				}
+
+			}
 			
 
  </style>
@@ -92,28 +111,20 @@
 <body>
 	<div class="container clearfix">
 		<header class="clearfix">
-			
 				<div class="image">
-					<img width="100 px" src='palmtrace2.svg'/>
+					<img src='palmtrace1.svg'/>
 				</div>
 				<div class="about">
-					<p class="about-text">About</p>
+					<div class="me-photo">
+						<img src="me.png"/>
+					</div>
+					<div class="about-para">
+						<p>Hi, I'm Nadine. I like creating things. I strive to get better so that I can put to (different-sized) devices what I envision. 
+						</p>	
+					</div>
 				</div>
 			
 		</header>
-
-		<div class="about-detail">
-			<div class="me-photo">
-				<img src="me.png"/>
-			</div>
-			
-			<div class="about-para">
-				<p>Hi, I'm Nadine. I like creating things. I strive to get better so that I can put to (different-sized) devices what I envision. 
-				</p>
-			</div>
-		</div>
-		
-
 	</div>
 
 </body>
