@@ -18,13 +18,50 @@
  			}
  			
  			.container {
- 				margin: 5% 20%;
+ 				margin: 5px;
+ 			}
+
+ 			.menu-bar img {
+ 				margin: 5px;
+ 				width: 30px;
+ 			}
+
+ 			.menu-list {
+ 				position: absolute;
+ 				display: none;
+ 				background-color: rgba(178, 210, 53,0.7);
+ 				border-radius: 5px;
+ 				padding: 3px;
+ 			}
+
+ 			.menu-list ul {
+ 				list-style-type: none;
+ 				margin: 5px;
+ 				padding: 0px;
+ 				font-family: 'Merriweather', serif;
+				color: #895881;
+				font-weight: 700;
+
+ 			}
+
+ 			.menu-list li:nth-child(2) {
+ 				padding-top: 7px;
+ 			}
+
+ 			.menu-places a, a:visited {
+ 				text-decoration: none;
+ 				color: #895881;
+ 			}
+
+			.menu-places a:hover {
+ 				text-decoration: underline;
+ 				color: white;
  			}
 
  			header {
  				
- 				margin-top: 15%;
- 				margin-left: 5%;
+ 				margin: 6% 20%;
+ 				
  				color: #EF9D9C;
 				letter-spacing: 3px;
  			}
@@ -187,6 +224,16 @@
 
 <body>
 	<div class="container clearfix">
+		<div class="menu-bar">
+			<img src="menu.svg"/>
+		</div>
+		<div class="menu-list">
+			<ul class="menu-places">
+				<li><a href="http://www.khasachi.com">Home</a></li>
+				<li><a href="http://www.khasachi.com/photos">Images</a></li>
+			</ul>
+
+		</div>
 		<header class="clearfix">
 				<div class="image">
 					<img src='palmtrace1.svg'/>
@@ -196,13 +243,21 @@
 						<img src="me.png"/>
 					</div>
 					<div class="about-para">
-						<p>Hi, I'm Nadine. I like creating things. I strive to get better so that I can put to (different-sized) devices what I envision. 
+						<p>Hi, I'm Nadine. I like creating things. I strive to get better so that I can put on the screen the things I envision. 
 						</p>	
 					</div>
 				</div>
 			
 		</header>
 	</div>
+
+	<script> 
+		    $(".menu-bar").click(function() {
+	        $(this).effect("bounce", { times: 3 }, "slow" );
+	        $(".menu-list").toggle();
+	    })
+
+	</script>
 
 </body>
 
