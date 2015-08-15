@@ -354,6 +354,111 @@ figure > img {
     }
 
 
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure
+{
+    margin-bottom: 15px;
+}
+
+/**
+ * Images
+ */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+/**
+ * Figures
+ */
+figure > img {
+    display: block;
+}
+
+figcaption {
+    font-size: calc(0.875 * 16px);
+}
+
+/**
+ * Lists
+ */
+ul, ol {
+    margin-left: 30px;
+}
+
+li > ul, li> ol {
+         margin-bottom: 0;
+}
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
+
+/**
+ * Links
+ */
+a {
+    color: #B28049;
+    text-decoration: none;
+}
+
+a:visited {
+        color: #B28049;
+        opacity: 1.2;
+}
+
+a:hover {
+        color: #B28049;
+        text-decoration: underline;
+}
+
+/**
+ * Blockquotes
+ */
+
+blockquote {
+    color: #828282;
+    border-left: 4px solid #e8e8e8
+    padding-left: 15px;
+    font-size: 18px;
+    letter-spacing: -1px;
+    font-style: italic;
+}
+
+blockquote > :last-child {
+        margin-bottom: 0;
+}
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+    font-size: 15px;
+    border: 1px solid #e8e8e8
+    border-radius: 3px;
+    background-color: #eef;
+}
+
+code {
+    padding: 1px 5px;
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: scroll;
+}
+
+pre  > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+}
+
 
 </style>
      
