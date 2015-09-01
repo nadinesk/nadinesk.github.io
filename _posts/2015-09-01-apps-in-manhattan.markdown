@@ -47,12 +47,12 @@ For my own entertainment, I use a few apps on the train during my commute, and a
 That basically covers most of the apps I use. It’s an ever-changing and evolving list. 
 
 Some Apps/Tech I Want: 
-* The Withings scale and HealthMate app. 
-* iPad air or mini. 
-* Apps on iPad: Paper app, iPhone wireframe apps
-* Apple watch. 
-* I want to use Apple Pay and Passbook more to pay for things. 
-* I want an app that makes it easier to get clothes in my style that fit me, easier, and to deliver to me. 
+*   The Withings scale and HealthMate app. 
+*   iPad air or mini. 
+*   Apps on iPad: Paper app, iPhone wireframe apps
+*   Apple watch. 
+*   I want to use Apple Pay and Passbook more to pay for things. 
+*   I want an app that makes it easier to get clothes in my style that fit me, easier, and to deliver to me. 
 
 
 
