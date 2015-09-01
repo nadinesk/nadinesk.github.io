@@ -27,14 +27,3 @@ I am thinking of ways to replace the purple hover/click boxes with something tha
 Customizing my blog using Jekyll and Github has been valuable for me. I have learned to use git much more, and it is pretty awesome/amazing. Customizing my blog with Jekyll also has given me a view into other aspects of CSS, and using SASS. 
 
 It's all been fun and I love it, and I'm really looking forward to making more. 
-
-
-
-
-
-
-
-
-
-
-
