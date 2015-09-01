@@ -54,6 +54,10 @@ Some Apps/Tech I Want:
 *   I want to use Apple Pay and Passbook more to pay for things. 
 *   I want an app that makes it easier to get clothes in my style that fit me, easier, and to deliver to me. 
 
+NK
+
+
+
 
 
 
