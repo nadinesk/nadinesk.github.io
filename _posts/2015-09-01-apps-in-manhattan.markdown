@@ -5,30 +5,6 @@ date:   2015-09-01 06:38
 categories: apps
 ---
 
-Twitter login/home page
-![twitter screen](http://khasachi.com/images/twitterscreen.png)
-
-
-My home page 
-![my screen](http://khasachi.com/images/myscreen.png)
-
-### Miles and Miles to Go, with a Few Initial Steps
-I've, at least, temporarily committed to a website design I made for my [home page](http://www.khasachi.com), inspired by the current Twitter login/home page. I used this design after several other iterations because it looked the most professional. I am getting back into web development, and this is a work in progress. 
-
-### Responsive Web Design and Web Interactivity 
-
-I used Bootstrap for my home page, which made responsive web design (for different screen sizes and devices) easier, because of their easy-to-understand grid system. I have left my site in a working state for mobile, but it is one of the things I will need to improve. 
-
-One challenge I faced in creating responsive web design, was switching from hovers over the boxes on desktops/laptops to clicks on divs (and anywhere off divs) on mobile. I used a lot of repetitive JQuery to make accomplish the change in user interactions with the site, and could refactor it to make it simpler. 
-
-I am thinking of ways to replace the purple hover/click boxes with something that not only looks better, but employs better web interactivity. I plan to learn more about and implement these methods (through JQuery and CSS Animations). 
-
-### Blogging with Jekyll and Using Github
-Customizing my blog using Jekyll and Github has been valuable for me. I have learned to use git much more, and it is pretty awesome/amazing. Customizing my blog with Jekyll also has given me a view into other aspects of CSS, and using SASS. 
-
-It's all been fun and I love it, and I'm really looking forward to making more. 
-
-
 I moved to New York City from Mountain View, CA, with my husband and my now-two-year-old son, in February. Mountain View is small, pretty, easy, convenient, place to live. New York City is a densely populated, crowded, vibrant, young, city. Aspects of my life have changed since we moved here because the weather is so different, I don’t have a car any more, there are less open, outdoor spaces, and there are more activity and food options. Some things have become more convenient in NYC, but some things have become less convenient. Mountain View is at the center of Silicon Valley, which, as everyone knows, is where so many apps and tech are created that are intended to make lives easier or better, or both. I have more of a need for these apps in NYC because of the way the city is set up, and I’ve been using them much more here. 
 
 ### Food
