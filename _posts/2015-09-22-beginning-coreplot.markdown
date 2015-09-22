@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Beginning CorePlot"
-date:   2015-09-022 06:35
+date:   2015-09-22 06:35
 categories: coreplot
 ---
 
