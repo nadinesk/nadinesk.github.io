@@ -13,8 +13,9 @@ I had to search around a little more and waste a little more time because I didn
 
 I crossed my fingers, and hoped for the best, and tried [this simple example](http://www.mobdevel.com/?p=96). 
 
-And then the joy, the, it was all worth it to get up at 5 am this morning. 
+And then the joy, the feeling that it was all worth it to get up at 5 am this morning. I got a graph! 
 
+![my screen](http://khasachi.com/images/photos/coreplot.png)
 
 Temporary joy before the next behemoth, as I tackle Core Plot and Core Data. 
 
