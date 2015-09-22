@@ -15,7 +15,7 @@ I crossed my fingers, and hoped for the best, and tried [this simple example](ht
 
 And then the joy, the feeling that it was all worth it to get up at 5 am this morning. I got a graph! 
 
-![my screen](http://khasachi.com/images/photos/coreplot.png)
+<img src="http://khasachi.com/images/photos/coreplot.png" style="width: 350px;"/>
 
 Temporary joy before the next behemoth, as I tackle Core Plot and Core Data. 
 
