@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Beginning CorePlot"
+title:  "Beginning Core Plot"
 date:   2015-09-22 06:35
-categories: coreplot
+categories: core plot, core data, ios development
 ---
 
 I'm getting started with [Core Plot](https://github.com/core-plot) in iOS. My goal is to use Core Plot to graph Core Data data. 
