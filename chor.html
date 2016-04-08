@@ -51,7 +51,7 @@ var svg = d3.select("body").append("svg")
 
 queue()
     .defer(d3.json, "https://bl.ocks.org/mbostock/raw/4090846/us.json")
-    .defer(d3.csv, "unemployment.csv", function(d) { rateById.set(d.id, +d.rate); })
+    .defer(d3.tsv, "unemployment.tsv", function(d) { rateById.set(d.id, +d.rate); })
     .await(ready);
 
 function ready(error, us) {
