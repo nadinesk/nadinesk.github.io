@@ -1,44 +1,39 @@
 ---
 layout: master
 ---
-<div class="post">
+<div class="full-row">
+      <div class="post-title"><p>{{ page.title }}</p></div>
+      <div class="post-date">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</div>
+  </div>
 
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
 
 
-  <article class="post-content">
+  <article class="post-text">
     {{ content }}
-  </article> 
+    </article>
 
 
-</div>
-
-<!--
-<div class="page-content">
-	<div class="wrapper"> 
-	  <article class="post-content">
-    	{{ content }}
- 	 </article> 
- 	</div>
-</div>s -->
+<div class="full-row">
 
 
-<div class="post-related"> 
+
+
+
+
         {% if page.next.url %} 
-        <div class="post-related__right"> 
+         <div class="next-post">
             <a href="{{page.next.url}}" title="next Post: 
 {{page.next.title}}">Next Post: {{page.next.title}}</a> 
         </div> 
         {% endif %} 
 
         {% if page.previous.url %} 
-        <div class="post-related__left"> 
+         </div>
+
+  <div class="previous-post">
             <a href="{{page.previous.url}}" title="Previous Post: 
 {{page.previous.title}}">Previous Post: {{page.previous.title}}</a> 
         </div> 
         {% endif %} 
-</div>`
+
