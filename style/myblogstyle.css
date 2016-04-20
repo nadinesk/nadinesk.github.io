@@ -5,13 +5,16 @@
 
 body {
   background-color: white;
-  background: url("../images/dots.png"); 
+ 
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
   font-family: 'Open Sans', sans-serif;
   background-position: cover;
 }
 
+.blog-main {
+	 background: url("../images/dots.png"); 
+}
 .list ul {
   list-style-type: none;
 }
