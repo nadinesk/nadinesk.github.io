@@ -1,6 +1,7 @@
 ---
 layout: master
 ---
+<div class="post-main">
 <div class="full-row">
       <div class="post-title"><p>{{ page.title }}</p></div>
       <div class="post-date">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</div>
@@ -20,20 +21,22 @@ layout: master
 
 
 
-
+   <div class="next-post">
         {% if page.next.url %} 
-         <div class="next-post">
+      
             <a href="{{page.next.url}}" title="next Post: 
 {{page.next.title}}">Next Post: {{page.next.title}}</a> 
-        </div> 
+       
         {% endif %} 
-
+ </div> 
+   <div class="previous-post">
         {% if page.previous.url %} 
-         </div>
+       
 
-  <div class="previous-post">
+
             <a href="{{page.previous.url}}" title="Previous Post: 
 {{page.previous.title}}">Previous Post: {{page.previous.title}}</a> 
-        </div> 
+     
         {% endif %} 
-
+   </div> 
+</div>
