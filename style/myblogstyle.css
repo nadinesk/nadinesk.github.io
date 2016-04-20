@@ -10,6 +10,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
   font-family: 'Open Sans', sans-serif;
   background-position: cover;
+  margin: 0px;
 }
 
 .blog-main {
