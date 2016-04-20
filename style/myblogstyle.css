@@ -18,6 +18,10 @@ body {
 position: absolute; top: 0px; right: 0; left: 0; margin: 0 auto;
   
 }
+
+.post-main {
+	background: white;
+}
 .list ul {
   list-style-type: none;
 }
