@@ -14,12 +14,8 @@ body {
 
 .blog-main {
 	 background: url("../images/dots.png"); 
-position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  width: 100%;
-  overflow:scroll;
+	margin: 0px;
+	padding: 0px;
   
 }
 .list ul {
