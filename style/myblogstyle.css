@@ -76,8 +76,8 @@ position: absolute; top: 0px; right: 0; left: 0; margin: 0 auto;
   text-align: center;
   color: #BE6E00;
   font-size: 2.0em;
-  padding-bottom: 10px;
-  border-bottom: 0.5px solid rgba(75, 43, 0, 0.3);
+  padding-bottom: 20px;
+  
   
 }
 
@@ -93,7 +93,7 @@ position: absolute; top: 0px; right: 0; left: 0; margin: 0 auto;
   color: #0077BE;
   font-size: 1.0em;
   padding-bottom: 3px;
-  border-top: 0.5px solid rgba(75, 43, 0, 0.3);
+  
 }
 
 .post-text {
