@@ -81,7 +81,7 @@ position: absolute; top: 0px; right: 0; left: 0; margin: 0 auto;
 }
 
 .post-title p {
-  padding-top: 5%;
+  padding-top: 10px;
 }
 
 .post-date {
@@ -95,7 +95,7 @@ position: absolute; top: 0px; right: 0; left: 0; margin: 0 auto;
 }
 
 .post-text {
-  margin-top: 10px;
+  margin-top: px;
   margin-left: 15%;
   margin-right: 15%;
   font-size: 1.2em;
