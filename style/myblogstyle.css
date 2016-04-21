@@ -87,10 +87,11 @@ position: absolute; top: 0px; right: 0; left: 0; margin: 0 auto;
 .post-date {
   margin-left: 20%;
   margin-right: 20%;
+  margin-top: 20px;
   text-align: center;
   color: #0077BE;
   font-size: 1.0em;
-  padding-bottom: 10px;
+  padding-bottom: 3px;
 }
 
 .post-text {
