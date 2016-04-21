@@ -105,9 +105,9 @@ position: absolute; top: 0px; right: 0; left: 0; margin: 0 auto;
   margin: 20px;
 }
 
-h1, h2 {
+h1, h2, h3 {
   color: #0077BE;
-  font-weight: normal;
+  
 }
 
 .post-text ul {
@@ -168,11 +168,13 @@ img {
     }
 
     .previous-post {
+      font-size: 0.8em;
       padding-bottom: 20px;
     }
 
     .next-post {
-      padding-top: 5px;
+      font-size: 0.8em;
+      padding-top: 20px;
     }
 }
 
@@ -204,11 +206,13 @@ img {
     }
 
     .previous-post {
+      font-size: 0.8em;
       padding-bottom: 20px;
     }
 
     .next-post {
-      padding-top: 5px;
+      font-size: 0.8em;
+      padding-top: 20px;
     }
 }
 
@@ -237,11 +241,13 @@ img {
     }
 
     .previous-post {
+      font-size: 0.8em;
       padding-bottom: 20px;
     }
 
     .next-post {
-      padding-top: 5px;
+      font-size: 0.8em;
+      padding-top: 20px;
     }
 
     .post-text {
