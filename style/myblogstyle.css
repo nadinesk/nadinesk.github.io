@@ -197,8 +197,8 @@ img {
 
     .post-text {
       font-size: 1em;
-      margin-left: 5%;
-      margin-right: 5%;
+      margin-left: 5px;
+      margin-right: 5px;
     }
     img {
       margin-left: 0;
@@ -257,8 +257,8 @@ img {
     }
 
     .post-text {
-      margin-left: 10%;
-      margin-right: 10%;
+      margin-left: 10px;
+      margin-right: 10px;
     }
 }
 
@@ -279,8 +279,8 @@ img {
     }
 
     .post-text {
-      margin-left: 15%;
-      margin-right: 15%;
+      margin-left: 25px;
+      margin-right: 25px;
     }
 
 }
