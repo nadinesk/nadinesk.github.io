@@ -66,13 +66,13 @@ position: absolute; top: 0px; right: 0; left: 0; margin: 0 auto;
   padding-bottom: 20px;
 }
 .full-row {
-  background-color: #3C94C9;
-  
+  background-color: #d3d3d3;
+
 }
 
 .post-title {
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 20%;
+  margin-right: 20%;
   text-align: center;
   color: #BE6E00;
   height: 100px;
@@ -85,8 +85,8 @@ position: absolute; top: 0px; right: 0; left: 0; margin: 0 auto;
 }
 
 .post-date {
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 20%;
+  margin-right: 20%;
   text-align: center;
   color: #0077BE;
   font-size: 1.0em;
@@ -95,14 +95,19 @@ position: absolute; top: 0px; right: 0; left: 0; margin: 0 auto;
 
 .post-text {
   margin-top: 50px;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
   font-size: 1.5em;
   line-height: 150%;
 }
 
 .post-text p {
   margin: 10px;
+}
+
+h1, h2 {
+  color: #0077BE;
+  font-weight: normal;
 }
 
 img {
@@ -182,6 +187,8 @@ img {
 
     .post-text {
       font-size: 1em;
+      margin-left: 5%;
+      margin-right: 5%;
     }
     img {
       margin-left: 0;
@@ -232,6 +239,11 @@ img {
     .next-post {
       padding-top: 5px;
     }
+
+    .post-text {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
 }
 
 
@@ -248,6 +260,11 @@ img {
       margin-left: 10%;
       margin-right: 10%;
       width: 70%;
+    }
+
+    .post-text {
+      margin-left: 15%;
+      margin-right: 15%;
     }
 
 }
