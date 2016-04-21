@@ -98,8 +98,8 @@ position: absolute; top: 0px; right: 0; left: 0; margin: 0 auto;
 
 .post-text {
   margin-top: px;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 15%;
+  margin-right: 15%;
   font-size: 1.2em;
   line-height: 170%;
 }
@@ -325,8 +325,8 @@ img {
 {
 .post-text {
   
-  margin-left: 33%;
-  margin-right: 33%;
+  margin-left: 25%;
+  margin-right: 25%;
   
   }
 }
