@@ -78,7 +78,8 @@ position: absolute; top: 0px; right: 0; left: 0; margin: 0 auto;
   
   font-size: 2.0em;
   padding-bottom: 10px;
-  border-bottom: 0.5px solid rgba(75, 43, 0, 0.3)
+  border-bottom: 0.5px solid rgba(75, 43, 0, 0.3);
+  border-top: 0.5px solid rgba(75, 43, 0, 0.3)
 }
 
 .post-title p {
