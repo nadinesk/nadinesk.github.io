@@ -149,6 +149,8 @@ img {
     }
 
     .post-title {
+      margin-left: 5px;
+      margin-right: 5px;
       padding-bottom: 10px;
       font-size: 1.5em;
     }
@@ -188,6 +190,8 @@ img {
     }
 
     .post-title {
+      margin-left: 10px;
+      margin-right: 10px;
       font-size: 1.8em;
     }
 
@@ -228,6 +232,8 @@ img {
     .post-title {
       font-size: 2.1em;
       padding-bottom: 40px;
+      margin-left: 15px;
+      margin-right: 15px;
     }
 
     img {
