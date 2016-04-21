@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Update"
+date:   2016-04-21 06:35
+categories: programming
+---
+
+What have I been doing since my last post in September?
+
+I developed and submitted my HealthyZen app, which graphs weight, steps, and mood data. I used Objective-C, the Core Plot library, oAuth, the Withings API, and HealthKit. That was a big project for me that helped me learn a lot about programming in general.
+
+I developed and submitted my RunGaosl app. This was a quick one that I tried to keep very simple, and turn around quickly. 
+
+It feels like I've been doing more, but I guess not...I'm continuously learning and learning that there are more and more things I don't know. 
+
+I'm currently trying to learn the back-end part of things. I'm trying to learn how to use Node.js, Express, Passport, and Heroku to deploy a web application. I'll try to keep progress of that here. 
+
+NK
