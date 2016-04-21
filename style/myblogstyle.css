@@ -118,11 +118,10 @@ h1, h2, h3 {
 }
 
 img {
-  margin-left: 30%;
-  margin-right: 30%;
-  width: 30%;
+  width: 500px;
   margin-top: 25px;
   margin-bottom: 25px;
+  text-align: center;
 }
 
 .previous-post {
