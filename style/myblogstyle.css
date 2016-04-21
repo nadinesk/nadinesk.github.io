@@ -110,6 +110,10 @@ h1, h2 {
   font-weight: normal;
 }
 
+.post-text ul {
+  margin-left: 20px;
+}
+
 img {
   margin-left: 30%;
   margin-right: 30%;
