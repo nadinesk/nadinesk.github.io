@@ -98,8 +98,8 @@ position: absolute; top: 0px; right: 0; left: 0; margin: 0 auto;
 
 .post-text {
   margin-top: px;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 20%;
+  margin-right: 20%;
   font-size: 1.2em;
   line-height: 170%;
 }
@@ -319,5 +319,15 @@ img {
     .list {
       font-size: 1.0em;
     }
+}
+
+@media screen and (max-width: 1300px)
+{
+.post-text {
+  
+  margin-left: 33%;
+  margin-right: 33%;
+  
+  }
 }
 
