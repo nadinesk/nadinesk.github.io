@@ -10,7 +10,7 @@ layout: master
 
 <div class = "list">
   <ul class="post-list">
-    {% for post in site.posts %}
+    {% for post in site.posts limit: 40 %}
       <li><span>{{ post.date | date:"%m/%d/%Y" }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
