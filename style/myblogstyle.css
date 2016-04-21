@@ -66,7 +66,7 @@ position: absolute; top: 0px; right: 0; left: 0; margin: 0 auto;
   padding-bottom: 20px;
 }
 .full-row {
-  background-color: #d3d3d3;
+  /*background-color: #d3d3d3; */
 
 }
 
@@ -76,7 +76,7 @@ position: absolute; top: 0px; right: 0; left: 0; margin: 0 auto;
   text-align: center;
   color: #BE6E00;
   height: 100px;
-  font-size: 2.4em;
+  font-size: 2.0em;
   padding-bottom: 20px;
 }
 
@@ -117,7 +117,7 @@ h1, h2, h3 {
 img {
   margin-left: 30%;
   margin-right: 30%;
-  width: 500px;
+  width: 30%;
   margin-top: 25px;
   margin-bottom: 25px;
 }
