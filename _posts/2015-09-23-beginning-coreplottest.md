@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Beginning Core Plot"
+title:  "Arizona"
 date:   2015-09-22 06:35
 categories: core plot, core data, ios development
 ---
