@@ -121,7 +121,8 @@ img {
   width: 500px;
   margin-top: 25px;
   margin-bottom: 25px;
-  text-align: center;
+  display: block;
+  margin:auto;
 }
 
 .previous-post {
