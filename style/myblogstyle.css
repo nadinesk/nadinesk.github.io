@@ -321,7 +321,7 @@ img {
     }
 }
 
-@media screen and (max-width: 1300px)
+@media screen and (min-width: 1300px)
 {
 .post-text {
   
