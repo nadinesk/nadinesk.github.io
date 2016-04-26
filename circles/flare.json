@@ -2,11 +2,7 @@
   "name": "flare", 
   "children": [
     {
-      "name":"the things", 
-      "children":[
-        {
-          
-        
+      
       "name":"cook", 
       "children": [
         {
@@ -90,8 +86,7 @@
     }
 
   ]
-    }
-        ]
+   
       
 }
 
