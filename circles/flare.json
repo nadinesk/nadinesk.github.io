@@ -11,7 +11,7 @@
             "name":"yes", 
             "children": [
             {"name":"23", "size": 500}, 
-            {"name":"25", "size": 500},    
+            {"name":"25", "size": 500}
            
             ]
           }, 
