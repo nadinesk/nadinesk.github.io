@@ -11,13 +11,7 @@
             "name":"yes", 
             "children": [
             {"name":"23", "size": 500}, 
-            {"name":"23", "size": 500}, 
-            {"name":"23", "size": 500}, 
-            {"name":"23", "size": 500}, 
-            {"name":"23", "size": 500}, 
-            {"name":"23", "size": 500}, 
-            {"name":"23", "size": 500}, 
-            {"name":"23", "size": 500}
+            {"name":"25", "size": 500},    
            
             ]
           }, 
@@ -25,15 +19,8 @@
             "name":"no", 
             "children": [
            
-            {"name":"24", "size": 500}, 
-                        {"name":"23", "size": 500}, 
-            {"name":"23", "size": 500}, 
-            {"name":"23", "size": 500}, 
-            {"name":"23", "size": 500}, 
-            {"name":"23", "size": 500}, 
-            {"name":"23", "size": 500}, 
-            {"name":"23", "size": 500}, 
-            {"name":"23", "size": 500}
+            {"name":"24", "size": 500}
+                        
             ]
           }
           ]
@@ -52,8 +39,8 @@
           {
             "name":"yes", 
             "children": [
-            
-            {"name":"24", "size": 500}
+            {"name":"24", "size": 500}, 
+            {"name":"26", "size": 500}
             ]
           }, 
           {
@@ -87,7 +74,7 @@
             "name":"no", 
             "children": [
             {"name":"23", "size": 500},
-            {"name":"24", "size": 500}
+            {"name":"25", "size": 500}
             
             ]
           }
