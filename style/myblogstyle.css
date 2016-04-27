@@ -41,16 +41,20 @@ position: absolute; top: 0px; right: 0; left: 0; margin: 0 auto;
   text-decoration: none;
 }
 
-.name a:hover, .subtitle a:hover {
-  color: #ffffff;
+.name a:hover {
+  color:  #BE6E00;
   text-decoration: none;
 }
 
 .subtitle a {
-  color: #0077BE;
+  color: #BE6E00;
   text-decoration: none;
 }
 
+.subtitle a:hover {
+  color:   #0077BE;
+  text-decoration: none;
+}
 .subtitle {
   margin-left: 30%;
   margin-right: 30%;
