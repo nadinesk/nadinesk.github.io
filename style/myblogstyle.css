@@ -76,6 +76,11 @@ position: absolute; top: 0px; right: 0; left: 0; margin: 0 auto;
   text-decoration: none;
 }
 
+.list a:hover {
+   color: #BE6E00;
+   text-decoration: none;
+}
+
 .list li {
   padding-bottom: 20px;
 }
