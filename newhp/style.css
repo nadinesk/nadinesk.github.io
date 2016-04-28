@@ -154,13 +154,13 @@ body {
        -webkit-box-shadow:    10px 10px 20px #efffef;
        box-shadow:        10px 10px 20px #efffef;
        border: 0px;
-       height: 100%;
+       
        margin-left: 25%;
        margin-right: 25%;
   }
 
   .name {
-    font-size: 30px;
+    font-size: 40px;
     width: 100%;
     margin-left: 25%;
     margin-right: 25%;
@@ -168,7 +168,7 @@ body {
   }
 
   .content-list {
-    font-size: 25px;
+    font-size: 35px;
   }
 }
 
