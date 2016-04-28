@@ -30,7 +30,6 @@ body {
   padding-bottom: 0%;
   font-size: 40px;
   color: #ff0332;
-  border: 1px solid black;
   width: 550px;
 
 }
@@ -39,7 +38,6 @@ body {
   margin-left: 33%;
   margin-right: 33%;
   background-color: white;
-  border: 1px solid black;
   width: 550px;
   height: 550px;
   border-radius: 50%;
