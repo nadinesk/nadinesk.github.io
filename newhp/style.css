@@ -30,6 +30,7 @@ body {
   padding-bottom: 0%;
   font-size: 40px;
   color: #ff0332;
+  border: 1px solid black;
 
 }
 
@@ -37,7 +38,7 @@ body {
   margin-left: 33%;
   margin-right: 33%;
   background-color: white;
-  border-radius: 50%;
+  border: 1px solid black;
   width: 500px;
   height: 500px;
   -moz-box-shadow:     10px 10px 20px #efffef;
