@@ -24,8 +24,6 @@ body {
 .name {
   margin-top: 2.5%;
   margin-bottom: 2.5%;
-  margin-left: 33%;
-  margin-right: 33%;
   padding-top: 0%;
   padding-bottom: 0%;
   font-size: 50px;
@@ -35,15 +33,20 @@ body {
 }
 
 .content-list-main {
-  margin-left: 33%;
-  margin-right: 33%;
   background-color: white;
-  width: 600px;
-  height: 600px;
   border-radius: 50%;
+  /*
   -moz-box-shadow:     10px 10px 20px #efffef;
    -webkit-box-shadow:    10px 10px 20px #efffef;
    box-shadow:        10px 10px 20px #efffef;
+   */
+
+   background: red; /* For browsers that do not support gradients */
+   background: -webkit-linear-gradient(white,#ffeef1); /* For Safari 5.1 to 6.0 */
+   background: -o-linear-gradient(white,#ffeef1); /* For Opera 11.1 to 12.0 */
+   background: -moz-linear-gradient(white,#ffeef1); /* For Firefox 3.6 to 15 */
+   background: linear-gradient(white,#ffeef1); /* Standard syntax */
+
 }
 
 
@@ -81,26 +84,35 @@ body {
 }
 
 
-@media screen and (min-width: 480px)
-              and (max-width: 640px)
+@media screen and (min-width: 1600px)
+
 {
   .content-list-main {
-      background-color: white;
-        border-radius: 5px;
-      -moz-box-shadow:    none;
-       -webkit-box-shadow:     none;
-       box-shadow:           none;
-       border: 0px;
-       height: 100%;
-       margin-left: 25%;
-       margin-right: 25%;
+       margin-left: 37.5%;
+       margin-right: 37.5%;
+  }
+
+  .name {
+    margin-left: 37.5%;
+    margin-right: 37.5%;
+
+  }
+
+}
+
+@media screen and (min-width: 500px)
+              and (max-width: 600px)
+{
+  .content-list-main {
+       margin-left: 15%;
+       margin-right: 15%;
   }
 
   .name {
     font-size: 30px;
-    width: 100%;
-    margin-left: 25%;
-    margin-right: 25%;
+
+    margin-left: 15%;
+    margin-right: 15%;
 
   }
 
@@ -110,26 +122,20 @@ body {
 
 }
 
-@media screen and (min-width: 640px)
-              and (max-width: 768px)
+@media screen and (min-width: 600px)
+              and (max-width: 780px)
 {
   .content-list-main {
-      background-color: white;
-      border-radius: 5px;
-      -moz-box-shadow:     10px 10px 20px #efffef;
-       -webkit-box-shadow:    10px 10px 20px #efffef;
-       box-shadow:        10px 10px 20px #efffef;
-       border: 0px;
-       height: 100%;
-       margin-left: 25%;
-       margin-right: 25%;
+
+       margin-left: 20%;
+       margin-right: 20%;
   }
 
   .name {
     font-size: 30px;
     width: 100%;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 20%;
+    margin-right: 20%;
 
   }
 
@@ -143,25 +149,18 @@ body {
 }
 
 
-@media screen and (min-width: 768px)
+@media screen and (min-width: 780px)
               and (max-width: 1024px)
 {
 
   .content-list-main {
       background-color: white;
-      border-radius: 5px;
-      -moz-box-shadow:     10px 10px 20px #efffef;
-       -webkit-box-shadow:    10px 10px 20px #efffef;
-       box-shadow:        10px 10px 20px #efffef;
-       border: 0px;
-       
        margin-left: 25%;
        margin-right: 25%;
   }
 
   .name {
     font-size: 40px;
-    width: 100%;
     margin-left: 25%;
     margin-right: 25%;
 
@@ -182,14 +181,36 @@ body {
     font-size: 30px;
   }
 
+  .content-list-main {
+      margin-left: 33%;
+       margin-right: 33%;
+  }
+
+  .name {
+    margin-left: 33%;
+    margin-right: 33%;
+
+  }
+
 }
 
 @media screen and (min-width: 1260px)
-              and (max-width: 1480px)
+              and (max-width: 1600px)
 {
   .content-list {
     font-size: 30px;
   }
+  .content-list-main {
+      margin-left: 33%;
+       margin-right: 33%;
+  }
+
+  .name {
+    margin-left: 33%;
+    margin-right: 33%;
+
+  }
+
 
 
 }
@@ -212,9 +233,6 @@ body {
     margin-right: 25%;
     width: 50%;
   }
-
-
-
 }
 */
 @media screen and (max-width: 1366px)
@@ -228,30 +246,30 @@ body {
 
 }
 
-@media screen and (max-width: 480px)
+@media screen and (max-width: 500px)
 {
   .content-list {
     font-size: 25px;
   }
   .content-list-main {
-      background-color: white;
-      border-radius: 5px;
-      -moz-box-shadow:     10px 10px 20px #efffef;
-       -webkit-box-shadow:    10px 10px 20px #efffef;
-       box-shadow:        10px 10px 20px #efffef;
-       border: 0px;
-       height: 100%;
-       margin-left: 25%;
-       margin-right: 25%;
+       margin-left: 10%;
+       margin-right: 10%;
   }
 
   .name {
     font-size: 25px;
-    width: 100%;
-    margin-left: 25%;
-    margin-right: 25%;
-
+    margin-left: 10%;
+    margin-right: 10%;
   }
+
+  .content-list li:nth-child(2), .content-list li:nth-child(3) {
+    padding-top: 25px;
+  }
+
+  .content-list li:nth-child(1) {
+    padding-top: 30px;
+  }
+
 }
 
 /*
