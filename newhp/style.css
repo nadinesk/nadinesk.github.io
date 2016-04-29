@@ -47,6 +47,8 @@ body {
    background: -moz-linear-gradient(white,#ffeef1); /* For Firefox 3.6 to 15 */
    background: linear-gradient(white,#ffeef1); /* Standard syntax */
 
+
+
 }
 
 
@@ -54,12 +56,28 @@ body {
   list-style-type: none;
   text-align: center;
   font-size: 45px;
+  -webkit-transition: all 1s ease;
+   -moz-transition: all 1s ease;
+     -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+        transition: all 1s ease;
+}
+
+.content-list:hover {
+
+  font-size: 48px;
 }
 
 .content-list a {
   text-decoration: none;
   color: #00b400;
 }
+
+.content-list a:hover {
+    color: #ff0332;
+}
+
+
 
 .content-list li:nth-child(2), .content-list li:nth-child(3) {
   padding-top: 50px;
@@ -133,6 +151,12 @@ body {
     font-size: 25px;
   }
 
+  .content-list:hover {
+
+    font-size: 30px;
+  }
+
+
 }
 
 @media screen and (min-width: 600px)
@@ -155,6 +179,12 @@ body {
   .content-list {
     font-size: 25px;
   }
+
+  .content-list:hover {
+
+    font-size: 30px;
+  }
+
 
 
 
@@ -182,6 +212,12 @@ body {
   .content-list {
     font-size: 35px;
   }
+
+  .content-list:hover {
+
+    font-size: 40px;
+  }
+
 }
 
 
@@ -205,6 +241,12 @@ body {
 
   }
 
+  .content-list:hover {
+
+    font-size: 35px;
+  }
+
+
 }
 
 @media screen and (min-width: 1260px)
@@ -223,9 +265,6 @@ body {
     margin-right: 33%;
 
   }
-
-
-
 }
 
 @media screen and (min-width: 1480px)
@@ -287,6 +326,12 @@ body {
     font-size: 12px;
 
   }
+
+  .content-list:hover {
+
+    font-size: 30px;
+  }
+
 
 }
 
