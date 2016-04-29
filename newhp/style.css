@@ -41,7 +41,7 @@ body {
    box-shadow:        10px 10px 20px #efffef;
    */
 
-   background: red; /* For browsers that do not support gradients */
+   background: #ffeef1; /* For browsers that do not support gradients */
    background: -webkit-linear-gradient(white,#ffeef1); /* For Safari 5.1 to 6.0 */
    background: -o-linear-gradient(white,#ffeef1); /* For Opera 11.1 to 12.0 */
    background: -moz-linear-gradient(white,#ffeef1); /* For Firefox 3.6 to 15 */
@@ -72,17 +72,30 @@ body {
 
 
 .footer {
-  border: 1px solid black;
   position: fixed;
   bottom: 0;
   left: 0;
-  text-align:center;
+  padding-left: 10px;
+  text-align:left;
   width: 100%;
-  height: 15px;
-  margin-top: -50px;
-  background-color: gray;
+  height: 30px;
+  margin-top: -30px;
+  color: #ff0332;
+  background: #ffeef1; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#ffeef1, white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#ffeef1, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#ffeef1, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#ffeef1, white); /* Standard syntax */
+  padding-bottom: 10px;
 }
 
+.footer a, .footer a:visited {
+  color: #00b400;
+}
+
+.footer a {
+  text-decoration: none;
+}
 
 @media screen and (min-width: 1600px)
 
@@ -268,6 +281,11 @@ body {
 
   .content-list li:nth-child(1) {
     padding-top: 30px;
+  }
+
+  .footer {
+    font-size: 12px;
+
   }
 
 }
