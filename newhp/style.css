@@ -24,8 +24,6 @@ body {
 .name {
   margin-top: 2.5%;
   margin-bottom: 2.5%;
-  margin-left: 33%;
-  margin-right: 33%;
   padding-top: 0%;
   padding-bottom: 0%;
   font-size: 50px;
@@ -34,6 +32,7 @@ body {
 
 }
 
+<<<<<<< HEAD
 #content-list-main {
   margin-left: 33%;
   margin-right: 33%;
@@ -47,6 +46,24 @@ body {
     background: -o-linear-gradient(white, #ffeef1); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(white, #ffeef1); /* For Firefox 3.6 to 15 */
     background: linear-gradient(white, #ffeef1); /* Standard syntax */
+=======
+.content-list-main {
+  background-color: white;
+  border-radius: 50%;
+  /*
+  -moz-box-shadow:     10px 10px 20px #efffef;
+   -webkit-box-shadow:    10px 10px 20px #efffef;
+   box-shadow:        10px 10px 20px #efffef;
+   */
+
+   background: #ffeef1; /* For browsers that do not support gradients */
+   background: -webkit-linear-gradient(white,#ffeef1); /* For Safari 5.1 to 6.0 */
+   background: -o-linear-gradient(white,#ffeef1); /* For Opera 11.1 to 12.0 */
+   background: -moz-linear-gradient(white,#ffeef1); /* For Firefox 3.6 to 15 */
+   background: linear-gradient(white,#ffeef1); /* Standard syntax */
+
+
+>>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
 
 }
 
@@ -55,12 +72,28 @@ body {
   list-style-type: none;
   text-align: center;
   font-size: 45px;
+  -webkit-transition: all 1s ease;
+   -moz-transition: all 1s ease;
+     -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+        transition: all 1s ease;
+}
+
+.content-list:hover {
+
+  font-size: 48px;
 }
 
 .content-list a {
   text-decoration: none;
   color: #00b400;
 }
+
+.content-list a:hover {
+    color: #ff0332;
+}
+
+
 
 .content-list li:nth-child(2), .content-list li:nth-child(3) {
   padding-top: 50px;
@@ -73,21 +106,35 @@ body {
 
 
 .footer {
-  border: 1px solid black;
   position: fixed;
   bottom: 0;
   left: 0;
-  text-align:center;
+  padding-left: 10px;
+  text-align:left;
   width: 100%;
-  height: 15px;
-  margin-top: -50px;
-  background-color: gray;
+  height: 30px;
+  margin-top: -30px;
+  color: #ff0332;
+  background: #ffeef1; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#ffeef1, white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#ffeef1, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#ffeef1, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#ffeef1, white); /* Standard syntax */
+  padding-bottom: 10px;
 }
 
+.footer a, .footer a:visited {
+  color: #00b400;
+}
 
-@media screen and (min-width: 480px)
-              and (max-width: 640px)
+.footer a {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 1600px)
+
 {
+<<<<<<< HEAD
   #content-list-main {
       background-color: white;
         margin-left: 20%;
@@ -98,35 +145,81 @@ body {
        border: 0px;
        
       
+=======
+  .content-list-main {
+       margin-left: 37.5%;
+       margin-right: 37.5%;
+  }
+
+  .name {
+    margin-left: 37.5%;
+    margin-right: 37.5%;
+
+  }
+
+}
+
+@media screen and (min-width: 500px)
+              and (max-width: 600px)
+{
+  .content-list-main {
+       margin-left: 15%;
+       margin-right: 15%;
+>>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
   }
 
   .name {
     font-size: 30px;
+<<<<<<< HEAD
     width: 100%;
     
+=======
+
+    margin-left: 15%;
+    margin-right: 15%;
+
+>>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
   }
 
   .content-list {
     font-size: 25px;
   }
 
+  .content-list:hover {
+
+    font-size: 30px;
+  }
+
+
 }
 
-@media screen and (min-width: 640px)
-              and (max-width: 768px)
+@media screen and (min-width: 600px)
+              and (max-width: 780px)
 {
+<<<<<<< HEAD
   #content-list-main {
       background-color: white;
       border-radius: 50%;
       
        border: 1px;
       
+=======
+  .content-list-main {
+
+       margin-left: 20%;
+       margin-right: 20%;
+>>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
   }
 
   .name {
     font-size: 30px;
     width: 100%;
+<<<<<<< HEAD
     
+=======
+    margin-left: 20%;
+    margin-right: 20%;
+>>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
 
   }
 
@@ -134,18 +227,25 @@ body {
     font-size: 25px;
   }
 
+  .content-list:hover {
+
+    font-size: 30px;
+  }
+
+
 
 
 
 }
 
 
-@media screen and (min-width: 768px)
+@media screen and (min-width: 780px)
               and (max-width: 1024px)
 {
 
   .content-list-main {
       background-color: white;
+<<<<<<< HEAD
       border-radius: 50%;
       
        border: 0px;
@@ -153,12 +253,21 @@ body {
       
        
     
+=======
+       margin-left: 25%;
+       margin-right: 25%;
+>>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
   }
 
   .name {
     font-size: 40px;
+<<<<<<< HEAD
     width: 100%;
     
+=======
+    margin-left: 25%;
+    margin-right: 25%;
+>>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
 
   }
 
@@ -166,6 +275,14 @@ body {
     font-size: 30px;
   }
 
+<<<<<<< HEAD
+=======
+  .content-list:hover {
+
+    font-size: 40px;
+  }
+
+>>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
 }
 
 
@@ -196,13 +313,31 @@ body {
    
   }
 
+<<<<<<< HEAD
 
+=======
+  .content-list-main {
+      margin-left: 33%;
+       margin-right: 33%;
+  }
+
+  .name {
+    margin-left: 33%;
+    margin-right: 33%;
+
+  }
+
+  .content-list:hover {
+
+    font-size: 35px;
+  }
+>>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
 
 
 }
 
 @media screen and (min-width: 1260px)
-              and (max-width: 1480px)
+              and (max-width: 1600px)
 {
   
 .content-list-main {
@@ -214,13 +349,23 @@ body {
       
     
   }
+  .content-list-main {
+      margin-left: 33%;
+       margin-right: 33%;
+  }
 
   .name {
+<<<<<<< HEAD
     font-size: 45px;
     
     
   }
+=======
+    margin-left: 33%;
+    margin-right: 33%;
+>>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
 
+  }
 }
 
 @media screen and (min-width: 1480px)
@@ -241,9 +386,6 @@ body {
     margin-right: 25%;
     width: 50%;
   }
-
-
-
 }
 */
 @media screen and (max-width: 1366px)
@@ -257,12 +399,13 @@ body {
 
 }
 
-@media screen and (max-width: 480px)
+@media screen and (max-width: 500px)
 {
   .content-list {
     font-size: 20px;
 
   }
+<<<<<<< HEAD
   #content-list-main {
       background-color: white;
       border-radius: 50%;
@@ -271,14 +414,43 @@ body {
        border: 0px;
        height: 80%;
        
+=======
+  .content-list-main {
+       margin-left: 10%;
+       margin-right: 10%;
+>>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
   }
 
   .name {
     font-size: 25px;
+<<<<<<< HEAD
     
     
+=======
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+>>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
+
+  .content-list li:nth-child(2), .content-list li:nth-child(3) {
+    padding-top: 25px;
+  }
+
+  .content-list li:nth-child(1) {
+    padding-top: 30px;
+  }
+
+  .footer {
+    font-size: 12px;
 
   }
+
+  .content-list:hover {
+
+    font-size: 30px;
+  }
+
+
 }
 
 /*

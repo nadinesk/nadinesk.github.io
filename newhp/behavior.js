@@ -5,8 +5,22 @@ $(document).ready(function() {
         var contentlistmain = $("content-list-main");
 
 
+<<<<<<< HEAD
         $("#header-name").width(bodywidth * 0.33);
         if (bodywidth >=950)
+=======
+      
+
+        if (bodywidth >=1600)
+        {
+          $("#content-list-main").width(bodywidth * 0.25);
+          $("#content-list-main").height(bodywidth * 0.25);
+  $("#header-name").width(bodywidth * 0.25);
+
+        }
+
+        if (bodywidth >=1024 && bodywidth <=1600 )
+>>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
         {
           $("#content-list-main").width(bodywidth * 0.33);
           $("#content-list-main").height(bodywidth * 0.33);
@@ -14,6 +28,7 @@ $(document).ready(function() {
 
         }
 
+<<<<<<< HEAD
        
 
  if (bodywidth < 950 && bodywidth >=680)
@@ -32,7 +47,38 @@ $(document).ready(function() {
           $("#content-list-main").height(bodywidth *.63);
           $("#content-list-main").width(bodywidth * 0.63);
   
+=======
+        if (bodywidth >= 780 && bodywidth < 1024)
+        {
+          $("#content-list-main").width(bodywidth * 0.5);
+          $("#content-list-main").height(bodywidth * 0.5);
+  $("#header-name").width(bodywidth * 0.5);
+>>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
 
+        }
+
+        if (bodywidth >=600 && bodywidth < 780)
+        {
+          $("#content-list-main").width(bodywidth * 0.6);
+          $("#content-list-main").height(bodywidth * 0.6);
+        $("#header-name").width(bodywidth * 0.6);
+
+        }
+
+
+        if (bodywidth >=500 && bodywidth < 600 )
+        {
+          $("#content-list-main").width(bodywidth * 0.7);
+          $("#content-list-main").height(bodywidth * 0.7);
+  $("#header-name").width(bodywidth * 0.7);
+
+        }
+
+        if (bodywidth < 500 )
+        {
+          $("#content-list-main").width(bodywidth * 0.8);
+          $("#content-list-main").height(bodywidth * 0.8);
+        $("#header-name").width(bodywidth * 0.8);
 
         }
 
