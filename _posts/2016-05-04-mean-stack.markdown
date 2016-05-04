@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Update"
+title:  "MEAN stack"
 date:   2016-05-04 00:00
 categories: programming, web apps
 ---
