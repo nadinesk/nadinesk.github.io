@@ -34,16 +34,20 @@ body {
 
 }
 
-.content-list-main {
+#content-list-main {
   margin-left: 33%;
   margin-right: 33%;
   background-color: white;
-  width: 600px;
-  height: 600px;
   border-radius: 50%;
-  -moz-box-shadow:     10px 10px 20px #efffef;
+  /*-moz-box-shadow:     10px 10px 20px #efffef;
    -webkit-box-shadow:    10px 10px 20px #efffef;
-   box-shadow:        10px 10px 20px #efffef;
+   box-shadow:        10px 10px 20px #efffef; */
+
+   background: -webkit-linear-gradient(white, #ffeef1); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white, #ffeef1); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white, #ffeef1); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, #ffeef1); /* Standard syntax */
+
 }
 
 
@@ -84,24 +88,22 @@ body {
 @media screen and (min-width: 480px)
               and (max-width: 640px)
 {
-  .content-list-main {
+  #content-list-main {
       background-color: white;
-        border-radius: 5px;
+        margin-left: 20%;
+     margin-right: 20%; 
       -moz-box-shadow:    none;
        -webkit-box-shadow:     none;
        box-shadow:           none;
        border: 0px;
-       height: 100%;
-       margin-left: 25%;
-       margin-right: 25%;
+       
+      
   }
 
   .name {
     font-size: 30px;
     width: 100%;
-    margin-left: 25%;
-    margin-right: 25%;
-
+    
   }
 
   .content-list {
@@ -113,23 +115,18 @@ body {
 @media screen and (min-width: 640px)
               and (max-width: 768px)
 {
-  .content-list-main {
+  #content-list-main {
       background-color: white;
-      border-radius: 5px;
-      -moz-box-shadow:     10px 10px 20px #efffef;
-       -webkit-box-shadow:    10px 10px 20px #efffef;
-       box-shadow:        10px 10px 20px #efffef;
-       border: 0px;
-       height: 100%;
-       margin-left: 25%;
-       margin-right: 25%;
+      border-radius: 50%;
+      
+       border: 1px;
+      
   }
 
   .name {
     font-size: 30px;
     width: 100%;
-    margin-left: 25%;
-    margin-right: 25%;
+    
 
   }
 
@@ -149,27 +146,26 @@ body {
 
   .content-list-main {
       background-color: white;
-      border-radius: 5px;
-      -moz-box-shadow:     10px 10px 20px #efffef;
-       -webkit-box-shadow:    10px 10px 20px #efffef;
-       box-shadow:        10px 10px 20px #efffef;
+      border-radius: 50%;
+      
        border: 0px;
        
-       margin-left: 25%;
-       margin-right: 25%;
+      
+       
+    
   }
 
   .name {
     font-size: 40px;
     width: 100%;
-    margin-left: 25%;
-    margin-right: 25%;
+    
 
   }
 
   .content-list {
-    font-size: 35px;
+    font-size: 30px;
   }
+
 }
 
 
@@ -179,18 +175,51 @@ body {
 {
 
   .content-list {
-    font-size: 30px;
+    padding-top: 5%;
+    font-size: 40px;
   }
+
+
+.content-list-main {
+      background-color: white;
+      border-radius: 50%;
+      
+       border: 0px;
+       
+      
+    
+  }
+
+  .name {
+    font-size: 45px;
+    width: 100%;
+   
+  }
+
+
+
 
 }
 
 @media screen and (min-width: 1260px)
               and (max-width: 1480px)
 {
-  .content-list {
-    font-size: 30px;
+  
+.content-list-main {
+      background-color: blue;
+      border-radius: 50%;
+      
+       border: 0px;
+       
+      
+    
   }
 
+  .name {
+    font-size: 45px;
+    
+    
+  }
 
 }
 
@@ -231,25 +260,23 @@ body {
 @media screen and (max-width: 480px)
 {
   .content-list {
-    font-size: 25px;
+    font-size: 20px;
+
   }
-  .content-list-main {
+  #content-list-main {
       background-color: white;
-      border-radius: 5px;
-      -moz-box-shadow:     10px 10px 20px #efffef;
-       -webkit-box-shadow:    10px 10px 20px #efffef;
-       box-shadow:        10px 10px 20px #efffef;
+      border-radius: 50%;
+      margin-left: 20%;
+     margin-right: 20%; 
        border: 0px;
-       height: 100%;
-       margin-left: 25%;
-       margin-right: 25%;
+       height: 80%;
+       
   }
 
   .name {
     font-size: 25px;
-    width: 100%;
-    margin-left: 25%;
-    margin-right: 25%;
+    
+    
 
   }
 }
