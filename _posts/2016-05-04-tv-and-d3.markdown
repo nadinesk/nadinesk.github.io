@@ -5,7 +5,7 @@ date:   2016-05-04 00:00
 categories: d3.js, data visualizations, tv
 ---
 
-<iframe src="http://bl.ocks.org/nadinesk/raw/52ea78139b9652934ea6ed0934def667/" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+<iframe src="http://bl.ocks.org/nadinesk/raw/52ea78139b9652934ea6ed0934def667/" height="900" width="900" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 
 This D3.js example displays the embarrasing fact that I watch the Real Housewives of Beverly Hills (and I mean I have watched all episdes of all six seasons). It shows viewership in millions, by season and by episode. Episodes are shown along the x-axis, and views are shown along the y-axis, with each line representing one of the six seasons. Some seasons had fewer episodes than others, and in those cases, the average views were used rather than null values. (Average values were used for Season 1, Episodes 18-23; Season 3, Episodes 23; and Season 6, episode 23 tbd). I removed Episode 24 since this was only shown during Season 2. Season 2 had the highest average viewrship at 2.2 million, and Season 6 has had the lowest average viewership so far, excluding the final episode which is TBD, with 1.8 million households watching.
 
