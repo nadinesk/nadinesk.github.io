@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "D3 and TV"
+date:   2016-05-04 00:00
+categories: d3.js, data visualizations, tv
+---
+
+<iframe src="http://bl.ocks.org/nadinesk/raw/52ea78139b9652934ea6ed0934def667/" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+
+This D3.js example displays the embarrasing fact that I watch the Real Housewives of Beverly Hills (and I mean I have watched all episdes of all six seasons). It shows viewership in millions, by season and by episode. Episodes are shown along the x-axis, and views are shown along the y-axis, with each line representing one of the six seasons. Some seasons had fewer episodes than others, and in those cases, the average views were used rather than null values. (Average values were used for Season 1, Episodes 18-23; Season 3, Episodes 23; and Season 6, episode 23 tbd). I removed Episode 24 since this was only shown during Season 2. Season 2 had the highest average viewrship at 2.2 million, and Season 6 has had the lowest average viewership so far, excluding the final episode which is TBD, with 1.8 million households watching.
+
+The final episode of Season 6 aired last night, and during the reunion, there was controversy over a cast member possibly angling other cast members to create a more interesting storyline (probably to generate more views). I've read that the viewership has been declining, and I wanted to see what that looked like. This data is from Nielsen ratings' Live viewing (after doing some research, I believe Live ratings include TV and DVR playback on the same day, from 3am-3am. Also from Nielsen, Live viewing, "...ratings are the percentage of TV homes in the U.S. tuned into television." I'm not an expert on tv ratings, but it looks like this dataset does not take into account cross-platorm views, and since more and more people are watching tv shows on their computers and phones, I wonder if this has a signficant effect on the decline in these numbers.
+
