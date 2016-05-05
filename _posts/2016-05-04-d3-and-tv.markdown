@@ -6,6 +6,10 @@ date:   2016-05-05 00:00:00
 
 <style>
 
+
+#example {
+  font: 10px sans-serif;
+}
 .axis path,
 .axis line {
   fill: none;
