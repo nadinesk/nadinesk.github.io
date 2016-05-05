@@ -6,7 +6,7 @@ date:   2014-03-26 13:12:00
 
 
 
-And here, I've used d3 to target an element `<div id="example">` in this document:
+test
 
 <style>
 
@@ -134,7 +134,7 @@ d3.tsv("/data.tsv", function(error, data) {
 
 </script>
 
-</script>
+
 
 <div id="example"></div>
 
