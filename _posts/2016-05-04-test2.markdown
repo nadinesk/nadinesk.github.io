@@ -1,0 +1,7 @@
+---
+layout: post
+title:  "Testing d3 with Markdown"
+date:   2014-03-26 13:12:00
+---
+
+<iframe src="http://www.khasachi.com/multiline" marginwidth="0" marginheight="0" scrolling="no"></iframe>
