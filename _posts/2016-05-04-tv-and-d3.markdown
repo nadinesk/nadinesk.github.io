@@ -9,7 +9,7 @@ test
 
 <style>
 
-body {
+div.example {
   font: 10px sans-serif;
 }
 
