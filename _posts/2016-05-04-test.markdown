@@ -72,7 +72,7 @@ d3.csv("/morley.csv", function(error, csv) {
 
   chart.domain([min, max]);
 
-  var svg = d3.select("div#example").append("svg")
+  var svg = d3.select("div#example").selectAll("svg")
       .data(data)
     .enter().append("svg")
       .attr("class", "box")
