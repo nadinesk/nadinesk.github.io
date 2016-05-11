@@ -48,16 +48,12 @@ body {
 .content-list-main {
   background-color: white;
   border-radius: 50%;
-  /*
+  
   -moz-box-shadow:     10px 10px 20px #efffef;
    -webkit-box-shadow:    10px 10px 20px #efffef;
    box-shadow:        10px 10px 20px #efffef;
-   */
-   background: #ffeef1; /* For browsers that do not support gradients */
-   background: -webkit-linear-gradient(white,#ffeef1); /* For Safari 5.1 to 6.0 */
-   background: -o-linear-gradient(white,#ffeef1); /* For Opera 11.1 to 12.0 */
-   background: -moz-linear-gradient(white,#ffeef1); /* For Firefox 3.6 to 15 */
-   background: linear-gradient(white,#ffeef1); /* Standard syntax */
+  
+
 }
 */
 
