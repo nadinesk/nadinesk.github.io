@@ -126,12 +126,12 @@ body {
        box-shadow:           none;
        border: 0px;
 }
-/*
+
   .content-list-main {
        margin-left: 37.5%;
        margin-right: 37.5%;
   }
-*/
+
   .name {
     margin-left: 37.5%;
     margin-right: 37.5%;
@@ -139,12 +139,12 @@ body {
 }
 
 @media screen and (min-width: 500px) and (max-width: 600px) {
-/*
+
   .content-list-main {
        margin-left: 15%;
        margin-right: 15%;
   }
- */
+ 
   .name {
     font-size: 30px;
     width: 100%;
@@ -168,12 +168,12 @@ body {
      border-radius: 50%;
      border: 1px;
   }
-  /*
+  
   .content-list-main {
 	margin-left: 20%;
        	margin-right: 20%;
  }
-*/
+
   .name {
     font-size: 30px;
     width: 100%;
@@ -192,7 +192,7 @@ body {
 
 
 @media screen and (min-width: 780px) and (max-width: 1024px) {
-  /*
+  
   .content-list-main {
     background-color: white;
     border-radius: 50%;
@@ -200,7 +200,7 @@ body {
     margin-left: 25%;
     margin-right: 25%;
   }
-*/
+
   .name {
     font-size: 40px;
     width: 100%;
@@ -222,23 +222,23 @@ body {
     padding-top: 5%;
     font-size: 40px;
   }
-/*
+
 .content-list-main {
     background-color: white;
     border-radius: 50%;
     border: 0px;
   }
-*/
+
   .name {
     font-size: 45px;
     width: 100%;
   }
-  /*
+  
   .content-list-main {
       margin-left: 33%;
        margin-right: 33%;
   }
-*/
+
   .name {
     margin-left: 33%;
     margin-right: 33%;
@@ -251,7 +251,7 @@ body {
 
 @media screen and (min-width: 1260px) and (max-width: 1600px) {
 
-/*
+
 .content-list-main {
       background-color: blue;
       border-radius: 50%;
@@ -262,7 +262,7 @@ body {
       margin-left: 33%;
        margin-right: 33%;
   }
-*/
+
   .name {
     font-size: 45px;
     margin-left: 33%;
@@ -310,12 +310,12 @@ body {
        border: 0px;
        height: 80%;
   }
-/*
+
   .content-list-main {
        margin-left: 10%;
        margin-right: 10%;
   }
-*/
+
   .name {
     font-size: 25px;
     margin-left: 10%;
