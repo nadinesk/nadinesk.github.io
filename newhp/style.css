@@ -6,7 +6,7 @@
 body {
   background-color: white;
   -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;
   font-family: 'Open Sans', sans-serif;
   background-position: cover;
   margin: 0px;
@@ -20,7 +20,6 @@ body {
   background-color: #ffdbe1;
 }
 
-
 .name {
   margin-top: 2.5%;
   margin-bottom: 2.5%;
@@ -32,7 +31,6 @@ body {
 
 }
 
-<<<<<<< HEAD
 #content-list-main {
   margin-left: 33%;
   margin-right: 33%;
@@ -41,12 +39,11 @@ body {
   /*-moz-box-shadow:     10px 10px 20px #efffef;
    -webkit-box-shadow:    10px 10px 20px #efffef;
    box-shadow:        10px 10px 20px #efffef; */
-
    background: -webkit-linear-gradient(white, #ffeef1); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(white, #ffeef1); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(white, #ffeef1); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(white, #ffeef1); /* Standard syntax */
-=======
+   background: -o-linear-gradient(white, #ffeef1); /* For Opera 11.1 to 12.0 */
+   background: -moz-linear-gradient(white, #ffeef1); /* For Firefox 3.6 to 15 */
+   background: linear-gradient(white, #ffeef1); /* Standard syntax */
+
 .content-list-main {
   background-color: white;
   border-radius: 50%;
@@ -55,16 +52,11 @@ body {
    -webkit-box-shadow:    10px 10px 20px #efffef;
    box-shadow:        10px 10px 20px #efffef;
    */
-
    background: #ffeef1; /* For browsers that do not support gradients */
    background: -webkit-linear-gradient(white,#ffeef1); /* For Safari 5.1 to 6.0 */
    background: -o-linear-gradient(white,#ffeef1); /* For Opera 11.1 to 12.0 */
    background: -moz-linear-gradient(white,#ffeef1); /* For Firefox 3.6 to 15 */
    background: linear-gradient(white,#ffeef1); /* Standard syntax */
-
-
->>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
-
 }
 
 
@@ -80,7 +72,6 @@ body {
 }
 
 .content-list:hover {
-
   font-size: 48px;
 }
 
@@ -93,8 +84,6 @@ body {
     color: #ff0332;
 }
 
-
-
 .content-list li:nth-child(2), .content-list li:nth-child(3) {
   padding-top: 50px;
 }
@@ -102,8 +91,6 @@ body {
 .content-list li:nth-child(1) {
   padding-top: 15%;
 }
-
-
 
 .footer {
   position: fixed;
@@ -132,9 +119,7 @@ body {
 }
 
 @media screen and (min-width: 1600px)
-
 {
-<<<<<<< HEAD
   #content-list-main {
       background-color: white;
         margin-left: 20%;
@@ -143,9 +128,6 @@ body {
        -webkit-box-shadow:     none;
        box-shadow:           none;
        border: 0px;
-       
-      
-=======
   .content-list-main {
        margin-left: 37.5%;
        margin-right: 37.5%;
@@ -154,9 +136,7 @@ body {
   .name {
     margin-left: 37.5%;
     margin-right: 37.5%;
-
   }
-
 }
 
 @media screen and (min-width: 500px)
@@ -165,20 +145,13 @@ body {
   .content-list-main {
        margin-left: 15%;
        margin-right: 15%;
->>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
   }
 
   .name {
     font-size: 30px;
-<<<<<<< HEAD
     width: 100%;
-    
-=======
-
     margin-left: 15%;
     margin-right: 15%;
-
->>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
   }
 
   .content-list {
@@ -189,38 +162,26 @@ body {
 
     font-size: 30px;
   }
-
-
 }
 
 @media screen and (min-width: 600px)
               and (max-width: 780px)
 {
-<<<<<<< HEAD
   #content-list-main {
-      background-color: white;
-      border-radius: 50%;
+     background-color: white;
+     border-radius: 50%;
+     border: 1px;
       
-       border: 1px;
-      
-=======
   .content-list-main {
-
-       margin-left: 20%;
-       margin-right: 20%;
->>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
-  }
+	margin-left: 20%;
+       	margin-right: 20%;
+ }
 
   .name {
     font-size: 30px;
     width: 100%;
-<<<<<<< HEAD
-    
-=======
     margin-left: 20%;
     margin-right: 20%;
->>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
-
   }
 
   .content-list {
@@ -228,94 +189,57 @@ body {
   }
 
   .content-list:hover {
-
     font-size: 30px;
   }
-
-
-
-
-
 }
 
 
 @media screen and (min-width: 780px)
               and (max-width: 1024px)
 {
-
   .content-list-main {
-      background-color: white;
-<<<<<<< HEAD
-      border-radius: 50%;
-      
-       border: 0px;
-       
-      
-       
-    
-=======
-       margin-left: 25%;
-       margin-right: 25%;
->>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
+    background-color: white;
+    border-radius: 50%;
+    border: 0px;
+    margin-left: 25%;
+    margin-right: 25%;
   }
 
   .name {
     font-size: 40px;
-<<<<<<< HEAD
     width: 100%;
-    
-=======
     margin-left: 25%;
     margin-right: 25%;
->>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
-
   }
 
   .content-list {
     font-size: 30px;
   }
 
-<<<<<<< HEAD
-=======
   .content-list:hover {
-
     font-size: 40px;
   }
-
->>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
 }
-
-
 
 @media screen and (min-width: 1024px)
               and (max-width: 1260px)
 {
-
   .content-list {
     padding-top: 5%;
     font-size: 40px;
   }
 
-
 .content-list-main {
-      background-color: white;
-      border-radius: 50%;
-      
-       border: 0px;
-       
-      
-    
+    background-color: white;
+    border-radius: 50%;
+    border: 0px;
   }
 
   .name {
     font-size: 45px;
     width: 100%;
-   
   }
-
-<<<<<<< HEAD
-
-=======
+  
   .content-list-main {
       margin-left: 33%;
        margin-right: 33%;
@@ -324,47 +248,31 @@ body {
   .name {
     margin-left: 33%;
     margin-right: 33%;
-
   }
 
   .content-list:hover {
-
     font-size: 35px;
   }
->>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
-
-
 }
 
 @media screen and (min-width: 1260px)
               and (max-width: 1600px)
 {
-  
 .content-list-main {
       background-color: blue;
       border-radius: 50%;
-      
-       border: 0px;
-       
-      
-    
+      border: 0px;
   }
+ 
   .content-list-main {
       margin-left: 33%;
        margin-right: 33%;
   }
 
   .name {
-<<<<<<< HEAD
     font-size: 45px;
-    
-    
-  }
-=======
     margin-left: 33%;
     margin-right: 33%;
->>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
-
   }
 }
 
@@ -374,8 +282,6 @@ body {
   .content-list {
     font-size: 40px;
   }
-
-
 }
 /*
 @media screen and (min-width: 1260px)
@@ -403,9 +309,8 @@ body {
 {
   .content-list {
     font-size: 20px;
-
   }
-<<<<<<< HEAD
+
   #content-list-main {
       background-color: white;
       border-radius: 50%;
@@ -413,24 +318,19 @@ body {
      margin-right: 20%; 
        border: 0px;
        height: 80%;
-       
-=======
+  }
+
   .content-list-main {
        margin-left: 10%;
        margin-right: 10%;
->>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
   }
 
   .name {
     font-size: 25px;
-<<<<<<< HEAD
-    
-    
-=======
     margin-left: 10%;
     margin-right: 10%;
   }
->>>>>>> c5cf4b42604cb407417cb4fd25d2364e1e87651f
+
 
   .content-list li:nth-child(2), .content-list li:nth-child(3) {
     padding-top: 25px;
