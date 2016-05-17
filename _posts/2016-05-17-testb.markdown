@@ -133,7 +133,7 @@ d3.tsv("/data.tsv", function(error, data) {
       .attr("x", 3)
       .attr("dy", ".55em")
       .text(function(d) { return d.name; });
-});
+
 
 
 var svg1 = d3.select("#example1").append("svg")
