@@ -35,9 +35,8 @@ var margin = {top: 20, right: 80, bottom: 30, left: 50},
 var parseDate = d3.time.format("%Y").parse;
 
 var x = d3.time.scale()
-    .range([0, width])
-     .nice(d3.time.year)
-     .domain([1997,2016]);
+    .range([1997, 2016])
+     .nice(d3.time.year);
      
 
 var y = d3.scale.linear()
@@ -47,8 +46,7 @@ var color = d3.scale.category10();
 
 var xAxis = d3.svg.axis()
     .scale(x)
-    .orient("bottom")
-    .tickFormat(d3.time.format("%Y"));
+    .orient("bottom");
 
 var yAxis = d3.svg.axis()
     .scale(y)
