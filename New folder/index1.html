@@ -126,7 +126,7 @@ d3.tsv("data1.tsv", function(error, data) {
       .filter(function(d, i) { return i % 2 === 0 ? this : null;})
       .attr("transform", function(d) { return "translate(" + x(d.value.date) + "," + y(d.value.temperature) + ")"; })
       .attr("x", 3)
-      .attr("dy", "1em")
+      .attr("dy", "-1em")
       .text(function(d) { return d.name; });
     
       
