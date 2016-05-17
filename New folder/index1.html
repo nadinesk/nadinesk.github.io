@@ -35,7 +35,8 @@ var margin = {top: 20, right: 80, bottom: 30, left: 50},
 var parseDate = d3.time.format("%Y").parse;
 
 var x = d3.time.scale()
-    .range([0, width]);
+    .range([0, width])
+     .nice(d3.time.year);
 
 var y = d3.scale.linear()
     .range([height, 0]);
