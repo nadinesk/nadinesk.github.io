@@ -36,7 +36,8 @@ var parseDate = d3.time.format("%Y").parse;
 
 var x = d3.time.scale()
     .range([0, width])
-     .nice(d3.time.year);
+     .nice(d3.time.year)
+     .domain([1997, 2016]);
 
 var y = d3.scale.linear()
     .range([height, 0]);
