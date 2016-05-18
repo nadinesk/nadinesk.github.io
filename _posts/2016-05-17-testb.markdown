@@ -57,7 +57,7 @@ var margin = {top: 20, right: 160, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-var parseDate = d3.time.format("%Y").parse;
+/*var parseDate = d3.time.format("%Y").parse;
 
 var x = d3.time.scale()
     .range([0, width])
@@ -158,7 +158,7 @@ d3.tsv("/New folder/data1.tsv", function(error, data) {
 
 });
 
-
+*/
 var negWidth = width * -1;
 var posWidth = width * 0.5;
 
