@@ -58,7 +58,7 @@ var svg = d3.select("#example").append("svg")
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-d3.csv("http://www.khasachi.com/New%20folder/datamv.csv", function(error, data) {
+d3.csv("/datamv.csv", function(error, data) {
   if (error) throw error;
   var ageNames = d3.keys(data[0]).filter(function(key) { return key !== "RegionName"; });
   data.forEach(function(d) {
