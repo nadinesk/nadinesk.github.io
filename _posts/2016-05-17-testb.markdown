@@ -10,7 +10,7 @@ date:   2016-05-17 00:00:00
   font: 10px sans-serif;
 }
 
-#example {
+#example1 {
   font: 10px sans-serif;
 }
 
@@ -290,7 +290,7 @@ d3.csv("/New folder/datamv.csv", function(error, data) {
       .attr("x", width - 18)
       .attr("width", 18)
       .attr("height", 18)
-      .style("fill", color);
+      .style("fill", color1);
 
   legend.append("text")
       .attr("x", width - 24)
