@@ -49,7 +49,7 @@ date:   2016-05-17 00:00:00
 
   <div id="example"></div>
   <div id="example1"></div>
-  
+
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
@@ -62,7 +62,7 @@ var parseDate = d3.time.format("%Y").parse;
 var x = d3.time.scale()
     .range([0, width])
     .domain ([1997,2016]);
-     
+
 
 var y = d3.scale.linear()
     .range([height, 0]);
@@ -154,8 +154,8 @@ d3.tsv("/New folder/data1.tsv", function(error, data) {
           .attr("dy", ".8em")
           .text(function(d) { return d.name; });
 
-    
-      
+
+
 });
 
 
@@ -221,7 +221,7 @@ d3.csv("/New folder/datamv.csv", function(error, data) {
      svg1.append("g")
            .attr("class", "y axis")
            .attr("transform", "translate(0," + xAxisTransform + ")") // this line moves x-axis
-           .call(xAxis)
+           .call(xAxis1)
            .selectAll("text")
            .attr("y", 0)
            .attr("x",5)
