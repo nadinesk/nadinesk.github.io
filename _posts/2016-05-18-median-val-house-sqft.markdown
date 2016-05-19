@@ -54,7 +54,7 @@ var margin = {top: 20, right: 200, bottom: 50, left: 40},
 var negWidth = width * -1;
 var posWidth = width * 0.5;
 
-d3.select(window).on('resize', resize);
+
 
 
 var x0 = d3.scale.ordinal()
@@ -285,14 +285,6 @@ d3.tsv("/New folder/data1.tsv", function(error, data) {
       .text(function(d) { return d.name; });
 
 
-function resize(){
-    width = window.innerWidth;
-    height = window.innerHeight;
-    svg.style({ width: width + 'px', height: height + 'px' });
-    updateNodes(); // update the nodes incorporating the new width and height
-}
-
-resize();      
  
 });
 
