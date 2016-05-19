@@ -56,14 +56,7 @@ var posWidth = width * 0.5;
 
 d3.select(window).on('resize', resize);
 
-function resize(){
-    width = window.innerWidth;
-    height = window.innerHeight;
-    svg.style({ width: width + 'px', height: height + 'px' });
-    updateNodes(); // update the nodes incorporating the new width and height
-}
 
-resize();
 var x0 = d3.scale.ordinal()
     .rangeRoundBands([0, width], .1);
 var x1 = d3.scale.ordinal();
@@ -182,7 +175,7 @@ d3.csv("/datamv.csv", function(error, data) {
 
 
 
-resize();
+
 
 var parseDate = d3.time.format("%Y").parse;
 
@@ -290,7 +283,16 @@ d3.tsv("/New folder/data1.tsv", function(error, data) {
       .attr("x", 30)
       .attr("dy", "-.35em")
       .text(function(d) { return d.name; });
-      
+
+
+function resize(){
+    width = window.innerWidth;
+    height = window.innerHeight;
+    svg.style({ width: width + 'px', height: height + 'px' });
+    updateNodes(); // update the nodes incorporating the new width and height
+}
+
+resize();      
  
 });
 
