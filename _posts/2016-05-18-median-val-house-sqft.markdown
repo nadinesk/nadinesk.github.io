@@ -283,9 +283,9 @@ d3.tsv("/New folder/data1.tsv", function(error, data) {
 
 
 <p>
-The first chart (bar chart) shows percentage increases (2014-2015, 2005-2015, 2010-2015) in median house values per square footage in the top 10 highest metro areas, and the average for U.S. metro areas,  by 2015 annual average values. Data is from <a href="http://www.zillow.com/research/data/">Zillow</a>: "Median ZHVI per sq. ft. ($): Median of the value of all homes per square foot. This number is calculated by taking the estimated home value for each home in a given region and dividing it by the home’s square footage." Interestingly, house values all had  percent increases from 2014-2015 and from 2010-15, but some metro areas showed percentage decreases from 2005-2015. 
+The first chart (bar chart) shows percentage increases (2014-2015, 2005-2015, 2010-2015) in yearly average median house values per square footage in the top 10 highest metro areas, and the average for U.S. metro areas, ranked by 2015 annual average values. Median house values per square foot for the top 10 metro areas (ranked according to 2015 values) all showed  percentage increases from 2014-2015 and from 2010-15, but some metro areas showed percentage decreases from 2005-2015. Data is from <a href="http://www.zillow.com/research/data/">Zillow</a>: "Median ZHVI per sq. ft. ($): Median of the value of all homes per square foot. This number is calculated by taking the estimated home value for each home in a given region and dividing it by the home’s square footage." 
 </p>
 <p>
-The second chart (line chart) shows median house values per square footage from 1998 to March 2016 in the top 10 highest metro areas, and the average for U.S. metro areas, by 2015 annual average values. 
+The second chart (line chart) shows yearly average median house values per square footage from 1998 to March 2016 in the top 10 highest metro areas, and the average for U.S. metro areas, by 2015 annual average values. The average house values are 
 </p>
 <p>I made both charts using D3.js. Raw data can be found in the data.csv/.tsv files <a href="http://bl.ocks.org/nadinesk/81c88201e760ae35af66c1fd30b6e7f3">here</a>for percentage change values, and <a href="http://bl.ocks.org/nadinesk/a54be2ef5866243fdd9834e48f3402b2">here</a> for raw median house values per square footage information.</p>
