@@ -283,7 +283,7 @@ d3.tsv("/New folder/data1.tsv", function(error, data) {
 
 
 <p>
-The first chart (bar chart) shows percentage increases (2014-2015, 2005-2015, 2010-2015) in median house values per square footage in the top 10 highest metro areas, and the average for U.S. metro areas,  by 2015 annual average values. Data is from <a href="http://www.zillow.com/research/data/">Zillow</a>: "Median ZHVI per sq. ft. ($): Median of the value of all homes per square foot. This number is calculated by taking the estimated home value for each home in a given region and dividing it by the home’s square footage."
+The first chart (bar chart) shows percentage increases (2014-2015, 2005-2015, 2010-2015) in median house values per square footage in the top 10 highest metro areas, and the average for U.S. metro areas,  by 2015 annual average values. Data is from <a href="http://www.zillow.com/research/data/">Zillow</a>: "Median ZHVI per sq. ft. ($): Median of the value of all homes per square foot. This number is calculated by taking the estimated home value for each home in a given region and dividing it by the home’s square footage." Interestingly, house values all had  percent increases from 2014-2015 and from 2010-15, but some metro areas showed percentage decreases from 2005-2015. 
 </p>
 <p>
 The second chart (line chart) shows median house values per square footage from 1998 to March 2016 in the top 10 highest metro areas, and the average for U.S. metro areas, by 2015 annual average values. 
