@@ -180,14 +180,7 @@ d3.csv("/datamv.csv", function(error, data) {
       .text(function(d) { return d; });
 });
 
-d3.select(window).on('resize', resize);
 
-function resize(){
-    width = window.innerWidth;
-    height = window.innerHeight;
-    svg.style({ width: width + 'px', height: height + 'px' });
-    updateNodes(); // update the nodes incorporating the new width and height
-}
 
 resize();
 
