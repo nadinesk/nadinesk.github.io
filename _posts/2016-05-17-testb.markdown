@@ -3,10 +3,14 @@ layout: post
 title:  "testb"
 date:   2016-05-17 00:00:00
 ---
-
 <style>
 
 #example {
+  font: 12px sans-serif;
+  color: blue;
+}
+
+#example1 {
   font: 12px sans-serif;
   color: blue;
 }
@@ -29,12 +33,19 @@ date:   2016-05-17 00:00:00
 .x.axis {
     color: blue;
 }
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
 </style>
 <body>
   <div id="example"></div>
+ <div id="example1"></div> 
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script>
-var margin = {top: 20, right: 20, bottom: 50, left: 40},
+var margin = {top: 20, right: 150, bottom: 50, left: 40},
     width = 960 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 var negWidth = width * -1;
@@ -154,7 +165,119 @@ d3.csv("/datamv.csv", function(error, data) {
       .style("text-anchor", "end")
       .text(function(d) { return d; });
 });
+
+
+var parseDate = d3.time.format("%Y").parse;
+
+var x2 = d3.time.scale()
+    .range([0, width]);
+
+var y1 = d3.scale.linear()
+    .range([height, 0]);
+
+var color1 = d3.scale.category10();
+
+var xAxis1 = d3.svg.axis()
+    .scale(x2)
+    .orient("bottom");
+
+var yAxis1 = d3.svg.axis()
+    .scale(y1)
+    .orient("left");
+
+var line = d3.svg.line()
+    .interpolate("basis")
+    .x(function(d) { return x2(d.date); })
+    .y(function(d) { return y1(d.temperature); });
+
+var svg1 = d3.select("#example1").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+ var focus = svg1.append("g")
+      .attr("transform", "translate(-100,-100)")
+      .attr("class", "focus");
+
+  focus.append("circle")
+      .attr("r", 3.5);
+
+  focus.append("text")
+      .attr("y", -10);
+
+
+d3.tsv("/New folder/data1.tsv", function(error, data) {
+  if (error) throw error;
+
+  color1.domain(d3.keys(data[0]).filter(function(key) { return key !== "date"; }));
+
+  data.forEach(function(d) {
+    d.date = parseDate(d.date);
+  });
+
+  var cities = color1.domain().map(function(name) {
+    return {
+      name: name,
+      values: data.map(function(d) {
+        return {date: d.date, temperature: +d[name]};
+      })
+    };
+  });
+
+  x2.domain(d3.extent(data, function(d) { return d.date; }));
+
+  y1.domain([
+    d3.min(cities, function(c) { return d3.min(c.values, function(v) { return v.temperature; }); }),
+    d3.max(cities, function(c) { return d3.max(c.values, function(v) { return v.temperature; }); })
+  ]);
+
+  svg1.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis1);
+
+  svg1.append("g")
+      .attr("class", "y axis")
+      .call(yAxis1)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Temperature (ºF)");
+
+  var city = svg1.selectAll(".city")
+      .data(cities)
+    .enter().append("g")
+      .attr("class", "city");
+
+  city.append("path")
+      .attr("class", "line")
+      .attr("d", function(d) { return line(d.values); })
+      .style("stroke", function(d) { return color1(d.name);})
+      .on("mouseover",function(d) {focus.select("text").text(d.temperature)});
+
+  city.append("text")
+      .datum(function(d) { return {name: d.name, value: d.values[d.values.length - 1]}; })
+      .filter (function(d,i){ return i % 2 === 1 ? this: null;})
+      .attr("transform", function(d) { return "translate(" + x2(d.value.date) + "," + y1(d.value.temperature ) + ")"; })
+      .attr("x", 1)
+      .attr("dy", ".35em")
+      .text(function(d) { return d.name; });
+
+        city.append("text")
+      .datum(function(d) { return {name: d.name, value: d.values[d.values.length - 1]}; })
+      .filter (function(d,i){ return i % 2 === 0 ? this: null;})
+      .attr("transform", function(d) { return "translate(" + x2(d.value.date) + "," + y1(d.value.temperature) + ")"; })
+      .attr("x", 30)
+      .attr("dy", "-.35em")
+      .text(function(d) { return d.name; });
+});
+
+
 </script>
+
 
 <p>
 This D3.js example shows viewership of the Real Housewives of Beverly Hills in millions, by season and by episode (along with the embarassing fact that I'm a big enough fan of this show to create this chart, having watched all episodes of all six seasons). Episodes are shown along the x-axis, and views are shown along the y-axis, with each line representing one of the six seasons. Some seasons had fewer episodes than others, and in those cases, the average views were used rather than null values. (Average values were used for Season 1, Episodes 18-23; Season 3, Episodes 23; and Season 6, episode 23 tbd). I removed Episode 24 since this was only shown during Season 2. Season 2 had the highest average viewrship at 2.2 million, and Season 6 has had the lowest average viewership so far, excluding the final episode which is TBD, with 1.8 million households watching.
