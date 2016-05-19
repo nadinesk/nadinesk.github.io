@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "testb"
-date:   2016-05-17 00:00:00
+title:  "Median House Values per Square Foot charts with D3.js"
+date:   2016-05-18 00:00:00
+categories: d3.js, charts, median house values, data, data visualization
 ---
 <style>
 
@@ -280,8 +281,9 @@ d3.tsv("/New folder/data1.tsv", function(error, data) {
 
 
 <p>
-This D3.js example shows viewership of the Real Housewives of Beverly Hills in millions, by season and by episode (along with the embarassing fact that I'm a big enough fan of this show to create this chart, having watched all episodes of all six seasons). Episodes are shown along the x-axis, and views are shown along the y-axis, with each line representing one of the six seasons. Some seasons had fewer episodes than others, and in those cases, the average views were used rather than null values. (Average values were used for Season 1, Episodes 18-23; Season 3, Episodes 23; and Season 6, episode 23 tbd). I removed Episode 24 since this was only shown during Season 2. Season 2 had the highest average viewrship at 2.2 million, and Season 6 has had the lowest average viewership so far, excluding the final episode which is TBD, with 1.8 million households watching.
+The first chart (bar chart) shows percentage increases (2014-2015, 2005-2015, 2010-2015) in median house values per square footage in the top 10 highest metro areas, and the average for U.S. metro areas,  by 2015 annual average values. Data is from <a href="http://www.zillow.com/research/data/">Zillow</a>: "Median ZHVI per sq. ft. ($): Median of the value of all homes per square foot. This number is calculated by taking the estimated home value for each home in a given region and dividing it by the home’s square footage."
 </p>
 <p>
-The final episode of Season 6 aired last night, and during the reunion, there was controversy over a cast member possibly angling other cast members to create a more interesting storyline (probably to generate more views). I've read that the viewership has been declining, and I wanted to see what that looked like. This data is from Nielsen ratings' Live viewing (after doing some research, I believe Live ratings include TV and DVR playback on the same day, from 3am-3am. Also from Nielsen, Live viewing, "...ratings are the percentage of TV homes in the U.S. tuned into television." I'm not an expert on tv ratings, but it looks like this dataset does not take into account cross-platorm views, and since more and more people are watching tv shows on their computers and phones, I wonder if this has a signficant effect on the decline in these numbers.
+The second chart (line chart) shows median house values per square footage from 1998 to March 2016 in the top 10 highest metro areas, and the average for U.S. metro areas, by 2015 annual average values. 
 </p>
+<p>I made both charts using D3.js. Raw data can be found in the data.csv/.tsv files <a href="http://bl.ocks.org/nadinesk/81c88201e760ae35af66c1fd30b6e7f3">here</a>for percentage change values, and <a href="http://bl.ocks.org/nadinesk/a54be2ef5866243fdd9834e48f3402b2">here</a> for raw median house values per square footage information.</p>
