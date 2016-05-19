@@ -14,6 +14,7 @@ categories: d3.js, charts, median house values, data, data visualization
 #example1 {
   font: 12px sans-serif;
   color: blue;
+  margin-top: 20px;
 }
 .axis path,
 .axis line {
@@ -21,6 +22,7 @@ categories: d3.js, charts, median house values, data, data visualization
   stroke: #000;
   shape-rendering: crispEdges;
 }
+
 .bar {
   fill: #402824;
   font-weight: 900;
@@ -246,7 +248,7 @@ d3.tsv("/New folder/data1.tsv", function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Temperature (ºF)");
+      .text("Dollars per square foot");
 
   var city = svg1.selectAll(".city")
       .data(cities)
