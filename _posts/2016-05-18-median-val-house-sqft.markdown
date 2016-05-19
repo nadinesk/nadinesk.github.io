@@ -276,6 +276,10 @@ d3.tsv("/New folder/data1.tsv", function(error, data) {
       .attr("x", 30)
       .attr("dy", "-.35em")
       .text(function(d) { return d.name; });
+      
+        d3.select(window).on('resize', resize); 
+
+  resize();
 });
 
 
