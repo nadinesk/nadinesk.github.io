@@ -48,8 +48,8 @@ categories: d3.js, charts, median house values, data, data visualization
  <div id="example1"></div> 
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script>
-var margin = {top: 20, right: 150, bottom: 50, left: 40},
-    width = 960 - margin.left - margin.right,
+var margin = {top: 20, right: 200, bottom: 50, left: 40},
+    width = 1000 - margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 var negWidth = width * -1;
 var posWidth = width * 0.5;
