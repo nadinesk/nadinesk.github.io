@@ -26,7 +26,9 @@ categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
 
 <body>
   <div id="example"></div>
+  
 </body>
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script>
 
     var frequency_list = [{"text":"Apps","size":50.4},{"text":"Facebook","size":29.4},{"text":"Videos","size":28.7},{"text":"Google","size":28},{"text":"Internet","size":25.2},{"text":"Book","size":24.5},{"text":"Site","size":24.5},{"text":"Email","size":23.1},{"text":"Music","size":21.7},{"text":"IOS","size":21.7},{"text":"Game","size":18.9},{"text":"Security","size":18.9},{"text":"Uber","size":18.2},{"text":"Sports","size":18.2},{"text":"Smartphones","size":18.2},{"text":"SaaS","size":18.2},{"text":"OnDemand","size":17.5},{"text":"eCommerce","size":16.1},{"text":"Restaurants","size":14.7},{"text":"Healthcare","size":14.7},{"text":"Airbnb","size":14.7},{"text":"Twitter","size":14},{"text":"Booking","size":14},{"text":"3D","size":14},{"text":"Instagram","size":12.6},{"text":"AI","size":12.6},{"text":"Doctors","size":11.9},{"text":"Advertising","size":11.9},{"text":"Photo","size":11.9},{"text":"Ads","size":11.2},{"text":"API","size":11.2},{"text":"Stream","size":11.2},{"text":"India","size":11.2},{"text":"Sensors","size":11.2},{"text":"Amazon","size":11.2},{"text":"B2B","size":10.5},{"text":"Sites","size":10.5},{"text":"YouTube","size":10.5},{"text":"UI","size":9.8},{"text":"Phones","size":9.1},{"text":"VR","size":8.4},{"text":"Globally","size":8.4},{"text":"Streaming","size":8.4},{"text":"IoT","size":8.4},{"text":"SMS","size":8.4},{"text":"Wearable","size":8.4},{"text":"Slack","size":7.7},{"text":"Apple","size":7.7},{"text":"Cars","size":7.7},{"text":"Yelp","size":7},
@@ -72,7 +74,7 @@ var fill = d3.scale.category20b();
 
 <div style="width: 40%;">
     <div class="legend">
-        Words with higher percentage of mentions in Y-Combinator applications are larger and purple. The colors progress from green (lower percentages) to gray (mid-percentages) to purple (higher percentages).
+        Words used in a higher percentage of 2016 Y-Combinator applications are larger and purple. The colors progress from green (lower percentages) to gray (mid-percentages) to purple (higher percentages).
     </div>
 
 </div>
