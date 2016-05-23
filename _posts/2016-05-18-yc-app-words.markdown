@@ -17,6 +17,7 @@ categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         background-color: #ffffbe;
+        width: 100%;
     }
     .legend {
         border: 1px solid #555555;
