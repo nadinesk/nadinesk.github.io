@@ -7,7 +7,7 @@ categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
   <div id="example"></div>
   
 <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-<script src="../d3.cloud.js"></script>
+<script src="http://www.nadinesk.github.io/d3.cloud.js"></script>
 
 <style>
 
