@@ -4,6 +4,9 @@ title:  "Words Used Most Frequently Used in Y-Combinator Applications"
 date:   2016-05-23 00:00:00
 categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
 ---
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<script src="d3.cloud.js"></script>
+
 <style>
 
     #example {
