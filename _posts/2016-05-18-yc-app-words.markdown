@@ -4,8 +4,10 @@ title:  "Words Used Most Frequently Used in Y-Combinator Applications"
 date:   2016-05-23 00:00:00
 categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
 ---
+  <div id="example"></div>
+  
 <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-<script src="d3.cloud.js"></script>
+<script src="../d3.cloud.js"></script>
 
 <style>
 
@@ -27,10 +29,7 @@ categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
     }
 </style>
 
-<body>
-  <div id="example"></div>
-  
-</body>
+
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script>
 
