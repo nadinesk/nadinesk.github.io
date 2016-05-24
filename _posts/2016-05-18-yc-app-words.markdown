@@ -61,7 +61,7 @@ var fill = d3.scale.category20b();
     function draw(words) {
         d3.select("#example").append("svg")
             .attr("id","svgtest")
-           .attr("width", 800)
+           .attr("width", "100%")
                    .attr("height", 350)
                  .attr("class", "wordcloud")
                 .append("g")
@@ -74,7 +74,7 @@ var fill = d3.scale.category20b();
                 .style("font-size", function(d) { return (d.size * 1.2) + "px"; })
                 .style("fill", function(d, i) { return color(i); })
                 .attr("transform", function(d) {
-                    return "translate(" + [(d.x*1.4), (d.y*1.2)] + ")rotate(" + d.rotate + ")";
+                    return "translate(" + [(d.x*1.3), (d.y*1.2)] + ")rotate(" + d.rotate + ")";
                 })
                 .text(function(d) { return d.text; });
     }
