@@ -8,7 +8,7 @@ categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
   
 <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="../New folder/resized3.js" charset="utf-8"></script>
+<script src="http://khasachi.com/New%20folder/resized3.js" charset="utf-8"></script>
 <script src="http://khasachi.com/d3.cloud.js"></script>
 
 
