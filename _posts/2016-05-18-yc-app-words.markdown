@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Words Used Most Frequently Used in Y-Combinator Applications"
+title:  "Some Trends from Y-Combinator 2016 Applications"
 date:   2016-05-23 00:00:00
 categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
 ---
@@ -16,7 +16,7 @@ categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
         font-family: 'Lato', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background-color: #ffffbe;
+        /*background-color: #ffffbe; */
         width: 100%;
     }
     .legend {
@@ -58,7 +58,7 @@ var fill = d3.scale.category20b();
     function draw(words) {
         d3.select("#example").append("svg")
            .attr("width", "100%")
-                   .attr("height", 500)
+                   .attr("height", 400)
                  .attr("class", "wordcloud")
                 .append("g")
                 // without the transform, words words would get cutoff to the left and top, they would
