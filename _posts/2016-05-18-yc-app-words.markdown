@@ -76,14 +76,14 @@ var fill = d3.scale.category20b();
                 .append("g")
                 // without the transform, words words would get cutoff to the left and top, they would
                 // appear outside of the SVG area
-                .attr("transform", "translate(320,200)")
+                .attr("transform", "translate(320,100)")
                 .selectAll("text")
                 .data(words)
                 .enter().append("text")
                 .style("font-size", function(d) { return (d.size * 1.2) + "px"; })
                 .style("fill", function(d, i) { return color(i); })
                 .attr("transform", function(d) {
-                    return "translate(" + [(d.x*1.5), (d.y*1.3)] + ")rotate(" + d.rotate + ")";
+                    return "translate(" + [(d.x*1.4), (d.y*1.2)] + ")rotate(" + d.rotate + ")";
                 })
                 .text(function(d) { return d.text; });
     }
