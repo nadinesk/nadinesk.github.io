@@ -1,5 +1,4 @@
-<script>
- var chart = $("#svgtest"),
+var chart = $("#svgtest"),
     aspect = chart.width() / chart.height(),
     container = chart.parent();
 $(window).on("resize", function() {
@@ -7,5 +6,3 @@ $(window).on("resize", function() {
     chart.attr("width", targetWidth);
     chart.attr("height", Math.round(targetWidth / aspect));
 }).trigger("resize");
-
-</script>
