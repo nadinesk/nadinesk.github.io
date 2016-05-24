@@ -10,6 +10,18 @@ categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script src="http://khasachi.com/d3.cloud.js"></script>
 
+<script>
+ var chart = $("#svgtest"),
+    aspect = chart.width() / chart.height(),
+    container = chart.parent();
+$(window).on("resize", function() {
+    var targetWidth = container.width();
+    chart.attr("width", targetWidth);
+    chart.attr("height", Math.round(targetWidth / aspect));
+}).trigger("resize");
+
+</script>
+
 <style>
 
     #example {
@@ -58,8 +70,8 @@ var fill = d3.scale.category20b();
     function draw(words) {
         d3.select("#example").append("svg")
             .attr("id","svgtest")
-           .attr("width", "100%")
-                   .attr("height", 400)
+           .attr("width", 800)
+                   .attr("height", 300)
                  .attr("class", "wordcloud")
                 .append("g")
                 // without the transform, words words would get cutoff to the left and top, they would

@@ -46,6 +46,17 @@ categories: d3.js, charts, median house values, data, data visualization
 <body>
   <div id="example"></div>
  <div id="example1"></div> 
+<script>
+ var chart = $("#svgtest"),
+    aspect = chart.width() / chart.height(),
+    container = chart.parent();
+$(window).on("resize", function() {
+    var targetWidth = container.width();
+    chart.attr("width", targetWidth);
+    chart.attr("height", Math.round(targetWidth / aspect));
+}).trigger("resize");
+
+</script>
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script>
 var margin = {top: 20, right: 200, bottom: 50, left: 40},
