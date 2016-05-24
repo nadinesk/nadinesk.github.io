@@ -76,7 +76,7 @@ var fill = d3.scale.category20b();
                 .append("g")
                 // without the transform, words words would get cutoff to the left and top, they would
                 // appear outside of the SVG area
-                .attr("transform", "translate(420,200)")
+                .attr("transform", "translate(420,300)")
                 .selectAll("text")
                 .data(words)
                 .enter().append("text")
