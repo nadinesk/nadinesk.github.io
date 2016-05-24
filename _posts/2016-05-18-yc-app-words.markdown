@@ -57,6 +57,7 @@ var fill = d3.scale.category20b();
 
     function draw(words) {
         d3.select("#example").append("svg")
+            .attr("id","svgtest")
            .attr("width", "100%")
                    .attr("height", 400)
                  .attr("class", "wordcloud")
