@@ -32,6 +32,10 @@ categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
     .bld {
         font-weight: bold;
     }
+    
+    #svgtest {
+        width: 100%;
+    }
 </style>
 
 
