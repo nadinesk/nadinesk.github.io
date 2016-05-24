@@ -71,7 +71,7 @@ var fill = d3.scale.category20b();
         d3.select("#example").append("svg")
             .attr("id","svgtest")
            .attr("width", 800)
-                   .attr("height", 300)
+                   .attr("height", 350)
                  .attr("class", "wordcloud")
                 .append("g")
                 // without the transform, words words would get cutoff to the left and top, they would
