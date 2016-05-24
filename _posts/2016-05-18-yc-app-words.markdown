@@ -83,7 +83,7 @@ var fill = d3.scale.category20b();
                 .style("font-size", function(d) { return (d.size * 1.2) + "px"; })
                 .style("fill", function(d, i) { return color(i); })
                 .attr("transform", function(d) {
-                    return "translate(" + [d.x, (d.y*1.3)] + ")rotate(" + d.rotate + ")";
+                    return "translate(" + [(d.x*2), (d.y*1.3)] + ")rotate(" + d.rotate + ")";
                 })
                 .text(function(d) { return d.text; });
     }
