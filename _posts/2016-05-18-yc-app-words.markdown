@@ -5,6 +5,7 @@ date:   2016-05-23 00:00:00
 categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
 ---
 
+These word clouds made with D3.js are from <a href="http://www.themacro.com/articles/2016/05/the-startup-zeitgeist/">this</a> blog post, The Startup Zeitgeist, from <a href="http://www.themacro.com/about/">Y-Combinator's blog</a> about happenings in the startup community. The post discusses analysis of eight years of anonymized Y-Combinator application data. 
 
   <div id="graph-title">Selection of Popular Terms from 2016 Y-Combinator Applications</div>
   <div id="example"></div>
@@ -252,7 +253,6 @@ svg20.selectAll("circle")
     .attr("fill", c20 );
 </script>
 
-These word clouds made with D3.js are from <a href="http://www.themacro.com/articles/2016/05/the-startup-zeitgeist/">this</a> blog post, The Startup Zeitgeist, from <a href="http://www.themacro.com/about/">Y-Combinator's blog</a> about happenings in the startup community. The post discusses analysis of eight years of anonymized Y-Combinator application data. 
 
 The first word cloud shows a selection of the most popular terms from 2016 YC applications. The data is <a href="http://www.themacro.com/images/articles/startupzeitgeist17-0e6248d2.png">here</a>. The values are in percentage of applications using the terms. The larger, purple words were more popular; the smaller, green words were less popular. the legend below the first word cloud shows the color range, from green to purple, or low to high values. The term 'Apps' was most popular, in 7.2 percent of applications. Out of the selected terms, 'Yelp' was the least popular, in 1.0 percent of applications. 
 
