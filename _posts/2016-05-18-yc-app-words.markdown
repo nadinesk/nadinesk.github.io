@@ -132,7 +132,7 @@ function draw(words) {
 </script>
 
 <script>
-var frequency_list_2 = [ {"text":"Slack","size":61},{"text":"Vehicles","size":43},{"text":"Firms","size":40},{"text":"Journey","size":37},{"text":"IoT","size":34},{"text":"OnDemand","size":33},{"text":"Integrations","size":32},{"text":"Visits","size":29},{"text":"VR","size":28},{"text":"Drone","size":28},{"text":"Drones","size":27},{"text":"AI","size":26},{"text":"Pattern","size":25},{"text":"Assistant","size":24},{"text":"Bills","size":23},{"text":"Robots","size":23},{"text":"Linking","size":22},{"text":"Academic","size":21},{"text":"Concierge","size":21},{"text":"Rooms","size":20},{"text":"Bookings","size":20},{"text":"Orderings","size":19},{"text":"Portable","size":19},{"text":"Bookings","size":18},{"text":"Exercise","size":18},{"text":"Parking","size":17},{"text":"Logistics","size":17},{"text":"Ingredients","size":17},{"text":"Uber","size":17},{"text":"India","size":16},{"text":"Campus","size":61},{"text":"B2C","size":43},{"text":"Environmental","size":40},{"text":"Healthy","size":37},{"text":"QA","size":34},{"text":"Parent","size":33},{"text":"Vehicle","size":32},{"text":"Meals","size":29},{"text":"Deep","size":28},{"text":"Artificial","size":28},{"text":"Visualization","size":27},{"text":"Provider","size":26},{"text":"Delivering","size":25},{"text":"Transportation","size":24},{"text":"ID","size":23},{"text":"SaaS","size":23},{"text":"Charge","size":22},{"text":"Cash","size":21},{"text":"Fly","size":21},{"text":"Automatic","size":20},
+var frequency_list_2 = [ {"text":"Slack","size":850},{"text":"Vehicles","size":211},{"text":"Firms","size":204},{"text":"Journey","size":175},{"text":"IoT","size":172},{"text":"OnDemand","size":147},{"text":"Integrations","size":143},{"text":"Visits","size":136},{"text":"VR","size":133},{"text":"Drone","size":130},{"text":"Drones","size":129},{"text":"AI","size":127},{"text":"Pattern","size":120},{"text":"Assistant","size":119},{"text":"Bills","size":119},{"text":"Robots","size":110},{"text":"Linking","size":107},{"text":"Academic","size":107},{"text":"Concierge","size":104},{"text":"Rooms","size":102},{"text":"Bookings","size":96},{"text":"Orderings","size":88},{"text":"Portable","size":88},{"text":"Bookings","size":88},{"text":"Exercise","size":86},{"text":"Parking","size":85},{"text":"Logistics","size":82},{"text":"Ingredients","size":77},{"text":"Uber","size":76},{"text":"India","size":74},{"text":"Campus","size":74},{"text":"B2C","size":74},{"text":"Environmental","size":74},{"text":"Healthy","size":72},{"text":"QA","size":71},{"text":"Parent","size":70},{"text":"Vehicle","size":70},{"text":"Meals","size":67},{"text":"Deep","size":63},{"text":"Artificial","size":63},{"text":"Visualization","size":62},{"text":"Provider","size":58},{"text":"Delivering","size":57},{"text":"Transportation","size":54},{"text":"ID","size":53},{"text":"SaaS","size":52},{"text":"Charge","size":52},{"text":"Cash","size":52},{"text":"Fly","size":51},{"text":"Automatic","size":50}
 
 
 ];
@@ -140,7 +140,7 @@ var frequency_list_2 = [ {"text":"Slack","size":61},{"text":"Vehicles","size":43
 var fill2 = d3.scale.category20();
 
 var color2 = d3.scale.linear()
-        .domain([0,1,2,3,4,5,6,10,15,20,100])
+        .domain([50,60,70,86,100,130,160,200,220,860])
         .range(['#40004b','#762a83','#9970ab','#c2a5cf','#e7d4e8','#acacac','#d9f0d3','#a6dba0','#5aae61','#1b7837','#00441b']);
 
 
