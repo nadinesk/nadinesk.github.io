@@ -5,7 +5,7 @@ date:   2016-05-23 00:00:00
 categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
 ---
 
-These word clouds made with D3.js are from data from <a href="http://www.themacro.com/articles/2016/05/the-startup-zeitgeist/">this</a> blog post on The Startup Zeitgeist, <a href="http://www.themacro.com/about/">Y-Combinator's blog</a> about happenings in the startup community. The post discusses analysis of eight years of anonymized Y-Combinator application data. 
+These word clouds made with D3.js are from data from <a href="http://www.themacro.com/articles/2016/05/the-startup-zeitgeist/" target="#">this</a> blog post on The Startup Zeitgeist, <a href="http://www.themacro.com/about/" target="#">Y-Combinator's blog</a> about happenings in the startup community. The post discusses analysis of eight years of anonymized Y-Combinator application data. 
 
   <div id="graph-title">Selection of Popular Terms from 2016 Y-Combinator Applications</div>
   <div id="example"></div>
