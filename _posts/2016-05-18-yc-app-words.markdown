@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Some Trends from Y-Combinator 2016 Applications"
+title:  "Term Trends from Y-Combinator 2016 Applications"
 date:   2016-05-24 00:00:00
 categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
 ---
