@@ -12,6 +12,8 @@ The second word cloud shows terms with the greatest decreases from 2015 to 2016 
 
 The second word cloud shows terms with the greatest increases from 2015 to 2016 YC applications. The data is <a href="http://www.themacro.com/images/articles/startupzeitgeist19-c7bdb0dc.png">here</a>. The values are in percentage increase in usage of terms in applications from 2015 to 2016. The color range for this word cloud is, low to high in absolute values, light blue (lowest) to purple (mid) to darker blue (highest). The larger words have higher values, and the smaller words have lower values. Slack is in dark blue and the largest font because its usage increased by 850% from 2015 to 2016 YC applications. 
 
+A note on the word clouds: I used the <a href="https://github.com/jasondavies/d3-cloud">d3-cloud library</a>; <a href="http://bl.ocks.org/ericcoopey/6382449">this</a> example implementation; and <a href="http://bl.ocks.org/aaizemberg/78bd3dade9593896a59d">this</a> example for the legend for the graphs.
+
   <div id="graph-title">Selection of Popular Terms from 2016 Y-Combinator Applications</div>
   <div id="example"></div>
   <div id="legend-text">color code legend: low to high values</div>
