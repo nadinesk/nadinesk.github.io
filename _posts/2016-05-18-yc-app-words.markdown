@@ -4,6 +4,8 @@ title:  "Some Trends from Y-Combinator 2016 Applications"
 date:   2016-05-23 00:00:00
 categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
 ---
+asdf
+
   <div id="graph-title">Selection of Popular Terms from 2016 Y-Combinator Applications</div>
   <div id="example"></div>
   <div id="legend-text">color code legend: low to high values</div>
