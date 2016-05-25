@@ -7,8 +7,7 @@ categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
   <div id="graph-title">Selection of Popular Terms from 2016 Y-Combinator Applications</div>
   <div id="example"></div>
   <div id="legend-text">color code legend: low to high values</div>
-    <div id="cfree"></div>
-
+  <div id="cfree"></div>
   <div id="graph-title">Terms with Greatest Decreases from 2015-16 YC Applications</div>
   <div id="example1"></div>
   <div id="legend-text">color code legend: high to low absolute values</div>
