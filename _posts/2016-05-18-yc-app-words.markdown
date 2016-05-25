@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Some Trends from Y-Combinator 2016 Applications"
-date:   2016-05-23 00:00:00
+date:   2016-05-24 00:00:00
 categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
 ---
 
@@ -254,7 +254,7 @@ svg20.selectAll("circle")
 </script>
 
 
-The first word cloud shows a selection of the most popular terms from 2016 YC applications. The data is <a href="http://www.themacro.com/images/articles/startupzeitgeist17-0e6248d2.png" target="#">here</a>. The values are in percentage of applications using the terms. The larger, purple words were more popular; the smaller, green words were less popular. the legend below the first word cloud shows the color range, from green to purple, or low to high values. The term 'Apps' was most popular, in 7.2 percent of applications. Out of the selected terms, 'Yelp' was the least popular, in 1.0 percent of applications. 
+The first word cloud shows a selection of the most popular terms from 2016 YC applications. The data is <a href="http://www.themacro.com/images/articles/startupzeitgeist17-0e6248d2.png" target="#">here</a>. The values are in percentage of applications using the terms. The larger, purple words were more popular; the smaller, green words were less popular. The legend below the first word cloud shows the color range, from green to purple, or low to high values. The term 'Apps' was most popular, in 7.2 percent of applications. Out of the selected terms, 'Yelp' was the least popular, in 1.0 percent of applications. 
 
 The second word cloud shows terms with the greatest decreases from 2015 to 2016 YC applications. The data is <a href="http://www.themacro.com/images/articles/startupzeitgeist18-b8bc3a2b.png" target="#">here</a>. The values are in percentage decrease in usage of terms in applications. The color range for this word cloud is, low to high in absolute values, pink (lowest) to yellow/green (mid) to blue (highest). The larger words have higher absolute values, and the smaller words have lower absolute values. The term 'Bitcoin' is largest and blue; it had a 61% decrease. It had the largest absolute value percent change. The term 'Game' had the lowest percentage decrease out of the selected terms, a 16 percent decrease in usage. 
 
