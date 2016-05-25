@@ -4,15 +4,7 @@ title:  "Some Trends from Y-Combinator 2016 Applications"
 date:   2016-05-23 00:00:00
 categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
 ---
-These word clouds made with D3.js are from <a href="http://www.themacro.com/articles/2016/05/the-startup-zeitgeist/">this</a> blog post, The Startup Zeitgeist, from <a href="http://www.themacro.com/about/">Y-Combinator's blog</a> about happenings in the startup community. The post discusses analysis of eight years of anonymized Y-Combinator application data. 
 
-The first word cloud shows a selection of the most popular terms from 2016 YC applications. The data is <a href="http://www.themacro.com/images/articles/startupzeitgeist17-0e6248d2.png">here</a>. The values are in percentage of applications using the terms. The larger, purple words were more popular; the smaller, green words were less popular. the legend below the first word cloud shows the color range, from green to purple, or low to high values. 
-
-The second word cloud shows terms with the greatest decreases from 2015 to 2016 YC applications. The data is <a href="http://www.themacro.com/images/articles/startupzeitgeist18-b8bc3a2b.png">here</a>. The values are in percentage decrease in usage of terms in applications. The color range for this word cloud is, low to high in absolute values, pink (lowest) to yellow/green (mid) to blue (highest). The larger words have higher absolute values, and the smaller words have lower absolute values. For example, Bitcoin is largest and blue because it had a 61% decrease. It had the largest absolute value percent change. 
-
-The second word cloud shows terms with the greatest increases from 2015 to 2016 YC applications. The data is <a href="http://www.themacro.com/images/articles/startupzeitgeist19-c7bdb0dc.png">here</a>. The values are in percentage increase in usage of terms in applications from 2015 to 2016. The color range for this word cloud is, low to high in absolute values, light blue (lowest) to purple (mid) to darker blue (highest). The larger words have higher values, and the smaller words have lower values. Slack is in dark blue and the largest font because its usage increased by 850% from 2015 to 2016 YC applications. 
-
-A note on the word clouds: I used the <a href="https://github.com/jasondavies/d3-cloud">d3-cloud library</a>; <a href="http://bl.ocks.org/ericcoopey/6382449">this</a> example implementation; and <a href="http://bl.ocks.org/aaizemberg/78bd3dade9593896a59d">this</a> example for the legend for the graphs.
 
   <div id="graph-title">Selection of Popular Terms from 2016 Y-Combinator Applications</div>
   <div id="example"></div>
@@ -259,6 +251,16 @@ svg20.selectAll("circle")
     .attr("cy", 10)
     .attr("fill", c20 );
 </script>
+
+These word clouds made with D3.js are from <a href="http://www.themacro.com/articles/2016/05/the-startup-zeitgeist/">this</a> blog post, The Startup Zeitgeist, from <a href="http://www.themacro.com/about/">Y-Combinator's blog</a> about happenings in the startup community. The post discusses analysis of eight years of anonymized Y-Combinator application data. 
+
+The first word cloud shows a selection of the most popular terms from 2016 YC applications. The data is <a href="http://www.themacro.com/images/articles/startupzeitgeist17-0e6248d2.png">here</a>. The values are in percentage of applications using the terms. The larger, purple words were more popular; the smaller, green words were less popular. the legend below the first word cloud shows the color range, from green to purple, or low to high values. The term 'Apps' was most popular, in 7.2 percent of applications. Out of the selected terms, 'Yelp' was the least popular, in 1.0 percent of applications. 
+
+The second word cloud shows terms with the greatest decreases from 2015 to 2016 YC applications. The data is <a href="http://www.themacro.com/images/articles/startupzeitgeist18-b8bc3a2b.png">here</a>. The values are in percentage decrease in usage of terms in applications. The color range for this word cloud is, low to high in absolute values, pink (lowest) to yellow/green (mid) to blue (highest). The larger words have higher absolute values, and the smaller words have lower absolute values. The term 'Bitcoin' is largest and blue; it had a 61% decrease. It had the largest absolute value percent change. The term 'Game' had the lowest percentage decrease out of the selected terms, a 16 percent decrease in usage. 
+
+The second word cloud shows terms with the greatest increases from 2015 to 2016 YC applications. The data is <a href="http://www.themacro.com/images/articles/startupzeitgeist19-c7bdb0dc.png">here</a>. The values are in percentage increase in usage of terms in applications from 2015 to 2016. The color range for this word cloud is, low to high in absolute values, light blue (lowest) to purple (mid) to darker blue (highest). The larger words have higher values, and the smaller words have lower values. Slack is in dark blue and the largest: its usage increased by 850% from 2015 to 2016 YC applications. The second highest increase in usage is the term 'Vehicles', a 215% increase. The lowest percentage increase out of the selected terms, is the term 'Automatic', a 50% increase. 
+
+A note on the word clouds: I used the <a href="https://github.com/jasondavies/d3-cloud">d3-cloud library</a>; <a href="http://bl.ocks.org/ericcoopey/6382449">this</a> example implementation; and <a href="http://bl.ocks.org/aaizemberg/78bd3dade9593896a59d">this</a> example for the legend for the graphs.
 
 <!--<div style="width: 40%;">
     <div class="legend">
