@@ -110,7 +110,7 @@ var c20b = d3.scale.category20b();
                 .selectAll("text")
                 .data(words)
                 .enter().append("text")
-                .style("font-size", function(d) { return d.size + "px"; })
+                .style("font-size", function(d) { return (d.size *1.2) + "px"; })
                 .style("fill", function(d, i) { return color(i); })
                 .attr("transform", function(d) {
                     return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
