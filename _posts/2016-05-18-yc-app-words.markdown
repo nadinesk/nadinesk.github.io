@@ -147,7 +147,7 @@ var color2 = d3.scale.linear()
 d3.layout.cloud().size([800, 300])
         .words(frequency_list_2)
         .rotate(0)
-        .fontSize(function(d) { return (d.size/50); })
+        .fontSize(function(d) { return (d.size/5); })
         .on("end", draw)
         .start();
 
