@@ -100,13 +100,13 @@ var c20b = d3.scale.category20b();
 
     function draw(words) {
         d3.select("#example").append("svg")
-                .attr("width", 850)
-                .attr("height", 350)
+                .attr("width", "100%")
+                .attr("height", 310)
                 .attr("class", "wordcloud")
                 .append("g")
                 // without the transform, words words would get cutoff to the left and top, they would
                 // appear outside of the SVG area
-                .attr("transform", "translate(320,150)")
+                .attr("transform", "translate(320,170)")
                 .selectAll("text")
                 .data(words)
                 .enter().append("text")
@@ -158,13 +158,13 @@ d3.layout.cloud().size([800, 300])
 
 function draw(words) {
     d3.select("#example1").append("svg")
-            .attr("width", 850)
-            .attr("height", 350)
+            .attr("width", "100%")
+            .attr("height", 310)
             .attr("class", "wordcloud")
             .append("g")
             // without the transform, words words would get cutoff to the left and top, they would
             // appear outside of the SVG area
-            .attr("transform", "translate(320,150)")
+            .attr("transform", "translate(320,170)")
             .selectAll("text")
             .data(words)
             .enter().append("text")
@@ -214,13 +214,13 @@ d3.layout.cloud().size([800, 300])
 
 function draw(words) {
     d3.select("#example2").append("svg")
-            .attr("width", 850)
-            .attr("height", 350)
+            .attr("width", "100%")
+            .attr("height", 310)
             .attr("class", "wordcloud")
             .append("g")
             // without the transform, words words would get cutoff to the left and top, they would
             // appear outside of the SVG area
-            .attr("transform", "translate(320,150)")
+            .attr("transform", "translate(320,170)")
             .selectAll("text")
             .data(words)
             .enter().append("text")
