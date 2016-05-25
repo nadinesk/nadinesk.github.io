@@ -106,7 +106,7 @@ var c20b = d3.scale.category20b();
                 .append("g")
                 // without the transform, words words would get cutoff to the left and top, they would
                 // appear outside of the SVG area
-                .attr("transform", "translate(320,200)")
+                .attr("transform", "translate(320,150)")
                 .selectAll("text")
                 .data(words)
                 .enter().append("text")
@@ -164,7 +164,7 @@ function draw(words) {
             .append("g")
             // without the transform, words words would get cutoff to the left and top, they would
             // appear outside of the SVG area
-            .attr("transform", "translate(320,200)")
+            .attr("transform", "translate(320,150)")
             .selectAll("text")
             .data(words)
             .enter().append("text")
@@ -220,7 +220,7 @@ function draw(words) {
             .append("g")
             // without the transform, words words would get cutoff to the left and top, they would
             // appear outside of the SVG area
-            .attr("transform", "translate(320,200)")
+            .attr("transform", "translate(320,150)")
             .selectAll("text")
             .data(words)
             .enter().append("text")
