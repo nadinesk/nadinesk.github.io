@@ -25,7 +25,7 @@ categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
     .legend {
         border: 1px solid #555555;
         border-radius: 5px 5px 5px 5px;
-        font-size: 0.8em;
+        font-size: 10px;
         margin: 10px;
         padding: 8px;
     }
