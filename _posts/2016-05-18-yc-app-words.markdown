@@ -4,9 +4,11 @@ title:  "Some Trends from Y-Combinator 2016 Applications"
 date:   2016-05-23 00:00:00
 categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
 ---
-  
+  <div id="graph-title">Selection of Popular Terms from 2016 Y-Combinator Applications</div>
   <div id="example"></div>
+  <div id="graph-title">Terms with Greatest Decreases from 2015-16 YC Applications</div>
   <div id="example1"></div>
+  <div id="graph-title">Terms with Greatest Increases from 2015-16 YC Applications</div>
   <div id="example2"></div>
 
   
@@ -18,6 +20,16 @@ categories: d3.js, word cloud, y-combinator, start-ups, data, data visualization
 
 
 <style>
+    
+#graph-title {
+    font-family: 'Lato', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 20px;
+        text-align: center;
+        color: #0077BE;
+    }
+
 
  #example, #example1,  #example2 {
         font-family: 'Lato', sans-serif;
