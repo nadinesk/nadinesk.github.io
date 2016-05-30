@@ -5,7 +5,7 @@ date:   2016-05-30 00:00:00
 categories: d3.js, data visualization, politics, election, polling data, polls
 ---
 
-These charts show polling data averages, sourced from <a href="http://www.realclearpolitics.com/epolls/2016/president/us/general_election_trump_vs_clinton-5491.html" target="#">Real Clear Politics</a>. (Mouse over the line charts to see the data). Chart 1 shows monthly averages, using Real Clear Politics' data from various polls, from May 2015 to May 2016. The highest monthly average spread (Chart 3) between Clinton and Trump was in June 2015, with Clinton up by 21 points. The lowest spread is the current Real Clear Politics average (Chart 2), with Hillary up by just one point. 
+These charts show polling data averages, sourced from <a href="http://www.realclearpolitics.com/epolls/2016/president/us/general_election_trump_vs_clinton-5491.html" target="#">Real Clear Politics</a>. (Mouse over the line charts to see the data). Chart 1 shows monthly averages, using Real Clear Politics' data from various polls, from May 2015 to May 2016. The highest monthly average spread (Chart 3) between Clinton and Trump was in June 2015, with Clinton up by 21 points. The lowest spread is the current Real Clear Politics average (Chart 2), with Hillary up by just one point. I listened to the Five-Thirty-Eight podcast last week, and am holding on to the idea that the polls right now aren't that meaningful (because I'm so with her). 
 
   <div class="title">Chart 1: Polling Data Monthly Averages</div>
   <div id="example"></div>
