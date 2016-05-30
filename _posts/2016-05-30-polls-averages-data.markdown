@@ -408,7 +408,7 @@ function type(d) {
 <script>
 
 var marginSD = {top: 20, right: 50, bottom: 30, left: 50},
-    widthSD = 960 - marginSD.left - marginSD.right,
+    widthSD = 700 - marginSD.left - marginSD.right,
     heightSD = 500 - marginSD.top - marginSD.bottom;
 
 var parseDate = d3.time.format("%B %Y").parse,
