@@ -101,7 +101,7 @@ var svg1 = d3.select("#example1").append("svg")
   .append("g")
     .attr("transform", "translate(" + width1 / 2 + "," + height1 / 2 + ")");
 
-d3.csv("data.csv", type, function(error, data) {
+d3.csv("/d3Data/ctMayAvg.csv", type, function(error, data) {
   if (error) throw error;
 
   var g = svg1.selectAll(".arc")
