@@ -424,6 +424,7 @@ var ySD = d3.scale.linear()
 
 var xAxisSD = d3.svg.axis()
     .scale(xSD)
+     .tickFormat(d3.time.format("%b %y"));
     .orient("bottom");
 
 var yAxisSD = d3.svg.axis()
@@ -468,7 +469,7 @@ d3.tsv("/d3Data/ctspreadsdata.tsv", function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Price ($)");
+      .text("Spread (%)");
 
   svgSD.append("path")
       .datum(data)
