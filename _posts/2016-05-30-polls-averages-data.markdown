@@ -5,13 +5,13 @@ date:   2016-05-30 00:00:00
 categories: d3.js, data visualization, politics, election, polling data, polls
 ---
 
-These charts show polling data averages, sourced from <a href="http://www.realclearpolitics.com/epolls/2016/president/us/general_election_trump_vs_clinton-5491.html" target="#">Real Clear Politics</a>. 
+These charts show polling data averages, sourced from <a href="http://www.realclearpolitics.com/epolls/2016/president/us/general_election_trump_vs_clinton-5491.html" target="#">Real Clear Politics</a>. Chart 1 shows monthly averages, using Real Clear Politics' data from various polls, from May 2015 to May 2016. The highest monthly average spread (Chart 3) between Clinton and Trump was in June 2015, with Clinton up by 21 points. The lowest spread is the current Real Clear Politics average (Chart 2), with Hillary up by just one point. 
 
-  <div class="title">Polling Data Monthly Averages</div>
+  <div class="title">Chart 1: Polling Data Monthly Averages</div>
   <div id="example"></div>
-  <div class="title">Polling Data Average <br>(5/13/16 to 5/24/16)</div>
+  <div class="title">Chart 2:Polling Data Average <br>(5/13/16 to 5/24/16)</div>
   <div id="example1"></div>
-  <div class="title">Spread of Polling Data Monthly Averages</div>
+  <div class="title">Chart 3:Spread of Polling Data Monthly Averages</div>
   <div id="example2"></div>
 
   
@@ -59,7 +59,8 @@ These charts show polling data averages, sourced from <a href="http://www.realcl
 
 
     #example, #example1, #example2 {
-      margin: 50px;
+      margin-top: 50px;
+      margin-bottom: 50px;
   font: 10px sans-serif;
 }
 
@@ -67,8 +68,9 @@ These charts show polling data averages, sourced from <a href="http://www.realcl
   font-family: 'Lato', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        font-size: 15px;
+        font-size: 17px;
         text-align: center;
+        font-weight: 700;
     }
 </style>
 
@@ -603,13 +605,7 @@ function type(d) {
   </script>
 
 
-The first word cloud shows a selection of the most popular terms from 2016 YC applications. The data is <a href="http://www.themacro.com/images/articles/startupzeitgeist17-0e6248d2.png" target="#">here</a>. The values are in percentage of applications using the terms. The larger, purple words were more popular; the smaller, green words were less popular. The legend below the first word cloud shows the color range, from green to purple, or low to high values. The term 'Apps' was most popular, in 7.2 percent of applications. Out of the selected terms, 'Yelp' was the least popular, in 1.0 percent of applications. 
 
-The second word cloud shows terms with the greatest decreases from 2015 to 2016 YC applications. The data is <a href="http://www.themacro.com/images/articles/startupzeitgeist18-b8bc3a2b.png" target="#">here</a>. The values are in percentage decrease in usage of terms in applications. The color range for this word cloud is, low to high in absolute values, pink (lowest) to yellow/green (mid) to blue (highest). The larger words have higher absolute values, and the smaller words have lower absolute values. The term 'Bitcoin' is largest and blue; it had a 61% decrease. It had the largest absolute value percent change. The term 'Game' had the lowest percentage decrease out of the selected terms, a 16 percent decrease in usage. 
-
-The third word cloud shows terms with the greatest increases from 2015 to 2016 YC applications. The data is <a href="http://www.themacro.com/images/articles/startupzeitgeist19-c7bdb0dc.png" target="#">here</a>. The values are in percentage increase in usage of terms in applications from 2015 to 2016. The color range for this word cloud is, low to high in absolute values, light blue (lowest) to purple (mid) to darker blue (highest). The larger words have higher values, and the smaller words have lower values. Slack is in dark blue and the largest: its usage increased by 850% from 2015 to 2016 YC applications. The second highest increase in usage is the term 'Vehicles', a 215% increase. The lowest percentage increase out of the selected terms, is the term 'Automatic', a 50% increase. 
-
-A note on the word clouds: I used the <a href="https://github.com/jasondavies/d3-cloud" target="#">d3-cloud library</a>; <a href="http://bl.ocks.org/ericcoopey/6382449" target="#">this</a> example implementation; and <a href="http://bl.ocks.org/aaizemberg/78bd3dade9593896a59d" target="#">this</a> example for the legend for the graphs.
 
 <!--<div style="width: 40%;">
     <div class="legend">
