@@ -173,7 +173,7 @@ function type(d) {
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
- d3.tsv("pollsdata.tsv", function(error, data) {
+ d3.tsv("/d3Data/ctmonthavgs.tsv", function(error, data) {
   if (error) throw error;
 
     color.domain(d3.keys(data[0]).filter(function(key) {
@@ -423,7 +423,7 @@ function type(d) {
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
- d3.tsv("pollsdata1.tsv", function(error, data) {
+ d3.tsv("/d3Data/ctspreadsdata.tsv", function(error, data) {
   if (error) throw error;
 
     color1.domain(d3.keys(data[0]).filter(function(key) {
