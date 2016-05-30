@@ -130,7 +130,7 @@ var svg1 = d3.select("#example1").append("svg")
   .append("g")
     .attr("transform", "translate(" + width1 / 2 + "," + height1 / 2 + ")");
 
-d3.csv("http://www.khasachi.com/d3Data/ctMayAvg.csv", type, function(error, data) {
+d3.csv("/d3Data/ctMayAvg.csv", type, function(error, data) {
   if (error) throw error;
 
   var g = svg1.selectAll(".arc")
@@ -202,7 +202,7 @@ function type(d) {
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
- d3.tsv("http://www.khasachi.com/d3Data/ctmonthavgs.tsv", function(error, data) {
+ d3.tsv("/d3Data/ctmonthavgs.tsv", function(error, data) {
   if (error) throw error;
 
     color.domain(d3.keys(data[0]).filter(function(key) {
@@ -440,7 +440,7 @@ var svgSD = d3.select("#example2").append("svg")
   .append("g")
     .attr("transform", "translate(" + marginSD.left + "," + marginSD.top + ")");
 
-d3.tsv("http://www.khasachi.com/d3Data/ctspreadsdata.tsv", function(error, data) {
+d3.tsv("/d3Data/ctspreadsdata.tsv", function(error, data) {
   if (error) throw error;
 
   data.forEach(function(d) {
