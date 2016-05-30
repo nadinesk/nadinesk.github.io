@@ -424,7 +424,7 @@ var ySD = d3.scale.linear()
 
 var xAxisSD = d3.svg.axis()
     .scale(xSD)
-     .tickFormat(d3.time.format("%b %y"));
+     .tickFormat(d3.time.format("%b %y"))
     .orient("bottom");
 
 var yAxisSD = d3.svg.axis()
