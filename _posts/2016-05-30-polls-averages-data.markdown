@@ -72,6 +72,33 @@ These charts show polling data averages, sourced from <a href="http://www.realcl
         text-align: center;
         font-weight: 700;
     }
+
+    .axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.focus circle {
+  fill: none;
+  stroke: steelblue;
+}
 </style>
 
 
@@ -103,7 +130,7 @@ var svg1 = d3.select("#example1").append("svg")
   .append("g")
     .attr("transform", "translate(" + width1 / 2 + "," + height1 / 2 + ")");
 
-d3.csv("/d3Data/ctMayAvg.csv", type, function(error, data) {
+d3.csv("http://www.khasachi.com/d3Data/ctMayAvg.csv", type, function(error, data) {
   if (error) throw error;
 
   var g = svg1.selectAll(".arc")
@@ -175,7 +202,7 @@ function type(d) {
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
- d3.tsv("/d3Data/ctmonthavgs.tsv", function(error, data) {
+ d3.tsv("http://www.khasachi.com/d3Data/ctmonthavgs.tsv", function(error, data) {
   if (error) throw error;
 
     color.domain(d3.keys(data[0]).filter(function(key) {
@@ -377,232 +404,108 @@ function type(d) {
       });
         });
   </script>
-  <script>
-    
 
-   var margin = {
-        top: 20,
-        right: 80,
-        bottom: 30,
-        left: 50
-      },
-      width = 600 - margin.left - margin.right,
-      height = 500 - margin.top - margin.bottom;
+<script>
 
-    var parseDate = d3.time.format("%B %Y").parse;
+var marginSD = {top: 20, right: 50, bottom: 30, left: 50},
+    widthSD = 960 - marginSD.left - marginSD.right,
+    heightSD = 500 - marginSD.top - marginSD.bottom;
 
-    var x = d3.time.scale()
-      .range([0, width])
-      
+var parseDate = d3.time.format("%B %Y").parse,
+    bisectDate = d3.bisector(function(d) { return d.date; }).left,
+    formatValue = d3.format(",.1f"),
+    formatCurrency = function(d) { return  formatValue(d); };
 
-    var y = d3.scale.linear()
-      .range([height, 0]);
+var xSD = d3.time.scale()
+    .range([0, widthSD]);
 
-    var color1 = d3.scale.ordinal()
-    .range(["purple", "#fc819d"]);
+var ySD = d3.scale.linear()
+    .range([heightSD, 0]);
 
-    var xAxis = d3.svg.axis()
-      .scale(x)
-      .orient("bottom")
-      .tickFormat(d3.time.format("%b %y"));
+var xAxisSD = d3.svg.axis()
+    .scale(xSD)
+    .orient("bottom");
 
-    var yAxis = d3.svg.axis()
-      .scale(y)
-      .orient("left");
+var yAxisSD = d3.svg.axis()
+    .scale(ySD)
+    .orient("left");
 
-    var line = d3.svg.line()
-      .interpolate("basis")
-      .x(function(d) {
-        return x(d.date);
-      })
-      .y(function(d) {
-        return y(d.temperature);
-      });
+var lineSD = d3.svg.line()
+    .x(function(d) { return xSD(d.date); })
+    .y(function(d) { return ySD(d.Spread); });
 
-    var svg2 = d3.select("#example2").append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+var svgSD = d3.select("#example2").append("svg")
+    .attr("width", widthSD + marginSD.left + marginSD.right)
+    .attr("height", heightSD + marginSD.top + marginSD.bottom)
+  .append("g")
+    .attr("transform", "translate(" + marginSD.left + "," + marginSD.top + ")");
 
- d3.tsv("/d3Data/ctspreadsdata.tsv", function(error, data) {
+d3.tsv("http://www.khasachi.com/d3Data/ctspreadsdata.tsv", function(error, data) {
   if (error) throw error;
 
-    color1.domain(d3.keys(data[0]).filter(function(key) {
-      return key !== "date";
-    }));
+  data.forEach(function(d) {
+    d.date = parseDate(d.date);
+    d.Spread = +d.Spread;
+  });
 
-    data.forEach(function(d) {
-      d.date = parseDate(d.date);
-    });
+  data.sort(function(a, b) {
+    return a.date - b.date;
+  });
 
-    var cities = color1.domain().map(function(name) {
-      return {
-        name: name,
-        values: data.map(function(d) {
-          return {
-            date: d.date,
-            temperature: +d[name]
-          };
-        })
-      };
-    });
+  xSD.domain([data[0].date, data[data.length - 1].date]);
+  ySD.domain(d3.extent(data, function(d) { return d.Spread; }));
 
-    x.domain(d3.extent(data, function(d) {
-      return d.date;
-    }));
-
-    y.domain([
-      d3.min(cities, function(c) {
-        return d3.min(c.values, function(v) {
-          return v.temperature;
-        });
-      }),
-      d3.max(cities, function(c) {
-        return d3.max(c.values, function(v) {
-          return v.temperature;
-        });
-      })
-    ]);
-
-    
-
-    svg2.append("g")
+  svgSD.append("g")
       .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
+      .attr("transform", "translate(0," + heightSD + ")")
+      .call(xAxisSD);
 
-    svg2.append("g")
+  svgSD.append("g")
       .attr("class", "y axis")
-      .call(yAxis)
-      .append("text")
+      .call(yAxisSD)
+    .append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Percentage (%)");
+      .text("Price ($)");
 
-    var city = svg2.selectAll(".city")
-      .data(cities)
-      .enter().append("g")
-      .attr("class", "city");
-
-    city.append("path")
+  svgSD.append("path")
+      .datum(data)
       .attr("class", "line")
-      .attr("d", function(d) {
-        return line(d.values);
-      })
-      .style("stroke", function(d) {
-        return color1(d.name);
-      });
+      .attr("d", lineSD);
 
-    city.append("text")
-      .datum(function(d) {
-        return {
-          name: d.name,
-          value: d.values[d.values.length - 1]
-        };
-      })
-      .attr("transform", function(d) {
-        return "translate(" + x(d.value.date) + "," + y(d.value.temperature) + ")";
-      })
-      .attr("x", 3)
-      .attr("dy", ".35em")
-      .text(function(d) {
-        return d.name ;
-      });
+  var focus = svgSD.append("g")
+      .attr("class", "focus")
+      .style("display", "none");
 
-    var mouseG = svg2.append("g")
-      .attr("class", "mouse-over-effects");
+  focus.append("circle")
+      .attr("r", 4.5);
 
-    mouseG.append("path") // this is the black vertical line to follow mouse
-      .attr("class", "mouse-line")
-      .style("stroke", "black")
-      .style("stroke-width", "1px")
-      .style("opacity", "0");
-      
-    var lines = document.getElementsByClassName('line');
+  focus.append("text")
+      .attr("x", 9)
+      .attr("dy", ".35em");
 
-    var mousePerLine = mouseG.selectAll('.mouse-per-line')
-      .data(cities)
-      .enter()
-      .append("g")
-      .attr("class", "mouse-per-line");
+  svgSD.append("rect")
+      .attr("class", "overlay")
+      .attr("width", widthSD)
+      .attr("height", heightSD)
+      .on("mouseover", function() { focus.style("display", null); })
+      .on("mouseout", function() { focus.style("display", "none"); })
+      .on("mousemove", mousemove);
 
-    mousePerLine.append("circle")
-      .attr("r", 7)
-      .style("stroke", function(d) {
-        return color(d.name);
-      })
-      .style("fill", "none")
-      .style("stroke-width", "1px")
-      .style("opacity", "0");
+  function mousemove() {
+    var x0 = xSD.invert(d3.mouse(this)[0]),
+        i = bisectDate(data, x0, 1),
+        d0 = data[i - 1],
+        d1 = data[i],
+        d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+    focus.attr("transform", "translate(" + xSD(d.date) + "," + ySD(d.Spread) + ")");
+    focus.select("text").text(formatCurrency(d.Spread));
+  }
+});
 
-    mousePerLine.append("text")
-      .attr("transform", "translate(10,3)");
-
-    mouseG.append('svg:rect') // append a rect to catch mouse movements on canvas
-      .attr('width', width) // can't catch mouse events on a g element
-      .attr('height', height)
-      .attr('fill', 'none')
-      .attr('pointer-events', 'all')
-      .on('mouseout', function() { // on mouse out hide line, circles and text
-        d3.select(".mouse-line")
-          .style("opacity", "0");
-        d3.selectAll(".mouse-per-line circle")
-          .style("opacity", "0");
-        d3.selectAll(".mouse-per-line text")
-          .style("opacity", "0"); 
-      }) 
-      .on('mouseover', function() { // on mouse in show line, circles and text
-        d3.select(".mouse-line")
-          .style("opacity", "1");
-        d3.selectAll(".mouse-per-line circle")
-          .style("opacity", "1");
-        d3.selectAll(".mouse-per-line text")
-          .style("opacity", "1");
-      })
-      .on('mousemove', function() { // mouse moving over canvas
-        var mouse = d3.mouse(this);
-        d3.select(".mouse-line")
-          .attr("d", function() {
-            var d = "M" + mouse[0] + "," + height;
-            d += " " + mouse[0] + "," + 0;
-            return d;
-          });
-
-        d3.selectAll(".mouse-per-line")
-          .attr("transform", function(d, i) {
-            console.log(width/mouse[0])
-            var xDate = x.invert(mouse[0]),
-                bisect = d3.bisector(function(d) { return d.date; }).right;
-                idx = bisect(d.values, xDate);
-                
-            
-            var beginning = 0,
-                end = lines[i].getTotalLength(),
-                target = null;
-
-            while (true){
-              target = Math.floor((beginning + end) / 2);
-              pos = lines[i].getPointAtLength(target);
-              if ((target === end || target === beginning) && pos.x !== mouse[0]) {
-                  break;
-              }
-              if (pos.x > mouse[0])      end = target;
-              else if (pos.x < mouse[0]) beginning = target;
-              else break; //position found
-            }
-            
-            d3.select(this).select('text')
-              .text(y.invert(pos.y).toFixed(2));
-
-              
-            return "translate(" + mouse[0] + "," + pos.y +")";
-          });
-      });
-        });
-  </script>
+</script>
 
 A note on these charts: I used the <a href="https://d3js.org/" target="#">D3.js</a> Javascript library, with help from <a href="http://stackoverflow.com/questions/34886070/d3-js-multiseries-line-chart-with-mouseover-tooltip" target="#">this</a> Stack Overflow answer on mousing over the multiseries chart lines to obtain the data points. 
 
