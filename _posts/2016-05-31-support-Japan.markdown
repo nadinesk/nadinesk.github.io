@@ -158,7 +158,7 @@ Go ahead and mark this one under polls that surprise me. At different points in 
   line-height: 1.5; 
   vertical-align: top;
   border-top: 1px solid #eceeef;
-  font-size: 1.2em;
+  font-size: 0.9em;
 }
 
 td, th {
@@ -175,7 +175,7 @@ padding-top: 8px;
 padding-bottom: 8px;
 color: #777; 
 text-align: left;
-font-size: 14px;
+font-size:0.7em;
 line-height: 1.1;
 
 }
