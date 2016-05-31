@@ -153,6 +153,21 @@ Go ahead and mark this one under polls that surprise me. At different points in 
   width: 80%;
 }
 
+.table td, .table th {
+  padding: .75rem;
+  line-height: 1.5; 
+  vertical-align: top;
+  border-top: 1px solid #eceeef;
+}
+
+td, th {
+display: table-cell;
+}
+
+table {
+  border-collapse: collapse;
+}
+
 </style>
 
 <script>
