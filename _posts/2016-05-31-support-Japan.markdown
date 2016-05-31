@@ -23,42 +23,42 @@ Go ahead and mark this one under polls that surprise me. At different points in 
       </thead>
       <tbody>
         <tr>
-          <th scope="row">2005 7/25-28</th>
+          <th scope="row">2005 Jul</th>
           <td>57</td>
           <td>38</td>
           <td>5</td>
           <td>-2</td>
         </tr>
         <tr>
-          <th scope="row">1995 7/20-23</th>
+          <th scope="row">1995 Jul</th>
           <td>59</td>
           <td>35</td>
           <td>6</td>
           <td>4</td>
         </tr>
         <tr>
-          <th scope="row">1994 12/2-5</th>
+          <th scope="row">1994 Dec</th>
           <td>55</td>
           <td>39</td>
           <td>6</td>
           <td>2</td>
         </tr>
         <tr>
-          <th scope="row">1991 11/21-24</th>
+          <th scope="row">1991 Nov</th>
           <td>53</td>
           <td>41</td>
           <td>6</td>
           <td>0</td>
         </tr>
         <tr>
-          <th scope="row">1990 7/19-21</th>
+          <th scope="row">1990 Jul</th>
           <td>53</td>
           <td>41</td>
           <td>6</td>
           <td>32</td>
         </tr>
         <tr>
-          <th scope="row">1945 8/10-15</th>
+          <th scope="row">1945 Aug</th>
           <td>85</td>
           <td>10</td>
           <td>5</td>
