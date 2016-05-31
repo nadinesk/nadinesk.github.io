@@ -21,7 +21,9 @@ These charts show polling data averages, sourced from <a href="http://www.realcl
 
 
 <style>
-    
+body {
+  background-color: white;
+  }
  #example, #example1,  #example2 {
         font-family: 'Lato', sans-serif;
         -webkit-font-smoothing: antialiased;
