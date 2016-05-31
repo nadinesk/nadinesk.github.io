@@ -70,8 +70,8 @@ Go ahead and mark this one under polls that surprise me. At different points in 
   </div>
 
 
-  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
 
 
