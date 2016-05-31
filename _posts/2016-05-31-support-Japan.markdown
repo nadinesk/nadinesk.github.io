@@ -168,6 +168,12 @@ table {
   border-collapse: collapse;
 }
 
+caption {
+padding-top: 8px;
+padding-bottom: 8px;
+color: #777; 
+text-align: left;
+
 </style>
 
 <script>
@@ -187,7 +193,7 @@ July 2005	57	38	5\n";
         bottom: 30,
         left: 50
       },
-      width = 450 - margin.left - margin.right,
+      width = 500 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
 
     var parseDate = d3.time.format("%B %Y").parse;
