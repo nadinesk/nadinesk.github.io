@@ -71,8 +71,7 @@ Go ahead and mark this one under polls that surprise me. At different points in 
 
 
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
 
 
@@ -151,7 +150,7 @@ Go ahead and mark this one under polls that surprise me. At different points in 
 .fortable {
   margin-left: 50px;
   margin-right: 50px;
-  width: 50%;
+  width: 80%;
 }
 
 </style>
