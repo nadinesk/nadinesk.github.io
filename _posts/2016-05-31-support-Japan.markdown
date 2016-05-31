@@ -158,6 +158,7 @@ Go ahead and mark this one under polls that surprise me. At different points in 
   line-height: 1.5; 
   vertical-align: top;
   border-top: 1px solid #eceeef;
+  font-size: 1.2em;
 }
 
 td, th {
