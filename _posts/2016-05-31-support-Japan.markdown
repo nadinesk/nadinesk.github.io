@@ -23,7 +23,7 @@ Go ahead and mark this one under polls that surprise me. At different points in 
       </thead>
       <tbody>
         <tr>
-          <th scope="row">2005 7/25-28, </th>
+          <th scope="row">2005 7/25-28</th>
           <td>57</td>
           <td>38</td>
           <td>5</td>
