@@ -7,7 +7,7 @@ categories: d3.js, data visualization, atomic bomb, polls, United States, WWII
 
 Go ahead and mark this one under polls that surprise me. At different points in time since the United States dropped atomic bombs in Hiroshima and Nagasaki in 1945,<a href="http://www.gallup.com/poll/17677/majority-supports-use-atomic-bomb-japan-wwii.aspx">Gallup</a> has asked Americans if they supported this action. Support was at 85% just after the bombs were dropped in 1945. The most recent poll in 2005 was at 57%, a 2 % decrease in support from a poll 10 years prior. I'm surprised that a majority of Americans still support this decision.
 
-  <h1"chart-title">Support of Use of Atomic Bomb on Japan in WWII</h1>
+  <h1>Support of Use of Atomic Bomb on Japan in WWII</h1>
   <div id="example"></div>
   <div class="fortable">
     <table class="table">
@@ -174,7 +174,8 @@ padding-top: 8px;
 padding-bottom: 8px;
 color: #777; 
 text-align: left;
-font-size: 10px;
+font-size: 14px;
+line-height: 1.1;
 
 }
 
