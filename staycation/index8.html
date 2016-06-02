@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+
+<script> 
+$(function(){
+    $(".flip").flip({
+        trigger: 'hover'
+    });
+});
+</script>
+  <style>
+
+.flip {
+    height: 500px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.flip img {
+    width: 500px;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.flip .back {
+    background: #2184cd;
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 500px;
+    height: auto;
+}
+
+
+
+  .mdimages {
+    
+  }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Accordion Example</h2>
+  <p><strong>Note:</strong> The <strong>data-parent</strong> attribute makes sure that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.</p>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Collapsible Group 1</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">    On the Friday before the long Memorial Day weekend, Zach's school was only half-day. Our favorite park near our neighborhood in Hell's Kitchen is Clinton/DeWitt playground. We tried to go there, but it looked like a entire NYC-sized middle school was at recess there, and Zach is just a little 3-year-old. We checked out the frog fountain just outside the playground instead that are now turned on (since the weather went from 40F to 80F in what seeme like a few days. Zach has never really been into the NYC fountains where the kids play. And that's fine with me. Instead we went to Riverside Park on the Hudson River. It was HOT. Zach climbed up a hill of rocks, made his way to the top, and picked a few flowers. We went home after it got too hot, and Zach napped when we got home. That night, I cooked dinner and aftewards, we went to Amy's Bread and got some ice cream and pastries. We really enjoyed being outside in the NYC summer weather, after a long and cold winter, which we're not used to coming from California now. </div>
+<div class="flip"> 
+    <div class="front"> 
+        <img src="fri.jpg" alt="" />
+    </div> 
+    <div class="back">
+        <h3>Some Text in the Back!</h3>
+    </div> 
+</div>
+
+<div class="flip"> 
+    <div class="front"> 
+        <img src="fri1.jpg" alt="" />
+    </div> 
+    <div class="back">
+        <h3>Some Text in the Back!</h3>
+    </div> 
+</div>
+
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Collapsible Group 2</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Collapsible Group 3</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      </div>
+    </div>
+  </div> 
+</div>
+    
+</body>
+</html>
