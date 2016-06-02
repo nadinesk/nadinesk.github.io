@@ -5,12 +5,19 @@
 
 body {
   background-color: white;
- background: url("../images/dots4.png"); 
+/* background: url("../images/dots4.png"); */
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
   font-family: 'Open Sans', sans-serif;
   background-position: cover;
   margin: 0px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin-bottom: 30px;
 }
 
 .blog-main {
