@@ -170,6 +170,7 @@ body {
 
 .anote {
   font-size: 10px;
+  line-spacing: 0;
 }
 
     #example, #example1, #example2 {
