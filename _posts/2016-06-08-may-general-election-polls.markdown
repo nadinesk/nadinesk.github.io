@@ -170,7 +170,7 @@ body {
 
 .anote {
   font-size: 10px;
-  line-height: 0;
+  line-height: 100%;
 }
 
     #example, #example1, #example2 {
