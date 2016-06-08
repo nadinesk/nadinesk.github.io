@@ -7,7 +7,7 @@ categories: d3.js, data visualization, polls, politics, general election, trump,
 
 This chart shows May polling results, sourced from <a href="http://www.realclearpolitics.com/epolls/2016/president/us/general_election_trump_vs_clinton-5491.html" target="#">Real Clear Politics</a>. (Mouse over the line charts to see the values). The overall Real Clear Politics average, for polls included from May 2015 to the present, show HRC ahead of Trump with a 2.0 spread (44.0 to 42.0).
 
-The data for the chart uses the last date of the pollign period per poll for the date. When two polls ended on the same date, the average between the two results is used. The poll showing the oddest result, the Rasmussen Reports poll on 5/17-5/18 (with a <a href="https://en.wikipedia.org/wiki/Rasmussen_Reports#Nate_Silver" Republican-leaning past </a>), shows Clinton down 37 to Trump's 42 points. The Rasmussen Reports has three polls included in this data set taken from RCP (so make of that what you will).
+The data for the chart uses the last date of the pollign period per poll for the date. When two polls ended on the same date, the average between the two results is used. The poll showing the oddest result, the Rasmussen Reports poll on 5/17-5/18 (with a <a href="https://en.wikipedia.org/wiki/Rasmussen_Reports#Nate_Silver">Republican-leaning past </a>), shows Clinton down 37 to Trump's 42 points. The Rasmussen Reports has three polls included in this data set taken from RCP (so make of that what you will).
 
 The largest spread is the most recent poll, the <a href="http://www.investors.com/">IBD/TIPP</a> poll, from 5/31 to 6/5, showing Clinton ahead by 5 points (45 to 40). The last poll might reflect Trump's bad week (or, a good week for the good of humanity) -- from the <a href="http://www.latimes.com/politics/la-na-pol-clinton-trump-analysis-20160608-snap-story.html">LA Times</a>: "House Speaker Paul Ryan had barely endorsed Trump before he was in front of cameras decrying Trump’s attacks on federal Judge Gonzalo Curiel, an Indiana-born jurist Trump described as Mexican because of his ancestry. On Tuesday, Illinois Sen. Mark Kirk, one of a group of Republicans facing tough reelection fights in November, said he would not support the New York businessman as nominee. Kirk said Trump does not possess the temperament of a president."
 
@@ -115,10 +115,6 @@ The largest spread is the most recent poll, the <a href="http://www.investors.co
             <td>41</td>
             <td>Clinton +6</td>
           </tr>
-
-
-
-
         </tbody>
       </table>
     </div>
@@ -225,7 +221,7 @@ body {
   line-height: 1.5;
   vertical-align: top;
   border-top: 1px solid #eceeef;
-  font-size: 0.7em;
+  font-size: 0.5em;
 }
 
 td, th {
@@ -242,7 +238,7 @@ padding-top: 8px;
 padding-bottom: 8px;
 color: #777;
 text-align: left;
-font-size:0.6em;
+font-size:0.5em;
 line-height: 1.1;
 
 }
