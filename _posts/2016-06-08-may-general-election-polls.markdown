@@ -291,7 +291,7 @@ line-height: 1.1;
       .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
- d3.tsv("http://www.khasachi.com/d3Data/mayPolls.tsv", function(error, data) {
+ d3.tsv("/d3Data/mayPolls.tsv", function(error, data) {
   if (error) throw error;
 
     color.domain(d3.keys(data[0]).filter(function(key) {
