@@ -122,7 +122,9 @@ The largest spread is the most recent poll, the <a href="http://www.investors.co
         </tbody>
       </table>
     </div>
-
+<div class="anote">
+<p>A note on these charts: I used the <a href="https://d3js.org/" target="#">D3.js</a> Javascript library, with help from <a href="http://stackoverflow.com/questions/34886070/d3-js-multiseries-line-chart-with-mouseover-tooltip" target="#">this</a> Stack Overflow answer on mousing over the multiseries chart lines to obtain the data points.</p>
+</div>
 <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
@@ -166,6 +168,9 @@ body {
       stroke-width: 3.5px;
     }
 
+.anote {
+  font-size: 10px;
+}
 
     #example, #example1, #example2 {
       margin-top: 50px;
@@ -219,7 +224,7 @@ body {
   line-height: 1.5;
   vertical-align: top;
   border-top: 1px solid #eceeef;
-  font-size: 0.9em;
+  font-size: 0.7em;
 }
 
 td, th {
@@ -236,7 +241,7 @@ padding-top: 8px;
 padding-bottom: 8px;
 color: #777;
 text-align: left;
-font-size:0.7em;
+font-size:0.6em;
 line-height: 1.1;
 
 }
@@ -498,4 +503,4 @@ line-height: 1.1;
         });
   </script>
 
-A note on these charts: I used the <a href="https://d3js.org/" target="#">D3.js</a> Javascript library, with help from <a href="http://stackoverflow.com/questions/34886070/d3-js-multiseries-line-chart-with-mouseover-tooltip" target="#">this</a> Stack Overflow answer on mousing over the multiseries chart lines to obtain the data points.
+
