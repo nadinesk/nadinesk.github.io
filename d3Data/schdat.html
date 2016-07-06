@@ -183,69 +183,7 @@ d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3D
       .style("text-anchor", "end")
       .text("grades ahead/below");
   
-  svg.selectAll(".dot")
-      .data(data)
-    .enter().append("circle")
-      .attr("class", "dot")
-      .attr("r", function(d) { if (d.totalenrollment >= 400000) 
-          {
-            return  25 
-          } 
-          else if (d.totalenrollment < 400000 && d.totalenrollment >= 100000) 
-          {
-            return 20
-          }
-          else if (d.totalenrollment < 100000 && d.totalenrollment >= 50000) 
-          {
-            return 15
-          }
-          else if (d.totalenrollment < 50000 && d.totalenrollment >= 10000) 
-          {
-            return 10
-          }
-          else if (d.totalenrollment < 10000 && d.totalenrollment >= 1000) 
-          {
-            return 8
-          }
-          else
-            return 4
-          }) 
-      .attr("cx", xMap)
-      .attr("cy", yMap)
-       .style("fill", function(d) { 
-          if (d.totalenrollment >= 400000) 
-          {
-            return  "rgba(255, 116, 140,1.0)"
-          } 
-          else if (d.totalenrollment < 400000 && d.totalenrollment >= 100000) 
-          {
-            return  "rgba(255, 116, 140,0.8)"
-          }
-          else if (d.totalenrollment < 100000 && d.totalenrollment >= 50000) 
-          {
-            return  "rgba(255, 116, 140.0.7)"
-          }
-          else if (d.totalenrollment < 50000 && d.totalenrollment >= 10000) 
-          {
-           return  "rgba(255, 116, 140, 0.6)"
-          }
-          else if (d.totalenrollment < 10000 && d.totalenrollment >= 1000) 
-          {
-            return  "rgba(255, 116, 140, 0.4)"
-          }
-          else
-            return  "rgba(255, 116, 140,0.9)"
-          }) 
-       .style("stroke", "white")
-       .attr("visibility", function(d) {
-           if (d.income50perc <= 1000)
-          {
-            return "hidden"
-          }
-          else {
-            return "visible"
-          }
-       })
+ 
         
       .on("mouseover", function(d) {
           tooltip.transition()
