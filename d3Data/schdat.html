@@ -65,9 +65,11 @@ var yValue = function(d) { return d["averagetest"];}, // data -> value
   xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
   yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
   
-  svg.selectAll("circle")
-  .attr("r", "10"
-          }) 
+  d3.selectAll("circle")
+  .transition()
+        .duration(300)
+        .ease("quad")
+  .attr("r", "10") 
       .attr("cx", xMap)
       .attr("cy", yMap)
        .style("fill", "yellow") 
