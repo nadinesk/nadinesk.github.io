@@ -61,6 +61,10 @@ var yValue = function(d) { return d["averagetest"];}, // data -> value
     
   d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
     
+   data.forEach(function(d) {
+    d.percentwhites = +d.percentwhites;
+    d["averagetest"] = +d["averagetest"];
+  });  
     
   xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
   yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
