@@ -75,6 +75,16 @@ d3.select("#select-list").on("change", function() {
         .call(xAxis)
       .append("text")
         .text("percentwhites");
+        
+    svg.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "dot")
+      .attr("r", "10")
+      .attr("cx", xMap)
+      .attr("cy", yMap)
+       .style("fill", "blue") 
+       .style("stroke", "red")
   
     });
 
