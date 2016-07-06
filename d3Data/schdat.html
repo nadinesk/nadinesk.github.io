@@ -59,7 +59,7 @@ var alertChange = function() {
 d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
   
   data.forEach(function(d) {
-    d.income50perc = +d.income50perc;
+    d.percentwhites = +d.precentwhites;
     d["averagetest"] = +d["averagetest"];
   });
   xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
