@@ -49,16 +49,100 @@ body {
 <script>
 d3.select("#select-list").on("change", function() {
   var selectedValue = d3.event.target.value;
+  
+  var xValue = function(d) { return d.percentwhites;}, // data -> value
+    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+  var yValue = function(d) { return d["averagetest"];}, // data -> value
+    yScale = d3.scale.linear().range([height, 0]), // value -> display
+    yMap = function(d) { return yScale(yValue(d));}, // data -> display
+    yAxis = d3.svg.axis().scale(yScale).orient("left");
+    
+    
   d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
     
-    d3.selectAll('circle')
-        .transition()
-        .duration(300)
-        .ease("quad")
-        .attr( 'r', 5)
-        .attr('cx', function(d) {return d.percentwhites;})
-        .attr('cy', function(d) {return d.averagetest;})
+    data.forEach(function(d) {
+    d.income50perc = +d.income50perc;
+    d["averagetest"] = +d["averagetest"];
+  });
+  xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
+  yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("x", width)
+      .attr("y", -6)
+      .style("text-anchor", "end")
+      .text("median income");
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("grades ahead/below");
   
+  svg.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "dot")
+      .attr("r", function(d) { if (d.totalenrollment >= 400000) 
+          {
+            return  25 
+          } 
+          else if (d.totalenrollment < 400000 && d.totalenrollment >= 100000) 
+          {
+            return 20
+          }
+          else if (d.totalenrollment < 100000 && d.totalenrollment >= 50000) 
+          {
+            return 15
+          }
+          else if (d.totalenrollment < 50000 && d.totalenrollment >= 10000) 
+          {
+            return 10
+          }
+          else if (d.totalenrollment < 10000 && d.totalenrollment >= 1000) 
+          {
+            return 8
+          }
+          else
+            return 4
+          }) 
+      .attr("cx", xMap)
+      .attr("cy", yMap)
+       .style("fill", "yellow") 
+       .style("stroke", "white")
+       .attr("visibility", function(d) {
+           if (d.income50perc <= 1000)
+          {
+            return "hidden"
+          }
+          else {
+            return "visible"
+          }
+       })
+        
+      .on("mouseover", function(d) {
+          tooltip.transition()
+               .duration(200)
+               .style("opacity", .9);
+          tooltip.html(d["educationagencyname"] + "<br/> (" + xValue(d) 
+          + ", " + yValue(d) + ")")
+               .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px");
+      })
+      .on("mouseout", function(d) {
+          tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
     
   
   
