@@ -55,12 +55,27 @@ d3.select("#select-list").on("change", function() {
   if (selectedValue == "d.percentwhites")
   {
   
+  var xValue = function(d) { return d.percentwhites;}, // data -> value
+  
     d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
     
       data.forEach(function(d) {
         d.percentwhites = +d.percentwhites;
         d["averagetest"] = +d["averagetest"];
       });
+  
+      xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
+      
+      svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis)
+      .append("text")
+      .attr("class", "label")
+      .attr("x", width)
+      .attr("y", -6)
+      .style("text-anchor", "end")
+      .text("percentwhites");
   
     });
 
