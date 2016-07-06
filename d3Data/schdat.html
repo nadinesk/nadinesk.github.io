@@ -55,7 +55,7 @@ d3.select("#select-list").on("change", function() {
   if (selectedValue == "d.percentwhites")
   {
   
-  var xValue = function(d) { return d.percentwhites;}, // data -> value
+  var xValue = function(d) { return d.percentwhites;};
   
     d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
     
@@ -66,7 +66,12 @@ d3.select("#select-list").on("change", function() {
   
       xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
       
-     
+      svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis)
+      .append("text")
+        .text("median income");
   
     });
 
