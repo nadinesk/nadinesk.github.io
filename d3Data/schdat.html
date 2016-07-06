@@ -66,16 +66,7 @@ d3.select("#select-list").on("change", function() {
   
       xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
       
-      svg.append("g")
-        .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
-        .call(xAxis)
-      .append("text")
-      .attr("class", "label")
-      .attr("x", width)
-      .attr("y", -6)
-      .style("text-anchor", "end")
-      .text("percentwhites");
+     
   
     });
 
