@@ -55,6 +55,15 @@ d3.select("#select-list").on("change", function() {
   if (selectedValue == "d.percentwhites")
   {
   
+    d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
+    
+      data.forEach(function(d) {
+        d.percentwhites = +d.percentwhites;
+        d["averagetest"] = +d["averagetest"];
+      });
+  
+    });
+
     alert(selectedValue);
     
   }
