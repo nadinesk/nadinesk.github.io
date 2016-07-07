@@ -32,9 +32,10 @@ body {
 </form>
 
 <select id="select-list">
-  <option value="d.percentwhites">percentwhites</option> 
+  <option value="d.income50perc">median income</option> 
   <option value="d.percentwhites">percentwhites</option> 
   <option value="d.percentblacks">percentblacks</option>
+  <option value="d.percentfemalesBA">percent females with BA</option>  
 </select>
   <div id="correl-1-title">Median Income
     <div id="correl-1-chart"></div>
@@ -108,8 +109,64 @@ d3.select("#select-list").on("change", function() {
     });
       
   }
+
+ else if (selectedValue == "d.income50perc") 
+  {
+    var xValue = function(d) { return d.income50perc;}, // data -> value
+    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+
+    d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
     
- 
+     data.forEach(function(d) {
+      d.income50perc = +d.income50perc;
+      });  
+      
+    xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
+    yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
+    
+    d3.selectAll("circle")
+      .transition()
+          .duration(300)
+          .ease("quad")
+        .attr("cx", xMap); 
+        
+    d3.select(".x-axis")
+        .call(xAxis);
+       
+    });
+      
+  }
+        
+  else if (selectedValue == "d.percentfemalesBA") 
+  {
+    var xValue = function(d) { return d.percentfemalesBA;}, // data -> value
+    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+
+    d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
+    
+     data.forEach(function(d) {
+      d.income50perc = +d.percentfemalesBA;
+      });  
+      
+    xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
+    yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
+    
+    d3.selectAll("circle")
+      .transition()
+          .duration(300)
+          .ease("quad")
+        .attr("cx", xMap); 
+        
+    d3.select(".x-axis")
+        .call(xAxis);
+       
+    });
+      
+  }
 });
 
 
