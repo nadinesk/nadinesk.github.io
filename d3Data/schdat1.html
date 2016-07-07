@@ -9,7 +9,7 @@
 body {
   font: 11px sans-serif;
 }
-.x-axis path, .y-axis path
+.x-axis path, .y-axis path,
 .x-axis line, .y-axis line {
   fill: none;
   stroke: #000;
@@ -33,6 +33,7 @@ body {
 
 <select id="select-list">
   <option value="d.percentwhites">percentwhites</option> 
+  <option value="d.percentwhites">percentwhites</option> 
   <option value="d.percentblacks">percentblacks</option>
 </select>
   <div id="correl-1-title">Median Income
@@ -52,36 +53,63 @@ d3.select("#select-list").on("change", function() {
   
   if (selectedValue == "d.percentwhites") 
   {
-  
-  
- var xValue = function(d) { return d.percentwhites;}, // data -> value
+    var xValue = function(d) { return d.percentwhites;}, // data -> value
     xScale = d3.scale.linear().range([0, width]), // value -> display
     xMap = function(d) { return xScale(xValue(d));}, // data -> display
     xAxis = d3.svg.axis().scale(xScale).orient("bottom");
 
-  d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
+    d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
     
-   data.forEach(function(d) {
-    d.percentwhites = +d.percentwhites;
-  });  
-    
-  xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
-  yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
-  
-  d3.selectAll("circle")
-  .transition()
-        .duration(300)
-        .ease("quad")
-      .attr("cx", xMap); 
+     data.forEach(function(d) {
+      d.percentwhites = +d.percentwhites;
+      });  
       
-  d3.select(".x-axis")
-      .call(xAxis);
-     
+    xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
+    yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
+    
+    d3.selectAll("circle")
+      .transition()
+          .duration(300)
+          .ease("quad")
+        .attr("cx", xMap); 
+        
+    d3.select(".x-axis")
+        .call(xAxis);
+       
     });
+      
+  }
+  
+  else if (selectedValue == "d.percentblacks") 
+  {
+    var xValue = function(d) { return d.percentblacks;}, // data -> value
+    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+
+    d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
     
-    }
+     data.forEach(function(d) {
+      d.percentblacks = +d.percentblacks;
+      });  
+      
+    xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
+    yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
     
-  alert(selectedValue);    
+    d3.selectAll("circle")
+      .transition()
+          .duration(300)
+          .ease("quad")
+        .attr("cx", xMap); 
+        
+    d3.select(".x-axis")
+        .call(xAxis);
+       
+    });
+      
+  }
+    
+ 
 });
 
 
