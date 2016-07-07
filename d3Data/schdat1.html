@@ -192,10 +192,16 @@ var tooltip = d3.select("body").append("div")
 var currentSearchTerm = "";
 d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
   
+  
+  
   data.forEach(function(d) {
     d.income50perc = +d.income50perc;
     d["averagetest"] = +d["averagetest"];
   });
+  
+  data.sort(function(a,b) { return a.income50perc - b.income50perc; });
+  
+  
   xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
   yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
   svg.append("g")
