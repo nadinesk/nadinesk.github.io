@@ -199,7 +199,7 @@ d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3D
     d["averagetest"] = +d["averagetest"];
   });
   
-  data.sort(function(a,b) { return a.income50perc - b.income50perc; });
+  data.sort(function(a,b) { return a.totalenrollment - b.totalenrollment; });
   
   
   xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
