@@ -65,7 +65,7 @@ d3.select("#select-list").on("change", function() {
     d.percentwhites = +d.percentwhites;
   });  
     
-  xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
+  xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
   yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
   
   d3.selectAll("circle")
