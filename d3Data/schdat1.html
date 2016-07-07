@@ -149,7 +149,7 @@ d3.select("#select-list").on("change", function() {
     d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
     
      data.forEach(function(d) {
-      d.income50perc = +d.percentfemalesBA;
+      d.percentfemalesBA = +d.percentfemalesBA;
       });  
       
     xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
@@ -157,8 +157,8 @@ d3.select("#select-list").on("change", function() {
     
     d3.selectAll("circle")
       .transition()
-          .duration(300)
-          .ease("quad")
+          .duration(100)
+          .ease("linear")
         .attr("cx", xMap); 
         
     d3.select(".x-axis")
