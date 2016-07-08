@@ -152,8 +152,7 @@ d3.select("#select-list").on("change", function() {
           .duration(300)
           .ease("quad")
         .attr("cx", xMap)
-        .style("fill","blue");
-        
+        .style("fill", "rgba(255, 192, 203, 0.6)"); 
     d3.select(".x-axis")
         .call(xAxis);
     d3.select(".label-x")
@@ -206,7 +205,8 @@ d3.select("#select-list").on("change", function() {
       .transition()
           .duration(300)
           .ease("quad")
-        .attr("cx", xMap); 
+        .attr("cx", xMap)
+        .style("fill", "rgba(255, 116, 140,0.5)");
         
     d3.select(".x-axis")
         .call(xAxis);
@@ -259,7 +259,8 @@ d3.select("#select-list").on("change", function() {
       .transition()
           .duration(100)
           .ease("linear")
-        .attr("cx", xMap); 
+        .attr("cx", xMap)
+        .style("fill", "rgba(204, 93, 112, 0.5)"); 
         
     d3.select(".x-axis")
         .call(xAxis);
@@ -313,7 +314,8 @@ d3.select("#select-list").on("change", function() {
       .transition()
           .duration(300)
           .ease("quad")
-        .attr("cx", xMap);
+        .attr("cx", xMap)
+        .style("fill", "rgba(127, 96, 102, 0.4)"); 
 
         
     d3.select(".x-axis")
