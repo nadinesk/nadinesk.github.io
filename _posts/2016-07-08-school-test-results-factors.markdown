@@ -23,21 +23,27 @@ categories: d3.js, data visualization, schools, education, public schools, race,
     <div id="correl-1-chart"></div>
   </div>
 
-[Stanford cepa](https://cepa.stanford.edu/seda/data-archive)
-
-[Money, Race and Success: How Your School District Compares](http://www.nytimes.com/interactive/2016/04/29/upshot/money-race-and-success-how-your-school-district-compares.html?smid=tw-share)
-
+<div> 
+Sources: <br> 
+<a href="https://cepa.stanford.edu/seda/data-archive">Stanford CEPA</a> <br>
+<a href="http://www.nytimes.com/interactive/2016/04/29/upshot/money-race-and-success-how-your-school-district-compares.html?smid=tw-share">Money, Race and Success: How Your School District</a> 
+</div>
+<div>
 This chart includes data from the Stanford Center for Education Policy Analysis, standardizing district-level test math and ELA test scores for third to eighth graders, from 2009-2013. The results show the district's grade level above/below the national average. More detail on how this database was created is [here](https://cepa.stanford.edu/sites/default/files/wp16-09-v201604.pdf). The results show the grade level above/below the tested grade of students. 
-
+</div>
+<div>
 The test results are show in correlation with various district-level characteristics, here in order of correlation coefficient: 
-
-* median family income: 0.66
-* percent of females with BA: 0.64
-* percent of females in poverty: -0.64
-* percent whites: 0.54
-* percent blacks: -0.37
-
+<ul>
+<li>median family income: 0.66 </li>
+<li>percent of females with BA: 0.64 </li>
+<li>percent of females in poverty: -0.64</li>
+<li>percent whites: 0.54</li>
+<li>percent blacks: -0.37</li>
+</ul>
+</div>
+<div>
 Median family income has the strongest positive correlation out of the factors included, with test results: the higher the median income of a district, the higher the students in the district scored. The precent of females with a BA (also an indicator of median income) had the second highest correlation with test scores, followed closely by percent of females in poverty. The male counterparts to both of these characteristics, not shown, were similar. The percentage of whites in the district had a positive correlation on test scores of 0.54, and the percent of blacks in teh district had a negative correlation on test scores of 0.37. 
+</div>
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
