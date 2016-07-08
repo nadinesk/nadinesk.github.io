@@ -17,8 +17,8 @@ categories: d3.js, data visualization, schools, education, public schools, race,
   <option value="d.percentfemalespov">percent females in poverty in district</option>  
   <option value="d.percentwhites">percent whites in district</option> 
   <option value="d.percentblacks">percent blacks in district</option>
-  
 </select>
+
   <div id="correl-1-title">Median Income
     <div id="correl-1-chart"></div>
   </div>
