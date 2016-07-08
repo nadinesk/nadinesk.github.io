@@ -505,11 +505,16 @@ data.forEach(function(d) {
   
   });
   $( "#myVal" ).autocomplete({
-    source: all_schools,
-    messages: {
-        noResults: '',
-        results: ''    }
-  });
+   source: function(request, response) {
+        var results = $.ui.autocomplete.filter(all_schools, request.term);
+        
+        response(results.slice(0, 10));
+    }
+});
+  
+  
+ 
+  
  
 });
 function handleClickSearch(event){
