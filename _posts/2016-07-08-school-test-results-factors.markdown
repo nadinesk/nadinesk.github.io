@@ -5,41 +5,12 @@ date:   2016-07-08 00:00:00
 categories: d3.js, data visualization, schools, education, public schools, race, poverty, socioeconomics
 ---
 
-
-
-  
-
-<select id="select-list">
-  <option value="d.income50perc">median family income</option> 
-  <option value="d.percentfemalesBA">percent of females with BA in district</option>  
-  <option value="d.percentfemalespov">percent females in poverty in district</option>  
-  <option value="d.percentwhites">percent whites in district</option> 
-  <option value="d.percentblacks">percent blacks in district</option>
-</select>
-
-<form name="myform" onSubmit="return handleClickSearch()">
-        <input name="Submit"  type="submit" size="50" style="font-size: 14px;" color="#fff"    value="Search" >
-        <input type="text" id="myVal" size="80" style="font-size: 14px;" placeholder="School Search">
-</form>
-
-<div id="correl-1-chart">  
-    </div>
- <div> 
-
-
-<script src="http://d3js.org/d3.v3.min.js"></script>
-
-<script src="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"></script>
-
-<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
 <style>
 body {
   font: 11px sans-serif;
 }
-.x-axis path, .y-axis path,
-.x-axis line, .y-axis line {
+.x-axis path, .y-axis path, .y-axis line
+.x-axis line {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
@@ -53,325 +24,170 @@ body {
   height: 28px;
   pointer-events: none;
 }
-
-.input:focus {
-  color: blue;
-}
-
-.ui-menu {
-  list-style-type: none;
-  padding: 5px;
-  font-size: 12px;
-  background-color: white;
-  cursor: pointer
-  opacity: 0.7;
-}
-
-.ui-menu-item {
-  padding: 1px;
-}
-
-.ui-menu-item:hover {
-  cursor: pointer;
-}
-
-form {
-  font-size: 12px;
-  margin: 7px;
-}
-select {
-  font-size: 12px;
-  margin: 7px;
-}
-
-
 </style>
+<body>
+  <form name="myform" onSubmit="return handleClickSearch()">
+        <input name="Submit"  type="submit" size="50" style="font-size: 14px;" color="#fff"    value="Search" >
+        <input type="text" id="myVal" size="80" style="font-size: 14px;" placeholder="School Search">
+</form>
+
+<select id="select-list">
+  <option value="d.percentwhites">percent whites</option> 
+  <option value="d.percentblacks">percent blacks</option>
+  <option value="d.percentfemalesBA">percent females BA</option>
+</select>
+  <div id="correl-1-title">Median Income
+    <div id="correl-1-chart"></div>
+  </div>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script src="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"></script>
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.0.1/spin.min.js'></script> 
+
 
 <script>
 d3.select("#select-list").on("change", function() {
   var selectedValue = d3.event.target.value;
   
-  if (selectedValue == "d.percentwhites") 
+  if (selectedValue=="d.percentwhites")
   {
-    var xValue = function(d) { return d.percentwhites;}, // data -> value
+ var xValue = function(d) { return d.percentwhites;}, // data -> value
     xScale = d3.scale.linear().range([0, width]), // value -> display
     xMap = function(d) { return xScale(xValue(d));}, // data -> display
     xAxis = d3.svg.axis().scale(xScale).orient("bottom");
-
-    d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
+var yValue = function(d) { return d["averagetest"];}, // data -> value
+    yScale = d3.scale.linear().range([height, 0]), // value -> display
+    yMap = function(d) { return yScale(yValue(d));}, // data -> display
+    yAxis = d3.svg.axis().scale(yScale).orient("left");
     
-     data.forEach(function(d) {
-      d.percentwhites = +d.percentwhites;
-      });  
-      
-    xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
-    yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
+  d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
     
-    d3.selectAll("circle")
-      .transition()
-          .duration(300)
-          .ease("quad")
-        .attr("cx", xMap)
-               .style("fill", "rgba(127, 58, 70,0.4)"); 
-        
-    d3.select(".x-axis")
-        .call(xAxis);
-    d3.select(".label-x")
-           .text("percent whites");
-
-          d3.selectAll(".dot")
-         .on("mouseover", function(d) {
-          tooltip.transition()
-               .duration(200)
-               .style("opacity", .9);
-          tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/>" + formatPercent(xValue(d)) 
-          + " white<br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
-          .style("left", (d3.event.pageX + 5) + "px")
-               .style("top", (d3.event.pageY - 28) + "px")
-                .style("background-color","white")
-               .style("border", "1px solid black")
-               .style("border-radius", "3px")
-               .style("padding", "5px")
-               //.style("width", "100px")
-               .style("height", "100px");
-               
-      })
-      .on("mouseout", function(d) {
-          tooltip.transition()
-               .duration(500)
-               .style("opacity", 0);
-      });
-       
-    });
+   data.forEach(function(d) {
+    d.percentwhites = +d.percentwhites;
+    d["averagetest"] = +d["averagetest"];
+  });  
+    
+  xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
+  yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
+   d3.selectAll("g.x-axis")
+        .call(xAxis)
+    .selectAll(".label")
       
-  }
+      .text("percentwhites");
   
-  else if (selectedValue == "d.percentblacks") 
-  {
-    var xValue = function(d) { return d.percentblacks;}, // data -> value
+  d3.selectAll("circle")
+  .transition()
+        .duration(100)
+        .ease("linear")
+  
+      .attr("cx", xMap)
+      
+       .style("fill", "yellow") 
+       .style("stroke", "white")
+       .attr("visibility", function(d) {
+           if (d.income50perc <= 1000)
+          {
+            return "hidden"
+          }
+          else {
+            return "visible"
+          }
+       })
+        
+     
+    });
+}
+else if (selectedValue == "d.percentblacks")
+{
+   var xValue = function(d) { return d.percentblacks;}, // data -> value
     xScale = d3.scale.linear().range([0, width]), // value -> display
     xMap = function(d) { return xScale(xValue(d));}, // data -> display
     xAxis = d3.svg.axis().scale(xScale).orient("bottom");
-
-    d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
+var yValue = function(d) { return d["averagetest"];}, // data -> value
+    yScale = d3.scale.linear().range([height, 0]), // value -> display
+    yMap = function(d) { return yScale(yValue(d));}, // data -> display
+    yAxis = d3.svg.axis().scale(yScale).orient("left");
     
-     data.forEach(function(d) {
-      d.percentblacks = +d.percentblacks;
-      });  
+  d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
+    
+   data.forEach(function(d) {
+    d.percentblacks = +d.percentblacks;
+    d["averagetest"] = +d["averagetest"];
+  });  
+    
+  xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
+  yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
+   d3.selectAll("g.x-axis")
+        .call(xAxis)
+    .selectAll(".label")
       
-    xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
-    yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
-    
-    d3.selectAll("circle")
-      .transition()
-          .duration(300)
-          .ease("quad")
-        .attr("cx", xMap)
-        .style("fill", "rgba(255, 192, 203, 0.6)"); 
-    d3.select(".x-axis")
-        .call(xAxis);
-    d3.select(".label-x")
-        .text("percent blacks");
-       
-
-  d3.selectAll(".dot")
-         .on("mouseover", function(d) {
-          tooltip.transition()
-               .duration(200)
-               .style("opacity", .9);
-          tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/>" + formatPercent(xValue(d)) 
-          + " black<br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
-          .style("left", (d3.event.pageX + 5) + "px")
-               .style("top", (d3.event.pageY - 28) + "px")
-                .style("background-color","white")
-               .style("border", "1px solid black")
-               .style("border-radius", "3px")
-               .style("padding", "5px")
-               //.style("width", "100px")
-               .style("height", "100px");
-      })
-      .on("mouseout", function(d) {
-          tooltip.transition()
-               .duration(500)
-               .style("opacity", 0);
-      });
-       
+      .text("percentblacks");
+  
+  d3.selectAll("circle")
+  .transition()
+        .duration(100)
+        .ease("linear")
+  
+      .attr("cx", xMap)
+      
+       .style("fill", "blue") 
+       .style("stroke", "white")
+       .attr("visibility", function(d) {
+           if (d.income50perc <= 1000)
+          {
+            return "hidden"
+          }
+          else {
+            return "visible"
+          }
+       })
+        
+     
     });
-      
-  }
-
- else if (selectedValue == "d.income50perc") 
-  {
-    var xValue = function(d) { return d.income50perc;}, // data -> value
+}
+else if (selectedValue == "d.percentfemalesBA")
+{
+   var xValue = function(d) { return d.percentfemalesBA;}, // data -> value
     xScale = d3.scale.linear().range([0, width]), // value -> display
     xMap = function(d) { return xScale(xValue(d));}, // data -> display
     xAxis = d3.svg.axis().scale(xScale).orient("bottom");
-
-    d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
     
-     data.forEach(function(d) {
-      d.income50perc = +d.income50perc;
-      });  
+  d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
+    
+   data.forEach(function(d) {
+    d.percentfemalesBA = +d.percentfemalesBA;
+  });  
+    
+  xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
+  
+   d3.selectAll("g.x-axis")
+        .call(xAxis)
+    .selectAll(".label")
       
-    xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
-    yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
-    
-    d3.selectAll("circle")
-      .transition()
-          .duration(300)
-          .ease("quad")
-        .attr("cx", xMap)
-        .style("fill", "rgba(255, 116, 140,0.5)");
-        
-    d3.select(".x-axis")
-        .call(xAxis);
-    d3.select(".label-x")
-        .text("median family income");
- 
-    d3.selectAll(".dot")
-         .on("mouseover", function(d) {
-          tooltip.transition()
-               .duration(200)
-               .style("opacity", .9);
-          tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/> median income: $" + formatDollar(xValue(d)) 
-          + "<br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
-          .style("left", (d3.event.pageX + 5) + "px")
-               .style("top", (d3.event.pageY - 28) + "px")
-                .style("background-color","white")
-               .style("border", "1px solid black")
-               .style("border-radius", "3px")
-               .style("padding", "5px")
-               //.style("width", "100px")
-               .style("height", "100px");
-      })
-      .on("mouseout", function(d) {
-          tooltip.transition()
-               .duration(500)
-               .style("opacity", 0);
-      });       
+      .text("percentfemalesBA");
+  
+  d3.selectAll("circle")
+  .transition()
+        .duration(100)
+        .ease("linear")
+          .attrTween("x", function (d, i, a) { 
+       console.log(a); // returns 60, the value of "x" at the start
+       return d3.interpolate(a, 400); 
+  })
+  
+      .attr("cx", xMap)
+      
+   
        
+     
     });
-      
-  }
-        
-  else if (selectedValue == "d.percentfemalesBA") 
-  {
-    var xValue = function(d) { return d.percentfemalesBA;}, // data -> value
-    xScale = d3.scale.linear().range([0, width]), // value -> display
-    xMap = function(d) { return xScale(xValue(d));}, // data -> display
-    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
-
-    d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
+}
     
-     data.forEach(function(d) {
-      d.percentfemalesBA = +d.percentfemalesBA;
-      });  
-      
-    xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
-    yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
-    
-    d3.selectAll("circle")
-      .transition()
-          .duration(100)
-          .ease("linear")
-        .attr("cx", xMap)
-        .style("fill", "rgba(204, 93, 112, 0.5)"); 
-        
-    d3.select(".x-axis")
-        .call(xAxis);
-    d3.select(".label-x")
-        .text("percent of females with BA");
-
-
-    d3.selectAll(".dot")
-         .on("mouseover", function(d) {
-          tooltip.transition()
-               .duration(200)
-               .style("opacity", .9);
-          tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/>" + formatPercent(xValue(d)) 
-          + " females with BA <br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
-          .style("left", (d3.event.pageX + 5) + "px")
-               .style("top", (d3.event.pageY - 28) + "px")
-                .style("background-color","white")
-               .style("border", "1px solid black")
-               .style("border-radius", "3px")
-               .style("padding", "5px")
-               //.style("width", "100px")
-               .style("height", "100px");
-      })
-      .on("mouseout", function(d) {
-          tooltip.transition()
-               .duration(500)
-               .style("opacity", 0);
-      });
-       
-    });
-      
-  }
-
-  else if (selectedValue == "d.percentfemalespov") 
-  {
-    var xValue = function(d) { return d.percentfemalespov;}, // data -> value
-    xScale = d3.scale.linear().range([0, width]), // value -> display
-    xMap = function(d) { return xScale(xValue(d));}, // data -> display
-    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
-
-    d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
-    
-     data.forEach(function(d) {
-      d.percentfemalespov = +d.percentfemalespov;
-      });  
-      
-    xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
-    yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
-    
-    d3.selectAll("circle")
-      .transition()
-          .duration(300)
-          .ease("quad")
-        .attr("cx", xMap)
-        .style("fill", "rgba(127, 96, 102, 0.4)"); 
-
-        
-    d3.select(".x-axis")
-        .call(xAxis);
-    d3.select(".label-x")
-        .text("percent of females in poverty");
-
-
-    d3.selectAll(".dot")
-         .on("mouseover", function(d) {
-          tooltip.transition()
-               .duration(200)
-               .style("opacity", .9);
-           tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/>" + formatPercent(xValue(d)) 
-          + " females in poverty <br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
-           .style("left", (d3.event.pageX + 5) + "px")
-               .style("top", (d3.event.pageY - 28) + "px")
-                .style("background-color","white")
-               .style("border", "1px solid black")
-               .style("border-radius", "3px")
-               .style("padding", "5px")
-               //.style("width", "100px")
-               .style("height", "100px");
-      })
-      .on("mouseout", function(d) {
-          tooltip.transition()
-               .duration(500)
-               .style("opacity", 0);
-      });
-       
-    });
-      
-  }
-
+  
 });
-
-var formatPercent = d3.format(".0%");
-var formatDollar = d3.format(",.0f");
-var formatResult = d3.format(",.1f");
-
-
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 1000 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
@@ -392,18 +208,12 @@ var tooltip = d3.select("body").append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
 var currentSearchTerm = "";
-d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata5.csv", function(error, data) {
-  
-  
+d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
   
   data.forEach(function(d) {
     d.income50perc = +d.income50perc;
     d["averagetest"] = +d["averagetest"];
   });
-  
-  data.sort(function(a,b) { return a.totalenrollment - b.totalenrollment; });
-  
-  
   xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
   yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
   svg.append("g")
@@ -411,7 +221,7 @@ d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3D
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis)
     .append("text")
-      .attr("class", "label-x")
+      .attr("class", "label")
       .attr("x", width)
       .attr("y", -6)
       .style("text-anchor", "end")
@@ -425,7 +235,7 @@ d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3D
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("grades above/below average");
+      .text("grades ahead/below");
   
   svg.selectAll(".dot")
       .data(data)
@@ -456,8 +266,30 @@ d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3D
           }) 
       .attr("cx", xMap)
       .attr("cy", yMap)
-       .style("fill", "rgba(255, 116, 140,0.5)")
-          
+       .style("fill", function(d) { 
+          if (d.totalenrollment >= 400000) 
+          {
+            return  "rgba(255, 116, 140,1.0)"
+          } 
+          else if (d.totalenrollment < 400000 && d.totalenrollment >= 100000) 
+          {
+            return  "rgba(255, 116, 140,0.8)"
+          }
+          else if (d.totalenrollment < 100000 && d.totalenrollment >= 50000) 
+          {
+            return  "rgba(255, 116, 140.0.7)"
+          }
+          else if (d.totalenrollment < 50000 && d.totalenrollment >= 10000) 
+          {
+           return  "rgba(255, 116, 140, 0.6)"
+          }
+          else if (d.totalenrollment < 10000 && d.totalenrollment >= 1000) 
+          {
+            return  "rgba(255, 116, 140, 0.4)"
+          }
+          else
+            return  "rgba(255, 116, 140,0.9)"
+          }) 
        .style("stroke", "white")
        .attr("visibility", function(d) {
            if (d.income50perc <= 1000)
@@ -473,16 +305,10 @@ d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3D
           tooltip.transition()
                .duration(200)
                .style("opacity", .9);
-          tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/> median income: $" + formatDollar(xValue(d)) 
-          + "<br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
+          tooltip.html(d["educationagencyname"] + "<br/> (" + xValue(d) 
+          + ", " + yValue(d) + ")")
                .style("left", (d3.event.pageX + 5) + "px")
-               .style("top", (d3.event.pageY - 28) + "px")
-               .style("background-color","white")
-               .style("border", "1px solid black")
-               .style("border-radius", "3px")
-               .style("padding", "5px")
-               //.style("width", "100px")
-               .style("height", "100px");
+               .style("top", (d3.event.pageY - 28) + "px");
       })
       .on("mouseout", function(d) {
           tooltip.transition()
@@ -494,19 +320,10 @@ var all_schools = [];
 data.forEach(function(d) {
     
   all_schools.push(d["educationagencyname"]);
-  
   });
   $( "#myVal" ).autocomplete({
-   source: function(request, response) {
-        var results = $.ui.autocomplete.filter(all_schools, request.term);
-        
-        response(results.slice(0, 10));
-    }
-});
-  
-  
- 
-  
+    source: all_schools
+  });
  
 });
 function handleClickSearch(event){
