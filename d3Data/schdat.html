@@ -9,8 +9,8 @@
 body {
   font: 11px sans-serif;
 }
-.axis path,
-.axis line {
+.x-axis path, .y-axis path, .y-axis line
+.x-axis line {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
@@ -32,8 +32,9 @@ body {
 </form>
 
 <select id="select-list">
-  <option value="d.percentwhites">First option, index 0</option> 
-  <option value="d.percentblacks">Second option, index 1</option>
+  <option value="d.percentwhites">percent whites</option> 
+  <option value="d.percentblacks">percent blacks</option>
+  <option value="d.percentfemalesBA">percent females BA</option>
 </select>
   <div id="correl-1-title">Median Income
     <div id="correl-1-chart"></div>
@@ -44,12 +45,17 @@ body {
 
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.0.1/spin.min.js'></script> 
 
 
 <script>
 d3.select("#select-list").on("change", function() {
   var selectedValue = d3.event.target.value;
   
+  if (selectedValue=="d.percentwhites")
+  {
+
+
  var xValue = function(d) { return d.percentwhites;}, // data -> value
     xScale = d3.scale.linear().range([0, width]), // value -> display
     xMap = function(d) { return xScale(xValue(d));}, // data -> display
@@ -66,16 +72,22 @@ var yValue = function(d) { return d["averagetest"];}, // data -> value
     d["averagetest"] = +d["averagetest"];
   });  
     
-  xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
+  xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
   yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
+
+   d3.selectAll("g.x-axis")
+        .call(xAxis)
+    .selectAll(".label")
+      
+      .text("percentwhites");
   
   d3.selectAll("circle")
   .transition()
-        .duration(300)
-        .ease("quad")
-  .attr("r", "10") 
+        .duration(100)
+        .ease("linear")
+  
       .attr("cx", xMap)
-      .attr("cy", yMap)
+      
        .style("fill", "yellow") 
        .style("stroke", "white")
        .attr("visibility", function(d) {
@@ -90,8 +102,102 @@ var yValue = function(d) { return d["averagetest"];}, // data -> value
         
      
     });
+}
+
+else if (selectedValue == "d.percentblacks")
+{
+   var xValue = function(d) { return d.percentblacks;}, // data -> value
+    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+var yValue = function(d) { return d["averagetest"];}, // data -> value
+    yScale = d3.scale.linear().range([height, 0]), // value -> display
+    yMap = function(d) { return yScale(yValue(d));}, // data -> display
+    yAxis = d3.svg.axis().scale(yScale).orient("left");
     
-  alert(selectedValue);    
+  d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
+    
+   data.forEach(function(d) {
+    d.percentblacks = +d.percentblacks;
+    d["averagetest"] = +d["averagetest"];
+  });  
+    
+  xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
+  yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
+
+   d3.selectAll("g.x-axis")
+        .call(xAxis)
+    .selectAll(".label")
+      
+      .text("percentblacks");
+  
+  d3.selectAll("circle")
+  .transition()
+        .duration(100)
+        .ease("linear")
+  
+      .attr("cx", xMap)
+      
+       .style("fill", "blue") 
+       .style("stroke", "white")
+       .attr("visibility", function(d) {
+           if (d.income50perc <= 1000)
+          {
+            return "hidden"
+          }
+          else {
+            return "visible"
+          }
+       })
+        
+     
+    });
+
+}
+
+else if (selectedValue == "d.percentfemalesBA")
+{
+   var xValue = function(d) { return d.percentfemalesBA;}, // data -> value
+    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+    
+  d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
+    
+   data.forEach(function(d) {
+    d.percentfemalesBA = +d.percentfemalesBA;
+
+  });  
+    
+  xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
+  
+
+   d3.selectAll("g.x-axis")
+        .call(xAxis)
+    .selectAll(".label")
+      
+      .text("percentfemalesBA");
+  
+  d3.selectAll("circle")
+  .transition()
+        .duration(100)
+        .ease("linear")
+          .attrTween("x", function (d, i, a) { 
+       console.log(a); // returns 60, the value of "x" at the start
+       return d3.interpolate(a, 400); 
+  })
+  
+      .attr("cx", xMap)
+      
+   
+       
+     
+    });
+
+}
+
+    
+  
 });
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 1000 - margin.left - margin.right,
@@ -122,7 +228,7 @@ d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3D
   xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
   yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
   svg.append("g")
-      .attr("class", "x axis")
+      .attr("class", "x-axis")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis)
     .append("text")
@@ -132,7 +238,7 @@ d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3D
       .style("text-anchor", "end")
       .text("median income");
   svg.append("g")
-      .attr("class", "y axis")
+      .attr("class", "y-axis")
       .call(yAxis)
     .append("text")
       .attr("class", "label")
