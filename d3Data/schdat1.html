@@ -48,13 +48,13 @@ body {
 
 form {
   font-size: 12px;
-  margin: 10px;
+  margin: 7px;
 }
-
 select {
   font-size: 12px;
-  margin: 10px;
+  margin: 7px;
 }
+
 
 </style>
 <body>
@@ -492,9 +492,13 @@ data.forEach(function(d) {
   
   });
   $( "#myVal" ).autocomplete({
-    source: all_schools
+    maxResults: 10,
+    source: function(request, response) {
+        var results = $.ui.autocomplete.filter(all_schools, request.term);
+        response(results.slice(0, this.options.maxResults));
+    }
   });
- 
+
 });
 function handleClickSearch(event){
   currentSearchTerm = document.getElementById("myVal").value;
