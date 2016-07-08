@@ -24,6 +24,12 @@ body {
   height: 28px;
   pointer-events: none;
 }
+
+.input:focus {
+  color: blue;
+}
+
+
 </style>
 <body>
   <form name="myform" onSubmit="return handleClickSearch()">
@@ -32,11 +38,11 @@ body {
 </form>
 
 <select id="select-list">
-  <option value="d.income50perc">median income</option> 
-  <option value="d.percentfemalesBA">percent females with BA</option>  
-  <option value="d.percentfemalespov">percent females in poverty</option>  
-  <option value="d.percentwhites">percentwhites</option> 
-  <option value="d.percentblacks">percentblacks</option>
+  <option value="d.income50perc">median family income</option> 
+  <option value="d.percentfemalesBA">percent of females with BA in district</option>  
+  <option value="d.percentfemalespov">percent females in poverty in district</option>  
+  <option value="d.percentwhites">percent whites in district</option> 
+  <option value="d.percentblacks">percent blacks in district</option>
   
 </select>
   <div id="correl-1-title">Median Income
@@ -84,10 +90,11 @@ d3.select("#select-list").on("change", function() {
           tooltip.transition()
                .duration(200)
                .style("opacity", .9);
-          tooltip.html(d["educationagencyname"] + "<br> (" + formatPercent(xValue(d))  
-          + ", " + formatResult(yValue(d)) + ")")
-               .style("left", (d3.event.pageX + 5) + "px")
+          tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/>" + formatPercent(xValue(d)) 
+          + " white<br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
+          .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
+               
       })
       .on("mouseout", function(d) {
           tooltip.transition()
@@ -131,9 +138,9 @@ d3.select("#select-list").on("change", function() {
           tooltip.transition()
                .duration(200)
                .style("opacity", .9);
-          tooltip.html(d["educationagencyname"] + "<br> (" + formatPercent(xValue(d))  
-          + ", " + formatResult(yValue(d)) + ")")
-               .style("left", (d3.event.pageX + 5) + "px")
+          tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/>" + formatPercent(xValue(d)) 
+          + " black<br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
+          .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
       })
       .on("mouseout", function(d) {
@@ -176,16 +183,16 @@ d3.select("#select-list").on("change", function() {
           tooltip.transition()
                .duration(200)
                .style("opacity", .9);
-          tooltip.html(d["educationagencyname"] + "<br> ($" + formatDollar(xValue(d))  
-          + ", " + formatResult(yValue(d)) + ")")
-               .style("left", (d3.event.pageX + 5) + "px")
+          tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/> median income: $" + formatDollar(xValue(d)) 
+          + "<br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
+          .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
       })
       .on("mouseout", function(d) {
           tooltip.transition()
                .duration(500)
                .style("opacity", 0);
-      });             
+      });       
        
     });
       
@@ -222,9 +229,9 @@ d3.select("#select-list").on("change", function() {
           tooltip.transition()
                .duration(200)
                .style("opacity", .9);
-          tooltip.html(d["educationagencyname"] + "<br> (" + formatPercent(xValue(d))  
-          + ", " + formatResult(yValue(d)) + ")")
-               .style("left", (d3.event.pageX + 5) + "px")
+          tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/>" + formatPercent(xValue(d)) 
+          + " females with BA <br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
+          .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
       })
       .on("mouseout", function(d) {
@@ -269,9 +276,9 @@ d3.select("#select-list").on("change", function() {
           tooltip.transition()
                .duration(200)
                .style("opacity", .9);
-          tooltip.html(d["educationagencyname"] + "<br> (" + formatPercent(xValue(d))  
-          + ", " + formatResult(yValue(d)) + ")")
-               .style("left", (d3.event.pageX + 5) + "px")
+           tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/>" + formatPercent(xValue(d)) 
+          + " females in poverty <br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
+           .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
       })
       .on("mouseout", function(d) {
@@ -392,13 +399,15 @@ d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3D
           tooltip.transition()
                .duration(200)
                .style("opacity", .9);
-          tooltip.html(d["educationagencyname"] + "<br/> ($" + formatDollar(xValue(d)) 
-          + ", " + formatResult(yValue(d)) + ")<br>" + d["state"])
+          tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/> median income: $" + formatDollar(xValue(d)) 
+          + "<br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px")
-               .style("background-color","yellow")
+               .style("background-color","white")
                .style("border", "1px solid black")
-               .style("width", "100px")
+               .style("border-radius", "3px")
+               .style("padding", "5px")
+               //.style("width", "100px")
                .style("height", "100px");
       })
       .on("mouseout", function(d) {
@@ -411,6 +420,7 @@ var all_schools = [];
 data.forEach(function(d) {
     
   all_schools.push(d["educationagencyname"]);
+  
   });
   $( "#myVal" ).autocomplete({
     source: all_schools
