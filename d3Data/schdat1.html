@@ -148,7 +148,8 @@ d3.select("#select-list").on("change", function() {
         .style("fill","blue");
         
     d3.select(".x-axis")
-        .call(xAxis)
+        .call(xAxis);
+    d3.select(".label-x")
         .text("percent blacks");
        
 
@@ -195,7 +196,8 @@ d3.select("#select-list").on("change", function() {
         .attr("cx", xMap); 
         
     d3.select(".x-axis")
-        .call(xAxis)
+        .call(xAxis);
+    d3.select(".label-x")
         .text("median family income");
  
     d3.selectAll(".dot")
@@ -241,7 +243,8 @@ d3.select("#select-list").on("change", function() {
         .attr("cx", xMap); 
         
     d3.select(".x-axis")
-        .call(xAxis)
+        .call(xAxis);
+    d3.select(".label-x")
         .text("percent of females with BA");
 
 
@@ -289,7 +292,8 @@ d3.select("#select-list").on("change", function() {
 
         
     d3.select(".x-axis")
-        .call(xAxis)
+        .call(xAxis);
+    d3.select(".label-x")
         .text("percent of females in poverty");
 
 
