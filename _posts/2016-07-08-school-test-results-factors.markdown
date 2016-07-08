@@ -505,7 +505,11 @@ data.forEach(function(d) {
   
   });
   $( "#myVal" ).autocomplete({
-    source: all_schools
+    source: all_schools,
+    messages: {
+        noResults: '',
+        results: function() {}
+    }
   });
  
 });
