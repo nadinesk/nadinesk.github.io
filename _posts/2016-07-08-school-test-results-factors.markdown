@@ -7,10 +7,7 @@ categories: d3.js, data visualization, schools, education, public schools, race,
 
 
 
-  <form name="myform" onSubmit="return handleClickSearch()">
-        <input name="Submit"  type="submit" size="50" style="font-size: 14px;" color="#fff"    value="Search" >
-        <input type="text" id="myVal" size="80" style="font-size: 14px;" placeholder="School Search">
-</form>
+  
 
 <select id="select-list">
   <option value="d.income50perc">median family income</option> 
@@ -19,6 +16,11 @@ categories: d3.js, data visualization, schools, education, public schools, race,
   <option value="d.percentwhites">percent whites in district</option> 
   <option value="d.percentblacks">percent blacks in district</option>
 </select>
+
+<form name="myform" onSubmit="return handleClickSearch()">
+        <input name="Submit"  type="submit" size="50" style="font-size: 14px;" color="#fff"    value="Search" >
+        <input type="text" id="myVal" size="80" style="font-size: 14px;" placeholder="School Search">
+</form>
 
 <div id="correl-1-chart">  
     </div>
@@ -88,7 +90,7 @@ body {
 }
 
 .ui-menu-item {
-  padding: 5px;
+  padding: 1px;
 }
 
 .ui-menu-item:hover {
