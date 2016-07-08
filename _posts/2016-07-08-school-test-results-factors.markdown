@@ -508,8 +508,7 @@ data.forEach(function(d) {
     source: all_schools,
     messages: {
         noResults: '',
-        results: function() {}
-    }
+        results: ''    }
   });
  
 });
