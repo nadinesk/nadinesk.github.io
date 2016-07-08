@@ -99,7 +99,8 @@ d3.select("#select-list").on("change", function() {
         .attr("cx", xMap); 
         
     d3.select(".x-axis")
-        .call(xAxis)
+        .call(xAxis);
+    d3.select(".label-x")
            .text("percent whites");
 
           d3.selectAll(".dot")
@@ -358,7 +359,7 @@ d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3D
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis)
     .append("text")
-      .attr("class", "label")
+      .attr("class", "label-x")
       .attr("x", width)
       .attr("y", -6)
       .style("text-anchor", "end")
