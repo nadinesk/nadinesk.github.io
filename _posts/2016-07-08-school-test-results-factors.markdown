@@ -5,7 +5,24 @@ date:   2016-07-08 00:00:00
 categories: d3.js, data visualization, schools, education, public schools, race, poverty, socioeconomics
 ---
 
-<div> 
+
+
+  <form name="myform" onSubmit="return handleClickSearch()">
+        <input name="Submit"  type="submit" size="50" style="font-size: 14px;" color="#fff"    value="Search" >
+        <input type="text" id="myVal" size="80" style="font-size: 14px;" placeholder="School Search">
+</form>
+
+<select id="select-list">
+  <option value="d.income50perc">median family income</option> 
+  <option value="d.percentfemalesBA">percent of females with BA in district</option>  
+  <option value="d.percentfemalespov">percent females in poverty in district</option>  
+  <option value="d.percentwhites">percent whites in district</option> 
+  <option value="d.percentblacks">percent blacks in district</option>
+</select>
+
+<div id="correl-1-chart">  
+    </div>
+ <div> 
 Sources: <br> 
 <a href="https://cepa.stanford.edu/seda/data-archive">Stanford CEPA</a> <br>
 <a href="http://www.nytimes.com/interactive/2016/04/29/upshot/money-race-and-success-how-your-school-district-compares.html?smid=tw-share">Money, Race and Success: How Your School District</a> 
@@ -26,24 +43,7 @@ The test results are show in correlation with various district-level characteris
 <div>
 Median family income has the strongest positive correlation out of the factors included, with test results: the higher the median income of a district, the higher the students in the district scored. The precent of females with a BA (also an indicator of median income) had the second highest correlation with test scores, followed closely by percent of females in poverty. The male counterparts to both of these characteristics, not shown, were similar. The percentage of whites in the district had a positive correlation on test scores of 0.54, and the percent of blacks in teh district had a negative correlation on test scores of 0.37. 
 </div>
-
-
-  <form name="myform" onSubmit="return handleClickSearch()">
-        <input name="Submit"  type="submit" size="50" style="font-size: 14px;" color="#fff"    value="Search" >
-        <input type="text" id="myVal" size="80" style="font-size: 14px;" placeholder="School Search">
-</form>
-
-<select id="select-list">
-  <option value="d.income50perc">median family income</option> 
-  <option value="d.percentfemalesBA">percent of females with BA in district</option>  
-  <option value="d.percentfemalespov">percent females in poverty in district</option>  
-  <option value="d.percentwhites">percent whites in district</option> 
-  <option value="d.percentblacks">percent blacks in district</option>
-</select>
-
-<div id="correl-1-chart">  
-    </div>
-  
+ 
 
 
 
@@ -94,6 +94,16 @@ body {
 .ui-menu-item:hover {
   cursor: pointer;
 }
+
+form {
+  font-size: 12px;
+  margin: 7px;
+}
+select {
+  font-size: 12px;
+  margin: 7px;
+}
+
 
 </style>
 
