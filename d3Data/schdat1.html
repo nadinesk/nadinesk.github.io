@@ -99,7 +99,8 @@ d3.select("#select-list").on("change", function() {
         .attr("cx", xMap); 
         
     d3.select(".x-axis")
-        .call(xAxis);
+        .call(xAxis)
+           .text("percent whites");
 
           d3.selectAll(".dot")
          .on("mouseover", function(d) {
@@ -146,7 +147,8 @@ d3.select("#select-list").on("change", function() {
         .style("fill","blue");
         
     d3.select(".x-axis")
-        .call(xAxis);
+        .call(xAxis)
+        .text("percent blacks");
        
 
   d3.selectAll(".dot")
@@ -192,7 +194,8 @@ d3.select("#select-list").on("change", function() {
         .attr("cx", xMap); 
         
     d3.select(".x-axis")
-        .call(xAxis);
+        .call(xAxis)
+        .text("median family income");
  
     d3.selectAll(".dot")
          .on("mouseover", function(d) {
@@ -237,7 +240,8 @@ d3.select("#select-list").on("change", function() {
         .attr("cx", xMap); 
         
     d3.select(".x-axis")
-        .call(xAxis);
+        .call(xAxis)
+        .text("percent of females with BA");
 
 
     d3.selectAll(".dot")
@@ -284,7 +288,8 @@ d3.select("#select-list").on("change", function() {
 
         
     d3.select(".x-axis")
-        .call(xAxis);
+        .call(xAxis)
+        .text("percent of females in poverty");
 
 
     d3.selectAll(".dot")
@@ -367,7 +372,7 @@ d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3D
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("grades ahead/below");
+      .text("grades above/below average");
   
   svg.selectAll(".dot")
       .data(data)
