@@ -5,7 +5,7 @@ date:   2016-07-08 00:00:00
 categories: d3.js, data visualization, schools, education, public schools, race, poverty, socioeconomics
 ---
 
-
+<div id="correl-1-chart">
   <form name="myform" onSubmit="return handleClickSearch()">
         <input name="Submit"  type="submit" size="50" style="font-size: 14px;" color="#fff"    value="Search" >
         <input type="text" id="myVal" size="80" style="font-size: 14px;" placeholder="School Search">
@@ -19,9 +19,9 @@ categories: d3.js, data visualization, schools, education, public schools, race,
   <option value="d.percentblacks">percent blacks in district</option>
 </select>
 
-  <div id="correl-1-title">Median Income
-    <div id="correl-1-chart"></div>
-  </div>
+  
+    </div>
+  
 
 <div> 
 Sources: <br> 
