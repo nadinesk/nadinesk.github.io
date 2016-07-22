@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title></title>
+<html lang="en">
+  <head>	   
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	
-<script src="testjs.js"></script>
+	<script src="test.js"></script>
 	
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Libre+Baskerville:400,700|Sanchez' rel='stylesheet' type='text/css'>
 	   
@@ -17,8 +19,8 @@
 	<style>
 	
 		body {
-		text-rendering: optimizeLegibility !important;
-		-webkit-font-smoothing: antialiased !important;
+			text-rendering: optimizeLegibility !important;
+			-webkit-font-smoothing: antialiased !important;
 		
 		}
 	
@@ -38,8 +40,16 @@
 			font-family: 'Sanchez', serif;
 			letter-spacing: 2px;
 			margin-bottom: 50px;
-			font-size: 35px;
+			width: 100%;
+			text-align: center;
 			
+	   }
+	   
+	   #name-text {
+			font-size 35px;
+			width: 500px;
+			margin:0 auto;
+			text-align: center;
 	   }
 	   
 	   
@@ -74,9 +84,8 @@
 			color: #319b54;
 	   }
 	   
+	   
 	 </style>
-	  
-
 	  
 
 
@@ -86,32 +95,22 @@
 <body>
 
 	<div class="head-container">
-
-		<h1 id="name"> Nadine Khattak Fischoff</h1>
+		<div id="name">
+			<h1 id="name-text"> Abcdef Ghijklmno </h1>
+		</div>
 		<div id="main-list">
 			<ul>
-				<li><a href="http://www.linkedin.com/in/nadinefischoff" target = #>linkedIn</a></li>
-				<li><a href="http://khasachi.com/blog" target = #>blog</a></li>
-				<li><a href="http://www.github.com/nadinesk" target = #>github </a></li>
-				<li><a href="http://bl.ocks.org/nadinesk" target = #>d3.js data visualizations</a></li>
-				<li><a href="https://itunes.apple.com/us/developer/nadine-khattak-fischoff/id924787458" target = #>iPhone Apps</a></li>
-				<li><a href="http://vsco.co/nadinesk/" target = #>photos</a></li>
-				<li><a href="http://www.twitter.com/alcajp" target = #>twitter</a></li>
+				<li id="list-item1"><a href="http://www.linkedin.com/in/nadinefischoff" target = #>linkedIn</a></li>
+				<li id="list-item2"><a href="http://khasachi.com/blog" target = #>blog</a></li>
+				<li id="list-item3"><a href="http://www.github.com/nadinesk" target = #>github </a></li>
+				<li id="list-item4"><a href="http://bl.ocks.org/nadinesk" target = #>d3.js data visualizations</a></li>
+				<li id="list-item5"><a href="https://itunes.apple.com/us/developer/nadine-khattak-fischoff/id924787458" target = #>iPhone Apps</a></li>
+				<li id="list-item6"><a href="http://vsco.co/nadinesk/" target = #>photos</a></li>
+				<li id="list-item7"><a href="http://www.twitter.com/alcajp" target = #>twitter</a></li>
 			</ul>
 		</div>
 	</div>
 
-
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-54131426-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 </body>
+
 </html>
