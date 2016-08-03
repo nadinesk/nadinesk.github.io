@@ -1,0 +1,312 @@
+<html>
+   <head>
+      <meta content = "text/html; charset = ISO-8859-1" http-equiv = "content-type">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	  <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+	  
+	  <title>Bills in U.S. Congress</title>
+
+      <style>
+
+		* {
+			margin: 0px;
+			padding: 0px;
+			
+		}
+	  
+         body {
+            font-family: 'Open Sans', sans-serif;	
+			text-rendering: optimizeLegibility !important;
+			-webkit-font-smoothing: antialiased !important;
+			font-size: 16px;
+			background-color: #e9ead4; 
+         }
+
+		.header {
+			margin: 0px;
+			padding: 0px;
+			height: 170px;
+			background-color: white;
+		}
+		h1 {
+			padding: 65px;
+			text-align: center; 
+			color: black;
+			font-family: 'Inconsolata' ;
+			font-size: 35px;
+		}
+		 
+         div {
+            margin: 15px;
+         }
+		 
+		 span {
+			font-weight: 700;
+		 }
+		 
+		 .yo {
+			margin-top: 10px;
+			margin-left: 80px;
+			margin-right: 80px;
+			background-color: #e9ead4;
+			border-radius: 5px;
+			padding: 10px;
+			line-height: 180%;
+		 }
+		 
+
+		 
+		 hr {
+			height: 6px;
+			border: 0px;
+			color:#b20000;
+			border-color: #b20000;
+			background-color: #b20000;
+			border-radius: -3px;
+			padding: 0px;
+			margin-left: -10px;
+			margin-right: -10px;
+		}
+		
+		a, a:visited {
+			color:#0000b2; 
+			font-weight: 700; 
+				
+		}
+		 
+
+
+
+      </style>
+		
+      <script type = "application/javascript">
+         $(document).ready(function () {
+
+         $.getJSON('https://www.govtrack.us/api/v2/bill?congress=114&order_by=-current_status_date', loadJSON);
+         
+         function loadJSON(){
+            var data_file = "https://www.govtrack.us/api/v2/bill?congress=114&order_by=-current_status_date";
+            var http_request = new XMLHttpRequest();
+            try{
+               // Opera 8.0+, Firefox, Chrome, Safari
+               http_request = new XMLHttpRequest();
+            }catch (e){
+               // Internet Explorer Browsers
+               try{
+                  http_request = new ActiveXObject("Msxml2.XMLHTTP");
+					
+               }catch (e) {
+				
+                  try{
+                     http_request = new ActiveXObject("Microsoft.XMLHTTP");
+                  }catch (e){
+                     // Something went wrong
+                     alert("Your browser broke!");
+                     return false;
+                  }
+					
+               }
+            }
+			      var title = [];
+               var bill_resolution_type = [];
+               var bill_type = []; 
+               var current_status = []; 
+               var current_status_description = []; 
+               var current_status_label = []; 
+               var display_number = []; 
+               var introduced_date = []; 
+               var is_current = []; 
+               var is_alive = []; 
+               var sponsorName = []; 
+               var party = []; 
+               var title_without_number = []; 
+			   var link = []; 
+			   var sponsorLink = []; 
+            http_request.onreadystatechange = function(){
+			
+               
+ 
+              if (http_request.readyState == 4  ){
+                  
+                  for ( var i = 0; i < 10; i ++) {
+                     
+                     var jsonObj = JSON.parse(http_request.responseText);
+
+                      title.push(jsonObj.objects[i].title)
+                      bill_resolution_type.push(jsonObj.objects[i].bill_resolution_type)
+                      //bill_type.push(jsonObj.objects[i].bill_type)
+                      current_status.push(jsonObj.objects[i].current_status)
+                      current_status_description.push(jsonObj.objects[i].current_status_description)
+                      current_status_label.push(jsonObj.objects[i].current_status_label)
+                      display_number.push(jsonObj.objects[i].display_number)
+                      introduced_date.push(jsonObj.objects[i].introduced_date)
+                      
+                //      is_current.push(jsonObj.objects[i].is_current)
+                      sponsorName.push(jsonObj.objects[i].sponsor.name)
+                      party.push(jsonObj.objects[i].sponsor_role.party)
+                      title_without_number.push(jsonObj.objects[i].title_without_number)
+					  link.push(jsonObj.objects[i].link)
+					  sponsorLink.push(jsonObj.objects[i].sponsor.link)
+
+                      if(jsonObj.objects[i].is_alive == true) {
+                         jsonObj.objects[i].is_alive ="yes"
+                         
+                           is_alive.push(jsonObj.objects[i].is_alive)
+                      }
+                      else if(jsonObj.objects[i].is_alive == false)  {
+                       
+                       jsonObj.objects[i].is_alive ="no"
+                       
+                         is_alive.push(jsonObj.objects[i].is_alive)
+                      }
+
+                       if(jsonObj.objects[i].is_current == true) {
+                         jsonObj.objects[i].is_current ="yes"
+                         
+                           is_current.push(jsonObj.objects[i].is_current)
+                      }
+                      else if(jsonObj.objects[i].is_current == false)  {
+                       
+                       jsonObj.objects[i].is_current ="no"
+                       
+                         is_current.push(jsonObj.objects[i].is_current)
+                      }
+
+                      if(jsonObj.objects[i].bill_type == "house_resolution") {
+                        jsonObj.objects[i].bill_type = "House Resolution"
+                        bill_type.push(jsonObj.objects[i].bill_type)
+                      }
+                      else if(jsonObj.objects[i].bill_type == "senate_bill") {
+                        jsonObj.objects[i].bill_type = "Senate Bill"
+                        bill_type.push(jsonObj.objects[i].bill_type)
+                      }
+                      else if(jsonObj.objects[i].bill_type == "senate_joint_resolution") {
+                        jsonObj.objects[i].bill_type = "Senate Joint Resolution"
+                        bill_type.push(jsonObj.objects[i].bill_type)
+                      }
+                      else if(jsonObj.objects[i].bill_type == "house_bill") {
+                        jsonObj.objects[i].bill_type = "House Bill"
+                        bill_type.push(jsonObj.objects[i].bill_type)
+                      }
+                      else if(jsonObj.objects[i].bill_type == "house_concurrent_resolution") {
+                        jsonObj.objects[i].bill_type = "House Concurrent Resolution"
+                        bill_type.push(jsonObj.objects[i].bill_type)
+                      }
+                      else if(jsonObj.objects[i].bill_type == "senate_concurrent_resolution") {
+                        jsonObj.objects[i].bill_type = "House Concurrent Resolution"
+                        bill_type.push(jsonObj.objects[i].bill_type)
+                      }
+                      else if(jsonObj.objects[i].bill_type == "house_joint_resolution") {
+                        jsonObj.objects[i].bill_type = "House Joint Resolution"
+                        bill_type.push(jsonObj.objects[i].bill_type)
+                      }
+                      else if(jsonObj.objects[i].bill_type == "senate_resolution") {
+                        jsonObj.objects[i].bill_type = "Senate Resolution"
+                        bill_type.push(jsonObj.objects[i].bill_type)
+                      }
+					
+                      $('.yo').empty();
+                      $.each(title, function( a, val ) {
+                        
+						var date_intro_header = $('<span> Date Introduced: </span>'); 
+						var display_number_header = $('<span> Display Number: </span>'); 
+						var title_wo_number_header = $('<span> Title: </span>');
+						var bill_type_header= $('<span> Bill Type: </span>');
+						var current_status_header = $('<span> Current Status: </span>');
+						var current_status_description_header = $('<span> Current Status Description: </span>');
+						var is_current_header = $('<span> Is Current: </span>');
+						var is_alive_header = $('<span> Is Alive: </span>'); 
+						var sponsor_name_header = $('<span> Sponsor Name: </span>'); 
+						var party_header = $('<span> Party: </span>'); 
+						
+						var $introduced_date = $("<div>").text(introduced_date[a]).prepend(date_intro_header); 
+                        $introduced_date.appendTo('.yo').addClass(".introduced_date"); 				
+						$introduced_date.css('margin-top', '30px'); 
+							
+						var $displayNumberText = $("<div>").text(display_number[a]); 
+						$displayNumberText.wrapInner("<a href='" + link[a] + "' target=#></a>");
+						var $display_number = $displayNumberText.prepend(display_number_header); 
+						$display_number.appendTo('.yo').addClass(".display_number"); 
+						
+						var $title_without_number = $("<div>").text(title_without_number[a]).prepend(title_wo_number_header); 
+                        $title_without_number.appendTo('.yo').addClass(".title_without_number");                   
+					
+						var $bill_type = $("<div>").text(bill_type[a]); 
+                        $bill_type.appendTo('.yo').addClass(".bill_type").prepend(bill_type_header); 
+                       						
+						var $current_status_label = $("<div>").text(current_status_label[a]); 
+                        $current_status_label.appendTo('.yo').addClass(".current_status_label").prepend(current_status_header); 
+            						
+						var $current_status_description = $("<div>").text(current_status_description[a]); 
+                        $current_status_description.appendTo('.yo').addClass(".current_status_description").prepend(current_status_description_header); 
+            
+						var $is_current = $("<div>").text(is_current[a]); 
+                        $is_current.appendTo('.yo').addClass(".is_current").prepend(is_current_header); 
+            
+                        var $is_alive = $("<div>").text(is_alive[a]); 
+                        $is_alive.appendTo('.yo').addClass(".is_alive").prepend(is_alive_header);
+              
+                        var $sponsorNameText = $("<div>").text(sponsorName[a]); 
+						$sponsorNameText.wrapInner("<a href='" + sponsorLink[a] + "' target=# id='linkfontCol'></a>")
+						$sponsorNameText.wrapInner("<span></span>"); 
+						
+                        var $sponsorName = $sponsorNameText.prepend(sponsor_name_header); 
+						$sponsorName.appendTo('.yo').addClass(".sponsorName");  
+
+                        var $partyText = $("<div>").text(party[a]);
+						$partyText.wrapInner("<span class='fontCol'></span>");
+						$('.fontCol').each(function(i, n) {
+						   if($(n).text() == "Republican") $(n).css('color', 'red');
+						   else if($(n).text() == "Democrat") $(n).css('color', 'blue');
+						});
+						var $party = $partyText.prepend(party_header); 
+                        $party.appendTo('.yo').addClass(".party"); 
+						$party.css('margin-bottom', '30px'); 
+						
+						$('<hr/>').appendTo('.yo').addClass(".line"); 
+                      }); 
+
+                        
+
+                  }
+               }
+            }
+			
+            http_request.open("GET", data_file, true);
+            http_request.send();
+         }
+      })
+		
+      </script>
+	
+
+   </head>
+	
+   <body>
+   
+	<div class="header">
+		<h1>Ten Most Recent Bills in U.S. Congress </h1> <!--Bills in U.S. Congress (House and Senate)-->
+	</div>
+           
+		   
+      <div class="yo">
+	  
+         
+      </div>
+	  
+	  <footer> 
+			<p>Source: <a href="http://www.govtrack.us" target=#>Govtrack.us</a>
+		</footer>
+	  
+
+
+ 
+
+
+		
+   </body>
+		
+</html>
+
