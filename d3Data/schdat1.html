@@ -27,6 +27,32 @@ body {
 
 
 
+.ui-menu {
+  list-style-type: none;
+  padding: 5px;
+  font-size: 12px;
+  background-color: white;
+  cursor: pointer
+  opacity: 0.7;
+}
+
+.ui-menu-item {
+  padding: 5px;
+}
+
+.ui-menu-item:hover {
+  cursor: pointer;
+}
+
+form {
+  font-size: 12px;
+  margin: 7px;
+}
+select {
+  font-size: 12px;
+  margin: 7px;
+}
+
 
 </style>
 <body>
@@ -78,10 +104,13 @@ d3.select("#select-list").on("change", function() {
       .transition()
           .duration(300)
           .ease("quad")
-        .attr("cx", xMap); 
+        .attr("cx", xMap)
+               .style("fill", "rgba(127, 58, 70,0.4)"); 
         
     d3.select(".x-axis")
         .call(xAxis);
+    d3.select(".label-x")
+           .text("percent whites");
 
           d3.selectAll(".dot")
          .on("mouseover", function(d) {
@@ -91,7 +120,13 @@ d3.select("#select-list").on("change", function() {
           tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/>" + formatPercent(xValue(d)) 
           + " white<br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
           .style("left", (d3.event.pageX + 5) + "px")
-               .style("top", (d3.event.pageY - 28) + "px");
+               .style("top", (d3.event.pageY - 28) + "px")
+                .style("background-color","white")
+               .style("border", "1px solid black")
+               .style("border-radius", "3px")
+               .style("padding", "5px")
+               //.style("width", "100px")
+               .style("height", "100px");
                
       })
       .on("mouseout", function(d) {
@@ -125,10 +160,11 @@ d3.select("#select-list").on("change", function() {
           .duration(300)
           .ease("quad")
         .attr("cx", xMap)
-        .style("fill","blue");
-        
+        .style("fill", "rgba(255, 192, 203, 0.6)"); 
     d3.select(".x-axis")
         .call(xAxis);
+    d3.select(".label-x")
+        .text("percent blacks");
        
 
   d3.selectAll(".dot")
@@ -139,7 +175,13 @@ d3.select("#select-list").on("change", function() {
           tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/>" + formatPercent(xValue(d)) 
           + " black<br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
           .style("left", (d3.event.pageX + 5) + "px")
-               .style("top", (d3.event.pageY - 28) + "px");
+               .style("top", (d3.event.pageY - 28) + "px")
+                .style("background-color","white")
+               .style("border", "1px solid black")
+               .style("border-radius", "3px")
+               .style("padding", "5px")
+               //.style("width", "100px")
+               .style("height", "100px");
       })
       .on("mouseout", function(d) {
           tooltip.transition()
@@ -171,10 +213,13 @@ d3.select("#select-list").on("change", function() {
       .transition()
           .duration(300)
           .ease("quad")
-        .attr("cx", xMap); 
+        .attr("cx", xMap)
+        .style("fill", "rgba(255, 116, 140,0.5)");
         
     d3.select(".x-axis")
         .call(xAxis);
+    d3.select(".label-x")
+        .text("median family income");
  
     d3.selectAll(".dot")
          .on("mouseover", function(d) {
@@ -184,7 +229,13 @@ d3.select("#select-list").on("change", function() {
           tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/> median income: $" + formatDollar(xValue(d)) 
           + "<br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
           .style("left", (d3.event.pageX + 5) + "px")
-               .style("top", (d3.event.pageY - 28) + "px");
+               .style("top", (d3.event.pageY - 28) + "px")
+                .style("background-color","white")
+               .style("border", "1px solid black")
+               .style("border-radius", "3px")
+               .style("padding", "5px")
+               //.style("width", "100px")
+               .style("height", "100px");
       })
       .on("mouseout", function(d) {
           tooltip.transition()
@@ -216,10 +267,13 @@ d3.select("#select-list").on("change", function() {
       .transition()
           .duration(100)
           .ease("linear")
-        .attr("cx", xMap); 
+        .attr("cx", xMap)
+        .style("fill", "rgba(204, 93, 112, 0.5)"); 
         
     d3.select(".x-axis")
         .call(xAxis);
+    d3.select(".label-x")
+        .text("percent of females with BA");
 
 
     d3.selectAll(".dot")
@@ -230,7 +284,13 @@ d3.select("#select-list").on("change", function() {
           tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/>" + formatPercent(xValue(d)) 
           + " females with BA <br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
           .style("left", (d3.event.pageX + 5) + "px")
-               .style("top", (d3.event.pageY - 28) + "px");
+               .style("top", (d3.event.pageY - 28) + "px")
+                .style("background-color","white")
+               .style("border", "1px solid black")
+               .style("border-radius", "3px")
+               .style("padding", "5px")
+               //.style("width", "100px")
+               .style("height", "100px");
       })
       .on("mouseout", function(d) {
           tooltip.transition()
@@ -262,11 +322,14 @@ d3.select("#select-list").on("change", function() {
       .transition()
           .duration(300)
           .ease("quad")
-        .attr("cx", xMap);
+        .attr("cx", xMap)
+        .style("fill", "rgba(127, 96, 102, 0.4)"); 
 
         
     d3.select(".x-axis")
         .call(xAxis);
+    d3.select(".label-x")
+        .text("percent of females in poverty");
 
 
     d3.selectAll(".dot")
@@ -277,7 +340,13 @@ d3.select("#select-list").on("change", function() {
            tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/>" + formatPercent(xValue(d)) 
           + " females in poverty <br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
            .style("left", (d3.event.pageX + 5) + "px")
-               .style("top", (d3.event.pageY - 28) + "px");
+               .style("top", (d3.event.pageY - 28) + "px")
+                .style("background-color","white")
+               .style("border", "1px solid black")
+               .style("border-radius", "3px")
+               .style("padding", "5px")
+               //.style("width", "100px")
+               .style("height", "100px");
       })
       .on("mouseout", function(d) {
           tooltip.transition()
@@ -335,7 +404,7 @@ d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3D
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis)
     .append("text")
-      .attr("class", "label")
+      .attr("class", "label-x")
       .attr("x", width)
       .attr("y", -6)
       .style("text-anchor", "end")
@@ -349,7 +418,7 @@ d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3D
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("grades ahead/below");
+      .text("grades above/below average");
   
   svg.selectAll(".dot")
       .data(data)
@@ -421,9 +490,13 @@ data.forEach(function(d) {
   
   });
   $( "#myVal" ).autocomplete({
-    source: all_schools
+    maxResults: 10,
+    source: function(request, response) {
+        var results = $.ui.autocomplete.filter(all_schools, request.term);
+        response(results.slice(0, this.options.maxResults));
+    }
   });
- 
+
 });
 function handleClickSearch(event){
   currentSearchTerm = document.getElementById("myVal").value;
