@@ -6,7 +6,7 @@
 					$(this).stop().effect("shake", {distance: 3}, 200); 
 				}); 
 				
-				$("li a").each(function( index) {
+				$("#main-list li a").each(function( index) {
 					$(this).on('mouseover', function(event) {
 						$(this).css("letter-spacing", "5px"); 
 						$(this).css("border-radius", "5px"); 
