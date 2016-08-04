@@ -1,6 +1,7 @@
 	$(document).ready(function(){
 
 				$("#main-list ul").addClass("load");
+				$("#project-list ul").addClass("load");
 				
 				$("#name-text").mouseover(function () {
 					$(this).stop().effect("shake", {distance: 3}, 200); 
