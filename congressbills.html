@@ -277,7 +277,7 @@
 						var sponsor_name_header = $('<span> Sponsor Name: </span>'); 
 						var party_header = $('<span> Party: </span>'); 
 						
-						var $introduced_date = $("<div>").text(introduced_date[a]).prepend(date_intro_header); 
+						var $introduced_date = $("<div>").text(introduced_date[a]).prepend(date_intro_header).prepend([a] + ". "); 
                         $introduced_date.appendTo('.yo').addClass(".introduced_date"); 				
 						$introduced_date.css('margin-top', '30px'); 
 							
