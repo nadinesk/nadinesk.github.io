@@ -1,10 +1,17 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
    <head>
-      <meta content = "text/html; charset = ISO-8859-1" http-equiv = "content-type">
+    	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+   </head>
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-      <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	  <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+	 
+	
+	
 	  
 	  <title>Bills in U.S. Congress</title>
 
@@ -22,6 +29,8 @@
 			-webkit-font-smoothing: antialiased !important;
 			font-size: 16px;
 			background-color: #e9ead4; 
+			margin: 0px;
+			padding: 0px;
          }
 
 		.header {
@@ -55,9 +64,7 @@
 			padding: 10px;
 			line-height: 180%;
 		 }
-		 
-
-		 
+				
 		 hr {
 			height: 6px;
 			border: 0px;
@@ -70,24 +77,60 @@
 			margin-right: -10px;
 		}
 		
-		a, a:visited {
-			color:#0000b2; 
+		 a, a:visited {
+			color:#ffa500; 
 			font-weight: 700; 
+
 				
 		}
+		
+		.dropdownform {
+			margin-left: 80px;
+
+		}
+		 .selectpicker {
+			 width: 100px;
+			 text-align: center;
+			 margin-left: 30px;
+			 padding: 5px; 
+			 border: none;
+			border-radius: 4px;
+			background-color: #f1f1f1;
+		}
+		
+
 		 
+		#select-title {
+			font-weight: 700;
+			color: #b20000;
+		}
 
-
+		
 
       </style>
 		
       <script type = "application/javascript">
          $(document).ready(function () {
-
-         $.getJSON('https://www.govtrack.us/api/v2/bill?congress=114&order_by=-current_status_date', loadJSON);
+		
+		 $( "select" )
+			  .change(function () {
+				var str = "";
+				$( "select option:selected" ).each(function() {
+				  str += $( this ).text() + " ";
+				  arraySize = $(this).val(); 
+				});
+			
+				console.log(arraySize); 
+				loadJSON(); 
+				
+			  })
+			  .change();
+	
+		var arraySize=10;
+         $.getJSON('https://www.govtrack.us/api/v2/bill?congress=114&order_by=-current_status_date&limit=100', loadJSON);
          
          function loadJSON(){
-            var data_file = "https://www.govtrack.us/api/v2/bill?congress=114&order_by=-current_status_date";
+            var data_file = "https://www.govtrack.us/api/v2/bill?congress=114&order_by=-current_status_date&limit="+arraySize;
             var http_request = new XMLHttpRequest();
             try{
                // Opera 8.0+, Firefox, Chrome, Safari
@@ -124,88 +167,101 @@
                var title_without_number = []; 
 			   var link = []; 
 			   var sponsorLink = []; 
+			   
+			   
+		<!--	var ddVal = $("#selectId :selected").text(); 
+			<!--console.log(ddVal); ! -->
+	
+			
+			
+
+			
+			 
             http_request.onreadystatechange = function(){
 			
                
  
               if (http_request.readyState == 4  ){
-                  
-                  for ( var i = 0; i < 10; i ++) {
-                     
-                     var jsonObj = JSON.parse(http_request.responseText);
+                   		var jsonObj = JSON.parse(http_request.responseText);	
+						var billsArray = jsonObj.objects;
+						console.log (jsonObj); 
+                  $.each(billsArray, function (index, valueObj) {
+					
+					title_without_number.push(valueObj.title_without_number)
+					console.log(title_without_number);
 
-                      title.push(jsonObj.objects[i].title)
-                      bill_resolution_type.push(jsonObj.objects[i].bill_resolution_type)
-                      //bill_type.push(jsonObj.objects[i].bill_type)
-                      current_status.push(jsonObj.objects[i].current_status)
-                      current_status_description.push(jsonObj.objects[i].current_status_description)
-                      current_status_label.push(jsonObj.objects[i].current_status_label)
-                      display_number.push(jsonObj.objects[i].display_number)
-                      introduced_date.push(jsonObj.objects[i].introduced_date)
+                    title.push(valueObj.title)
+                      bill_resolution_type.push(valueObj.bill_resolution_type)
+                      //bill_type.push(valueObj.bill_type)
+                      current_status.push(valueObj.current_status)
+                      current_status_description.push(valueObj.current_status_description)
+                      current_status_label.push(valueObj.current_status_label)
+                      display_number.push(valueObj.display_number)
+                      introduced_date.push(valueObj.introduced_date)
                       
-                //      is_current.push(jsonObj.objects[i].is_current)
-                      sponsorName.push(jsonObj.objects[i].sponsor.name)
-                      party.push(jsonObj.objects[i].sponsor_role.party)
-                      title_without_number.push(jsonObj.objects[i].title_without_number)
-					  link.push(jsonObj.objects[i].link)
-					  sponsorLink.push(jsonObj.objects[i].sponsor.link)
+                //      is_current.push(valueObj.is_current)
+                      sponsorName.push(valueObj.sponsor.name)
+                      party.push(valueObj.sponsor_role.party)
+                      title_without_number.push(valueObj.title_without_number)
+					  link.push(valueObj.link)
+					  sponsorLink.push(valueObj.sponsor.link)
 
-                      if(jsonObj.objects[i].is_alive == true) {
-                         jsonObj.objects[i].is_alive ="yes"
+                      if(valueObj.is_alive == true) {
+                         valueObj.is_alive ="yes"
                          
-                           is_alive.push(jsonObj.objects[i].is_alive)
+                           is_alive.push(valueObj.is_alive)
                       }
-                      else if(jsonObj.objects[i].is_alive == false)  {
+                      else if(valueObj.is_alive == false)  {
                        
-                       jsonObj.objects[i].is_alive ="no"
+                       valueObj.is_alive ="no"
                        
-                         is_alive.push(jsonObj.objects[i].is_alive)
+                         is_alive.push(valueObj.is_alive)
                       }
 
-                       if(jsonObj.objects[i].is_current == true) {
-                         jsonObj.objects[i].is_current ="yes"
+                       if(valueObj.is_current == true) {
+                         valueObj.is_current ="yes"
                          
-                           is_current.push(jsonObj.objects[i].is_current)
+                           is_current.push(valueObj.is_current)
                       }
-                      else if(jsonObj.objects[i].is_current == false)  {
+                      else if(valueObj.is_current == false)  {
                        
-                       jsonObj.objects[i].is_current ="no"
+                       valueObj.is_current ="no"
                        
-                         is_current.push(jsonObj.objects[i].is_current)
+                         is_current.push(valueObj.is_current)
                       }
 
-                      if(jsonObj.objects[i].bill_type == "house_resolution") {
-                        jsonObj.objects[i].bill_type = "House Resolution"
-                        bill_type.push(jsonObj.objects[i].bill_type)
+                      if(valueObj.bill_type == "house_resolution") {
+                        valueObj.bill_type = "House Resolution"
+                        bill_type.push(valueObj.bill_type)
                       }
-                      else if(jsonObj.objects[i].bill_type == "senate_bill") {
-                        jsonObj.objects[i].bill_type = "Senate Bill"
-                        bill_type.push(jsonObj.objects[i].bill_type)
+                      else if(valueObj.bill_type == "senate_bill") {
+                        valueObj.bill_type = "Senate Bill"
+                        bill_type.push(valueObj.bill_type)
                       }
-                      else if(jsonObj.objects[i].bill_type == "senate_joint_resolution") {
-                        jsonObj.objects[i].bill_type = "Senate Joint Resolution"
-                        bill_type.push(jsonObj.objects[i].bill_type)
+                      else if(valueObj.bill_type == "senate_joint_resolution") {
+                        valueObj.bill_type = "Senate Joint Resolution"
+                        bill_type.push(valueObj.bill_type)
                       }
-                      else if(jsonObj.objects[i].bill_type == "house_bill") {
-                        jsonObj.objects[i].bill_type = "House Bill"
-                        bill_type.push(jsonObj.objects[i].bill_type)
+                      else if(valueObj.bill_type == "house_bill") {
+                        valueObj.bill_type = "House Bill"
+                        bill_type.push(valueObj.bill_type)
                       }
-                      else if(jsonObj.objects[i].bill_type == "house_concurrent_resolution") {
-                        jsonObj.objects[i].bill_type = "House Concurrent Resolution"
-                        bill_type.push(jsonObj.objects[i].bill_type)
+                      else if(valueObj.bill_type == "house_concurrent_resolution") {
+                        valueObj.bill_type = "House Concurrent Resolution"
+                        bill_type.push(valueObj.bill_type)
                       }
-                      else if(jsonObj.objects[i].bill_type == "senate_concurrent_resolution") {
-                        jsonObj.objects[i].bill_type = "House Concurrent Resolution"
-                        bill_type.push(jsonObj.objects[i].bill_type)
+                      else if(valueObj.bill_type == "senate_concurrent_resolution") {
+                        valueObj.bill_type = "House Concurrent Resolution"
+                        bill_type.push(valueObj.bill_type)
                       }
-                      else if(jsonObj.objects[i].bill_type == "house_joint_resolution") {
-                        jsonObj.objects[i].bill_type = "House Joint Resolution"
-                        bill_type.push(jsonObj.objects[i].bill_type)
+                      else if(valueObj.bill_type == "house_joint_resolution") {
+                        valueObj.bill_type = "House Joint Resolution"
+                        bill_type.push(valueObj.bill_type)
                       }
-                      else if(jsonObj.objects[i].bill_type == "senate_resolution") {
-                        jsonObj.objects[i].bill_type = "Senate Resolution"
-                        bill_type.push(jsonObj.objects[i].bill_type)
-                      }
+                      else if(valueObj.bill_type == "senate_resolution") {
+                        valueObj.bill_type = "Senate Resolution"
+                        bill_type.push(valueObj.bill_type)
+                      } 
 					
                       $('.yo').empty();
                       $.each(title, function( a, val ) {
@@ -233,10 +289,10 @@
 						var $title_without_number = $("<div>").text(title_without_number[a]).prepend(title_wo_number_header); 
                         $title_without_number.appendTo('.yo').addClass(".title_without_number");                   
 					
-						var $bill_type = $("<div>").text(bill_type[a]); 
+				/*)*/		var $bill_type = $("<div>").text(bill_type[a]); 
                         $bill_type.appendTo('.yo').addClass(".bill_type").prepend(bill_type_header); 
-                       						
 						var $current_status_label = $("<div>").text(current_status_label[a]); 
+
                         $current_status_label.appendTo('.yo').addClass(".current_status_label").prepend(current_status_header); 
             						
 						var $current_status_description = $("<div>").text(current_status_description[a]); 
@@ -270,13 +326,18 @@
 
                         
 
-                  }
+					
+				  });
+				  
+				 
                }
             }
 			
             http_request.open("GET", data_file, true);
             http_request.send();
          }
+		 
+		 
       })
 		
       </script>
@@ -287,7 +348,21 @@
    <body>
    
 	<div class="header">
-		<h1>Ten Most Recent Bills in U.S. Congress </h1> <!--Bills in U.S. Congress (House and Senate)-->
+		<h1>Most Recent Bills in U.S. Congress</h1> <!--Bills in U.S. Congress (House and Senate)-->
+	</div>
+	
+	<div class="dropdownform">
+		<div id="select-title"> Select Number of Most Recent Bills to View</div>
+		<select class="selectpicker">
+			<option id="option" value="10">10</option>
+			<option id = "option" value="25">25</option>
+			<option id = "option" value="50">50</option>
+			<option id = "option" value="100">100</option>
+		</select>
+	
+	</div>
+	
+	<div id="test">
 	</div>
            
 		   
@@ -301,14 +376,7 @@
 		</footer>
 	  
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-54131426-1', 'auto');
-  ga('send', 'pageview');
-</script>
+
  
 
 
