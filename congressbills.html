@@ -265,7 +265,7 @@
 					
                       $('.yo').empty();
                       $.each(title, function( a, val ) {
-                        
+                        var numcount = a+1; 
 						var date_intro_header = $('<span> Date Introduced: </span>'); 
 						var display_number_header = $('<span> Display Number: </span>'); 
 						var title_wo_number_header = $('<span> Title: </span>');
@@ -277,7 +277,7 @@
 						var sponsor_name_header = $('<span> Sponsor Name: </span>'); 
 						var party_header = $('<span> Party: </span>'); 
 						
-						var $introduced_date = $("<div>").text(introduced_date[a]).prepend(date_intro_header).prepend([a] + ". "); 
+						var $introduced_date = $("<div>").text(introduced_date[a]).prepend(date_intro_header).prepend(numcount + ". "); 
                         $introduced_date.appendTo('.yo').addClass(".introduced_date"); 				
 						$introduced_date.css('margin-top', '30px'); 
 							
