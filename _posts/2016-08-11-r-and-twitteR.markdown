@@ -9,6 +9,6 @@ I followed along with [this](http://geoffjentry.hexdump.org/twitteR.pdf) documen
 
 And all I got was this pie chart. :) Actually I can't really take for granted that it worked, considering all the times when my attempts are fraught with...not working.
 
-(https://khasachi.com/photos/Rplot.png)
+![Pie chart](https://khasachi.com/photos/Rplot.png)
 
 
