@@ -56,11 +56,16 @@ Then I get the most recent 5,000 tweets for each top hashtag trend for each coun
      lbls_JP <- paste(lbls_JP,"%",sep="") 
      pie(source_JP1_table[pct_JP >=1], labels = lbls_JP)
      
-More people tweeted from Twitter for iPhone than all other sources for these top hashtags this morning. Twitter for iPhone is 58% of the sources of the most recent 5,000 tweets for the top trend in the U.S. (which this morning at around 9:30 am is #IfYouWantToBeMyNeighbor) and 65% of sources in Japan (their top hashtag this morning is #自殺と打って続きを見守れ)
+More people tweeted from Twitter for iPhone than all other sources for these top hashtags this morning. Twitter for iPhone is 58% of the sources of the most recent 5,000 tweets for the top trend in the U.S. (which this morning at around 9:30 am is #IfYouWantToBeMyNeighbor) and 65% of sources in Japan (their top hashtag this morning is #自殺と打って続きを見守れ, which from what I can gather might be a Japanese band?)
+
+Worldwide, the top hashtag this morning is #유성우, which I think is meteor shower. The top source for the most recent 5,000 tweets (as of coding) for this hashtag is Twitter for Android.
 
 Japan
 ![Japan Pie Chart](http://khasachi.com/photos/source_JP_1.png)
 
 United States
 ![U.S. Pie Chart](http://khasachi.com/photos/source_US_2.png)
+
+World 
+![U.S. Pie Chart](http://khasachi.com/photos/world_1.png)
 
