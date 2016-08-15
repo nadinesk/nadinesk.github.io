@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Learning R and Clinton and Trump Tweet Word Frequencies"
+title:  "Learning R and Clinton and Trump Twitter Word Frequencies"
 date:   2016-08-15 00:00:00
 categories: r, data, twitter, twitter data, trump, clinton
 ---
