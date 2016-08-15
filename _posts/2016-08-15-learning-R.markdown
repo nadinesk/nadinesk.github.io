@@ -82,7 +82,7 @@ My top words and counts:
 
 
 Donald Trump's Most Common Words
-[![Trump Common Words](http://khasachi.com/images/trump_common_words.png)]
+<a href="http://khasachi.com/images/trump_common_words.png"><img src="http://khasachi.com/images/trump_common_words.png/"></a>
 
 Hillary Clinton's Most Common Words
 [![Trump Common Words](http://khasachi.com/images/hill_common_words.png)]
