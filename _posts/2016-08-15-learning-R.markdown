@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Learning R"
+title:  "Learning R and using the Twitter API"
 date:   2016-08-15 00:00:00
 categories: r, data, twitter, twitter data, trump, clinton
 ---
