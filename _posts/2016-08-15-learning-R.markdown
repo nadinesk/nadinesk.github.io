@@ -30,19 +30,30 @@ get the tweets and just the words from user timelines:
           str_detect(word, "[a-z]"))
 
 get the count for each word
+
      hill_tweet_words_count_1 <- hill_tweet_words %>%
-       count(word)
+         count(word)
 get just words used five or more times (for trump, n>=40 since he used many more words)
+
      hill_tweet_words_count_2 <- hill_tweet_words_count_1 %>%
        filter(n>=5)
 
 create the bar chart 
+
      ggplot(data=hill_tweet_words_count_2, aes(x=word, y=n, fill=n)) + 
        geom_bar(stat="identity", position="dodge") + 
        coord_flip()
 
-
 Donald Trump used 8,517 total words and 2,578 unique words in his last 3200 tweets. Hillary Clinton used 1,089 total words and 639 unique words in the same number of tweets. (I used 516 total and 399 unique words.)
+
+Their top words look weirdly similar: 
+
+* The top word for both Trump and Clinton is the other's opponent (3.9% for Clinton, and 2.3% for Trump). 
+* The fifth most frequent word for both is "people" (1.1% for both Trump and Clinton). 
+* The second and fourth most frequent words for Clinton and Trump are either first/last name of their opponent, or their own name.
+* Trump's third most frequent word is "crooked" in reference to Clinton (1.2%)
+* Clinton's third most frequent word is "America" (1.7%). 
+* Trump's top 5 most frequent words referring to Clinton add up to about 5% (429 timeS), and Clinton's referring to Trump are 6.29% (68 times). 
 
 Donald Trump's top words and perentage of their use to total words used (8,517): 
 
@@ -61,6 +72,7 @@ Hillary Clinton's top words and perentage of their use to total words used (1,08
 * people: 12, 1.1%
 
 My top words and counts: 
+
 * http (25), 
 * app (10), 
 * d3js (8), 
@@ -70,10 +82,10 @@ My top words and counts:
 
 
 Donald Trump's Most Common Words
-![Trump Common Words](http://khasachi.com/images/trump_common_words.png)
+[![Trump Common Words](http://khasachi.com/images/trump_common_words.png)]
 
 Hillary Clinton's Most Common Words
-![Trump Common Words](http://khasachi.com/images/hill_common_words.png)
+[![Trump Common Words](http://khasachi.com/images/hill_common_words.png)]
 
 My Most Common Words
-![Trump Common Words](http://khasachi.com/images/nf_common_words.png)
+[![Trump Common Words](http://khasachi.com/images/nf_common_words.png)]
