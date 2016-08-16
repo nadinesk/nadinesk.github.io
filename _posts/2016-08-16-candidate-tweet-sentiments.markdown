@@ -27,24 +27,28 @@ I'm still utlizing the code from this, [Text analysis of Trump's tweets confirms
 Following are the grouped bar charts, table with values, and code
 
 Clinton vs Trump Tweets Sentiment Percentge Comparison
-<a href="http://khasachi.com/images/percent_comparison.png"><img height="550" src="http://khasachi.com/images/percent_comparison.png"/></a>
+<a href="http://khasachi.com/images/percent_comparison.png"><img width="600" src="http://khasachi.com/images/percent_comparison.png"/></a>
 
 Clinton vs Trump Tweets Sentiment Value (Count) Comparison
-<a href="http://khasachi.com/images/comp_values.png"><img height="550" src="http://khasachi.com/images/comp_values.png"/></a>
+<a href="http://khasachi.com/images/comp_values.png"><img width="600" src="http://khasachi.com/images/comp_values.png"/></a>
 
 Top 5 Highest percentage of sentiments in Trump's tweets: 
-1. positive(18.5%)
-2. negative (16.0%)
-3. trust(12.2%)
-4. anger(9.5%)
-5. sadness (8.9%)
+<ol>
+<li>positive(18.5%)
+<li>negative (16.0%)
+<li>trust(12.2%)
+<li>anger(9.5%)
+<li>sadness (8.9%)
+</ol>
 
 Top 5 Highest percentage of sentiments in Clinton's tweets: 
-1. positive(20.8%)
-2. trust (15.7%)
-3. anticipation(13.4%)
-4. negative(10.9%)
-5. surprise (10.9%)
+<ol>
+<li>positive(20.8%)
+<li>trust (15.7%)
+<li>anticipation(13.4%)
+<li>negative(10.9%)
+<li>surprise (10.9%)
+</ol>
 
 Hillary's top five have four positive-ish sentiments, and Trump's has two...
 
@@ -123,12 +127,10 @@ Hillary's top five have four positive-ish sentiments, and Trump's has two...
     <td>trust</td>
     <td>599</td>
     <td>12.2%</td>
-    <td>116/td>
+    <td>116</td>
     <td>15.7%</td>
   </tr>
 </table>
-
-
 
 <pre>
      hill_tweets <- userTimeline("HillaryClinton", n= 3200)
