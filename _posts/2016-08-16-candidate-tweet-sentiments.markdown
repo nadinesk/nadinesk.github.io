@@ -24,6 +24,22 @@ tr:nth-child(even) {
 </style>
 I'm still utlizing the code from this, [Text analysis of Trump's tweets confirms he writes only the (angrier) Android half](http://varianceexplained.org/r/trump-tweets/), to compare tweet word sentiments between Clinton and Trump's recent tweets. 
 
+Following are the grouped bar charts, table with values, and code
+
+Clinton vs Trump Tweets Sentiment Percentge Comparison
+<a href="http://khasachi.com/images/percent_comparison.png"><img height="550" src="http://khasachi.com/images/percent_comparison.png"/></a>
+
+Clinton vs Trump Tweets Sentiment Value (Count) Comparison
+<a href="http://khasachi.com/images/comp_values.png"><img height="550" src="http://khasachi.com/images/comp_values.png"/></a>
+
+Top 5 Highest percentage of sentiments in Trump's tweets: 
+positive(18.5%), negative (16.0%), trust(12.2%), anger(9.5%), sadness (8.9%)
+
+Top 5 Highest percentage of sentiments in Clinton's tweets: 
+positive(20.8%), trust (15.7%), anticipation(13.4%), negative(10.9%), surprise (10.9%)
+
+Hillary's top five have four positive-ish sentiments, and Trump's has two...
+
 <table>
   <tr>
     <th>sentiment</th>
@@ -40,31 +56,67 @@ I'm still utlizing the code from this, [Text analysis of Trump's tweets confirms
     <td>4.3%</td>
   </tr>
   <tr>
-  <td>anger</td>
-    <td>465</td>
-    <td>9.5%</td>
-    <td>32</td>
-    <td>4.3%</td>
+    <td>anticipation</td>
+    <td>430</td>
+    <td>8.8%</td>
+    <td>99</td>
+    <td>13.4%</td>
   </tr>
   <tr>
-    <td>Ernst Handel</td>
-    <td>Roland Mendel</td>
-    <td>Austria</td>
+    <td>disgust</td>
+    <td>306</td>
+    <td>6.2%</td>
+    <td>14</td>
+    <td>1.9%</td>
   </tr>
   <tr>
-    <td>Island Trading</td>
-    <td>Helen Bennett</td>
-    <td>UK</td>
+    <td>fear</td>
+    <td>398</td>
+    <td>8.1%</td>
+    <td>49</td>
+    <td>6.6%</td>
   </tr>
   <tr>
-    <td>Laughing Bacchus Winecellars</td>
-    <td>Yoshi Tannamuri</td>
-    <td>Canada</td>
+    <td>joy</td>
+    <td>333</td>
+    <td>6.8%</td>
+    <td>81</td>
+    <td>10.9%</td>
   </tr>
   <tr>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Giovanni Rovelli</td>
-    <td>Italy</td>
+    <td>negative</td>
+    <td>788</td>
+    <td>16.5%</td>
+    <td>81</td>
+    <td>10.9%</td>
+  </tr>
+    <tr>
+    <td>positive</td>
+    <td>911</td>
+    <td>18.5%</td>
+    <td>154</td>
+    <td>20.8%</td>
+  </tr>
+    <tr>
+    <td>sadness</td>
+    <td>438</td>
+    <td>8.9%</td>
+    <td>47</td>
+    <td>6.4%</td>
+  </tr>
+    <tr>
+    <td>surprise</td>
+    <td>245</td>
+    <td>5.0%</td>
+    <td>81</td>
+    <td>10.9%</td>
+  </tr>
+  <tr>
+    <td>trust</td>
+    <td>599</td>
+    <td>12.2%</td>
+    <td>116/td>
+    <td>15.7%</td>
   </tr>
 </table>
 
@@ -156,12 +208,3 @@ I'm still utlizing the code from this, [Text analysis of Trump's tweets confirms
      ggplot(sentiment_comp_values,aes(x = sentiment, y = value)) + 
        geom_bar(aes(fill = variable),stat="identity", position = position_dodge()) 
 
-
-Donald Trump's Most Common Words
-<a href="http://khasachi.com/images/trump_common_words.png"><img height="550" src="http://khasachi.com/images/trump_common_words.png"/></a>
-
-Hillary Clinton's Most Common Words
-<a href="http://khasachi.com/images/hill_common_words.png"><img height="550" src="http://khasachi.com/images/hill_common_words.png"/></a>
-
-My Most Common Words
-<a href="http://khasachi.com/images/nf_common_words.png"><img src="http://khasachi.com/images/nf_common_words.png"/></a>
