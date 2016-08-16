@@ -34,20 +34,20 @@ Clinton vs Trump Tweets Sentiment Value (Count) Comparison
 
 Top 5 Highest percentage of sentiments in Trump's tweets: 
 <ol>
-<li>positive(18.5%)
-<li>negative (16.0%)
-<li>trust(12.2%)
-<li>anger(9.5%)
-<li>sadness (8.9%)
+<li>positive(18.5%)</li>
+<li>negative (16.0%) </li>
+<li>trust(12.2%) </li>
+<li>anger(9.5%) </li>
+<li>sadness (8.9%) </li>
 </ol>
 
 Top 5 Highest percentage of sentiments in Clinton's tweets: 
 <ol>
-<li>positive(20.8%)
-<li>trust (15.7%)
-<li>anticipation(13.4%)
-<li>negative(10.9%)
-<li>surprise (10.9%)
+<li>positive(20.8%) </li>
+<li>trust (15.7%) </li>
+<li>anticipation(13.4%) </li>
+<li>negative(10.9%) </li>
+<li>surprise (10.9%) </li>
 </ol>
 
 Hillary's top five have four positive-ish sentiments, and Trump's has two...
