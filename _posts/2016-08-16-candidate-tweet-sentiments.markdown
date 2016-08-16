@@ -27,10 +27,10 @@ I'm still utlizing the code from this, [Text analysis of Trump's tweets confirms
 Following are the grouped bar charts, table with values, and code
 
 Clinton vs Trump Tweets Sentiment Percentge Comparison
-<a href="http://khasachi.com/images/percent_comparison.png"><img width="600" src="http://khasachi.com/images/percent_comparison.png"/></a>
+<a href="http://khasachi.com/images/percent_comparison.png"><img width="650" src="http://khasachi.com/images/percent_comparison.png"/></a>
 
 Clinton vs Trump Tweets Sentiment Value (Count) Comparison
-<a href="http://khasachi.com/images/comp_values.png"><img width="600" src="http://khasachi.com/images/comp_values.png"/></a>
+<a href="http://khasachi.com/images/comp_values.png"><img width="650" src="http://khasachi.com/images/comp_values.png"/></a>
 
 Top 5 Highest percentage of sentiments in Trump's tweets: 
 <ol>
