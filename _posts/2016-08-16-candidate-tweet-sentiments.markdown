@@ -225,6 +225,7 @@ The code:
     </pre>
 
 And to this I'll add graphs showing the change in retweets and likes by month for Trump's tweets, from January to August. 
+
 Retweets
 <a href="http://khasachi.com/images/r_m.png"><img width="650" src="http://khasachi.com/images/r_m.png"/></a>
 
