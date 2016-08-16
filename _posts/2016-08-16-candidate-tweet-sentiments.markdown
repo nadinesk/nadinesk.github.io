@@ -26,7 +26,7 @@ I'm still utlizing the code from this, [Text analysis of Trump's tweets confirms
 
 Following are the grouped bar charts, table with values, and code
 
-Clinton vs Trump Tweets Sentiment Percentge Comparison
+Clinton vs Trump Tweets Sentiment Percentage Comparison
 <a href="http://khasachi.com/images/percent_comparison.png"><img width="650" src="http://khasachi.com/images/percent_comparison.png"/></a>
 
 Clinton vs Trump Tweets Sentiment Value (Count) Comparison
