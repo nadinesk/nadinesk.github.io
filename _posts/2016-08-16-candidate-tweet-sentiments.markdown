@@ -132,6 +132,8 @@ Hillary's top five have four positive-ish sentiments, and Trump's has two...
   </tr>
 </table>
 
+The code: 
+
 <pre>
      hill_tweets <- userTimeline("HillaryClinton", n= 3200)
      hill_tweets_df <- tbl_df(map_df(hill_tweets, as.data.frame))
