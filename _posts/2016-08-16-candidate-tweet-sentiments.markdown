@@ -33,15 +33,104 @@ Clinton vs Trump Tweets Sentiment Value (Count) Comparison
 <a href="http://khasachi.com/images/comp_values.png"><img height="550" src="http://khasachi.com/images/comp_values.png"/></a>
 
 Top 5 Highest percentage of sentiments in Trump's tweets: 
-positive(18.5%), negative (16.0%), trust(12.2%), anger(9.5%), sadness (8.9%)
+1. positive(18.5%)
+2. negative (16.0%)
+3. trust(12.2%)
+4. anger(9.5%)
+5. sadness (8.9%)
 
 Top 5 Highest percentage of sentiments in Clinton's tweets: 
-positive(20.8%), trust (15.7%), anticipation(13.4%), negative(10.9%), surprise (10.9%)
+1. positive(20.8%)
+2. trust (15.7%)
+3. anticipation(13.4%)
+4. negative(10.9%)
+5. surprise (10.9%)
 
 Hillary's top five have four positive-ish sentiments, and Trump's has two...
 
+<table>
+  <tr>
+    <th>sentiment</th>
+    <th>Trump:word-count</th>
+    <th>Trump:word-percent</th>
+    <th>Clinton:word-count</th>
+    <th>Clinton:word-percent</th>
+  </tr>
+  <tr>
+    <td>anger</td>
+    <td>465</td>
+    <td>9.5%</td>
+    <td>32</td>
+    <td>4.3%</td>
+  </tr>
+  <tr>
+    <td>anticipation</td>
+    <td>430</td>
+    <td>8.8%</td>
+    <td>99</td>
+    <td>13.4%</td>
+  </tr>
+  <tr>
+    <td>disgust</td>
+    <td>306</td>
+    <td>6.2%</td>
+    <td>14</td>
+    <td>1.9%</td>
+  </tr>
+  <tr>
+    <td>fear</td>
+    <td>398</td>
+    <td>8.1%</td>
+    <td>49</td>
+    <td>6.6%</td>
+  </tr>
+  <tr>
+    <td>joy</td>
+    <td>333</td>
+    <td>6.8%</td>
+    <td>81</td>
+    <td>10.9%</td>
+  </tr>
+  <tr>
+    <td>negative</td>
+    <td>788</td>
+    <td>16.5%</td>
+    <td>81</td>
+    <td>10.9%</td>
+  </tr>
+    <tr>
+    <td>positive</td>
+    <td>911</td>
+    <td>18.5%</td>
+    <td>154</td>
+    <td>20.8%</td>
+  </tr>
+    <tr>
+    <td>sadness</td>
+    <td>438</td>
+    <td>8.9%</td>
+    <td>47</td>
+    <td>6.4%</td>
+  </tr>
+    <tr>
+    <td>surprise</td>
+    <td>245</td>
+    <td>5.0%</td>
+    <td>81</td>
+    <td>10.9%</td>
+  </tr>
+  <tr>
+    <td>trust</td>
+    <td>599</td>
+    <td>12.2%</td>
+    <td>116/td>
+    <td>15.7%</td>
+  </tr>
+</table>
 
 
+
+<pre>
      hill_tweets <- userTimeline("HillaryClinton", n= 3200)
      hill_tweets_df <- tbl_df(map_df(hill_tweets, as.data.frame))
      library(tidyr)
@@ -129,83 +218,5 @@ Hillary's top five have four positive-ish sentiments, and Trump's has two...
 
      ggplot(sentiment_comp_values,aes(x = sentiment, y = value)) + 
        geom_bar(aes(fill = variable),stat="identity", position = position_dodge()) 
+    </pre>
 
-<table>
-  <tr>
-    <th>sentiment</th>
-    <th>Trump:word-count</th>
-    <th>Trump:word-percent</th>
-    <th>Clinton:word-count</th>
-    <th>Clinton:word-percent</th>
-  </tr>
-  <tr>
-    <td>anger</td>
-    <td>465</td>
-    <td>9.5%</td>
-    <td>32</td>
-    <td>4.3%</td>
-  </tr>
-  <tr>
-    <td>anticipation</td>
-    <td>430</td>
-    <td>8.8%</td>
-    <td>99</td>
-    <td>13.4%</td>
-  </tr>
-  <tr>
-    <td>disgust</td>
-    <td>306</td>
-    <td>6.2%</td>
-    <td>14</td>
-    <td>1.9%</td>
-  </tr>
-  <tr>
-    <td>fear</td>
-    <td>398</td>
-    <td>8.1%</td>
-    <td>49</td>
-    <td>6.6%</td>
-  </tr>
-  <tr>
-    <td>joy</td>
-    <td>333</td>
-    <td>6.8%</td>
-    <td>81</td>
-    <td>10.9%</td>
-  </tr>
-  <tr>
-    <td>negative</td>
-    <td>788</td>
-    <td>16.5%</td>
-    <td>81</td>
-    <td>10.9%</td>
-  </tr>
-    <tr>
-    <td>positive</td>
-    <td>911</td>
-    <td>18.5%</td>
-    <td>154</td>
-    <td>20.8%</td>
-  </tr>
-    <tr>
-    <td>sadness</td>
-    <td>438</td>
-    <td>8.9%</td>
-    <td>47</td>
-    <td>6.4%</td>
-  </tr>
-    <tr>
-    <td>surprise</td>
-    <td>245</td>
-    <td>5.0%</td>
-    <td>81</td>
-    <td>10.9%</td>
-  </tr>
-  <tr>
-    <td>trust</td>
-    <td>599</td>
-    <td>12.2%</td>
-    <td>116/td>
-    <td>15.7%</td>
-  </tr>
-</table>
