@@ -5,7 +5,7 @@ date:   2016-08-17 01:00:00
 categories: r, data, twitter, twitter data, trump, clinton, election, convention speeches, politics
 ---
 
-Getting more mileage out of the sentiment analysis post I've blogged about this week (at least a couple times??) and combining that with the word cloud on the convention speeches (here), I used R to do a sentiment analysis on the convention speeches by Hillary Clinton, Bill Clinton, and Trump. 
+Getting more mileage out of the sentiment analysis post I've blogged about this week (at least a couple times??) and combining that with the word cloud on the convention speeches I did, I used R to do a sentiment analysis on the convention speeches by Hillary Clinton, Bill Clinton, and Trump. 
 
 The speeches did happen a while ago, and Trump has done a lot to damage (permanently, one can only hope here) his campaign since then, but his polls began to drop after the conventions, and they haven't really picked back up since then. 
 
