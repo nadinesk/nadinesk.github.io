@@ -212,6 +212,13 @@ pre  > code {
 	color: white;
 }
 
+.nv-lk {
+	float: right; 
+	line-height: 56px;
+	color: #111;
+        line-height: 1.5;
+        margin-left: 20px;
+}
 
 .site-nav {
     float: right;
