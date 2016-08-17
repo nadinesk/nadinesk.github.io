@@ -5,7 +5,7 @@
     <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
 
     
-    <div class="nv-lk"></div>
+    <div class="nv-lk">
         {% for page in site.pages %}
           {% if page.title %}
           <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
