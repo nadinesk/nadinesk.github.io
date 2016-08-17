@@ -4,24 +4,7 @@ title:  "Using R and Sentiment Analysis on Clinton and Trump Tweets"
 date:   2016-08-16 00:00:00
 categories: r, data, twitter, twitter data, trump, clinton, election
 ---
-<style> 
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-</style>
 I'm still utlizing the code from this, [Text analysis of Trump's tweets confirms he writes only the (angrier) Android half](http://varianceexplained.org/r/trump-tweets/), to compare tweet word sentiments between Clinton and Trump's recent tweets. 
 
 Following are the grouped bar charts, table with values, and code
