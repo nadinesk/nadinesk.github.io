@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Convention Speech Sentiment Analysis" 
-date:   2016-08-17 00:00:00
+date:   2016-08-17 01:00:00
 categories: r, data, twitter, twitter data, trump, clinton, election, convention speeches, politics
 ---
 
