@@ -1,14 +1,31 @@
 <!DOCTYPE html>
-<html>
-<meta charset="utf-8">
-
-<!-- Example based on http://bl.ocks.org/mbostock/3887118 -->
-<!-- Tooltip example from http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html -->
+<html lang="en">
+  <head>	   
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <title>School Districts, Test, Income, and Race</title>
 
 <style>
 body {
-  font: 11px sans-serif;
+ font-family: 'Open Sans', sans-serif;
+ font-size: 14px;
 }
+
+.summary-text{
+ font-family: 'Open Sans', sans-serif;
+ font-size: 14px;
+ margin-left: 30px;
+ line-height: 180%;
+}
+
+.heading {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	text-align: center;
+	font-weight: 700;
+}
+
 .x-axis path, .y-axis path,
 .x-axis line, .y-axis line {
   fill: none;
@@ -58,6 +75,8 @@ select {
 
 </style>
 <body>
+
+<div class="heading">School Districts, Tests, Income, and Race</div>
   <form name="myform" onSubmit="return handleClickSearch()">
         <input name="Submit"  type="submit" size="50" style="font-size: 14px;" color="#fff"    value="Search" >
         <input type="text" id="myVal" size="80" style="font-size: 14px;" placeholder="School Search">
@@ -71,7 +90,7 @@ select {
   <option value="d.percentblacks">percent blacks in district</option>
   
 </select>
-  <div id="correl-1-title">Median Income
+  <div id="correl-1-title">
     <div id="correl-1-chart"></div>
   </div>
 <script src="http://d3js.org/d3.v3.min.js"></script>
@@ -514,5 +533,30 @@ var valOpacity = function(d) {
       }
     };
 </script>
+<div class="summary-text">
+<div>
+Sources: 
+<ul>
+	<li><a href="https://cepa.stanford.edu/seda/data-archive">Stanford CEPA</a></li>
+	<li><a href="http://www.nytimes.com/interactive/2016/04/29/upshot/money-race-and-success-how-your-school-district-compares.html?smid=tw-share">Money, Race and Success: How Your School District Compares</a></li>
+</ul>
+</div>
+
+<div> 
+<p>This chart includes data from the Stanford Center for Education Policy Analysis, standardizing district-level test math and ELA test scores for third to eighth graders, from 2009-2013. The results show the district's grade level above/below the national average. More detail on how this database was created is here. The results show the grade level above/below the tested grade of students.</p>
+
+<p>The test results are show in correlation with various district-level characteristics, here in order of correlation coefficient:</p>
+<ul>
+<li>median family income: 0.66 </li>
+<li>percent of females with BA: 0.64 </li>
+<li>percent of females in poverty: -0.64 </li>
+<li>percent whites: 0.54 </li>
+<li>percent blacks: -0.37 </li>
+</ul>
+<p>
+Median family income has the strongest positive correlation out of the factors included, with test results: the higher the median income of a district, the higher the students in the district scored. The precent of females with a BA (also an indicator of median income) had the second highest correlation with test scores, followed closely by percent of females in poverty. The male counterparts to both of these characteristics, not shown, were similar. The percentage of whites in the district had a positive correlation on test scores of 0.54, and the percent of blacks in teh district had a negative correlation on test scores of 0.37.
+</p>
+</div>
+</div>
 </body>
 </html>
