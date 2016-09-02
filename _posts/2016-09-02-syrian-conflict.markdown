@@ -4,10 +4,6 @@ title:  "Number of Deaths in Syrian Conflict"
 date:   2016-09-02 00:00:00
 ---
 
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style>
-
 body {
 	background-color: white;
 	 font-family: 'Open Sans', sans-serif;
@@ -45,7 +41,6 @@ option {
 	font-size: 30px;
 	font-weight: 700; 
 	margin-left: 200px;
-	margin-right: 200px;
 	color: #2F4F4F;
 	display: none;
 }
@@ -54,7 +49,7 @@ option {
 	margin-left: 200px; 
 	margin-right: 200px;
 	line-height: 1.2;
-	width: 700px;
+	width: 500px;
 	display: none;
 }
 @keyframes blinker {  
