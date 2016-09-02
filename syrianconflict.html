@@ -44,7 +44,12 @@ option {
 	display: none;
 }
 
-
+#source {
+	margin-left: 200px; 
+	margin-right: 200px;
+	line-height: 1.2;
+	width: 700px;
+}
 @keyframes blinker {  
   50% { opacity: 0.2; }
 }
@@ -90,6 +95,12 @@ $(document).ready(function(){
 	$('.heading').fadeIn("medium");
 	$('#source').fadeIn("medium");
 	    }, 200);
+	
+	setTimeout(function () {  	
+	$('#source').fadeIn("medium");
+	    }, 200);    
+	    
+	    
 });
 
 var node_range = 11407
