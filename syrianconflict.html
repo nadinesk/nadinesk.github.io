@@ -38,7 +38,8 @@ option {
 .heading {
 	font-size: 30px;
 	font-weight: 700; 
-	text-align: center; 
+	margin-left: 200px;
+	margin-right: 200px;
 	color: #2F4F4F;
 	display: none;
 }
@@ -47,6 +48,11 @@ option {
   50% { opacity: 0.2; }
 }
 
+#source {
+	margin-left: 200px
+	margin-right: 200px;
+	line-height: 1.2;
+}
 
 </style>
 <body>
@@ -85,6 +91,7 @@ $(document).ready(function(){
 	setTimeout(function () {  	
 	$('#select-list').fadeIn("medium");
 	$('.heading').fadeIn("medium");
+	$('#source').fadeIn("medium");
 	    }, 200);
 });
 
