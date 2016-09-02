@@ -61,7 +61,7 @@ option {
 </style>
 <body>
 
-<div class="heading">Number of Deaths in Syrian Conflict</div>
+
 <div class="blink">Loading...</div>
 
 
