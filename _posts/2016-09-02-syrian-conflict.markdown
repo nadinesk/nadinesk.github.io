@@ -3,7 +3,7 @@ layout: post
 title:  "Number of Deaths in Syrian Conflict"
 date:   2016-09-02 00:00:00
 ---
-
+<style>
 body {
 	background-color: white;
 	 font-family: 'Open Sans', sans-serif;
