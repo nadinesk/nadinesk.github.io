@@ -76,7 +76,7 @@ option {
 
 <div id="charting"></div>
 <div id="source">
-	Number of deaths documented by the Violations Documentation Center in Syria (http://www.vdc-sy.info/index.php/en/). Each circle represents a casualty during the specified time range. Ages and other demographics per person are documented on this site for some deaths, and of those documented, children who have died between the age of 1 and 10 are represented with black circles. Code is <a href="http://bl.ocks.org/nadinesk/74da1f566f8bdb742bdcfad31178d4dc">here</a>.
+	Number of deaths documented by the Violations Documentation Center in Syria (http://www.vdc-sy.info/index.php/en/). Each circle represents a casualty during the specified time range. Ages and other demographics per person are documented on this site for some deaths, and of those documented, children who have died between the age of 1 and 10 are represented with black circles. Code is <a href="http://bl.ocks.org/nadinesk/74da1f566f8bdb742bdcfad31178d4dc">here</a>. HT <a href="http://www.nytimes.com/interactive/2015/09/14/world/middleeast/syria-war-deaths.html?_r=0">here</a> for data source and visualization idea.
 	
 </div>
 </body>
