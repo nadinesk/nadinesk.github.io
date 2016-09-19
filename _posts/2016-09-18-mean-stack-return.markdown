@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "MEAN Stack Practive"
+title:  "I Return to the MEAN Stack"
 date:   2016-09-18 00:00:00
 categories: mean stack, programming, node.js, express, angular.js, mongodb
 ---
