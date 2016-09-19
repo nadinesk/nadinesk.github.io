@@ -1,5 +1,5 @@
 # Site settings
-title: Nadine Fischoff
+title: Nadine K Fischoff
 email: nadine.khattak@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Nadine Fischoff's blog
@@ -9,6 +9,7 @@ twitter_username: alcajp
 github_username:  nadinesk
 paginate: 5
 paginate_path: "/blog/page:num/"
+
 
 # Build settings
 markdown: kramdown

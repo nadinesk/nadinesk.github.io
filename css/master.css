@@ -212,14 +212,21 @@ pre  > code {
 	color: white;
 }
 
+.nv-lk {
+	float: right; 
+	line-height: 56px;
+	color: #111;
+        line-height: 1.5;
+        margin-left: 20px;
+}
 
 .site-nav {
     float: right;
     line-height: 56px;
 }
-.site-nav .menu-icon {
+/*.site-nav .menu-icon {
         display: none;
-    }
+    }*/
 
 .site-nav .nav-list {
     list-style-type: none;    
@@ -235,10 +242,10 @@ pre  > code {
         line-height: 1.5;
 }
 
-
+/*
 .site-nav .page-link a {
     color: white;
-}
+}*/
 
 .site-nav .page-link:not(:first-child) 
 { 
@@ -247,7 +254,7 @@ pre  > code {
   
 @media screen and (max-width: 600px){
 
-      .site-nav {
+    /*  .site-nav {
 	        position: absolute;
 	        top: 9px;
 	        right: 30px;
@@ -293,7 +300,7 @@ pre  > code {
 
     .site-nav .page-link a {
             color: #B28049;;
-        }
+        } */
 }
 
 /**

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>	   
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <title>School Districts, Test, Income, and Race</title>
+
+<style>
+body {
+ font-family: 'Open Sans', sans-serif;
+ font-size: 14px;
+}
+
+.summary-text{
+ font-family: 'Open Sans', sans-serif;
+ font-size: 14px;
+ margin-left: 30px;
+ line-height: 180%;
+}
+
+.heading {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	text-align: center;
+	font-weight: 700;
+}
+
+.x-axis path, .y-axis path,
+.x-axis line, .y-axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.dot {
+  stroke: #000;
+}
+.tooltip {
+  position: absolute;
+  width: 200px;
+  height: 28px;
+  pointer-events: none;
+}
+
+.input:focus {
+  color: blue;
+}
+
+.ui-menu {
+  list-style-type: none;
+  padding: 5px;
+  font-size: 12px;
+  background-color: white;
+  cursor: pointer
+  opacity: 0.7;
+}
+
+.ui-menu-item {
+  padding: 5px;
+}
+
+.ui-menu-item:hover {
+  cursor: pointer;
+}
+
+form {
+  font-size: 12px;
+  margin: 7px;
+}
+select {
+  font-size: 12px;
+  margin: 7px;
+}
+
+
+</style>
+<body>
+
+<div class="heading">School Districts, Tests, Income, and Race</div>
+  <form name="myform" onSubmit="return handleClickSearch()">
+        <input name="Submit"  type="submit" size="50" style="font-size: 14px;" color="#fff"    value="Search" >
+        <input type="text" id="myVal" size="80" style="font-size: 14px;" placeholder="School Search">
+</form>
+
+<select id="select-list">
+  <option value="d.income50perc">median family income</option> 
+  <option value="d.percentfemalesBA">percent of females with BA in district</option>  
+  <option value="d.percentfemalespov">percent females in poverty in district</option>  
+  <option value="d.percentwhites">percent whites in district</option> 
+  <option value="d.percentblacks">percent blacks in district</option>
+  
+</select>
+  <div id="correl-1-title">
+    <div id="correl-1-chart"></div>
+  </div>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script src="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"></script>
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+<script>
+d3.select("#select-list").on("change", function() {
+  var selectedValue = d3.event.target.value;
+  
+  if (selectedValue == "d.percentwhites") 
+  {
+    var xValue = function(d) { return d.percentwhites;}, // data -> value
+    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+
+    d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
+    
+     data.forEach(function(d) {
+      d.percentwhites = +d.percentwhites;
+      });  
+      
+    xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
+    yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
+    
+    d3.selectAll("circle")
+      .transition()
+          .duration(300)
+          .ease("quad")
+        .attr("cx", xMap)
+               .style("fill", "rgba(127, 58, 70,0.4)"); 
+        
+    d3.select(".x-axis")
+        .call(xAxis);
+    d3.select(".label-x")
+           .text("percent whites");
+
+          d3.selectAll(".dot")
+         .on("mouseover", function(d) {
+          tooltip.transition()
+               .duration(200)
+               .style("opacity", .9);
+          tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/>" + formatPercent(xValue(d)) 
+          + " white<br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
+          .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px")
+                .style("background-color","white")
+               .style("border", "1px solid black")
+               .style("border-radius", "3px")
+               .style("padding", "5px")
+               //.style("width", "100px")
+               .style("height", "100px");
+               
+      })
+      .on("mouseout", function(d) {
+          tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
+      });
+       
+    });
+      
+  }
+  
+  else if (selectedValue == "d.percentblacks") 
+  {
+    var xValue = function(d) { return d.percentblacks;}, // data -> value
+    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+
+    d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
+    
+     data.forEach(function(d) {
+      d.percentblacks = +d.percentblacks;
+      });  
+      
+    xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
+    yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
+    
+    d3.selectAll("circle")
+      .transition()
+          .duration(300)
+          .ease("quad")
+        .attr("cx", xMap)
+        .style("fill", "rgba(255, 192, 203, 0.6)"); 
+    d3.select(".x-axis")
+        .call(xAxis);
+    d3.select(".label-x")
+        .text("percent blacks");
+       
+
+  d3.selectAll(".dot")
+         .on("mouseover", function(d) {
+          tooltip.transition()
+               .duration(200)
+               .style("opacity", .9);
+          tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/>" + formatPercent(xValue(d)) 
+          + " black<br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
+          .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px")
+                .style("background-color","white")
+               .style("border", "1px solid black")
+               .style("border-radius", "3px")
+               .style("padding", "5px")
+               //.style("width", "100px")
+               .style("height", "100px");
+      })
+      .on("mouseout", function(d) {
+          tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
+      });
+       
+    });
+      
+  }
+
+ else if (selectedValue == "d.income50perc") 
+  {
+    var xValue = function(d) { return d.income50perc;}, // data -> value
+    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+
+    d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
+    
+     data.forEach(function(d) {
+      d.income50perc = +d.income50perc;
+      });  
+      
+    xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
+    yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
+    
+    d3.selectAll("circle")
+      .transition()
+          .duration(300)
+          .ease("quad")
+        .attr("cx", xMap)
+        .style("fill", "rgba(255, 116, 140,0.5)");
+        
+    d3.select(".x-axis")
+        .call(xAxis);
+    d3.select(".label-x")
+        .text("median family income");
+ 
+    d3.selectAll(".dot")
+         .on("mouseover", function(d) {
+          tooltip.transition()
+               .duration(200)
+               .style("opacity", .9);
+          tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/> median income: $" + formatDollar(xValue(d)) 
+          + "<br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
+          .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px")
+                .style("background-color","white")
+               .style("border", "1px solid black")
+               .style("border-radius", "3px")
+               .style("padding", "5px")
+               //.style("width", "100px")
+               .style("height", "100px");
+      })
+      .on("mouseout", function(d) {
+          tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
+      });       
+       
+    });
+      
+  }
+        
+  else if (selectedValue == "d.percentfemalesBA") 
+  {
+    var xValue = function(d) { return d.percentfemalesBA;}, // data -> value
+    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+
+    d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
+    
+     data.forEach(function(d) {
+      d.percentfemalesBA = +d.percentfemalesBA;
+      });  
+      
+    xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
+    yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
+    
+    d3.selectAll("circle")
+      .transition()
+          .duration(100)
+          .ease("linear")
+        .attr("cx", xMap)
+        .style("fill", "rgba(204, 93, 112, 0.5)"); 
+        
+    d3.select(".x-axis")
+        .call(xAxis);
+    d3.select(".label-x")
+        .text("percent of females with BA");
+
+
+    d3.selectAll(".dot")
+         .on("mouseover", function(d) {
+          tooltip.transition()
+               .duration(200)
+               .style("opacity", .9);
+          tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/>" + formatPercent(xValue(d)) 
+          + " females with BA <br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
+          .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px")
+                .style("background-color","white")
+               .style("border", "1px solid black")
+               .style("border-radius", "3px")
+               .style("padding", "5px")
+               //.style("width", "100px")
+               .style("height", "100px");
+      })
+      .on("mouseout", function(d) {
+          tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
+      });
+       
+    });
+      
+  }
+
+  else if (selectedValue == "d.percentfemalespov") 
+  {
+    var xValue = function(d) { return d.percentfemalespov;}, // data -> value
+    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+
+    d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata4.csv", function(error, data) {
+    
+     data.forEach(function(d) {
+      d.percentfemalespov = +d.percentfemalespov;
+      });  
+      
+    xScale.domain([d3.min(data, xValue)-0.1, d3.max(data, xValue)+0.1]);
+    yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
+    
+    d3.selectAll("circle")
+      .transition()
+          .duration(300)
+          .ease("quad")
+        .attr("cx", xMap)
+        .style("fill", "rgba(127, 96, 102, 0.4)"); 
+
+        
+    d3.select(".x-axis")
+        .call(xAxis);
+    d3.select(".label-x")
+        .text("percent of females in poverty");
+
+
+    d3.selectAll(".dot")
+         .on("mouseover", function(d) {
+          tooltip.transition()
+               .duration(200)
+               .style("opacity", .9);
+           tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/>" + formatPercent(xValue(d)) 
+          + " females in poverty <br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
+           .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px")
+                .style("background-color","white")
+               .style("border", "1px solid black")
+               .style("border-radius", "3px")
+               .style("padding", "5px")
+               //.style("width", "100px")
+               .style("height", "100px");
+      })
+      .on("mouseout", function(d) {
+          tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
+      });
+       
+    });
+      
+  }
+
+});
+
+var formatPercent = d3.format(".0%");
+var formatDollar = d3.format(",.0f");
+var formatResult = d3.format(",.1f");
+
+
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 1000 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+var xValue = function(d) { return d.income50perc;}, // data -> value
+    xScale = d3.scale.linear().range([0, width]), // value -> display
+    xMap = function(d) { return xScale(xValue(d));}, // data -> display
+    xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+var yValue = function(d) { return d["averagetest"];}, // data -> value
+    yScale = d3.scale.linear().range([height, 0]), // value -> display
+    yMap = function(d) { return yScale(yValue(d));}, // data -> display
+    yAxis = d3.svg.axis().scale(yScale).orient("left");
+var svg = d3.select("#correl-1-chart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+var tooltip = d3.select("body").append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+var currentSearchTerm = "";
+d3.csv("https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/d3Data/schooldata5.csv", function(error, data) {
+  
+  
+  
+  data.forEach(function(d) {
+    d.income50perc = +d.income50perc;
+    d["averagetest"] = +d["averagetest"];
+  });
+  
+  data.sort(function(a,b) { return a.totalenrollment - b.totalenrollment; });
+  
+  
+  xScale.domain([d3.min(data, xValue)-1, d3.max(data, xValue)+1]);
+  yScale.domain([d3.min(data, yValue)-0.2, d3.max(data, yValue)+0.2]);
+  svg.append("g")
+      .attr("class", "x-axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .append("text")
+      .attr("class", "label-x")
+      .attr("x", width)
+      .attr("y", -6)
+      .style("text-anchor", "end")
+      .text("median income");
+  svg.append("g")
+      .attr("class", "y-axis")
+      .call(yAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("grades above/below average");
+  
+  svg.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "dot")
+      .attr("r", function(d) { if (d.totalenrollment >= 400000) 
+          {
+            return  25 
+          } 
+          else if (d.totalenrollment < 400000 && d.totalenrollment >= 100000) 
+          {
+            return 20
+          }
+          else if (d.totalenrollment < 100000 && d.totalenrollment >= 50000) 
+          {
+            return 15
+          }
+          else if (d.totalenrollment < 50000 && d.totalenrollment >= 10000) 
+          {
+            return 10
+          }
+          else if (d.totalenrollment < 10000 && d.totalenrollment >= 1000) 
+          {
+            return 8
+          }
+          else
+            return 4
+          }) 
+      .attr("cx", xMap)
+      .attr("cy", yMap)
+       .style("fill", "rgba(255, 116, 140,0.5)")
+          
+       .style("stroke", "white")
+       .attr("visibility", function(d) {
+           if (d.income50perc <= 1000)
+          {
+            return "hidden"
+          }
+          else {
+            return "visible"
+          }
+       })
+        
+      .on("mouseover", function(d) {
+          tooltip.transition()
+               .duration(200)
+               .style("opacity", .9);
+          tooltip.html("<b>" + d["educationagencyname"] + "</b>" + "<br/> median income: $" + formatDollar(xValue(d)) 
+          + "<br> grades above/below avg: " + formatResult(yValue(d)) + "<br> state: " + d["state"])
+               .style("left", (d3.event.pageX + 5) + "px")
+               .style("top", (d3.event.pageY - 28) + "px")
+               .style("background-color","white")
+               .style("border", "1px solid black")
+               .style("border-radius", "3px")
+               .style("padding", "5px")
+               //.style("width", "100px")
+               .style("height", "100px");
+      })
+      .on("mouseout", function(d) {
+          tooltip.transition()
+               .duration(500)
+               .style("opacity", 0);
+      });
+var all_schools = [];
+  
+data.forEach(function(d) {
+    
+  all_schools.push(d["educationagencyname"]);
+  
+  });
+  $( "#myVal" ).autocomplete({
+    source: all_schools
+  });
+ 
+});
+function handleClickSearch(event){
+  currentSearchTerm = document.getElementById("myVal").value;
+    console.log(currentSearchTerm);
+    draw(currentSearchTerm);
+return false;
+}
+function draw(){
+    d3.select("body").selectAll("circle.dot").attr("visibility", valOpacity);
+}
+var valOpacity = function(d) { 
+      if (d.educationagencyname.search(currentSearchTerm.toUpperCase()) != -1)  {
+        return "visible";
+      }
+      else {
+        return "hidden";
+      }
+    };
+</script>
+<div class="summary-text">
+<div>
+Sources: 
+<ul>
+	<li><a href="https://cepa.stanford.edu/seda/data-archive">Stanford CEPA</a></li>
+	<li><a href="http://www.nytimes.com/interactive/2016/04/29/upshot/money-race-and-success-how-your-school-district-compares.html?smid=tw-share">Money, Race and Success: How Your School District Compares</a></li>
+</ul>
+</div>
+
+<div> 
+<p>This chart includes data from the Stanford Center for Education Policy Analysis, standardizing district-level test math and ELA test scores for third to eighth graders, from 2009-2013. The results show the district's grade level above/below the national average. More detail on how this database was created is here. The results show the grade level above/below the tested grade of students.</p>
+
+<p>The test results are show in correlation with various district-level characteristics, here in order of correlation coefficient:</p>
+<ul>
+<li>median family income: 0.66 </li>
+<li>percent of females with BA: 0.64 </li>
+<li>percent of females in poverty: -0.64 </li>
+<li>percent whites: 0.54 </li>
+<li>percent blacks: -0.37 </li>
+</ul>
+<p>
+Median family income has the strongest positive correlation out of the factors included, with test results: the higher the median income of a district, the higher the students in the district scored. The precent of females with a BA (also an indicator of median income) had the second highest correlation with test scores, followed closely by percent of females in poverty. The male counterparts to both of these characteristics, not shown, were similar. The percentage of whites in the district had a positive correlation on test scores of 0.54, and the percent of blacks in teh district had a negative correlation on test scores of 0.37.
+</p>
+</div>
+</div>
+</body>
+</html>
