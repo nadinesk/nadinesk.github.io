@@ -120,17 +120,35 @@
 				  arraySize = $(this).val(); 
 				});
 			
-				console.log(arraySize); 
+			//	console.log(arraySize); 
 				loadJSON(); 
 				
 			  })
 			  .change();
-	
+
+			  $('#search').click(function(){
+   				
+    			var txt = $('#search-criteria').val().toUpperCase();
+    			console.log("txt", txt); 
+    			
+    			loadJSON(); 
+    /*$('.contact-name').each(function(){
+       if($(this).text().toUpperCase().indexOf(txt.toUpperCase()) != -1){
+           $(this).show();
+       }
+    });*/
+}).click();
+		 var txt="";    
 		var arraySize=10;
-         $.getJSON('https://www.govtrack.us/api/v2/bill?congress=114&order_by=-current_status_date&limit=100', loadJSON);
+         $.getJSON('https://www.govtrack.us/api/v2/bill?congress=114&order_by=-current_status_date', loadJSON);
          
          function loadJSON(){
-            var data_file = "https://www.govtrack.us/api/v2/bill?congress=114&order_by=-current_status_date&limit="+arraySize;
+        
+
+            	data_file = "https://www.govtrack.us/api/v2/bill?congress=114&order_by=-current_status_date&limit="+arraySize + "&p=" + txt;	
+            
+
+            
             var http_request = new XMLHttpRequest();
             try{
                // Opera 8.0+, Firefox, Chrome, Safari
@@ -170,7 +188,7 @@
 			   
 			   
 		<!--	var ddVal = $("#selectId :selected").text(); 
-			<!--console.log(ddVal); ! -->
+		
 	
 			
 			
@@ -184,11 +202,11 @@
               if (http_request.readyState == 4  ){
                    		var jsonObj = JSON.parse(http_request.responseText);	
 						var billsArray = jsonObj.objects;
-						console.log (jsonObj); 
+						//console.log (jsonObj); 
                   $.each(billsArray, function (index, valueObj) {
 					
 					title_without_number.push(valueObj.title_without_number)
-					console.log(title_without_number);
+					//console.log(title_without_number);
 
                     title.push(valueObj.title)
                       bill_resolution_type.push(valueObj.bill_resolution_type)
@@ -362,8 +380,9 @@
 	
 	</div>
 	
-	<div id="test">
-	</div>
+	
+	<input type="text" id="search-criteria"/>
+<input type="button" id="search" value="search"/>
            
 		   
       <div class="yo">
