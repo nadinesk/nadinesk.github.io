@@ -3,9 +3,7 @@
 				$("#main-list ul").addClass("load");
 				$("#project-list ul").addClass("load");
 				
-				$("#name-text").mouseover(function () {
-					$(this).stop().effect("shake", {distance: 3}, 200); 
-				}); 
+				
 				
 				$("#main-list li a").each(function( index) {
 					$(this).on('mouseover', function(event) {
