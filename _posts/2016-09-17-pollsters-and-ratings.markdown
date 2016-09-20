@@ -10,7 +10,7 @@ I was looking at [Real Clear Politics’ Clinton vs. Trump polls](http://www.rea
 
 I’ve been listening to [FiveThirtyEight’s podcast](http://fivethirtyeight.com/tag/fivethirtyeight-podcasts/), and they have mentioned that they have [rated the pollsters](http://projects.fivethirtyeight.com/pollster-ratings/). So I decided to see what grades 538 gave the polls used on RCP. The table below shows the frequency of grades for each poll result RCP used to arrive at their average spread (the same pollster’s results could have been returned multiple times in the time period of the results used - May 2015 to September 2016). 
 
-As of today, the RCP spread uses 185 poll results. A large proportion of the poll returns cited were by pollsters with an A- rating (80 times or 43%); and the next most frequent rating cited was an A (22 or 55%). The lowest rated poll used is a C-, and it is used 9 times. 
+As of today, the RCP spread uses 185 poll results. A large proportion of the poll returns cited were by pollsters with an A- rating (80 times or 43%); and the next most frequent rating cited was an A (22 or 12%). Both comprise a majority of the polls used (55%).The lowest rated poll used is a C-, and it is used 9 times. 
 
 NA   ->   10 <br/>
 A    ->   22 <br/>
