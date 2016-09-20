@@ -10,41 +10,41 @@ I was looking at [Real Clear Politics’ Clinton vs. Trump polls](http://www.rea
 
 I’ve been listening to [FiveThirtyEight’s podcast](http://fivethirtyeight.com/tag/fivethirtyeight-podcasts/), and they have mentioned that they have rated the pollsters. So I decided to see what grades 538 gave the polls used on RCP. The table below shows the frequency of grades for each poll result RCP used to arrive at their average spread (the same pollster’s results could have been returned multiple times in the time period of the results used - May 2015 to September 2016). As of today, the RCP spread uses 185 poll results. A large proportion of the poll returns cited were by pollsters with an A- rating (80 times or 43%); and the next most frequent rating cited was an A (22 or 55%). The lowest rated poll used is a C-, and it is used 9 times. 
 
-NA   ->   10
-A    ->   22
-A-   ->   80
-A+   ->   11
-B    ->   15
-B-   ->   5
-B+   ->   18
-C-   ->   9
-C+   ->   15
+NA   ->   10 <br/>
+A    ->   22 <br/>
+A-   ->   80 <br/>
+A+   ->   11 <br/>
+B    ->   15 <br/>
+B-   ->   5 <br/>
+B+   ->   18 <br/>
+C-   ->   9 <br/>
+C+   ->   15 <br/>
 
 A total of 29 distinct pollsters are used, and here is the breakdown of the number of grades give to each of the 29 polls. . 
 
-A    ->   3
-A-   ->   10
-A+   ->   2
-B    ->   2
-B-   ->   2
-B+   ->   3
-C-   ->   1
-C+   ->   1
-N/A  ->   5
+A    ->   3 <br/>
+A-   ->   10 <br/>
+A+   ->   2 <br/>
+B    ->   2 <br/>
+B-   ->   2 <br/>
+B+   ->   3 <br/>
+C-   ->   1 <br/>
+C+   ->   1 <br/>
+N/A  ->   5 <br/>
 
 I then wanted to see how different the results between the pollsters with As (A, A+, A-) were from those with C’s (C, C+). The following graph shows this difference. The bad news here is that more recently, the A-rated polls show Trump ahead, and the C-rated ones show Clinton ahead. One A+-rated poll from 9/7-9/10 (ABC News/Wash Post) does show Clinton ahead by 8 points...but that was two weeks ago. So again...not good.
 
 apluscminus.png
-A's and C's Results
+*A's and C's Results*
 
 ![A's and C's Results](http://khasachi.com/images/apluscminus.png)
 
 The following two graphs disaggregate the A+ polls and the C+ polls, respectively (the highest and lowest rated polls), and shows all results for any poll result for pollsters in these respective ratings. 
  
-A Plus Results
+*A Plus Results*
 ![A+ Results](http://khasachi.com/images/aplus.png)
 
-C Minus Results
+*C Minus Results*
 ![C- Results](http://khasachi.com/images/cminus.png)
 
 
