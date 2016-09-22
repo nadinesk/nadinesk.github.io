@@ -19,19 +19,21 @@ Then I went into what I can only call a long and dark R-hole, wherein I made the
 
 And so, here are the many, many graphs I created, followed by some example R code: 
 
+**SCHOOL DISTRICT LEVEL CHARTS** (each circle represents a school district)
+
 **School Districts: Percent Whites - Percent Blacks and Avg Math/ELA Scores**, Regression Coefficient: 1.4056
 ![Percent White - Percent Black and Avg Math/ELA Scores](http://khasachi.com/images/blkwhtscatter.png)
 
 
-**Percent White and Avg Math/ELA Scores**, Regression Coefficient: 2.025
+**School Districts: Percent White and Avg Math/ELA Scores**, Regression Coefficient: 2.025
 ![Percent White and Avg Math/ELA Scores](http://khasachi.com/images/whiteplot.png)
 
 
-**Percent Black Avg Math/ELA Scores**,Regression Coefficient: -2.2550
+**School Districts: Percent Black Avg Math/ELA Scores**,Regression Coefficient: -2.2550
 ![Percent Black and Avg Math/ELA Scores](http://khasachi.com/images/blkplot.png)
 
 
-**Percent Asian and Avg Math/ELA Scores**, Regression Coefficient: 5.56798
+**School Districts: Percent Asian and Avg Math/ELA Scores**, Regression Coefficient: 5.56798
 ![Percent Asian and Avg Math/ELA Scores](http://khasachi.com/images/asnplot.png)
 
 
@@ -51,7 +53,7 @@ And so, here are the many, many graphs I created, followed by some example R cod
 <a href="http://khasachi.com/images/stateblkplot.png">![States: Percent Black and Avg Math/ELA Scores](http://khasachi.com/images/stateblkplot.png)</a>
 
 **States: States and Avg Math/ELA Scores**
-<a href="http://khasachi.com/images/staterestultsplot.png">![States: Percent Black and Avg Math/ELA Scores](http://khasachi.com/images/stateresultsplot.png)</a>
+<a href="http://khasachi.com/images/stateresultsplot.png">![States: Percent Black and Avg Math/ELA Scores](http://khasachi.com/images/stateresultsplot.png)</a>
 
 I used the ggplot2, reshape, and dplyr packages 
 
