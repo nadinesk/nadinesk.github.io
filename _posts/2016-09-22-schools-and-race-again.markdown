@@ -39,18 +39,18 @@ And so, here are the many, many graphs I created, followed by some example R cod
 ![Percent Hispanic and Avg Math/ELA Scores](http://khasachi.com/images/hspplot.png)
 
 
-**STATE-LEVEL CHARTS**
+**STATE-LEVEL CHARTS** (click to expand chart)
 **States: Percent White - Percent Black and Avg Math/ELA Scores**
-![States: Percent White - Percent Black and Avg Math/ELA Scores](http://khasachi.com/images/whtblkstateplot.png)
+<a href="http://khasachi.com/images/whtblkstateplot.png">![States: Percent White - Percent Black and Avg Math/ELA Scores](http://khasachi.com/images/whtblkstateplot.png)</a>
 
 **States: Percent White and Avg Math/ELA Scores**
-![States: Percent White and Avg Math/ELA Scores](http://khasachi.com/images/statewhtplot.png)
+<a href="http://khasachi.com/images/statewhteplot.png">![States: Percent White and Avg Math/ELA Scores](http://khasachi.com/images/statewhtplot.png)</a>
 
 **States: Percent Black and Avg Math/ELA Scores**
-![States: Percent Black and Avg Math/ELA Scores](http://khasachi.com/images/stateblkplot.png)
+<a href="http://khasachi.com/images/stateblkplot.png">![States: Percent Black and Avg Math/ELA Scores](http://khasachi.com/images/stateblkplot.png)</a>
 
 **States: States and Avg Math/ELA Scores**
-![States: Percent Black and Avg Math/ELA Scores](http://khasachi.com/images/stateresultsplot.png)
+<a href="http://khasachi.com/images/staterestultsplot.png">![States: Percent Black and Avg Math/ELA Scores](http://khasachi.com/images/stateresultsplot.png)</a>
 
 I used the ggplot2, reshape, and dplyr packages 
 
