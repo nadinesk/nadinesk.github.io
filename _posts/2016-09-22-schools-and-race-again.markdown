@@ -40,6 +40,7 @@ And so, here are the many, many graphs I created, followed by some example R cod
 
 
 **STATE-LEVEL CHARTS** (click to expand chart)
+
 **States: Percent White - Percent Black and Avg Math/ELA Scores**
 <a href="http://khasachi.com/images/whtblkstateplot.png">![States: Percent White - Percent Black and Avg Math/ELA Scores](http://khasachi.com/images/whtblkstateplot.png)</a>
 
