@@ -66,25 +66,22 @@ PROCESS
 
 CODE
 
-<pre><code>
-totalWords <- function(directory, person_spk) {
-  wd <- getwd()
-  dir <- paste(wd,"/",directory,sep="")
-  db_text <- read.csv(dir)
-  atext <- subset(db_text, person == person_spk)
-  atext$total <- str_count(atext$text, '\\s+')+1
-  dword_count <- sum(atext$total)
-  dword_count  
-}
+    totalWords <- function(directory, person_spk) {
+      wd <- getwd()
+      dir <- paste(wd,"/",directory,sep="")
+      db_text <- read.csv(dir)
+      atext <- subset(db_text, person == person_spk)
+      atext$total <- str_count(atext$text, '\\s+')+1
+      dword_count <- sum(atext$total)
+      dword_count  
+    }
 
-clinton_TW <- totalWords("ctdeb.csv",'C')
-trump_TW <- totalWords("ctdeb.csv",'T')
-clintonPrim_TW <- totalWords("demprim.csv",'CLINTON')
-sandersPrim_TW <- totalWords("demprim.csv",'SANDERS')
-trumpPrim_TW <- totalWords("repprim.csv",'TRUMP')
-CruzPrim_TW <- totalWords("repprim.csv",'CRUZ')
-
-</pre></code>
+    clinton_TW <- totalWords("ctdeb.csv",'C')
+    trump_TW <- totalWords("ctdeb.csv",'T')
+    clintonPrim_TW <- totalWords("demprim.csv",'CLINTON')
+    sandersPrim_TW <- totalWords("demprim.csv",'SANDERS')
+    trumpPrim_TW <- totalWords("repprim.csv",'TRUMP')
+    CruzPrim_TW <- totalWords("repprim.csv",'CRUZ')
 
 *Sentiment Analysis*:
 
@@ -157,78 +154,75 @@ CODE
 
 The actual sentiment analysis function is from [this](http://varianceexplained.org/r/trump-tweets/) post
 
-<pre><code
 
 Sentiment Function 
 
-sentmt <- function(directory, person_spk) {
-  wd <- getwd()
+    sentmt <- function(directory, person_spk) {
+      wd <- getwd()
   
-  dir <- paste(wd,"/",directory,sep="")
-  db_text <- read.csv(dir)
+      dir <- paste(wd,"/",directory,sep="")
+      db_text <- read.csv(dir)
+      
+      atext <- subset(db_text, person == person_spk)
+      
+      reg <- "([^A-Za-z\\d#@']|'(?![A-Za-z\\d#@]))"
   
-  atext <- subset(db_text, person == person_spk)
+      nrc <- sentiments %>%
+        filter(lexicon == "nrc") %>%
+        dplyr::select(word, sentiment)
+      
+      deb_words <- atext %>%
+        filter(!str_detect(text, '^"')) %>%
+        unnest_tokens(word, text, token = "regex", pattern = reg) %>%
+        filter(!word %in% stop_words$word,
+               str_detect(word, "[a-z]"))
+      freq_words <- data.frame(table(deb_words))
+      freq_words <- subset(h_freq_words, person==person)
+      freq_words <- freq_words[order(-freq_words$Freq),]
+      words_sentiment <- deb_words %>%
+        inner_join(nrc, by = "word") %>%
+        count(sentiment) %>%
+        ungroup() %>%
+        complete(sentiment,  fill = list(n = 0)) %>%
+        group_by(sentiment) %>%
+        summarize(words = sum(n)) %>%
+        ungroup()
   
-  reg <- "([^A-Za-z\\d#@']|'(?![A-Za-z\\d#@]))"
-  
-  nrc <- sentiments %>%
-    filter(lexicon == "nrc") %>%
-    dplyr::select(word, sentiment)
-  
-  deb_words <- atext %>%
-    filter(!str_detect(text, '^"')) %>%
-    unnest_tokens(word, text, token = "regex", pattern = reg) %>%
-    filter(!word %in% stop_words$word,
-           str_detect(word, "[a-z]"))
-  freq_words <- data.frame(table(deb_words))
-  freq_words <- subset(h_freq_words, person==person)
-  freq_words <- freq_words[order(-freq_words$Freq),]
-  words_sentiment <- deb_words %>%
-    inner_join(nrc, by = "word") %>%
-    count(sentiment) %>%
-    ungroup() %>%
-    complete(sentiment,  fill = list(n = 0)) %>%
-    group_by(sentiment) %>%
-    summarize(words = sum(n)) %>%
-    ungroup()
-  
-  words_sentiment$words_perc <- ((words_sentiment$words)/sum(words_sentiment$words)*100)
-  words_sentiment
-  }
+      words_sentiment$words_perc <- ((words_sentiment$words)/sum(words_sentiment$words)*100)
+      words_sentiment
+      }
 
-##Run function and rename columns 
+    ##Run function and rename columns 
 
-clinton_sentiment <- sentmt("ctdeb.csv",'C')
-clinton_sentiment <-  clinton_sentiment[order(-clinton_sentiment$`C-gen-perc`),]
-names(clinton_sentiment)[2] <- "C-gen-words"
-names(clinton_sentiment)[3] <- "C-gen-perc"
+    clinton_sentiment <- sentmt("ctdeb.csv",'C')
+    clinton_sentiment <-  clinton_sentiment[order(-clinton_sentiment$`C-gen-perc`),]
+    names(clinton_sentiment)[2] <- "C-gen-words"
+    names(clinton_sentiment)[3] <- "C-gen-perc"
 
-trump_sentiment <- sentmt("ctdeb.csv",'T')
-names(trump_sentiment)[2] <- "T-gen-words"
-names(trump_sentiment)[3] <- "T-gen-perc"
+    trump_sentiment <- sentmt("ctdeb.csv",'T')
+    names(trump_sentiment)[2] <- "T-gen-words"
+    names(trump_sentiment)[3] <- "T-gen-perc"
 
-demClinton_sentiment <- sentmt("demprim.csv",'CLINTON')
-names(demClinton_sentiment)[2] <- "C-prim-words"
-names(demClinton_sentiment)[3] <- "C-prim-perc"
+    demClinton_sentiment <- sentmt("demprim.csv",'CLINTON')
+    names(demClinton_sentiment)[2] <- "C-prim-words"
+    names(demClinton_sentiment)[3] <- "C-prim-perc"
 
-repTrump_sentiment <- sentmt("repprim.csv",'TRUMP')
-names(repTrump_sentiment)[2] <- "T-prim-words"
-names(repTrump_sentiment)[3] <- "T-prim-perc"
+    repTrump_sentiment <- sentmt("repprim.csv",'TRUMP')
+    names(repTrump_sentiment)[2] <- "T-prim-words"
+    names(repTrump_sentiment)[3] <- "T-prim-perc"
 
-MERGE FUNCTION
+    ##MERGE FUNCTION
 
-mergestuff <- function(xMerge, yMerge) {
-  primMerge <- merge(x=xMerge, y=yMerge, by = "sentiment", all.x = TRUE)
-  sorted <- primMerge[order(-primMerge[,2]),]
-  sorted
-}
-primMg <- mergestuff(demClinton_sentiment, repTrump_sentiment)
-genMerge <- mergestuff(clinton_sentiment, trump_sentiment)
-clinton_comp <- mergestuff(demClinton_sentiment, clinton_sentiment)
-trump_comp <- mergestuff(repTrump_sentiment, trump_sentiment)
-merge_ev <- mergestuff(primMg, genMerge)
-
-</pre></code
+    mergestuff <- function(xMerge, yMerge) {
+      primMerge <- merge(x=xMerge, y=yMerge, by = "sentiment", all.x = TRUE)
+      sorted <- primMerge[order(-primMerge[,2]),]
+      sorted
+    }
+    primMg <- mergestuff(demClinton_sentiment, repTrump_sentiment)
+    genMerge <- mergestuff(clinton_sentiment, trump_sentiment)
+    clinton_comp <- mergestuff(demClinton_sentiment, clinton_sentiment)
+    trump_comp <- mergestuff(repTrump_sentiment, trump_sentiment)
+    merge_ev <- mergestuff(primMg, genMerge)
 
 **Graphs**:
 
@@ -249,4 +243,35 @@ merge_ev <- mergestuff(primMg, genMerge)
 ![Debate GenElec ](http://khasachi.com/images/chart_92016_debate.PNG)
 
 
+Process: 
 
+Use reshape package to melt data for bar chart
+
+    ##CODE
+
+    ##Melt Function
+    melting <- function(file,ons, id) {
+      newdata <- file[id]
+      mdata <- melt(newdata, id=c(ons))  
+    }
+
+    melt_ev <- melting(merge_ev,"sentiment",c(1,3,5,7,9))
+    melt_gen <- melting(genMerge,"sentiment",c(1,3,5))
+    melt_clint_comp <- melting(clinton_comp,"sentiment",c(1,3,5))
+    melt_trump_comp <- melting(trump_comp, "sentiment", c(1,2,4))
+
+    ##Bar Chart Function 
+    make_bar <- function(file,blabels,legTitle) {
+        label_dig <- round(file$value, digits=0)
+        label_perc <- paste(label_dig, "%",sep="")
+        ggplot(data=file, aes(x=sentiment, y=value, fill=variable)) +
+        geom_bar(stat="identity", position=position_dodge()) + 
+        scale_fill_discrete(labels=blabels, name=legTitle) + 
+        geom_text(aes(label=label_perc),
+              position=position_dodge(width=0.9), vjust=-0.25, size=2.5 )
+      }
+
+    make_bar(melt_ev,c("Clinton-pmy", "Trump-pmy", "Clinton-9/16", "Trump-9/16"), "Candidate-Debate")
+    make_bar(melt_clint_comp,c("Clinton-pmy", "Clinton-9/16"), "Debate")
+    make_bar(melt_trump_comp,c("Trump-pmy", "Trump-9/16"), "Debate")
+    make_bar(melt_gen, c("Clinton-9/16", "Trump-9/16"), "Sept 2016 Debate")
