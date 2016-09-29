@@ -6,15 +6,19 @@ categories: r, data, graphs, politics, debates, clinton, trump, general election
 ---
 
 **Overview**: 
+
 This post provides a sentiment analysis of words used by Clinton and Trump in their debate in September 2016. Sentiment analyses of Clinton and Trump in their last primary debates (April 2016 for Clinton, and March 2016 for Trump’s last debate) is also provided as a point of comparison and/or trends. 
 
 *Getting the Data*: 
+
 I obtained transcripts of the three debates from the Washington Post ((Dem Prim Debate)[link], (Rep Prim Debate)[link], (Sept 2016 Debate)[link]), and coded each part of the transcript by who said what, and saved as a csv file. 
 
 *Getting the Sentiment Analysis Results*: 
+
 I used the function provided in [this](http://varianceexplained.org/r/trump-tweets/) post by David Robinson to perform the sentiment analysis. I then created functions to automate total word counts; perform the sentiment analysis (again using the code in Varience Explained post by Robinson to do all the heavy lifting); reshape data to reshape it for the bar chart; and to create the bar chart. 
 
 *Sentiment Analysis Overview*: 
+
 The results show that Clinton overwhelmingly uses words of positivity and trust (44% of her words used in the primary debate, and 39% of her words in the Sept 2016 debate). Trump is more negative than Clinton when looking at both debates: he has higher percentages than her for all negative-associated sentiments (anger, disgust, fear, negative, sadness). 
 
 Clinton’s top five sentiments in the September 2016 debate comprise 71% of her total words used and are: positive, trust, negative, anticipation, fear
@@ -22,6 +26,7 @@ Clinton’s top five sentiments in the September 2016 debate comprise 71% of her
 Trump’s top five sentiments in the September 2016 debate comprise 71% of his total words used:   positive, negative, trust, sadness, fear
 
 *Number of Words*: 
+
 Word count (not sentiment analysis, I know) shows that Trump said 27% more words than Clinton in the September 2016 debate; Clinton said 31% more words than Trump when comparing their non head-to-head primary debates in April and March, respectively. Clinton had only one opponent in her last primary debate; Trump had three other opponents, and so he said less (but still more than any of his opponents). (The word counts include all words, while the sentiment analysis removes words that should not be included in a sentiment analysis.)
 
 **Analysis and Process**:
@@ -80,7 +85,7 @@ DATA
 
 Clinton vs Trump Comparison: Last Primary Debates for Each and 9/2016 Head-to-Head Debate
 
-![Clinton vs Trump Comparison](http://khasachi.com/images/sent_comp.png)
+![Clinton vs Trump Comparison](http://khasachi.com/images/sent_comp.PNG)
 
 ANALYSIS
 Clinton is more positive and expresses more trusting sentiments than Trump. Clinton had higher percentages for positive,trust, and anticipation sentiment words when comparing both primary and head to head general election debate. She was lower on negative, fear, anger, joy, sadness, surprise, and disgust. 
@@ -93,7 +98,7 @@ Trump: sentiments expressed less than Trump
 DATA
 Clinton vs Sanders: Democratic Primary Debate, April 2016
 
-![Clinton vs Sanders Comparison](http://khasachi.com/images/demCScomp.png)
+![Clinton vs Sanders Comparison](http://khasachi.com/images/demCScomp.PNG)
 
 ANALYSIS
 Clinton is more positive than Sanders
@@ -106,7 +111,7 @@ Clinton: sentiments expressed less than Sanders
 DATA
 Republican Primary Debate, March 2016
 
-![Repbulican Primary Debate March 2016](http://khasachi.com/images/primTOthcop.png)
+![Repbulican Primary Debate March 2016](http://khasachi.com/images/primTOthcop.PNG)
 
 ANALYSIS
 Trump expresses more negative-associated sentiments than average of 3 opponents 
@@ -116,11 +121,11 @@ Used positive, trust, and negative sentiments less than average opponents. Used 
 Rankings: 
 Sentiment Rankings for Clinton, 9/2016 Debate
 
-![Clinton 9 2016 debate ](http://khasachi.com/images/clintononlygen.png)
+![Clinton 9 2016 debate ](http://khasachi.com/images/clintononlygen.PNG)
 
 Sentiment Rankings for Trump
 
-![Trump 9 2016 debate ](http://khasachi.com/images/tronlygen.png)
+![Trump 9 2016 debate ](http://khasachi.com/images/tronlygen.PNG)
 
 PROCESS
 * Get word sentiments for each candidate and different debates
@@ -205,19 +210,19 @@ merge_ev <- mergestuff(primMg, genMerge)
 
 **Clinton vs Trump, Last Primary for Each, and Head-to-Head 9/2016 Debate**
 
-![Chart all debates ](http://khasachi.com/images/chart_all_debates.png)
+![Chart all debates ](http://khasachi.com/images/chart_all_debates.PNG)
 
 **Clinton Comparison: 4/2016 Dem Primary Debate and 9/2016 Gen Election Debate**
 
-![Clinton comparison ](http://khasachi.com/images/chart_clinton_only.png)
+![Clinton comparison ](http://khasachi.com/images/chart_clinton_only.PNG)
 
 **Trump Comparison: 3/2016 Dem Primary Debate and 9/2016 Gen Election Debate**
 
-![Trump comparison ](http://khasachi.com/images/chart_tr_only.png)
+![Trump comparison ](http://khasachi.com/images/chart_tr_only.PNG)
 
 **Clinton vs Trump, Head-to-Head 9/2016 General Election Debate**
 
-![Debate GenElec ](http://khasachi.com/images/chart_92016_debate.png)
+![Debate GenElec ](http://khasachi.com/images/chart_92016_debate.PNG)
 
 
 
