@@ -228,19 +228,19 @@ Sentiment Function
 
 **Clinton vs Trump, Last Primary for Each, and Head-to-Head 9/2016 Debate**
 
-![Chart all debates ](http://khasachi.com/images/chart_all_debates.PNG)
+![Chart all debates ](http://khasachi.com/images/chart_all_debates.png)
 
 **Clinton Comparison: 4/2016 Dem Primary Debate and 9/2016 Gen Election Debate**
 
-![Clinton comparison ](http://khasachi.com/images/chart_clinton_only.PNG)
+![Clinton comparison ](http://khasachi.com/images/chart_clinton_only.png)
 
 **Trump Comparison: 3/2016 Dem Primary Debate and 9/2016 Gen Election Debate**
 
-![Trump comparison ](http://khasachi.com/images/chart_tr_only.PNG)
+![Trump comparison ](http://khasachi.com/images/chart_tr_only.png)
 
 **Clinton vs Trump, Head-to-Head 9/2016 General Election Debate**
 
-![Debate GenElec ](http://khasachi.com/images/chart_92016_debate.PNG)
+![Debate GenElec ](http://khasachi.com/images/chart_92016_debate.png)
 
 
 Process: 
