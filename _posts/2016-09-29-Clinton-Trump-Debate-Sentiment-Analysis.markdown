@@ -15,7 +15,7 @@ I obtained transcripts of the three debates from the Washington Post ([Dem Prim 
 
 *Getting the Sentiment Analysis Results*: 
 
-I used the function provided in [this](http://varianceexplained.org/r/trump-tweets/) post by David Robinson to perform the sentiment analysis. I then created functions to automate total word counts; perform the sentiment analysis (again using the code in Varience Explained post by Robinson to do all the heavy lifting); reshape data to reshape it for the bar chart; and to create the bar chart. 
+I used R to perform the analysis, and the function provided in [this](http://varianceexplained.org/r/trump-tweets/) post by David Robinson to perform the sentiment analysis. I then created functions to automate total word counts; perform the sentiment analysis (again using the code in Varience Explained post by Robinson to do all the heavy lifting); reshape data to reshape it for the bar chart; and to create the bar chart. 
 
 *Sentiment Analysis Overview*: 
 
