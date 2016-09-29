@@ -37,15 +37,15 @@ Word count (not sentiment analysis, I know) shows that Trump said 27% more words
 
 Republican Primary Debate, March 2016:
 
-* Trump: 5588
-* Cruz: 3877
-* Kasich: 3880
-* Rubio: 5013
+* Trump: 5,588
+* Cruz: 3,877
+* Kasich: 3,880
+* Rubio: 5,013
 
 Democratic Primary Debate, April 2016:
 
-* Clinton: 8157
-* Sanders: 6294
+* Clinton: 8,157
+* Sanders: 6,294
 
 General Election Debate, September 2016: 
 
@@ -59,12 +59,12 @@ General Election Debate, September 2016:
 
 **Process**
 
-* Get transcript (link to transcripts)
+* Get transcripts (links above)
 * Code all lines by person 
 * Save as csv with two columns: one text and one person. These files be used for sentiment function also 
 * Includes all words, and doesn’t exclude words excluded in sentiment analysis
 
-**Code**
+**R Code**
 
     totalWords <- function(directory, person_spk) {
       wd <- getwd()
@@ -149,7 +149,7 @@ Sentiment Rankings for Trump
 * Merge two times (one for primary debates, one for General Election debates)
 * Add two columns to calculate percentage variances between Clinton and Trump during primaries and Clinton and Trump head-to-head general election debate
 
-**Code**
+**R Code**
 
 The actual sentiment analysis function is from [this](http://varianceexplained.org/r/trump-tweets/) post
 
@@ -245,7 +245,7 @@ The actual sentiment analysis function is from [this](http://varianceexplained.o
 
 Use reshape package to melt data for bar chart
 
-**Code**
+**R Code**
 
     ##Melt Function
     melting <- function(file,ons, id) {
