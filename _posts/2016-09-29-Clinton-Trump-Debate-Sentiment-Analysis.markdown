@@ -222,7 +222,7 @@ The actual sentiment analysis function is from [this](http://varianceexplained.o
     trump_comp <- mergestuff(repTrump_sentiment, trump_sentiment)
     merge_ev <- mergestuff(primMg, genMerge)
 
-**GRAPHS**:
+**GRAPHS**
 
 **Clinton vs Trump, Last Primary for Each, and Head-to-Head 9/2016 Debate**
 
