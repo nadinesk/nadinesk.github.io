@@ -11,7 +11,7 @@ This post provides a sentiment analysis of words used by Clinton and Trump in th
 
 *Getting the Data*: 
 
-I obtained transcripts of the three debates from the Washington Post ((Dem Prim Debate)[link], (Rep Prim Debate)[link], (Sept 2016 Debate)[link]), and coded each part of the transcript by who said what, and saved as a csv file. 
+I obtained transcripts of the three debates from the Washington Post ((Dem Prim Debate)[https://www.washingtonpost.com/news/the-fix/wp/2016/04/14/the-brooklyn-democratic-debate-transcript-annotated/], (Rep Prim Debate)[https://www.washingtonpost.com/news/the-fix/wp/2016/03/10/the-cnn-miami-republican-debate-transcript-annotated/], (Sept 2016 Debate)[https://www.washingtonpost.com/news/the-fix/wp/2016/09/26/the-first-trump-clinton-presidential-debate-transcript-annotated/]), and coded each part of the transcript by who said what, and saved as a csv file. 
 
 *Getting the Sentiment Analysis Results*: 
 
