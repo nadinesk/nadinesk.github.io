@@ -30,28 +30,35 @@ Trump’s top five sentiments in the September 2016 debate comprise 71% of his t
 Word count (not sentiment analysis, I know) shows that Trump said 27% more words than Clinton in the September 2016 debate; Clinton said 31% more words than Trump when comparing their non head-to-head primary debates in April and March, respectively. Clinton had only one opponent in her last primary debate; Trump had three other opponents, and so he said less (but still more than any of his opponents). (The word counts include all words, while the sentiment analysis removes words that should not be included in a sentiment analysis.)
 
 **Analysis and Process**:
+
 *Word Counts*
 
 DATA
+
 Republican Primary Debate, March 2016:
+
 * Trump: 5588
 * Cruz: 3877
 * Kasich: 3880
 * Rubio: 5013
 
 Democratic Primary Debate, April 2016:
+
 * Clinton: 8157
 * Sanders: 6294
 
 General Election Debate, September 2016: 
+
 * Trump: 8,675
 * Clinton: 6,332
 
 ANALYSIS
+
 * Trump said 27% more words than Clinton in gen election debate
 * Clinton said 31% more words than Trump when comparing the primary debates, probably because she had one opponent and he had 3 others
 
 PROCESS
+
 * Get transcript (link to transcripts)
 * Code all lines by person 
 * Save as csv with two columns: one text and one person. These files be used for sentiment function also 
@@ -88,37 +95,49 @@ Clinton vs Trump Comparison: Last Primary Debates for Each and 9/2016 Head-to-He
 ![Clinton vs Trump Comparison](http://khasachi.com/images/sent_comp.PNG)
 
 ANALYSIS
+
 Clinton is more positive and expresses more trusting sentiments than Trump. Clinton had higher percentages for positive,trust, and anticipation sentiment words when comparing both primary and head to head general election debate. She was lower on negative, fear, anger, joy, sadness, surprise, and disgust. 
 
 Clinton: sentiments expressed more than Trump
+
 * positive,trust, and anticipation
+
 Trump: sentiments expressed less than Trump
+
 * negative, fear, anger, joy, sadness, surprise, and disgust. 
 
 DATA
+
 Clinton vs Sanders: Democratic Primary Debate, April 2016
 
 ![Clinton vs Sanders Comparison](http://khasachi.com/images/demCScomp.PNG)
 
 ANALYSIS
+
 Clinton is more positive than Sanders
 
 Clinton: sentiments expressed more than Sanders
+
 * positive, trust, anticipation, disgust
+
 Clinton: sentiments expressed less than Sanders 
+
 * negative, fear, sadness, anger, joy, surprise
 
 DATA
+
 Republican Primary Debate, March 2016
 
 ![Repbulican Primary Debate March 2016](http://khasachi.com/images/primTOthcop.PNG)
 
 ANALYSIS
+
 Trump expresses more negative-associated sentiments than average of 3 opponents 
 
 Used positive, trust, and negative sentiments less than average opponents. Used surprise, joy, anger, disgust, sadness, and fear sentiments more than average of opponents.
 
 Rankings: 
+
 Sentiment Rankings for Clinton, 9/2016 Debate
 
 ![Clinton 9 2016 debate ](http://khasachi.com/images/clintononlygen.PNG)
@@ -128,13 +147,18 @@ Sentiment Rankings for Trump
 ![Trump 9 2016 debate ](http://khasachi.com/images/tronlygen.PNG)
 
 PROCESS
+
 * Get word sentiments for each candidate and different debates
 * Merge two times (one for primary debates, one for General Election debates)
 * Add two columns to calculate percentage variances between Clinton and Trump during primaries and Clinton and Trump head-to-head general election debate
 
+
 CODE
+
 The actual sentiment analysis function is from [this](http://varianceexplained.org/r/trump-tweets/) post
+
 <pre><code
+
 Sentiment Function 
 
 sentmt <- function(directory, person_spk) {
