@@ -29,11 +29,11 @@ Trump’s top five sentiments in the September 2016 debate comprise 71% of his t
 
 Word count (not sentiment analysis, I know) shows that Trump said 27% more words than Clinton in the September 2016 debate; Clinton said 31% more words than Trump when comparing their non head-to-head primary debates in April and March, respectively. Clinton had only one opponent in her last primary debate; Trump had three other opponents, and so he said less (but still more than any of his opponents). (The word counts include all words, while the sentiment analysis removes words that should not be included in a sentiment analysis.)
 
-**Analysis and Process**:
+**Analyses and Process**:
 
-*Word Counts*
+**WORD COUNTS**
 
-DATA
+**Data**
 
 Republican Primary Debate, March 2016:
 
@@ -52,19 +52,19 @@ General Election Debate, September 2016:
 * Trump: 8,675
 * Clinton: 6,332
 
-ANALYSIS
+**Analysis**
 
 * Trump said 27% more words than Clinton in gen election debate
 * Clinton said 31% more words than Trump when comparing the primary debates, probably because she had one opponent and he had 3 others
 
-PROCESS
+**Process**
 
 * Get transcript (link to transcripts)
 * Code all lines by person 
 * Save as csv with two columns: one text and one person. These files be used for sentiment function also 
 * Includes all words, and doesn’t exclude words excluded in sentiment analysis
 
-CODE
+**Code**
 
     totalWords <- function(directory, person_spk) {
       wd <- getwd()
@@ -83,15 +83,15 @@ CODE
     trumpPrim_TW <- totalWords("repprim.csv",'TRUMP')
     CruzPrim_TW <- totalWords("repprim.csv",'CRUZ')
 
-*Sentiment Analysis*:
+**SENTIMENT ANALYSIS**
 
-DATA
+**Data**
 
 Clinton vs Trump Comparison: Last Primary Debates for Each and 9/2016 Head-to-Head Debate
 
 ![Clinton vs Trump Comparison](http://khasachi.com/images/sent_comp.PNG)
 
-ANALYSIS
+**Analysis**
 
 Clinton is more positive and expresses more trusting sentiments than Trump. Clinton had higher percentages for positive,trust, and anticipation sentiment words when comparing both primary and head to head general election debate. She was lower on negative, fear, anger, joy, sadness, surprise, and disgust. 
 
@@ -103,13 +103,13 @@ Trump: sentiments expressed less than Trump
 
 * negative, fear, anger, joy, sadness, surprise, and disgust. 
 
-DATA
+**Data**
 
 Clinton vs Sanders: Democratic Primary Debate, April 2016
 
 ![Clinton vs Sanders Comparison](http://khasachi.com/images/demCScomp.PNG)
 
-ANALYSIS
+**Analysis**
 
 Clinton is more positive than Sanders
 
@@ -121,13 +121,13 @@ Clinton: sentiments expressed less than Sanders
 
 * negative, fear, sadness, anger, joy, surprise
 
-DATA
+**Data**
 
 Republican Primary Debate, March 2016
 
 ![Repbulican Primary Debate March 2016](http://khasachi.com/images/primTOthcop.PNG)
 
-ANALYSIS
+**Analysis**
 
 Trump expresses more negative-associated sentiments than average of 3 opponents 
 
@@ -143,19 +143,17 @@ Sentiment Rankings for Trump
 
 ![Trump 9 2016 debate ](http://khasachi.com/images/tronlygen.PNG)
 
-PROCESS
+**Process**
 
 * Get word sentiments for each candidate and different debates
 * Merge two times (one for primary debates, one for General Election debates)
 * Add two columns to calculate percentage variances between Clinton and Trump during primaries and Clinton and Trump head-to-head general election debate
 
-
-CODE
+**Code**
 
 The actual sentiment analysis function is from [this](http://varianceexplained.org/r/trump-tweets/) post
 
-
-Sentiment Function 
+    ##Sentiment Function 
 
     sentmt <- function(directory, person_spk) {
       wd <- getwd()
@@ -243,11 +241,11 @@ Sentiment Function
 ![Debate GenElec ](http://khasachi.com/images/chart_92016_debate.png)
 
 
-Process: 
+**Process**: 
 
 Use reshape package to melt data for bar chart
 
-    ##CODE
+**Code**
 
     ##Melt Function
     melting <- function(file,ons, id) {
