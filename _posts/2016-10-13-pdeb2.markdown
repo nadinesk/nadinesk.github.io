@@ -73,23 +73,15 @@ Sentiments Clinton Expressed More Frequently than Trump (percentage points, from
 **Total Words Comparison**
 
 Second Debate: 
-
-Clinton: 6,334 words
-
-Trump: 7,325 words
-
-Raddatz: 1,283 words
-
-Cooper: 1,116 words
-
+* Clinton: 6,334 words
+* Trump: 7,325 words
+* Raddatz: 1,283 words
+* Cooper: 1,116 words
 
 First Debate: 
-
-Clinton: 6,332 words
-
-Trump: 8,675 words
-
-Holt: 1,790 words
+* Clinton: 6,332 words
+* Trump: 8,675 words
+* Holt: 1,790 words
 
 **Table of Results** 
 ![Table of Results](http://khasachi.com/images/comTable.PNG)
