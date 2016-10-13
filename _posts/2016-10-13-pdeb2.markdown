@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Kaine and Pence VP Debate Sentiment Analysis"
-date:   2016-10-04 00:00:00
-categories: r, data, graphs, politics, debates, clinton, trump, general election, kaine, pence
+title:  "Clinton and Trump Second Presidential Debate Sentiment Analysis"
+date:   2016-10-16 00:00:00
+categories: r, data, graphs, politics, debates, clinton, trump, general election
 ---
 
 **Overview**: 
 
-Sentiment Analysis of the VP Debate on 10/4/2016: 
+Sentiment Analysis of the VP Debate on 10/13/2016: 
 
 ![Trump 9 2016 debate ](http://khasachi.com/images/vp_barchart.png)
 
