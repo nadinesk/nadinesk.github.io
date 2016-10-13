@@ -15,36 +15,53 @@ Sentiment Analysis of the Second Presidential Debate on 10/9/2016:
 ![Trump Debates Comparison](http://khasachi.com/images/tCompBar.png)
 
 **Sentiment Comparison Results**: 
+
 Clinton, Debate 2 vs Debate 1 Sentiment Comparison: 
+
 Sentiments Used Less Frequently (percentage points, from highest to lowest change): fear, sadness, negative, disgust
+
 Sentiments Used More Frequently (percentage points, from highest to lowest change): positive, trust, surprise, joy, anticipation, anger
 
 Trump, Debate 2 vs Debate 1 Sentiment Comparison: 
+
 Sentiments Used Less Frequently (percentage points, from highest to lowest change): positive, negative, joy, sadness anticipation
+
 Sentiments Used More Frequently (percentage points, from highest to lowest change): anger, trust, surprise, digust, fear
 
 Clinton vs Trump, Debate 1 Sentiment Comparison: 
+
 Sentiments Clinton Expressed Less Frequently than Trump (percentage points, from highest to lowest difference): negative, anger, sadness, disgust, joy, surprise, fear
+
 Sentiments Clinton Expressed More Frequently than Trump (percentage points, from highest to lowest difference): trust, positive, anticipation
 
 Clinton vs Trump, Debate 2 Sentiment Comparison: 
+
 Sentiments Clinton Expressed Less Frequently than Trump (percentage points, from highest to lowest difference): disgust, anger, negative, fear, sadness, surprise
+
 Sentiments Clinton Expressed More Frequently than Trump (percentage points, from highest to lowest difference): positive, trust, anticipation, joy
 
 **Total Words Comparison**
 Second Debate: 
+
 Clinton: 6,334 words
+
 Trump: 7,325 words
+
 Raddatz: 1,283 words
+
 Cooper: 1,116 words
 
+
 First Debate: 
+
 Clinton: 6,332 words
+
 Trump: 8,675 words
+
 Holt: 1,790 words
 
 **Table of Results** 
-![Table of Results](http://khasachi.com/images/comTable.png)
+![Table of Results](http://khasachi.com/images/comTable.PNG)
 
 **Getting the Data**
 
