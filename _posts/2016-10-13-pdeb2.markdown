@@ -24,23 +24,54 @@ Sentiments Used More Frequently (percentage points, from highest to lowest chang
 
 Trump, Debate 2 vs Debate 1 Sentiment Comparison: 
 
-Sentiments Used Less Frequently (percentage points, from highest to lowest change): positive, negative, joy, sadness anticipation
+Sentiments Used Less Frequently (percentage points, from highest to lowest change): 
+* positive 
+* negative
+* joy
+* sadness 
+* anticipation
 
-Sentiments Used More Frequently (percentage points, from highest to lowest change): anger, trust, surprise, digust, fear
+Sentiments Used More Frequently (percentage points, from highest to lowest change):
+* anger
+* trust
+* surprise
+* digust
+* fear
 
 Clinton vs Trump, Debate 1 Sentiment Comparison: 
 
-Sentiments Clinton Expressed Less Frequently than Trump (percentage points, from highest to lowest difference): negative, anger, sadness, disgust, joy, surprise, fear
+Sentiments Clinton Expressed Less Frequently than Trump (percentage points, from highest to lowest difference): 
+* negative
+* anger
+* sadness
+* disgust
+* joy
+* surprise
+* fear
 
-Sentiments Clinton Expressed More Frequently than Trump (percentage points, from highest to lowest difference): trust, positive, anticipation
+Sentiments Clinton Expressed More Frequently than Trump (percentage points, from highest to lowest difference):
+* trust
+* positive
+* anticipation
 
 Clinton vs Trump, Debate 2 Sentiment Comparison: 
 
-Sentiments Clinton Expressed Less Frequently than Trump (percentage points, from highest to lowest difference): disgust, anger, negative, fear, sadness, surprise
+Sentiments Clinton Expressed Less Frequently than Trump (percentage points, from highest to lowest difference): 
+* disgust
+* anger
+* negative
+* fear
+* sadness
+* surprise
 
-Sentiments Clinton Expressed More Frequently than Trump (percentage points, from highest to lowest difference): positive, trust, anticipation, joy
+Sentiments Clinton Expressed More Frequently than Trump (percentage points, from highest to lowest difference): 
+* positive
+* trust
+* anticipation
+* joy
 
 **Total Words Comparison**
+
 Second Debate: 
 
 Clinton: 6,334 words
