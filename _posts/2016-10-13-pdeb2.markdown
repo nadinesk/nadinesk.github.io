@@ -18,13 +18,26 @@ Sentiment Analysis of the Second Presidential Debate on 10/9/2016:
 
 Clinton, Debate 2 vs Debate 1 Sentiment Comparison: 
 
-Sentiments Used Less Frequently (percentage points, from highest to lowest change): fear, sadness, negative, disgust
+Sentiments Used Less Frequently (percentage points, from highest to lowest change): 
 
-Sentiments Used More Frequently (percentage points, from highest to lowest change): positive, trust, surprise, joy, anticipation, anger
+* fear
+* sadness
+* negative
+* disgust
+
+Sentiments Used More Frequently (percentage points, from highest to lowest change): 
+
+* positive
+* trust
+* surprise
+* joy
+* anticipation
+* anger
 
 Trump, Debate 2 vs Debate 1 Sentiment Comparison: 
 
 Sentiments Used Less Frequently (percentage points, from highest to lowest change): 
+
 * positive 
 * negative
 * joy
@@ -32,6 +45,7 @@ Sentiments Used Less Frequently (percentage points, from highest to lowest chang
 * anticipation
 
 Sentiments Used More Frequently (percentage points, from highest to lowest change):
+
 * anger
 * trust
 * surprise
@@ -41,6 +55,7 @@ Sentiments Used More Frequently (percentage points, from highest to lowest chang
 Clinton vs Trump, Debate 1 Sentiment Comparison: 
 
 Sentiments Clinton Expressed Less Frequently than Trump (percentage points, from highest to lowest difference): 
+
 * negative
 * anger
 * sadness
@@ -50,6 +65,7 @@ Sentiments Clinton Expressed Less Frequently than Trump (percentage points, from
 * fear
 
 Sentiments Clinton Expressed More Frequently than Trump (percentage points, from highest to lowest difference):
+
 * trust
 * positive
 * anticipation
@@ -57,6 +73,7 @@ Sentiments Clinton Expressed More Frequently than Trump (percentage points, from
 Clinton vs Trump, Debate 2 Sentiment Comparison: 
 
 Sentiments Clinton Expressed Less Frequently than Trump (percentage points, from highest to lowest difference): 
+
 * disgust
 * anger
 * negative
@@ -65,6 +82,7 @@ Sentiments Clinton Expressed Less Frequently than Trump (percentage points, from
 * surprise
 
 Sentiments Clinton Expressed More Frequently than Trump (percentage points, from highest to lowest difference): 
+
 * positive
 * trust
 * anticipation
@@ -73,17 +91,20 @@ Sentiments Clinton Expressed More Frequently than Trump (percentage points, from
 **Total Words Comparison**
 
 Second Debate: 
+
 * Clinton: 6,334 words
 * Trump: 7,325 words
 * Raddatz: 1,283 words
 * Cooper: 1,116 words
 
 First Debate: 
+
 * Clinton: 6,332 words
 * Trump: 8,675 words
 * Holt: 1,790 words
 
 **Table of Results** 
+
 ![Table of Results](http://khasachi.com/images/comTable.PNG)
 
 **Getting the Data**
@@ -91,6 +112,7 @@ First Debate:
 I obtained transcripts of the debates from the New York Times' trancript [Second Presidential Debate](http://www.nytimes.com/2016/10/10/us/politics/transcript-second-debate.html?_r=0).
 
 **Getting the Results**
+
 I used R to perform the analysis. Specifically, I used the code provided in [this](http://varianceexplained.org/r/trump-tweets/) post by David Robinson to perform the sentiment analysis. I then used R to create functions to automate total word counts; perform the sentiment analysis (again using the code in Varience Explained post by Robinson to do all the heavy lifting); reshape data to reshape it for the bar chart; and to create the bar chart. 
 
 **R Code**
