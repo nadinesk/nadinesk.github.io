@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Clinton and Trump Third Presidential Debate Sentiment Analysis"
+title:  "Clinton and Trump Sentiment Analysis: Three Debates"
 date:   2016-10-25 00:00:00
 categories: r, data, graphs, politics, debates, clinton, trump, general election
 ---
