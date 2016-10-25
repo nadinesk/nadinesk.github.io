@@ -8,7 +8,7 @@ categories: r, data, graphs, politics, debates, clinton, trump, general election
 
 **Clinton Clearly More Positive, and Why That's Important**
 
-![Second Debates Comparison Chart](http://khasachi.com/images/positiveNegativesum.png)
+![Second Debates Comparison Chart](http://khasachi.com/images/positiveNegativesum1.png)
 
 ![Second Debates Comparison Table](http://khasachi.com/images/posnegsumtable1.png)
 
