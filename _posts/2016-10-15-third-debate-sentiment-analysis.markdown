@@ -8,15 +8,17 @@ categories: r, data, graphs, politics, debates, clinton, trump, general election
 
 **Clinton Clearly More Positive, and Why That's Important**
 
+Sentiment Analyses comparisons between Clinton and Trump between their convention party acceptance speeches and the three debates show that Clinton is by far the more positive candidate. Trump spoke more in the first two debates, but Clinton, fighting back and being more aggressive in the third debate, spoke more words than Trump did. 
+
 ![Second Debates Comparison Chart](http://khasachi.com/images/positiveNegativesum1.png)
 
 ![Second Debates Comparison Table](http://khasachi.com/images/posnegsumtable1.png)
 
-This line chart and table above compare positive and negative sentiments in the past three debates by Clinton and Trump. I used the three debates' transcripts ([third debate transcript](https://www.washingtonpost.com/news/the-fix/wp/2016/10/19/the-final-trump-clinton-debate-transcript-annotated/)) to perform the sentiment analysis, informed by [this](http://varianceexplained.org/r/trump-tweets/) blog post by David Robinson. Each candidates’ words are grouped according to the [NRC Emotion Lexicon](http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm),  “a list of English words and their associations with eight basic emotions (anger, fear, anticipation, trust, surprise, sadness, joy, and disgust) and two sentiments (negative and positive).” I then further grouped these emotions and sentiments into the larger categories of positive (anticipation, trust, surprise, joy, positive) or negative (anger, fear, sadness, disgust, negative), and totaled the word counts by the overarching categories, for each candidate across the three debates. 
+The line chart and table above compare positive and negative sentiments in the past three debates by Clinton and Trump. I used the three debates' transcripts ([third debate transcript](https://www.washingtonpost.com/news/the-fix/wp/2016/10/19/the-final-trump-clinton-debate-transcript-annotated/)) to perform the sentiment analysis, informed by [this](http://varianceexplained.org/r/trump-tweets/) blog post by David Robinson. Each candidates’ words are grouped according to the [NRC Emotion Lexicon](http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm),  “a list of English words and their associations with eight basic emotions (anger, fear, anticipation, trust, surprise, sadness, joy, and disgust) and two sentiments (negative and positive).” I then further grouped these emotions and sentiments into the larger categories of positive (anticipation, trust, surprise, joy, positive) or negative (anger, fear, sadness, disgust, negative), and totaled the word counts by the overarching categories, for each candidate across the three debates. 
 
-The line chart above summarizing the three debates, the sentiment analysis I did for the [convention speeches](http://khasachi.com/r,/data,/twitter,/twitter/trump,/clinton,/election,/convention/speeches,/politics/2016/08/17/speech-sentiment-analysis.html), and the [first](http://khasachi.com/r,/data,/graphs,/politics,/debates,/clinton,/trump,/general/election/2016/09/29/Clinton-Trump-Debate-Sentiment-Analysis.html) and [second]  (http://khasachi.com/r,/data,/graphs,/politics,/debates,/clinton,/trump,/general/election/2016/10/13/pdeb2.html) debates, show that Clinton is clearly the more positive candidate. 
+The line chart above summarizing the three debates, the sentiment analysis I did for the [convention speeches](http://khasachi.com/r,/data,/twitter,/twitter/trump,/clinton,/election,/convention/speeches,/politics/2016/08/17/speech-sentiment-analysis.html), and the [first](http://khasachi.com/r,/data,/graphs,/politics,/debates,/clinton,/trump,/general/election/2016/09/29/Clinton-Trump-Debate-Sentiment-Analysis.html) and [second](http://khasachi.com/r,/data,/graphs,/politics,/debates,/clinton,/trump,/general/election/2016/10/13/pdeb2.html) debates, show that Clinton is clearly the more positive candidate. 
 
-Why does this matter? A [classic study](http://www.nytimes.com/1988/05/08/us/for-presidential-candidates-optimism-appears-a-winner.html) by Harold Zullow and Martin Seligman showed that a candidate’s optimism relative to their opponent is a good predictor of his/her success. They studied the optimism/pessimism of 22 elections, looking at each party nominee's acceptance speech in each election. They found that, in 18 of the 22 speeches, the more optimistic candidate won the election. The sentiment analysis I’ve done shows that Clinton is clearly the more optimistic candidate; the polls have her clearly ahead at this point (the [RCP average](http://www.realclearpolitics.com/epolls/2016/president/us/general_election_trump_vs_clinton-5491.html) has her ahead by 5.1 points today). 
+Why does this matter? A [classic study](http://www.nytimes.com/1988/05/08/us/for-presidential-candidates-optimism-appears-a-winner.html) by Harold Zullow and Martin Seligman showed that a candidate’s optimism relative to their opponent is a good predictor of his/her success. 
 
 From the [LA Times](http://www.latimes.com/opinion/op-ed/la-oe-1105-lyubomirsky-optimism-politics-20151105-story.html): 
 
@@ -24,6 +26,9 @@ From the [LA Times](http://www.latimes.com/opinion/op-ed/la-oe-1105-lyubomirsky-
 > 22 elections. Furthermore, the more positive the candidate was relative to his opponent — for example, projecting optimism that 
 > America's problems were temporary and that he was the one to set things right — the wider his victory margin. (On a side note, Zullow 
 > and Seligman found that the more positive the candidate, the more active he was on the trail, making more frequent stump speeches.)
+
+The sentiment analysis I’ve done shows that Clinton is clearly the more optimistic candidate; and the polls have her clearly ahead at this point (the [RCP average](http://www.realclearpolitics.com/epolls/2016/president/us/general_election_trump_vs_clinton-5491.html) has her ahead by 5.1 points today). 
+
 
 **Sentiment Analysis Rankings by Each Candidate in the Three Debates** 
 
@@ -33,7 +38,7 @@ Three Debates: Clinton Sentiment Rankings
 ![Clinton Comparison](http://khasachi.com/images/clintonrank.png)
 
 Three Debates: Trump Sentiment Rankings
-![Trump Comparison](http://khasachi.com/images/trumprank.png)
+![Trump Comparison](http://khasachi.com/images/trump_rank.png)
 
 Third Debate: Clinton vs Trump Sentiment Rankings
 ![Clinton and Trump Comparison Third debate](http://khasachi.com/images/clinton_trump_debate3.png)
@@ -47,7 +52,7 @@ Trump spoke much more than Clinton in the first two debates but she spoke more t
 
 ![Clinton and Trump Total Words](http://khasachi.com/images/twLine.png)
 
-And finally, here is Trump displaying more negativity after apparent disgust at his last performance.
+And finally, here is Trump displaying more negativity and craziness/scariness at his last debate performance. 
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="und" dir="ltr">Yup <a href="https://t.co/vDf6G8bRmZ">pic.twitter.com/vDf6G8bRmZ</a></p>&mdash; Chris Cillizza (@TheFix) <a href="https://twitter.com/TheFix/status/789090575249125376">October 20, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
