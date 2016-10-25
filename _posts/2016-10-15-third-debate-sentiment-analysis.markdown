@@ -8,6 +8,8 @@ categories: r, data, graphs, politics, debates, clinton, trump, general election
 
 **Clinton Clearly More Positive, and Why That's Important**
 
+![Second Debates Comparison Chart](http://khasachi.com/images/positiveNegativesum.png)
+
 ![Second Debates Comparison Table](http://khasachi.com/images/posnegsumtable1.png)
 
 This line chart and table above compare positive and negative sentiments in the past three debates by Clinton and Trump. I used the three debates' transcripts ([third debate transcript](https://www.washingtonpost.com/news/the-fix/wp/2016/10/19/the-final-trump-clinton-debate-transcript-annotated/)) to perform the sentiment analysis, informed by [this](http://varianceexplained.org/r/trump-tweets/) blog post by David Robinson. Each candidates’ words are grouped according to the [NRC Emotion Lexicon](http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm),  “a list of English words and their associations with eight basic emotions (anger, fear, anticipation, trust, surprise, sadness, joy, and disgust) and two sentiments (negative and positive).” I then further grouped these emotions and sentiments into the larger categories of positive (anticipation, trust, surprise, joy, positive) or negative (anger, fear, sadness, disgust, negative), and totaled the word counts by the overarching categories, for each candidate across the three debates. 
