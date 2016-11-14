@@ -1,137 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>	   
-
-  	  <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <!-- Angular lib -->
-    
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
-	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-	
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-	
-	<script src="testjs.js"></script>
-	
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Libre+Baskerville:400,700|Sanchez' rel='stylesheet' type='text/css'>
-	
-	<head profile="http://www.w3.org/2005/10/profile">
-<link rel="icon" 
-      type="image/png" 
-      href="http://www.khasachi.com/images/favicon-16x16.png">
-	   
-    <title> Nadine Fischoff </title>
-       
-	   
-	<style>
-	
-		      body {
-        min-height: 2000px;
-        padding-top: 70px;
-        font-family: 'Open Sans', sans-serif;
-      }
-
-      #titlename {
-      	font-size: 18px;
-      }
-
-      #titlename a {
-      	color: #777;
-      }
-      
-      #titlename a:hover {
-      	color: black;
-      }
-      
-      #navlist {
-      	font-size: 16px;
-      }
-	 
-	 </style>
-	  
-
-
- </head> 
- 
+    <title>Nadine Fischoff</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+  </head>
 	
 <body>
-	<nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <div id="titlename" class="navbar-brand" href="#/"><a href=#/">Nadine Khattak Fischoff</a></div>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li id="navlist" class="active"><a href="http://www.khasachi.com/">Home</a></li>
-            <li id="navlist"><a href="http://www.khasachi.com/blog">Blog</a></li>
-            <li id="navlist"><a href="http://www.khasachi.com/gack">Gack</a></li>
-          </ul>
-        </div>
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed visible-xs" data-toggle="collapse" data-target="#collapse-target" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand title" href="#">Nadine Fischoff</a>
+          </div>
+          <div class="collapse navbar-collapse navlist" id="collapse-target">
+            <ul class="nav navbar-nav visible-xs">
+              <li class="text-center menuItem"><a href="http://www.khasachi.com/blog">Blog</a>
+              <hr class="visible-xs">        
+              <li class="text-center menuItem"><a href="http://www.github.com/nadinesk">Github</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
+
+
+	<div id="main-content" class="container-fluid">
+      	<div class="row">
+	        <div class="col-md-4 col-xs-12"></div>
+			<div class="col-md-4 col-xs-12"><div id="textpara"><h3 class="text-center"><a href="http://www.linkedin.com/in/nadinefischoff">linkedIn</a></h3></div></div>
+			<div class="col-md-4 col-xs-12"></div>
+		</div>
+		<div class="row">
+	        <div class="col-md-4 col-xs-12"></div>
+			<div class="col-md-4 col-xs-12"><div id="textpara"><h3 class="text-center"><a href="http://www.khasachi.com/blog">blog</h3></div></div>
+			<div class="col-md-4 col-xs-12"></div>
+		</div>
+		<div class="row">
+	        <div class="col-md-4 col-xs-12"></div>
+			<div class="col-md-4 col-xs-12"><div id="textpara"><h3 class="text-center"><a href="http://www.github.com/nadinesk">github</h3></div></div>
+			<div class="col-md-4 col-xs-12"></div>
+		</div>
+		<div class="row">
+	        <div class="col-md-4 col-xs-12"></div>
+			<div class="col-md-4 col-xs-12"><div id="textpara"><h3 class="text-center"><a href="https://itunes.apple.com/us/developer/nadine-khattak-fischoff/id924787458">iPhone apps</h3></div></div>
+			<div class="col-md-4 col-xs-12"></div>
+		</div>
+		<div class="row">
+	        <div class="col-md-4 col-xs-12"></div>
+			<div class="col-md-4 col-xs-12"><div id="textpara"><h3 class="text-center"><a href="http://khasachi.com/congressbills.html">most recent bills, US Congress</h3></div></div>
+			<div class="col-md-4 col-xs-12"></div>
+		</div>
+
+
+        
       </div>
-    </nav>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-md-5">
-				<h2 id="name-text"> Nadine Khattak Fischoff</h2>
-			</div>
-			<div class="col-md-7">
-			</div>
-		</div>
+      
 
-		
-		<div class="row">
-			<div class="col-md-5">
-				<ul>
-					<li><a href="https://www.linkedin.com/in/nadinefischoff" target = #>linkedIn</a></li>
-					<li><a href="http://khasachi.com/blog" target = #>blog</a></li>
-					<li><a href="http://www.github.com/nadinesk" target = #>github </a></li>
-					<li><a href="http://bl.ocks.org/nadinesk" target = #>d3.js data visualizations</a></li>
-					<li><a href="https://itunes.apple.com/us/developer/nadine-khattak-fischoff/id924787458" target = #>iPhone Apps</a></li>
-					<li><a href="http://vsco.co/nadinesk/" target = #>photos</a></li>
-					<li><a href="http://www.twitter.com/alcajp" target = #>twitter</a></li>
-				</ul>
-			</div>
-			<div class="col-md-7">
-			</div>			
-		</div>
-			<br/>
-		<div class="row">
-			<div class="col-md-5">
-				Interactive Projects: 
-				<ul>
+     
+
+
+
+		<!-- linkedin, blog, github, d3.js data visualizations, iPhone Apps, photos, twitter -->
+		<!-- Interactive projects: <ul>
 					<li id="project-list-item1"><a href="http://www.khasachi.com/congressbills.html" target = #>Search Most Recent Bills in the 114th U.S. Congress</a></li>
 					<li id="project-list-item1"><a href="http://khasachi.com/school_test_results.html" target = #>Data Viz: School Districts, Tests, Income, and Race</a></li>
 					<li id="project-list-item1"><a href="http://khasachi.com/syrianconflict.html" target = #>Data Viz: Number of Casualties in Syrian Conflict</a></li>
 					<li id="project-list-item1"><a href="https://fathomless-savannah-68425.herokuapp.com" target = #>Crowdsourcing: Add Your Ways for Staying Healthy in Manhattan</a></li>
-				</ul>
-			</div>
-			<div class="col-md-7">
-			</div>
-
-		</div>
+				</ul> --> 
 		
-			<div class="row">
-			<div class="col-md-5">
-				Other: 
-				<ul>
-					<li id="project-list-item1"><a href="http://www.khasachi.com/gack" target = #>Gack</a></li>
-			</div>
-			<div class="col-md-7">
-			</div>
-
-		</div>
-	</div>	
-
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -141,6 +89,11 @@
   ga('send', 'pageview');
 </script>
 
+
+<!-- jQuery (Bootstrap JS plugins depend on it) -->
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!--<script src="js/script.js"></script> -->
 </body>
 
 </html>
