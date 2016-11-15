@@ -8,7 +8,7 @@ body {
 
 /* Header */
  #page_title {  
-  margin: 100px 0px 25px 50px;
+  margin: 100px 0px 25px 70px;
   text-transform: uppercase;
   letter-spacing: 2.9px;
   
@@ -27,7 +27,7 @@ body {
 #main-list {
   
   padding: 0px;
-  margin: 0px 0px 0px 50px;
+  margin: 0px 0px 0px 70px;
 }
 #main-list li {
   list-style-type: none;
