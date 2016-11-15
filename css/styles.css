@@ -110,3 +110,13 @@ h3 {
 
 
 /* End Content */
+
+@media only screen and (max-width: 768px) {
+    #page_title {  
+      margin: 100px 0px 25px 40px;
+  }
+
+#main-list {  
+    margin: 0px 0px 0px 40px;
+  }
+}
