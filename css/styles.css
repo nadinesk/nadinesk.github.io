@@ -1,8 +1,8 @@
 body {
   font-size: 16px;
   font-family: 'Oxygen', sans-serif;
-  background-color: #3d334c;
-  color: white;
+  background-color: #c0c0c0;
+  color: #3d334c;
   
 }
 
@@ -15,7 +15,7 @@ body {
  }
 
  #page_title a, #page_title a:visited {
-  color: white;
+  color: #3d334c;
  }
 
  #page_title a:hover, #page_title a:focus {
@@ -45,7 +45,7 @@ body {
 
 
 #main-list a, #main-list a:visited {
-  color: white;
+  color: #3d334c;
 }
 
 #main-list a:hover, #main-list a:focus {
