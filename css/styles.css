@@ -1,3 +1,8 @@
+html {
+	position: relative; 
+	min-height: 100%; 
+}
+		
 body {
   font-size: 16px;
   font-family: 'Oxygen', sans-serif;
@@ -90,11 +95,24 @@ h3 {
 
 /* Blog Main Page */
 .navbar {
-	background-color: white;
+	background-color: #c0c0c0;
+	border-radius: 0px;
 }
-.navbar-header a,.navbar-header a:visited {
+
+.navbar-default .navbar-brand, #nb-list a, #nb-list a:visited {
 	color: #3d334c;
-	text-transform: uppercase;
+	text-transform: uppercase; 
+	letter-spacing: 1.2px;
+}
+
+#nh a:hover, #nh a:focus, #nb-list a:hover {
+	color: #424c33;
+	text-transform: uppercase; 
+}
+
+#line {
+	border-top: 1px solid #c0c0c0;
+	opacity: 0.54;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
@@ -105,14 +123,21 @@ h3 {
 	border-color: #3d334c;
 }
 
+
+#page-title {
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
+}
 .bl-list {
 	list-style-type: none;
+	padding: 0px;
 }
 
 .bl-list li {
 	font-size: 1.2em;
 	padding: 10px;
 	text-transform: uppercase;
+	letter-spacing: 0.5px;
 
 }
 
@@ -131,11 +156,12 @@ h3 {
 }
 
 .footer {
-	position: absolute; 
-	background-color: #c0c0c0;
-	bottom: 0px;
-	
-	width: 100%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100px;
+  background-color: #c0c0c0;
 }
 
 .footer ul {
@@ -143,6 +169,33 @@ h3 {
 	list-style-type: none;
 
 }
+
+#footerStuff {
+	margin: 0px;
+	padding: 15px;
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
+}
+
+#footerStuff div > div > a:visited, #footerStuff div > div > a {
+	color: #3d334c;
+	opacity: 0.7;
+}
+
+#footerStuff div > div > a:hover, #footerStuff div > div > a:focus {
+	color: #424c33;
+	text-decoration: none;
+}
+
+#footerStuff div > div{
+	padding-top: 10px;
+
+}
+
+.footerlist {
+	margin-left: 100px;
+}
+
 
 
 
