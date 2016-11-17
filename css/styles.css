@@ -131,6 +131,7 @@ h3 {
 .bl-list {
 	list-style-type: none;
 	padding: 0px;
+	margin-bottom: 150px;
 }
 
 .bl-list li {
