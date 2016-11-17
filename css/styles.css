@@ -93,6 +93,7 @@ h3 {
 .navbar {
 	background-color: #c0c0c0;
 	border-radius: 0px;
+	margin-bottom: 0px;
 }
 
 .navbar-default .navbar-brand, #nb-list a, #nb-list a:visited {
@@ -123,6 +124,7 @@ h3 {
 #page-title {
 	text-transform: uppercase;
 	letter-spacing: 1.2px;
+	padding-top: 20px;
 }
 .bl-list {
 	list-style-type: none;
