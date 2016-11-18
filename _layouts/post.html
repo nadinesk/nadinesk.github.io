@@ -1,54 +1,38 @@
 ---
 layout: master1
 ---
-<div class="post-main">
-<div class="full-row">
-      <div class="post-date">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</div>
-      <div class="post-title"><p>{{ page.title }}</p></div>
+<div class="row">
+  <div class="col-md-2 col-sm-1"></div>
+    <div class="col-md-8 col-sm-10 col-xs-12 blog-main">
+      <div class="blog-post">
+        <h2 class="blog-post-title">{{ page.title }}</h2>
+        <p class="blog-post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+
+              {{ content }}
       
+      </div>
+    </div>
+    <div class="col-md-2 col-sm-1"></div> 
   </div>
 
 
-
-
-  <article class="post-text">
-    {{ content }}
-    </article>
-
-
-<div class="full-row">
-
-
-
-
-
-   <div class="next-post">
+  <div class="next-post">
         {% if page.next.url %} 
-      
-            <a href="{{page.next.url}}" title="next Post: 
-{{page.next.title}}">Next Post: {{page.next.title}}</a> 
-       
+    <a href="{{page.next.url}}" title="next Post: {{page.next.title}}">Next Post: {{page.next.title}}</a> 
         {% endif %} 
- </div> 
-   <div class="previous-post">
+  </div> 
+  <div class="previous-post">
         {% if page.previous.url %} 
-       
-
-
-            <a href="{{page.previous.url}}" title="Previous Post: 
-{{page.previous.title}}">Previous Post: {{page.previous.title}}</a> 
-     
+    <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">Previous Post: {{page.previous.title}}</a> 
         {% endif %} 
    </div> 
-</div>
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-54131426-1', 'auto');
   ga('send', 'pageview');
-
 </script>
