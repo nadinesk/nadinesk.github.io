@@ -1,9 +1,13 @@
+	
 body {
   font-size: 16px;
   font-family: 'Oxygen', sans-serif;
   background-color: #c0c0c0;
   color: #3d334c;
-  
+}
+
+#blog-main {
+  background-color: white;
 }
 
 /* Header */
@@ -11,6 +15,7 @@ body {
   margin: 100px 0px 25px 70px;
   text-transform: uppercase;
   letter-spacing: 2.9px;
+  padding-top: 20px;
   
  }
 
@@ -52,30 +57,11 @@ body {
   color: #9febab;
   text-decoration: none;
 }
-.navbar {
-  margin-bottom: 25px;
-}
-.navbar-brand {
-  font-size: 1.5em;  
-  
-  
-}
-
-.navbar-header a, .navbar-header a:visited  {
-  color: #007300;
-}
-
 
 hr {
   padding: 0px;
   margin: 5px;
 }
-
-
-/* End Header */
-
-/* Content */
-
 
 h2 {
   font-size: 1.4em;
@@ -87,11 +73,7 @@ h3 {
 
 
 #textpara {  
-
   margin: 20px;
-  
-
-
 }
 
 
@@ -108,8 +90,111 @@ h3 {
   text-decoration: none;
 }
 
+/* Blog Main Page */
+.navbar {
+	background-color: #c0c0c0;
+	border-radius: 0px;
+	margin-bottom: 0px;
+}
 
-/* End Content */
+.navbar-default .navbar-brand, #nb-list a, #nb-list a:visited {
+	color: #3d334c;
+	text-transform: uppercase; 
+	letter-spacing: 1.2px;
+}
+
+#nh a:hover, #nh a:focus, #nb-list a:hover {
+	color: #424c33;
+	text-transform: uppercase; 
+}
+
+#line {
+	border-top: 1px solid #c0c0c0;
+	opacity: 0.54;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	border-color: #3d334c;
+}
+
+.navbar-default .navbar-toggle {
+	border-color: #3d334c;
+}
+
+
+
+.bl-list {
+	list-style-type: none;
+	padding: 0px;
+	margin-bottom: 150px;
+}
+
+.bl-list li {
+	font-size: 1.2em;
+	padding: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+
+}
+
+.bl-list li span {
+	font-size: 0.8em;
+	padding-right: 3px;
+}
+
+.bl-list li a, .bl-list li a:visited {
+	color: #3d334c;
+} 
+
+.bl-list li a:hover, .bl-list li a:focus {
+	text-decoration: none; 
+  	color: #424c33;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100px;
+  background-color: #c0c0c0;
+}
+
+.footer ul {
+	
+	list-style-type: none;
+
+}
+
+#footerStuff {
+	margin: 0px;
+	padding: 15px;
+	text-transform: uppercase;
+	letter-spacing: 1.2px;
+}
+
+#footerStuff div > div > a:visited, #footerStuff div > div > a {
+	color: #3d334c;
+	opacity: 0.7;
+}
+
+#footerStuff div > div > a:hover, #footerStuff div > div > a:focus {
+	color: #424c33;
+	text-decoration: none;
+}
+
+#footerStuff div > div{
+	padding-top: 10px;
+
+}
+
+.footerlist {
+	margin-left: 100px;
+}
+
+
+
+
 
 @media only screen and (max-width: 768px) {
     #page_title {  

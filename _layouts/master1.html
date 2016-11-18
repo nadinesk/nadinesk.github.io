@@ -1,48 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <!-- Angular lib -->
-    
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
-  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-  
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Libre+Baskerville:400,700|Sanchez' rel='stylesheet' type='text/css'>
   {% include head1.html %}
-
-  <style>
-  body {
-    font-family: 'Open Sans', sans-serif;    
-
-  }
-  
-  #sitetitle a {
-    text-decoration: none;
-    color: #777;
-  }
-  
-  #sitetitle a:hover {
-    color: black;
-  }
-
-  </style>
+ 
 </head>
 
   <body>
 
     {% include header1.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
+   
+    <div class="container-fluid" id="blog-main">
         {{ content }}
-      </div>
-    </div>
+      
+    </div> 
 
     {% include footer1.html %}
 
