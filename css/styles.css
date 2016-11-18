@@ -205,3 +205,38 @@ h3 {
     margin: 0px 0px 0px 40px;
   }
 }
+
+
+
+/* posts layout */
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+
+
+/**
+ * Figures
+ */
+figure > img {
+    display: block;
+}
+
+.blog-main {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.blog-post {
+  margin-bottom: 60px;
+}
+.blog-post-title {
+  margin-bottom: 5px;
+  font-size: 40px;
+}
+.blog-post-meta {
+  margin-bottom: 20px;
+  color: #999;
+}
