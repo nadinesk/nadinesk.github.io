@@ -56,8 +56,4 @@ I use sentiment analysis based on [this](http://varianceexplained.org/r/trump-tw
         geom_bar(aes(fill = time_catg),stat="identity", position = position_dodge()) 
        library(broom)
 
-sentiment_differences
-
-
-
 
