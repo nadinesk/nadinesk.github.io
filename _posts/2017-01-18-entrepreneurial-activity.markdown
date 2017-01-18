@@ -5,12 +5,12 @@ date:   2017-01-18 00:00:00
 categories: r, data, entrepreneur, plots, graphs, kauffman index
 ---
 
-I used the [Kauffman Index of Entrepreneurial Activity](https://www.quandl.com/data/KAUFFMAN-The-Kauffman-Foundation) by age, education, gender, industry, immigrant/native status, and veteran status to look at changes in entrepreneurial activity over time. The plots below show these changes over time, from 1996 to 2014. 
+Entrepreneurial activity has been the highest among immigrants, men, those with less education, and in the West and in the Construction Industry, from 1996-2014. I used the [Kauffman Index of Entrepreneurial Activity](https://www.quandl.com/data/KAUFFMAN-The-Kauffman-Foundation) among these several characteristics to look at overall enterpreneurial activity and changes over time. The plots below show these changes over time, from 1996 to 2014. 
 
 **Age
 
 Entrepreneurial activity has increased for each age grouping from 20 to 64 years, other than the group from 20-34 years. 
-![Entrepreneurial Activity by Age, 1996, 2014](http://khasachi.com/images/age.png)
+![Entrepreneurial Activity by Age, 1996-2014](http://khasachi.com/images/age.png)
      
      library(ggplot2)
      library(dplyr)
@@ -41,7 +41,7 @@ Entrepreneurial activity has increased for each age grouping from 20 to 64 years
 **Education
 
 Entrepreneurial activity has increased for all education levels, other than those with some college. Those with less than a high school education have the largest entrepreneurial activity. Surprisingly to me, entrepeneurial activity is inversely correlated with educational level attained. 
-![Entrepreneurial Activity by Education, 1996, 2014](http://khasachi.com/images/edu.png)
+![Entrepreneurial Activity by Education, 1996-2014](http://khasachi.com/images/edu.png)
 
 
      library(ggplot2)
@@ -73,7 +73,7 @@ Entrepreneurial activity has increased for all education levels, other than thos
 
 Enterpreneurial activity for females has decreased from 1996-2014, and has increased for males during this time period. 
 
-![Entrepreneurial Activity by Gender, 1996, 2014](http://khasachi.com/images/gender.png)
+![Entrepreneurial Activity by Gender, 1996-2014](http://khasachi.com/images/gender.png)
 
      library(ggplot2)
      library(dplyr)
@@ -102,7 +102,7 @@ Enterpreneurial activity for females has decreased from 1996-2014, and has incre
 
 Construction has show the largest increase in entrepreneurial activity, and also the largest entrepreneurial activity from 1996-2014. The second highest activity is the Services industry, followed by other industries, trade, and then manufacturing. Trade is the only industry that has shown a decrease in entrepreneurial activity. 
 
-![Entrepreneurial Activity by Industry, 1996, 2014](http://khasachi.com/images/ind.png)
+![Entrepreneurial Activity by Industry, 1996-2014](http://khasachi.com/images/ind.png)
 
      library(ggplot2)
      library(dplyr)
@@ -131,3 +131,59 @@ Construction has show the largest increase in entrepreneurial activity, and also
 
 **Immigrant or Native Enterpreneurs
 
+Immigrants have more enterpreurial activity than native-born entrepreneurs, and they have increased much more from 1996 to 2014, while native-born enterpreneurs have shown a decrease in enterpreneurial activity during this time period. 
+
+![Entrepreneurial Activity, Native or Immigrant, 1996-2014](http://khasachi.com/images/native.png)
+
+     library(ggplot2)
+     library(dplyr)
+     library(reshape2)
+     
+     native <- read.csv("KAUFFMAN-KAUFF_NATIVE.csv")
+     native01 <- melt(native, id=c("Date"))
+     native01$type <- grepl("Index..", native01$variable, ignore.case = TRUE)
+     native02 <- subset(native01, type == TRUE)
+     native02 <- data.frame(native02)   
+     native02$Date <- as.Date(as.character(native02$Date))
+     native02$variable <- as.character(native02$variable)
+
+     native02 <- native02 %>% 
+          mutate(variable= replace(variable, variable == "Immigrant.Index..", "Immigrant")) %>%
+          mutate(variable= replace(variable, variable == "Native.Born.Index..", "Native Born")) %>%
+          mutate(variable= replace(variable, variable == "Total.Index..", "Total")) 
+
+     n.ind <- ggplot(native02, aes(Date, value))
+     p.ind <- n.ind + geom_point(size=2, aes(color=variable)) + facet_grid(. ~variable) + 
+          geom_smooth(aes(Date, value), method = "lm", color="brown") + ylab("Index") + 
+          theme(legend.position = "none") + labs(title = "Immigrant vs Native") 
+     p.ind
+
+**Region
+
+All regions except the Midwest have show increases in enterpreneurial activity. The West has had the most activity for each year from 1996 to 2014, followed by the South and then the Northeast. 
+
+![Entrepreneurial Activity by Region, 1996-2014](http://khasachi.com/images/region.png)
+
+     library(ggplot2)
+     library(dplyr)
+     library(reshape2)
+     
+     region01 <- melt(region, id=c("Year"))
+     region01$type <- grepl("Index..", region01$variable, ignore.case = TRUE)
+     region02 <- subset(region01, type == TRUE)
+     region02 <- data.frame(region02)
+     region02$Year <- as.Date(as.character(region02$Year))
+     region02$variable <- as.character(region02$variable)
+     region02 <- region02 %>% 
+          mutate(variable= replace(variable, variable == "Midwest.Index..", "Midwest")) %>%
+          mutate(variable= replace(variable, variable == "Northeast.Index..", "Northeast")) %>%
+          mutate(variable= replace(variable, variable == "South.Index..", "South")) %>%
+          mutate(variable= replace(variable, variable == "Total.Index..", "Total")) %>%
+          mutate(variable= replace(variable, variable == "West.Index..", "West"))
+
+     n.region <- ggplot(region02, aes(Year, value))
+     p.region <- n.region + geom_point(size=2, aes(color=variable)) + facet_grid(. ~variable) + 
+          geom_smooth(aes(Year, value), method = "lm", color="brown") + ylab("Index") + 
+          theme(legend.position = "none") + labs(title = "Region") 
+     p.region
+     
