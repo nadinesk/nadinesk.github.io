@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Entrepreneurial Activity by Various Characteristics"
-date:   2016-08-17 00:00:00
+date:   2017-01-18 00:00:00
 categories: r, data, entrepreneur, plots, graphs, kauffman index
 ---
 
