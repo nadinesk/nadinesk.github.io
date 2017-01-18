@@ -38,7 +38,7 @@ Entrepreneurial activity has increased for each age grouping from 20 to 64 years
      p.age
      
      
-##Education
+## Education
 
 Entrepreneurial activity has increased for all education levels, other than those with some college. Those with less than a high school education have the largest entrepreneurial activity. Surprisingly to me, entrepeneurial activity is inversely correlated with educational level attained. 
 ![Entrepreneurial Activity by Education, 1996-2014](http://khasachi.com/images/edu.png)
