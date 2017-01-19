@@ -1,15 +1,16 @@
 ---
 layout: post
-title:  "Entrepreneurial Activity by Various Characteristics"
+title:  "Entrepreneurial Activity by Age, Education, Gender, Industry, and More"
 date:   2017-01-18 00:00:00
 categories: r, data, entrepreneur, plots, graphs, kauffman index
 ---
 
-Entrepreneurial activity has been the highest among immigrants, men, those with less education, and in the West and in the Construction Industry, from 1996-2014. I used the [Kauffman Index of Entrepreneurial Activity](https://www.quandl.com/data/KAUFFMAN-The-Kauffman-Foundation) among these several characteristics to look at overall enterpreneurial activity and changes over time. The plots below show these changes over time, from 1996 to 2014. 
+Entrepreneurial activity has been the highest among immigrants, men, 35-44 year-olds, those with less education, and highest in the West and in the Construction Industry, from 1996-2014. I used the [Kauffman Index of Entrepreneurial Activity](http://www.kauffman.org/microsites/kauffman-index) among these several characteristics to look at overall enterpreneurial activity and changes over time. The plots below show these changes over time, from 1996 to 2014. 
 
 ## Age
 
-Entrepreneurial activity has increased for each age grouping from 20 to 64 years, other than the group from 20-34 years. 
+Entrepreneurial activity has increased for each age group from 35 to 64 years, and has decreased for group betweeen 20-34 years. 
+
 ![Entrepreneurial Activity by Age, 1996-2014](http://khasachi.com/images/age.png)
      
      library(ggplot2)
@@ -41,6 +42,7 @@ Entrepreneurial activity has increased for each age grouping from 20 to 64 years
 ## Education
 
 Entrepreneurial activity has increased for all education levels, other than those with some college. Those with less than a high school education have the largest entrepreneurial activity. Surprisingly to me, entrepeneurial activity is inversely correlated with educational level attained. 
+
 ![Entrepreneurial Activity by Education, 1996-2014](http://khasachi.com/images/edu.png)
 
 
@@ -100,7 +102,7 @@ Enterpreneurial activity for females has decreased from 1996-2014, and has incre
 
 ## Industry
 
-Construction has show the largest increase in entrepreneurial activity, and also the largest entrepreneurial activity from 1996-2014. The second highest activity is the Services industry, followed by other industries, trade, and then manufacturing. Trade is the only industry that has shown a decrease in entrepreneurial activity. 
+Construction has show the largest increase in entrepreneurial activity, and also the largest entrepreneurial activity from 1996-2014. The second highest activity is the Services industry, followed by other industries, trade, and then manufacturing. Trade has shown a decrease in entrepreneurial activity. 
 
 ![Entrepreneurial Activity by Industry, 1996-2014](http://khasachi.com/images/ind.png)
 
@@ -131,7 +133,7 @@ Construction has show the largest increase in entrepreneurial activity, and also
 
 ## Immigrant or Native Enterpreneurs
 
-Immigrants have more enterpreurial activity than native-born entrepreneurs, and they have increased much more from 1996 to 2014, while native-born enterpreneurs have shown a decrease in enterpreneurial activity during this time period. 
+Immigrants have been more enterpreurial than those who are native-born, and they have shown a steep increase in their entrepreneurial activity from 1996 to 2014; native-born enterpreneurial activity has decreased during this time period. 
 
 ![Entrepreneurial Activity, Native or Immigrant, 1996-2014](http://khasachi.com/images/native.png)
 
