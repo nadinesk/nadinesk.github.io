@@ -7,6 +7,8 @@ categories: r, data, entrepreneur, plots, graphs, kauffman index
 
 Entrepreneurial activity has been the highest among immigrants, men, 35-44 year-olds, those with less education, and highest in the West and in the Construction Industry, from 1996-2014. I used the [Kauffman Index of Entrepreneurial Activity](http://www.kauffman.org/microsites/kauffman-index) among these several characteristics to look at overall enterpreneurial activity and changes over time. The plots below show these changes over time, from 1996 to 2014. 
 
+The github repo with the script and datasets is [here](https://github.com/nadinesk/entrepreneur-activity). 
+
 ## Age
 
 Entrepreneurial activity has increased for each age group from 35 to 64 years, and has decreased for group betweeen 20-34 years. 
