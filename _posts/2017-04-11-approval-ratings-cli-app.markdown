@@ -102,7 +102,7 @@ The method `call` runs the `start` method. The `start` method first calls the `l
 
   * If the index of the object exists, the CLI method, `print_rating` method is called, and the date, grade, approval and disapproval ratings of all instances of the pollster's name are printed. 
 
-## Building and Publshing the Approval Ratings CLI App Gem
+## Building and Publishing the Approval Ratings CLI App Gem
 
 I published the [approval-ratings-cli-app gem](https://rubygems.org/gems/approval-ratings-cli-app) by following along with this [guide](http://guides.rubygems.org/make-your-own-gem/) to build the gem, and create a gemspec file; and this [guide](http://guides.rubygems.org/publishing/) to publish the gem. 
 
