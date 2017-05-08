@@ -2,7 +2,7 @@
 title: "RHOA Reunion"
 author: "Nadine"
 date: "May 8, 2017"
-output: github_document
+output: html_document
 ---
 
 #Packages
@@ -31,6 +31,8 @@ library(stringr)
 library(tidytext)
 library(reshape2)
 library(scales)
+library(knitr)
+library(rmarkdown)
 
 ```
 
@@ -50,11 +52,8 @@ Get the 5,000 most recent tweets with the #rhoareunion hashtag.
 
 rr <- searchTwitter("#rhoareunion", n=5000)
 
-str(rr)
-
 rr2 <- do.call("rbind", lapply(rr, as.data.frame))
 
-str(rr2)
 head(rr2, n=10)
 
 ```
@@ -202,12 +201,17 @@ The following combines the bar charts and tables for the #rhoareunion and #rhobh
 
 ```{r combine_bar_charts}
 
-t <- merge(trend_words_sentiment, bh_trend_words_sentiment, by="sentiment")
+mt <- merge(trend_words_sentiment, bh_trend_words_sentiment, by="sentiment")
 
 str(mt)
 
-mt_melt <- melt(mt[,c('sentiment', 'perc.x', 'perc.y')])
+mt$perc.x <- as.numeric(gsub("%$", "", mt$perc.x))
+mt$perc.y <- as.numeric(gsub("%$", "", mt$perc.y))
 
+mt$var <- mt$perc.x - mt$perc.y
+
+mt_melt <- melt(mt[c(1,3,5)], id=c('sentiment'))
+str(mt_melt)
 mt_melt$variable <- gsub("^perc.x$", "rhoareunion", mt_melt$variable)
 mt_melt$variable <- gsub("^perc.y$", "rhobhreunion", mt_melt$variable)
 mt_melt$sentiment <- gsub("^negative$", "01-negative", mt_melt$sentiment)
@@ -226,13 +230,13 @@ mt_melt
 
 
 mt_melt <- mt_melt %>%
-            arrange(variable, desc(value))
+            arrange(sentiment, desc(value))
 
 ggplot(mt_melt, aes(x=sentiment, y=value)) + 
                 geom_bar(aes(fill=variable), stat="identity", position="dodge") + 
                theme(axis.text.x = element_text(angle=45, hjust=1)) 
+str(mt)
 
-mt$var <- mt$perc.x - mt$perc.y
 
 
 names(mt)[2] <- "rhoa_words"
@@ -240,8 +244,12 @@ names(mt)[3] <- "rhoa_perc"
 names(mt)[4] <- "rhobh_words"
 names(mt)[5] <- "rhobh_perc"
 
-mt$rhoa_perc <- as.numeric(paste(as.numeric(format(round(mt$rhoa_perc,2), nsmall = 2)) * 100, "%", sep=""))
-mt$rhobh_perc <- as.numeric(paste(as.numeric(format(round(mt$rhobh_perc,2), nsmall = 2)) * 100, "%", sep=""))
+str(mt)
+
+mt$rhoa_perc <- paste(mt$rhoa_perc, "%", sep="")
+mt$rhobh_perc <- paste(mt$rhobh_perc, "%", sep="")
+
+
 
 kable(mt)
 ```
