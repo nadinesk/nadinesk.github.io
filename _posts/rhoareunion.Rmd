@@ -2,7 +2,7 @@
 title: "RHOA Reunion"
 author: "Nadine"
 date: "May 8, 2017"
-output: html_document
+output: github_document
 ---
 
 #Packages
