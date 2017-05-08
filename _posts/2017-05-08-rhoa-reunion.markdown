@@ -2,9 +2,8 @@
 title: "RHOA Reunion"
 author: "Nadine"
 date: "May 7, 2017"
-output:
-  pdf_document: default
-  html_document: default
+output:github_document
+
 ---
 
 # Overview
@@ -40,23 +39,6 @@ I used a comparison of the #rhobhreunion tweets, even though that aired last wee
 *  library(tidytext)
 *  library(reshape2)
 *  library(scales)
-
-```{r setup, include=FALSE}
-library(dplyr)
-library(purrr)
-library(twitteR)
-library(tidyr)
-library(lubridate)
-library(scales)
-library(ggplot2)
-library(stringr)
-library(tidytext)
-library(reshape2)
-library(scales)
-library(knitr)
-library(rmarkdown)
-
-```
 
 ## Setup
 
