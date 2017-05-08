@@ -1,7 +1,7 @@
 ---
 title: "RHOA Reunion"
 author: "Nadine"
-date: "May 8, 2017"
+date: "May 7, 2017"
 output:
   pdf_document: default
   html_document: default
