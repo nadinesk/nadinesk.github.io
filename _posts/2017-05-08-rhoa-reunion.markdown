@@ -62,11 +62,7 @@ library(rmarkdown)
 
 Authenicate app. 
 
-```{r include=FALSE}
-setup_twitter_oauth("YzDrMmjsdPajxmuMXGrfZz2zB", "fDK3UJOuUnp1OF8Dd91RSsFcKeB1tQ53W9FKoqxu7mKcY0efQh", "499964206-UwcPxJM1hr2iQ0aTAgUev8hdOptejKkNkBmrn2Nu", "785vZOkgTGramES0HsjJ7TBFibUhjs274KL5XxdlPjnfC")
-```
-
-## Get #rhoareunion tweets
+## Get rhoareunion tweets
 
 Get the 5,000 most recent tweets with the #rhoareunion hashtag. 
 
