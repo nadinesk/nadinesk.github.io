@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "test"
-date: 2017-05-11 00:00:00
-categories: r, data, twitter, twitter data, rhoa
+title:  "testing"
+date:   2017-05-11 00:00:00
+categories: r, data, twitter, twitter data, trump, clinton, election, convention speeches, politics
 ---
 
 # Overview
