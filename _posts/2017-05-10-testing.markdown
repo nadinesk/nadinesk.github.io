@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "testing"
-date:   2017-05-11 00:00:00
+date:   2017-05-10 01:00:00
 categories: r, data, twitter, twitter data, trump, clinton, election, convention speeches, politics
 ---
 
