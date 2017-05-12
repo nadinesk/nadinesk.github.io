@@ -96,31 +96,20 @@ Sheree had the least words, with 193 words. 10%, or 21, of her words were includ
 
 The code is also located in this github repository: [rhoa_cast_tweets](https://github.com/nadinesk/rhoa_cast_tweets)
 
-    library(dplyr)
-    library(purrr)
-    library(twitteR)
-    library(tidyr)
-    library(lubridate)
-    library(scales)
-    library(ggplot2)
-    library(stringr)
-    library(tidytext)
-    library(reshape2)
-    library(scales)
+{% highlight r %}
+
+library(dplyr)
+library(purrr)
+library(twitteR)
+
+kb2 <- kb1[c(1)]
 
 
-
-
-    kb <- userTimeline("kandi", n= 3200)
-
-    kb1 <- do.call("rbind", lapply(kb, as.data.frame))
-
-    kb2 <- kb1[c(1)]
-
-
-    nrc <- sentiments %>%
-      filter(lexicon == "nrc") %>%
-      dplyr::select(word, sentiment)
+nrc <- sentiments %>%
+   filter(lexicon == "nrc") %>%
+   dplyr::select(word, sentiment)
+      
+{% endhighlight %}
 
 
     kb3 <- kb2 %>%
