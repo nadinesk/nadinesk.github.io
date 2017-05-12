@@ -1,0 +1,23 @@
+---
+layout: post
+title: "test"
+date: 2017-05-11 00:00:00
+categories: r, data, twitter, twitter data, rhoa
+---
+
+# Overview
+
+The cast of the Real Housewives of Atlanta all have Twitter accounts and tweet with varying frequency; and express differing degrees of sentiments, as categorized by the [NRC Emotion Lexicon](http://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm), and represented in the [TidyText package](https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html). 
+
+
+# The Code
+
+The code is also located in this github repository: [rhoa_cast_tweets](https://github.com/nadinesk/rhoa_cast_tweets)
+
+{% highlight r %}
+library(dplyr)
+library(tidytext)
+
+
+{% endhighlight %}
+    
