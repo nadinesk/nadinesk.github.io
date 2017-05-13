@@ -408,7 +408,7 @@ tbl_df(month3.2)
 
 {% endhighlight %}
 
-![months_complaints](http://khasachi.com/images/months1.png))
+![months_complaints](https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/months1.png)
 
 {% highlight text }
 
@@ -427,9 +427,6 @@ tbl_df(month3.2)
 ##10 Noise - Residential     10     freq  64903
 ##11      HEAT/HOT WATER     11     freq  98520
 ##12      HEAT/HOT WATER     12     freq  96917
-
-
-
 
 
 {% endhighlight}
