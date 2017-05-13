@@ -92,72 +92,35 @@ tbl_df(month3.2)
 
 {% endhighlight %}
 
+## Time of day
 
-# Get Data!
+Complaints were filed mostly in the morning in 2013 and 2014, but in 2015, 2016, and YTD 2017, complaints are filed more in the afternoon. 
 
-But before I get ahead of myself, to get the data summarized data above, and to get the data below, first the setup. 
+{% highlight r%}
+## Get complaint types by morning or afternoon
 
-{% highlight r %}
+am_pm <- as.data.frame(table(df_comb2$am_pm1, df_comb2$year))
 
-library(RCurl) 
-library(dplyr)
-library(stringr)
-library(reshape)
-library(tidyr)
-library(ggplot2)
+str(am_pm)
 
-## Read Files
-df2017ytd <- read.csv("311_Service_Requests_from_2010_to_Present (2).csv")
-df2016 <- read.csv("311_Service_Requests_from_2010_to_Present.csv")
-df2013 <- read.csv("311_Service_Requests_from_2013.csv")
-df2014 <- read.csv("311_Service_Requests_from_2014 2.csv")
-df2015 <- read.csv("311_Service_Requests_from_2015.csv")
+## Group by year and complaint type, and sum number of complaints
 
-## Combine Files
-df_comb <- rbind(df2014,df2015, df2016, df2017ytd)
-df_comb1 <-rbind(df_comb, df2013)
+am_pm1 <- am_pm %>%
+          group_by(Var1, Var2) %>%
+          summarise(frequency = sum(Freq))
 
-## Split date column to month, day, year, time, and AM/PM
-df_comb1$month <- sapply(strsplit(as.character(df_comb1$Created.Date),'/'), "[", 1)
-df_comb1$day <- sapply(strsplit(as.character(df_comb1$Created.Date),'/'), "[", 2)
-df_comb1$year <- sapply(strsplit(as.character(df_comb1$Created.Date),'/'), "[", 3)
+head(am_pm1)
 
-df_comb1$time <- sapply(strsplit(as.character(df_comb1$Created.Date),' '), "[", 1)
-df_comb1$am_pm <- sapply(strsplit(as.character(df_comb1$Created.Date),' '), "[", 2)
-df_comb1$am_pm1 <- sapply(strsplit(as.character(df_comb1$Created.Date),' '), "[", 3)
+am_pm1
 
-## Get only columns needed
-
-df_comb2 <- df_comb1[c(1:9,17,19,25,54:57,59:60)]
-
-## Replace NA's to 0's
-df_comb2[is.na(df_comb2)] <- 0
+## Plot complaints by time of day
+ggplot(data=am_pm1, aes(x=Var2, y=frequency, fill=Var1)) + 
+  geom_bar(stat="identity", position=position_dodge()) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
 
 {% endhighlight %}
 
 
-{% highlight text %}
-
-## A tibble: 9,445,206 x 18
-##   Unique.Key           Created.Date            Closed.Date Agency
-##*       <int>                 <fctr>                 <fctr> <fctr>
-##1    28457271 07/11/2014 03:08:58 PM 08/05/2014 12:41:37 PM    DOT
-##2    28644314 08/08/2014 02:06:22 PM 08/12/2014 11:33:34 AM    DCA
-##3    29306886 11/18/2014 12:52:40 AM 11/18/2014 01:35:22 AM   NYPD
-##4    28907593 09/18/2014 01:45:51 PM 09/22/2014 02:43:43 PM   FDNY
-##5    28908228 09/18/2014 06:43:00 PM 09/18/2014 06:43:57 PM    HRA
-##6    29423275 12/04/2014 12:45:08 AM 12/04/2014 07:22:41 AM   NYPD
-##7    29419044 12/03/2014 02:08:52 PM 12/03/2014 05:23:13 PM   NYPD
-##8    27768554 04/02/2014 07:46:56 PM 04/03/2014 08:00:27 AM    DOT
-##9    28254593 06/13/2014 03:17:13 PM 07/22/2014 12:22:11 PM  DOHMH
-##10   27982973 05/05/2014 11:42:00 AM 05/12/2014 10:47:32 AM    DOT
-### ... with 9,445,196 more rows, and 14 more variables: Agency.Name <fctr>, Complaint.Type <fctr>,
-###   Descriptor <fctr>, Location.Type <fctr>, Incident.Zip <fctr>, City <fctr>, Facility.Type <fctr>,
-###   Borough <fctr>, month <chr>, day <chr>, year <chr>, time <chr>, am_pm <chr>, am_pm1 <chr>
-
-{% endhighlight %}
-
-
+![am.pm_complaints](https://raw.githubusercontent.com/nadinesk/nyc_openData311/master/charts/am_pm.png)
 
 # Complaint with Biggest Increase
 
@@ -213,7 +176,6 @@ ggplot(data=year.comp_type.long_top5_percChange.long, aes(x=variable, y=value, g
 5##  Unsanitary Animal Pvt Property  1996  2108  2329  2181  9.2685370741483
 
 {% endhighlight %}
-
 
 ## Borough
 
@@ -408,34 +370,80 @@ ggplot(data=borough_top5_1, aes(x=Var2, y=Frequency.y, fill=Var1.y)) +
 ![all_boroughs](https://raw.githubusercontent.com/nadinesk/nyc_openData311/master/charts/all_boroughs.png)
 
 
-## Time of day
 
-Complaints were filed mostly in the morning in 2013 and 2014, but in 2015, 2016, and YTD 2017, complaints are filed more in the afternoon. 
+# Get Data!
 
-{% highlight r%}
-## Get complaint types by morning or afternoon
+To get the data summarized above, here is the set up. 
 
-am_pm <- as.data.frame(table(df_comb2$am_pm1, df_comb2$year))
+{% highlight r %}
 
-str(am_pm)
+library(RCurl) 
+library(dplyr)
+library(stringr)
+library(reshape)
+library(tidyr)
+library(ggplot2)
 
-## Group by year and complaint type, and sum number of complaints
+## Read Files
+df2017ytd <- read.csv("311_Service_Requests_from_2010_to_Present (2).csv")
+df2016 <- read.csv("311_Service_Requests_from_2010_to_Present.csv")
+df2013 <- read.csv("311_Service_Requests_from_2013.csv")
+df2014 <- read.csv("311_Service_Requests_from_2014 2.csv")
+df2015 <- read.csv("311_Service_Requests_from_2015.csv")
 
-am_pm1 <- am_pm %>%
-          group_by(Var1, Var2) %>%
-          summarise(frequency = sum(Freq))
+## Combine Files
+df_comb <- rbind(df2014,df2015, df2016, df2017ytd)
+df_comb1 <-rbind(df_comb, df2013)
 
-head(am_pm1)
+## Split date column to month, day, year, time, and AM/PM
+df_comb1$month <- sapply(strsplit(as.character(df_comb1$Created.Date),'/'), "[", 1)
+df_comb1$day <- sapply(strsplit(as.character(df_comb1$Created.Date),'/'), "[", 2)
+df_comb1$year <- sapply(strsplit(as.character(df_comb1$Created.Date),'/'), "[", 3)
 
-am_pm1
+df_comb1$time <- sapply(strsplit(as.character(df_comb1$Created.Date),' '), "[", 1)
+df_comb1$am_pm <- sapply(strsplit(as.character(df_comb1$Created.Date),' '), "[", 2)
+df_comb1$am_pm1 <- sapply(strsplit(as.character(df_comb1$Created.Date),' '), "[", 3)
 
-## Plot complaints by time of day
-ggplot(data=am_pm1, aes(x=Var2, y=frequency, fill=Var1)) + 
-  geom_bar(stat="identity", position=position_dodge()) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
+## Get only columns needed
+
+df_comb2 <- df_comb1[c(1:9,17,19,25,54:57,59:60)]
+
+## Replace NA's to 0's
+df_comb2[is.na(df_comb2)] <- 0
 
 {% endhighlight %}
 
 
-![am.pm_complaints](https://raw.githubusercontent.com/nadinesk/nyc_openData311/master/charts/am_pm.png)
+{% highlight text %}
+
+## A tibble: 9,445,206 x 18
+##   Unique.Key           Created.Date            Closed.Date Agency
+##*       <int>                 <fctr>                 <fctr> <fctr>
+##1    28457271 07/11/2014 03:08:58 PM 08/05/2014 12:41:37 PM    DOT
+##2    28644314 08/08/2014 02:06:22 PM 08/12/2014 11:33:34 AM    DCA
+##3    29306886 11/18/2014 12:52:40 AM 11/18/2014 01:35:22 AM   NYPD
+##4    28907593 09/18/2014 01:45:51 PM 09/22/2014 02:43:43 PM   FDNY
+##5    28908228 09/18/2014 06:43:00 PM 09/18/2014 06:43:57 PM    HRA
+##6    29423275 12/04/2014 12:45:08 AM 12/04/2014 07:22:41 AM   NYPD
+##7    29419044 12/03/2014 02:08:52 PM 12/03/2014 05:23:13 PM   NYPD
+##8    27768554 04/02/2014 07:46:56 PM 04/03/2014 08:00:27 AM    DOT
+##9    28254593 06/13/2014 03:17:13 PM 07/22/2014 12:22:11 PM  DOHMH
+##10   27982973 05/05/2014 11:42:00 AM 05/12/2014 10:47:32 AM    DOT
+### ... with 9,445,196 more rows, and 14 more variables: Agency.Name <fctr>, Complaint.Type <fctr>,
+###   Descriptor <fctr>, Location.Type <fctr>, Incident.Zip <fctr>, City <fctr>, Facility.Type <fctr>,
+###   Borough <fctr>, month <chr>, day <chr>, year <chr>, time <chr>, am_pm <chr>, am_pm1 <chr>
+
+{% endhighlight %}
+
+
+
+
+
+
+
+
+
+
+
 
 
