@@ -95,7 +95,7 @@ tbl_df(month3.2)
 
 # Get Data!
 
-But before I get ahead of myself, to get the data summarized data above, and to get the data above, first the setup. 
+But before I get ahead of myself, to get the data summarized data above, and to get the data below, first the setup. 
 
 {% highlight r %}
 
