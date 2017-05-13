@@ -5,10 +5,17 @@ date: 2017-05-13 00:00:00
 categories: r, data, twitter, twitter data, rhoa
 ---
 
-[NYC Open Data](https://opendata.cityofnewyork.us/data/) includes data on [311 Service Requests](https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9). I used at this dataset to look at complaint types over time, by borough, and time of day. I looked at data from 2013 to May 2017. 
-NYC Open Data (link) 311 dataset. 
+[NYC Open Data](https://opendata.cityofnewyork.us/data/) includes data on [311 Service Requests](https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9). 
 
-## Biggest Complaint
+I used at this dataset to look at complaint types: 
+* over time 
+* by month
+* by borough
+* time of day. 
+
+I looked at data from 2013 to May 2017. 
+
+# Biggest Complaint
 
 There were 275 different complaint types. The most frequent complaint during this time period was Residental Noise, with 848,649 complaints. 
 
@@ -40,9 +47,55 @@ biggest_complaint1 <- biggest_complaint %>%
 
 {% endhighlight %}
 
-## Get Data
+# Complaints by Month
 
-But before I get ahead of myself, to get the data summarized data above, first the setup. 
+Heat/Hot Water was the biggest complaints for the winter months (Jan-March, Nov-Dec). Residential Noise was the biggest complaint for the other months, April to October. 
+
+January had the most complaints, and October had the least, from 2013 to May 2017. 
+
+
+{% highlight r %}
+month3.1 <- month1 %>%
+              group_by(Var1, Var2) %>%
+              summarise(freq  = sum(Freq)) %>%
+              arrange(Var2, desc(freq))
+
+    
+tbl_df(month3.1)
+
+month3.2 <- month3.1[!duplicated(month3.1$Var2), ]
+    
+tbl_df(month3.2)
+
+{% endhighlight %}
+
+![months_complaints](https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/months1.png)
+
+{% highlight text %}
+
+## A tibble: 12 x 4
+##                  Var1   Var2 variable  value
+##                <fctr> <fctr>   <fctr>  <int>
+##1       HEAT/HOT WATER     01     freq 131518
+##2       HEAT/HOT WATER     02     freq 111072
+##3       HEAT/HOT WATER     03     freq  86287
+##4  Noise - Residential     04     freq  81390
+##5  Noise - Residential     05     freq  84272
+##6  Noise - Residential     06     freq  73153
+##7  Noise - Residential     07     freq  67008
+##8  Noise - Residential     08     freq  71881
+##9  Noise - Residential     09     freq  70231
+##10 Noise - Residential     10     freq  64903
+##11      HEAT/HOT WATER     11     freq  98520
+##12      HEAT/HOT WATER     12     freq  96917
+
+
+{% endhighlight %}
+
+
+# Get Data!
+
+But before I get ahead of myself, to get the data summarized data above, and to get the data above, first the setup. 
 
 {% highlight r %}
 
@@ -106,7 +159,7 @@ df_comb2[is.na(df_comb2)] <- 0
 
 
 
-## Complaint with Biggest Increase
+# Complaint with Biggest Increase
 
 The complaint with the biggest percentage increase from 2013 to 2016 was Homeless Person Assistance, which increased by 9,923.5%, from 456 in 2013 to 45,707 complaint in 2016. 
 
@@ -385,49 +438,4 @@ ggplot(data=am_pm1, aes(x=Var2, y=frequency, fill=Var1)) +
 
 ![am.pm_complaints](https://raw.githubusercontent.com/nadinesk/nyc_openData311/master/charts/am_pm.png)
 
-
-## Complaints by Month
-
-Heat/Hot Water was the biggest complaints for the winter months (Jan-March, Nov-Dec). Residential Noise was the biggest complaint for the other months, April to October. 
-
-January had the most complaints, and October had the least, from 2013 to May 2017. 
-
-
-{% highlight r %}
-month3.1 <- month1 %>%
-              group_by(Var1, Var2) %>%
-              summarise(freq  = sum(Freq)) %>%
-              arrange(Var2, desc(freq))
-
-    
-tbl_df(month3.1)
-
-month3.2 <- month3.1[!duplicated(month3.1$Var2), ]
-    
-tbl_df(month3.2)
-
-{% endhighlight %}
-
-![months_complaints](https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/months1.png)
-
-{% highlight text %}
-
-## A tibble: 12 x 4
-##                  Var1   Var2 variable  value
-##                <fctr> <fctr>   <fctr>  <int>
-##1       HEAT/HOT WATER     01     freq 131518
-##2       HEAT/HOT WATER     02     freq 111072
-##3       HEAT/HOT WATER     03     freq  86287
-##4  Noise - Residential     04     freq  81390
-##5  Noise - Residential     05     freq  84272
-##6  Noise - Residential     06     freq  73153
-##7  Noise - Residential     07     freq  67008
-##8  Noise - Residential     08     freq  71881
-##9  Noise - Residential     09     freq  70231
-##10 Noise - Residential     10     freq  64903
-##11      HEAT/HOT WATER     11     freq  98520
-##12      HEAT/HOT WATER     12     freq  96917
-
-
-{% endhighlight %}
 
