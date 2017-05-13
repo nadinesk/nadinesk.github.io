@@ -298,7 +298,7 @@ b3_manh <- b3 %>%
 
 ### Queens
 
-{% highlight r}
+{% highlight r %}
 
 ## Get Queen's top five complaints, and add back in the number of those complaints for the other boroughs (the inner join)
 
@@ -337,7 +337,7 @@ b3_si <- b3 %>%
 ### Borough Comparison
 
 
-{% highlight r}
+{% highlight r %}
 ## Combine all top 5's together
 
 
@@ -359,7 +359,7 @@ ggplot(data=borough_top5_1, aes(x=Var2, y=Frequency.y, fill=Var1.y)) +
 
 Complaints were filed mostly in the morning in 2013 and 2014, but in 2015, 2016, and YTD 2017, complaints are filed more in the afternoon. 
 
-{% highlight r}
+{% highlight r%}
 ## Get complaint types by morning or afternoon
 
 am_pm <- as.data.frame(table(df_comb2$am_pm1, df_comb2$year))
@@ -393,7 +393,7 @@ Heat/Hot Water was the biggest complaints for the winter months (Jan-March, Nov-
 January had the most complaints, and October had the least, from 2013 to May 2017. 
 
 
-{% highlight r $}
+{% highlight r %}
 month3.1 <- month1 %>%
               group_by(Var1, Var2) %>%
               summarise(freq  = sum(Freq)) %>%
@@ -410,7 +410,7 @@ tbl_df(month3.2)
 
 ![months_complaints](https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/months1.png)
 
-{% highlight text }
+{% highlight text %}
 
 ## A tibble: 12 x 4
 ##                  Var1   Var2 variable  value
@@ -429,5 +429,5 @@ tbl_df(month3.2)
 ##12      HEAT/HOT WATER     12     freq  96917
 
 
-{% endhighlight}
+{% endhighlight %}
 
