@@ -1,17 +1,48 @@
 ---
 layout: post
-title: "RHOA Cast Tweets"
-date: 2017-05-10 00:00:00
+title: "NYC 311 Open Data"
+date: 2017-05-13 00:00:00
 categories: r, data, twitter, twitter data, rhoa
 ---
 
 [NYC Open Data](https://opendata.cityofnewyork.us/data/) includes data on [311 Service Requests](https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9). I used at this dataset to look at complaint types over time, by borough, and time of day. I looked at data from 2013 to May 2017. 
 NYC Open Data (link) 311 dataset. 
 
+## Biggest Complaint
 
-First, the setup. 
+There were 275 different complaint types. The most frequent complaint during this time period was Residental Noise, with 848,649 complaints. 
 
-#### Get and Clean the Data
+{% highlight r %}
+
+biggest_complaint <- as.data.frame(table(df_comb2$Complaint.Type))
+
+biggest_complaint1 <- biggest_complaint %>%
+                        arrange(desc(Freq))
+
+{% endhighlight %}
+
+{% highlight text %}
+
+## A tibble: 275 x 2
+##                      Var1   Freq
+##                    <fctr>  <int>
+## 1     Noise - Residential 848649
+## 2          HEAT/HOT WATER 688968
+## 3        Street Condition 444825
+## 4  Street Light Condition 404171
+## 5        Blocked Driveway 401503
+## 6         Illegal Parking 369456
+## 7                 HEATING 300493
+## 8                PLUMBING 276949
+## 9            Water System 273922
+## 10   UNSANITARY CONDITION 251285
+## ... with 265 more rows
+
+{% endhighlight %}
+
+## Get Data
+
+But before I get ahead of myself, to get the data summarized data above, first the setup. 
 
 {% highlight r %}
 
@@ -74,37 +105,6 @@ df_comb2[is.na(df_comb2)] <- 0
 {% endhighlight %}
 
 
-## Biggest Complaint
-
-There were 275 different complaint types. The most frequent complaint during this time period was Residental Noise, with 848,649 complaints. 
-
-{% highlight r %}
-
-biggest_complaint <- as.data.frame(table(df_comb2$Complaint.Type))
-
-biggest_complaint1 <- biggest_complaint %>%
-                        arrange(desc(Freq))
-
-{% endhighlight %}
-
-{% highlight text %}
-
-## A tibble: 275 x 2
-##                      Var1   Freq
-##                    <fctr>  <int>
-## 1     Noise - Residential 848649
-## 2          HEAT/HOT WATER 688968
-## 3        Street Condition 444825
-## 4  Street Light Condition 404171
-## 5        Blocked Driveway 401503
-## 6         Illegal Parking 369456
-## 7                 HEATING 300493
-## 8                PLUMBING 276949
-## 9            Water System 273922
-## 10   UNSANITARY CONDITION 251285
-## ... with 265 more rows
-
-{% endhighlight %}
 
 ## Complaint with Biggest Increase
 
