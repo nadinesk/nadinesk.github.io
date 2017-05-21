@@ -6,7 +6,7 @@ categories: sinatra, ruby, mvc, crud, programming
 ---
 
 # Project
-I create a [MVC Sinatra CRUD App](https://github.com/nadinesk/preschool_list), where logged-in users with an account can create a list of preschools, and view all preschools added by other users. Preschools can only be edited and deleted by the signed-in user. 
+I created a [MVC Sinatra CRUD App](https://github.com/nadinesk/preschool_list), where logged-in users with an account can create a list of preschools, and view all preschools added by other users. Preschools can only be edited and deleted by the signed-in user. 
 
 ## Actions
 * A user can add a preschool and information about each preschool: name, address, cost, and a summary. 
@@ -104,5 +104,5 @@ A post request processes the forms, using parameters from the form, for creating
   * show.erb -> show one preschool
   * user_preschoools.erb -> show all preschools for just the user 
 
-  
+
 
