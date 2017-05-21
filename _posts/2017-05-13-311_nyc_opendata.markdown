@@ -1,108 +1,448 @@
 ---
 layout: post
-title: "MVC Sinatra CRUD App"
-date: 2017-05-19 00:00:00
-categories: sinatra, ruby, mvc, crud, programming
+title: "NYC 311 Open Data"
+date: 2017-05-13 00:00:00
+categories: r, data, twitter, twitter data, rhoa
 ---
 
-# Project
-I create a [MVC Sinatra CRUD App](https://github.com/nadinesk/preschool_list), where logged-in users with an account can create a list of preschools, and view all preschools added by other users. Preschools can only be edited and deleted by the signed-in user. 
+[NYC Open Data](https://opendata.cityofnewyork.us/data/) includes data on [311 Service Requests](https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9). 
 
-## Actions
-* A user can add a preschool and information about each preschool: name, address, cost, and a summary. 
-* A user can edit or delete a preschool after it has been added. 
+I used at this dataset to look at complaint types: 
+* over time 
+* by month
+* by borough
+* time of day. 
 
-View 
-* A user can view all preschools added by other users. 
-* A user can view just the preschools they have added.
-* A user can view just one preschool they have added. 
+I looked at data from 2013 to May 2017. 
 
-## Security
-The app includes secure passwords, using the `bcrypt` gem. 
+# Biggest Complaint
 
-# Process 
+There were 275 different complaint types. The most frequent complaint during this time period was Residental Noise, with 848,649 complaints. 
 
-## Project structure
+{% highlight r %}
 
-```
-├── preschool_list
-│   ├── .bundle
-│   │   ├── config
-│   ├── app
-│   │   ├── controllers
-│   │   │   ├── applicaiton_controller.rb
-│   │   │   ├── preschools_controller.rb
-│   │   │   ├── users_controller.rb
-│   │   ├── models
-│   │   │   ├── preschool.rb
-│   │   │   ├── user.rb
-│   │   ├── views
-│   │   │   ├── preschools
-│   │   │   │   ├──create.erb
-│   │   │   │   ├──edit.erb
-│   │   │   │   ├──preschools.erb
-│   │   │   │   ├──show.erb
-│   │   │   │   ├──user_preschools.erb
-│   │   │   ├── users
-│   │   │   │   ├──login.erb
-│   │   │   │   ├──signup.erb
-│   │   ├── index.erb
-│   │   ├── layout.erb
-│   ├── config
-│   │   ├── environment.rb
-│   ├── db
-│   │   ├── migrate
-│   │   │   ├──users_table.rb
-│   │   │   ├──preschools_table.rb
-│   ├── config.ru
-│   ├── Gemfile
-│   ├── Gemfile.lock
-│   ├── Rakefile
-│   ├── README.md
-│   ├── spec.md
-```
+biggest_complaint <- as.data.frame(table(df_comb2$Complaint.Type))
 
-## Create Tables
+biggest_complaint1 <- biggest_complaint %>%
+                        arrange(desc(Freq))
 
-I created two tables using `rake db:create_migration NAME=` for users and preschools, and ran these migrations with `rake db:migrate`. I had to add another migration to add the user_column to the preschool table.
+{% endhighlight %}
 
-## Models
+{% highlight text %}
 
-I created two models, Preschool and User. The User has_many Preschools, and Preschools belong_to a user. I added those Active Record methods to the Preschool (`belongs_to :user`) and User (`has_many :preschools`) models, along with the `has_secure_password` Active Record method, to the User model. 
+## A tibble: 275 x 2
+##                      Var1   Freq
+##                    <fctr>  <int>
+## 1     Noise - Residential 848649
+## 2          HEAT/HOT WATER 688968
+## 3        Street Condition 444825
+## 4  Street Light Condition 404171
+## 5        Blocked Driveway 401503
+## 6         Illegal Parking 369456
+## 7                 HEATING 300493
+## 8                PLUMBING 276949
+## 9            Water System 273922
+## 10   UNSANITARY CONDITION 251285
+## ... with 265 more rows
 
-## Controllers
+{% endhighlight %}
 
-This app contains three controllers: application_controller.rb, preschools_controller.rb, and users_controller.rb. The users and preschools application controllers inherit from application_controller.rb. 
+# Complaints by Month
 
-### Application_Controller.rb
+Heat/Hot Water was the biggest complaints for the winter months (Jan-March, Nov-Dec). Residential Noise was the biggest complaint for the other months, April to October. 
 
-This file contains the routes to get the home page, and helper methods to check if a user is logged in, and to get the current user. 
+January had the most complaints, and October had the least, from 2013 to May 2017. 
 
-### User_Controller.rb
 
-This file contains the routes to sign up, login, logout, and view the signed-in user's preschool list. 
+{% highlight r %}
+month3.1 <- month1 %>%
+              group_by(Var1, Var2) %>%
+              summarise(freq  = sum(Freq)) %>%
+              arrange(Var2, desc(freq))
 
-Get requests load the forms to sign up and login, and post requests process the sign-up and login parameters. 
+    
+tbl_df(month3.1)
 
-### Preschool_Controller.rb
+month3.2 <- month3.1[!duplicated(month3.1$Var2), ]
+    
+tbl_df(month3.2)
 
-This file contains the actions to view all preschools, create a new prechool, edit a preschool, view one preschool, and delete a preschool. 
+{% endhighlight %}
 
-Get requests load the page to view all preschools and view one single preschool; the edit form to edit one preschool; and the create form, to add a new preschool to the list. 
+![months_complaints](https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/months1.png)
 
-A post request processes the forms, using parameters from the form, for creating a new preschool. A patch request processes the form to edit an existing preschool from the list; and a delete request deletes a preschool from the user's list. 
+{% highlight text %}
 
-### View
+## A tibble: 12 x 4
+##                  Var1   Var2 variable  value
+##                <fctr> <fctr>   <fctr>  <int>
+##1       HEAT/HOT WATER     01     freq 131518
+##2       HEAT/HOT WATER     02     freq 111072
+##3       HEAT/HOT WATER     03     freq  86287
+##4  Noise - Residential     04     freq  81390
+##5  Noise - Residential     05     freq  84272
+##6  Noise - Residential     06     freq  73153
+##7  Noise - Residential     07     freq  67008
+##8  Noise - Residential     08     freq  71881
+##9  Noise - Residential     09     freq  70231
+##10 Noise - Residential     10     freq  64903
+##11      HEAT/HOT WATER     11     freq  98520
+##12      HEAT/HOT WATER     12     freq  96917
 
-* User views
-  * login.erb -> Login page
-  * signup.erb -> Signup page
-* Preschool views
-  * create.erb -> create a new preschool
-  * edit.erb -> edit a preschool
-  * preschools.erb -> view all preschools
-  * show.erb -> show one preschool
-  * user_preschoools.erb -> show all preschools for just the user 
 
-  
+{% endhighlight %}
+
+## Time of day
+
+Complaints were filed mostly in the morning in 2013 and 2014, but in 2015, 2016, and YTD 2017, complaints are filed more in the afternoon. 
+
+{% highlight r%}
+## Get complaint types by morning or afternoon
+
+am_pm <- as.data.frame(table(df_comb2$am_pm1, df_comb2$year))
+
+str(am_pm)
+
+## Group by year and complaint type, and sum number of complaints
+
+am_pm1 <- am_pm %>%
+          group_by(Var1, Var2) %>%
+          summarise(frequency = sum(Freq))
+
+head(am_pm1)
+
+am_pm1
+
+## Plot complaints by time of day
+ggplot(data=am_pm1, aes(x=Var2, y=frequency, fill=Var1)) + 
+  geom_bar(stat="identity", position=position_dodge()) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
+
+{% endhighlight %}
+
+
+![am.pm_complaints](https://raw.githubusercontent.com/nadinesk/nyc_openData311/master/charts/am_pm.png)
+
+# Complaint with Biggest Increase
+
+The complaint with the biggest percentage increase from 2013 to 2016 was Homeless Person Assistance, which increased by 9,923.5%, from 456 in 2013 to 45,707 complaint in 2016. 
+
+{% highlight r %}
+
+## Look at the number of each type of complaint per year
+year.comp_type <- as.data.frame(table(df_comb2$year, df_comb2$Complaint.Type))
+
+## Reshape from long to wide format
+year.comp_type.long <- spread(year.comp_type, Var1, Freq)
+
+## Get row sums (total for each complaint)
+
+year.comp_type.long1$sum <- rowSums(year.comp_type.long1[2:6])
+
+## Get percentage change of each complaint type, from 2013 to 2016
+year.comp_type.long1$perc.change <- ((year.comp_type.long1$`2016` - year.comp_type.long1$`2013`)/year.comp_type.long1$`2013`) * 100
+
+## Replace percentage changes of NaN with 0
+year.comp_type.long1$perc.change <- gsub("NaN", "0", year.comp_type.long1$perc.change)
+## Replace percentage changes of Inf with 1
+year.comp_type.long1$perc.change <- gsub("Inf", "1", year.comp_type.long1$perc.change)
+
+## Sort data descending by percentage change, and keep only the top five rows
+year.comp_type.long_top5_percChange <- year.comp_type.long1 %>%
+  arrange(desc(`perc.change`))%>%
+  slice(1:5) %>%
+  select(-`2017`, -sum)
+
+## Reshape data from wide to long
+year.comp_type.long_top5_percChange.long <- melt(year.comp_type.long_top5_percChange)
+
+## Create bar chart showing change in complaint types over year, for complaint types with  five highest percentage changes 
+ggplot(data=year.comp_type.long_top5_percChange.long, aes(x=variable, y=value, group= Var2, color= Var2)) +
+  geom_line() +
+  geom_point()
+
+{% endhighlight %}
+
+![year_comparison](https://raw.githubusercontent.com/nadinesk/nyc_openData311/master/charts/comp_year.png)
+
+{% highlight text %}
+
+## A tibble: 5 x 6
+##                             Var2  2013  2014  2015  2016      perc.change
+##                           <fctr> <int> <int> <int> <int>            <chr>
+## 1     Homeless Person Assistance   456  1883  6505 45707  9923.4649122807
+## 2    Non-Emergency Police Matter  4648  6744  7506  9223 98.4294320137694
+## 3  DOF Property - Property Value   110   199   119   216 96.3636363636364
+## 4          Posting Advertisement   106   120   681  1100 937.735849056604
+5##  Unsanitary Animal Pvt Property  1996  2108  2329  2181  9.2685370741483
+
+{% endhighlight %}
+
+## Borough
+
+Brooklyn had the most complaints, with 2,834,130 complaints, followed by Queens, Manhattan, the Bronx, and Staten Island. 
+
+{% highlight r %}
+
+complaint_borough_summary <- as.data.frame(table(df_comb2$Borough))
+
+complaint_borough_summary1<- complaint_borough_summary %>%
+                                arrange(desc(Freq))
+
+tbl_df(complaint_borough_summary1)
+
+{% endhighlight %}
+
+
+{% highlight text %}
+
+# A tibble: 6 x 2
+           Var1    Freq
+         <fctr>   <int>
+1      BROOKLYN 2834130
+2        QUEENS 2079916
+3     MANHATTAN 1971470
+4         BRONX 1746389
+5 STATEN ISLAND  444498
+6   Unspecified  368803
+
+{% endhighlight %}
+
+The biggest complaints by borough were: 
+*  Residential Noise in Brooklyn and Manhattan (256,618 in Brooklyn, 196,582 in Manhattan);
+*  Heat/Hot Water in the Bronx (225,871 complaints; 
+*  Blocked Driveway in Queens (164,471 complaints); 
+*  Streen condition in Staten Island (58,964 complaints) 
+
+### Bronx
+
+{% highlight r %}
+
+
+# Get frequency of each complaint type by borough
+
+b1 <- as.data.frame(table(df_comb2$Borough, df_comb2$Complaint.Type))
+b1
+
+## Group and Sum
+b2 <- b1 %>%
+        group_by(Var1, Var2) %>%
+        summarise(Frequency = sum(Freq))
+
+b3 <- b2 %>%
+        arrange(Var1, desc(Frequency))
+
+
+
+## Get the Bronx's top five complaints, and add back in the number of those complaints for the other boroughs (the inner join)
+
+b3_bronx1 <- b3 %>%
+  filter(Var1=="BRONX") %>%
+  arrange(desc(Frequency)) %>%
+  slice(1:5) 
+
+tbl_df(b3_bronx1)
+
+b3_bronx <- b3 %>%
+              filter(Var1=="BRONX") %>%
+              arrange(desc(Frequency)) %>%
+              slice(1:5) %>%
+              inner_join(b2, by=c("Var2"))
+
+
+{% endhighlight %}
+
+{% highlight text %}
+
+## A tibble: 5 x 3
+##    Var1                   Var2 Frequency
+##  <fctr>                 <fctr>     <int>
+##1  BRONX         HEAT/HOT WATER    225871
+##2  BRONX    Noise - Residential    205636
+##3  BRONX                HEATING    102574
+##4  BRONX               PLUMBING     85879
+##5  BRONX Street Light Condition     77134
+
+{% endhighlight %}
+
+
+### Brooklyn
+
+{% highlight r %}
+
+## Get Brooklyn's top five complaints, and add back in the number of those complaints for the other boroughs (the inner join)
+b3_brooklyn <- b3 %>%
+  filter(Var1=="BROOKLYN") %>%
+  arrange(desc(Frequency)) %>%
+  slice(1:5) %>%
+  inner_join(b2, by=c("Var2"))
+
+## Plot Brooklyn's top 5 complaints
+ggplot(data=b3_brooklyn, aes(x=Var2, y=Frequency.y, fill=Var1.y)) + 
+  geom_bar(stat="identity", position=position_dodge()) 
+
+{% endhighlight %}
+
+![brooklyn_complaints](https://raw.githubusercontent.com/nadinesk/nyc_openData311/master/charts/brooklyn.png)
+
+{% highlight text %}
+
+## A tibble: 5 x 3
+##      Var1                Var2 Frequency
+##    <fctr>              <fctr>     <int>
+##1 BROOKLYN Noise - Residential    256618
+##2 BROOKLYN      HEAT/HOT WATER    207894
+##3 BROOKLYN    Blocked Driveway    146749
+##4 BROOKLYN     Illegal Parking    135967
+##5 BROOKLYN    Street Condition    124929
+
+{% endhighlight %}
+
+### Manhattan
+
+{% highlight r %}
+## Get Manhattan's top five complaints, and add back in the number of those complaints for the other boroughs (the inner join)
+b3_manh <- b3 %>%
+  filter(Var1=="MANHATTAN") %>%
+  arrange(desc(Frequency)) %>%
+  slice(1:5) %>%
+  inner_join(b2, by=c("Var2"))
+
+
+{% endhighlight %}
+
+
+### Queens
+
+{% highlight r %}
+
+## Get Queen's top five complaints, and add back in the number of those complaints for the other boroughs (the inner join)
+
+b3_queens <- b3 %>%
+  filter(Var1=="QUEENS") %>%
+  arrange(desc(Frequency)) %>%
+  slice(1:5) %>%
+  inner_join(b2, by=c("Var2"))
+
+{% endhighlight %}
+
+{% highlight text %}
+## A tibble: 5 x 3
+##    Var1                   Var2 Frequency
+##  <fctr>                 <fctr>     <int>
+##1 QUEENS       Blocked Driveway    164471
+##2 QUEENS    Noise - Residential    162566
+##3 QUEENS       Street Condition    137251
+##4 QUEENS Street Light Condition    127942
+##5 QUEENS        Illegal Parking    108240
+
+{% endhighlight %} 
+
+### Staten Island
+
+{% highlight r %}
+## Get Staten Island's top five complaints, and add back in the number of those complaints for the other boroughs (the inner join)
+b3_si <- b3 %>%
+  filter(Var1=="STATEN ISLAND") %>%
+  arrange(desc(Frequency)) %>%
+  slice(1:5) %>%
+  inner_join(b2, by=c("Var2"))
+
+{% endhighlight %}
+
+### Borough Comparison
+
+
+{% highlight r %}
+## Combine all top 5's together
+
+
+borough_top5 <- rbind(b3_bronx, b3_brooklyn, b3_manh, b3_queens, b3_si)
+
+# borough_top5_1 <- borough_top5 %>%
+#   inner_join(b2, by=c("Var2"))
+
+## Plot all boroughs' top 5 complaints
+ggplot(data=borough_top5_1, aes(x=Var2, y=Frequency.y, fill=Var1.y)) + 
+  geom_bar(stat="identity", position=position_dodge()) + theme(axis.text.x = element_text(angle = 45, hjust = 1)) + facet_grid(Var1.y ~. )
+
+{% endhighlight %}
+
+![all_boroughs](https://raw.githubusercontent.com/nadinesk/nyc_openData311/master/charts/all_boroughs.png)
+
+
+
+# Get Data!
+
+To get the data summarized above, here is the set up. 
+
+{% highlight r %}
+
+library(RCurl) 
+library(dplyr)
+library(stringr)
+library(reshape)
+library(tidyr)
+library(ggplot2)
+
+## Read Files
+df2017ytd <- read.csv("311_Service_Requests_from_2010_to_Present (2).csv")
+df2016 <- read.csv("311_Service_Requests_from_2010_to_Present.csv")
+df2013 <- read.csv("311_Service_Requests_from_2013.csv")
+df2014 <- read.csv("311_Service_Requests_from_2014 2.csv")
+df2015 <- read.csv("311_Service_Requests_from_2015.csv")
+
+## Combine Files
+df_comb <- rbind(df2014,df2015, df2016, df2017ytd)
+df_comb1 <-rbind(df_comb, df2013)
+
+## Split date column to month, day, year, time, and AM/PM
+df_comb1$month <- sapply(strsplit(as.character(df_comb1$Created.Date),'/'), "[", 1)
+df_comb1$day <- sapply(strsplit(as.character(df_comb1$Created.Date),'/'), "[", 2)
+df_comb1$year <- sapply(strsplit(as.character(df_comb1$Created.Date),'/'), "[", 3)
+
+df_comb1$time <- sapply(strsplit(as.character(df_comb1$Created.Date),' '), "[", 1)
+df_comb1$am_pm <- sapply(strsplit(as.character(df_comb1$Created.Date),' '), "[", 2)
+df_comb1$am_pm1 <- sapply(strsplit(as.character(df_comb1$Created.Date),' '), "[", 3)
+
+## Get only columns needed
+
+df_comb2 <- df_comb1[c(1:9,17,19,25,54:57,59:60)]
+
+## Replace NA's to 0's
+df_comb2[is.na(df_comb2)] <- 0
+
+{% endhighlight %}
+
+
+{% highlight text %}
+
+## A tibble: 9,445,206 x 18
+##   Unique.Key           Created.Date            Closed.Date Agency
+##*       <int>                 <fctr>                 <fctr> <fctr>
+##1    28457271 07/11/2014 03:08:58 PM 08/05/2014 12:41:37 PM    DOT
+##2    28644314 08/08/2014 02:06:22 PM 08/12/2014 11:33:34 AM    DCA
+##3    29306886 11/18/2014 12:52:40 AM 11/18/2014 01:35:22 AM   NYPD
+##4    28907593 09/18/2014 01:45:51 PM 09/22/2014 02:43:43 PM   FDNY
+##5    28908228 09/18/2014 06:43:00 PM 09/18/2014 06:43:57 PM    HRA
+##6    29423275 12/04/2014 12:45:08 AM 12/04/2014 07:22:41 AM   NYPD
+##7    29419044 12/03/2014 02:08:52 PM 12/03/2014 05:23:13 PM   NYPD
+##8    27768554 04/02/2014 07:46:56 PM 04/03/2014 08:00:27 AM    DOT
+##9    28254593 06/13/2014 03:17:13 PM 07/22/2014 12:22:11 PM  DOHMH
+##10   27982973 05/05/2014 11:42:00 AM 05/12/2014 10:47:32 AM    DOT
+### ... with 9,445,196 more rows, and 14 more variables: Agency.Name <fctr>, Complaint.Type <fctr>,
+###   Descriptor <fctr>, Location.Type <fctr>, Incident.Zip <fctr>, City <fctr>, Facility.Type <fctr>,
+###   Borough <fctr>, month <chr>, day <chr>, year <chr>, time <chr>, am_pm <chr>, am_pm1 <chr>
+
+{% endhighlight %}
+
+
+
+
+
+
+
+
+
+
+
 
