@@ -114,37 +114,12 @@ tbl_df(fj3)
 
 {% endhighlight %}
 
-Here's a table of the top 10 domains, from 2006 to 2017, by story count:
+Here's a bar chart of the top 10 domains, from 2006 to 2017, by story count:
 
 ![top_10_overall_domain_story_count](https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/overall_top_domains.png)
 
-
-biggest_complaint <- as.data.frame(table(df_comb2$Complaint.Type))
-
-biggest_complaint1 <- biggest_complaint %>%
-                        arrange(desc(Freq))
+Github had the most stories submitted, with 54,350 stories submitted. Medium and Youtube were close behind. The Top five all are pretty close in story count. There's a big drop-off after the top 5 (after the NY Times), with arstechnica.com having 49% (12,062) fewer stories than the NY Times. 
 
 
 
-{% highlight text %}
-
-## A tibble: 275 x 2
-##                      Var1   Freq
-##                    <fctr>  <int>
-## 1     Noise - Residential 848649
-## 2          HEAT/HOT WATER 688968
-## 3        Street Condition 444825
-## 4  Street Light Condition 404171
-## 5        Blocked Driveway 401503
-## 6         Illegal Parking 369456
-## 7                 HEATING 300493
-## 8                PLUMBING 276949
-## 9            Water System 273922
-## 10   UNSANITARY CONDITION 251285
-## ... with 265 more rows
-
-{% endhighlight %}
-
-
-![months_complaints](https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/months1.png)
 
