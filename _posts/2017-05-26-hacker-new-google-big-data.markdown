@@ -7,7 +7,7 @@ categories: r, data, hacker news, google big data
 
 I decided to take a look at the data on [Hacker News Google BigQuery](https://cloud.google.com/bigquery/public-data/hacker-news). [This post](https://medium.com/@hoffa/hacker-news-on-bigquery-now-with-daily-updates-so-what-are-the-top-domains-963d3c68b2e2) gave me ideas of data to pull, and an idea of the type of SQL queries I could run.  
 
-I pulled the data with SQL queries, and used R to take a longitudinal look at domains with the most stories, from 2006 to 2017 year-to-date.And I used R's [TidyText package](https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html) to do a pretty terse sentiment analysis of story titles for top stories by score. 
+I pulled the data with SQL queries, and used R to take a longitudinal look at domains with the most stories, from 2006 to 2017 year-to-date.And I used R's [TidyText package](https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html) to do a pretty terse sentiment analysis of story titles for top stories by score; and again used the method from [this post](http://varianceexplained.org/r/trump-tweets/). 
 
 # Domains with Most Stories, 2006 to May 2017
 
@@ -453,6 +453,114 @@ I did this for each year, then combined them; and then I merged these bottom ten
 b14 <- rbind(b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13)
 
 {% endhighlight %}
+
+I looked at the range for these bottom ten out of the top 100 stories by score. The range is much smaller than that for the top stories by score:
+
+![sent_anal_bottom100_each_year](https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/sent_anal_bottom100_each_year.png)
+
+I then got just the words out of the titles of the stories, merged those words with the NRC datasets to get the sentiment/emotion for each word, and counted the number of words for each sentiment/emotion.
+
+{% highlight r %}
+
+b16 <- b14 %>%
+  filter(!str_detect(title, '^"')) %>%
+  unnest_tokens(word, title, token = "regex") %>%
+  filter(!word %in% stop_words$word,
+         str_detect(word, "[a-z]")) %>%
+  data.frame()
+
+b17 <- b16 %>%
+  inner_join(nrc, by = "word")
+
+b17
+
+b17_1 <- count(b17$sentiment)
+
+b17_1
+
+b17_1$perc_bottom <- b17_1$freq / sum(b17_1$freq)
+
+sum(b17_1$perc_bottom)
+
+{% endhighlight %}
+
+{% highlight r %}
+
+> tbl_df(b17_1)
+# A tibble: 10 x 3
+              x  freq perc_bottom
+         <fctr> <int>       <dbl>
+1         anger    20  0.09478673
+2  anticipation    17  0.08056872
+3       disgust    13  0.06161137
+4          fear    17  0.08056872
+5           joy    14  0.06635071
+6      negative    31  0.14691943
+7      positive    39  0.18483412
+8       sadness    14  0.06635071
+9      surprise     9  0.04265403
+10        trust    37  0.17535545
+
+{% endhighlight %}
+
+I combined the `a17_1` dataframe with the sentiments for the top ten stories, with the `b17_1` dataframe, with the sentiments for the bottom ten out of the top 100 stories. 
+
+I reshaped the data to be able to create the bar chart comparing the sentiments between the two stories. 
+
+{% highlight r %}
+
+ab1 <- a17_1 %>%
+        inner_join(b17_1, by="x")
+ab1
+
+ab1_1 <- ab1[c(1,3,5)]
+
+ab2 <- melt(ab1_1)
+
+ab2
+
+ab2$variable <-  gsub('perc_top', 'top_10',ab2$variable )
+ab2$variable <-  gsub('perc_bottom', 'bottom_10',ab2$variable )
+
+{% endhighlight %}
+
+{% highlight r %}
+
+# A tibble: 20 x 3
+              x  variable      value
+         <fctr>     <chr>      <dbl>
+1         anger    top_10 0.09803922
+2  anticipation    top_10 0.08496732
+3       disgust    top_10 0.07843137
+4          fear    top_10 0.10457516
+5           joy    top_10 0.03921569
+6      negative    top_10 0.18300654
+7      positive    top_10 0.17647059
+8       sadness    top_10 0.09150327
+9      surprise    top_10 0.01960784
+10        trust    top_10 0.12418301
+11        anger bottom_10 0.09478673
+12 anticipation bottom_10 0.08056872
+13      disgust bottom_10 0.06161137
+14         fear bottom_10 0.08056872
+15          joy bottom_10 0.06635071
+16     negative bottom_10 0.14691943
+17     positive bottom_10 0.18483412
+18      sadness bottom_10 0.06635071
+19     surprise bottom_10 0.04265403
+20        trust bottom_10 0.17535545
+
+{% endhighlight %}
+
+![sent_anal_comp_bottom_top_scores_top100](https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/sent_anal_comp_bottom_top_scores_top100.png)
+
+It looks like the top 10 stories were more negative and had more negative emotions than the bottom ten out of the top 100 stories. 
+
+The top 10 stories were higher in anger, anticipation, disgust, fear, and sadness. It was higher in the negative sentiments. 
+
+The bottom 10 stories were higher in positive sentiments and emotions of joy, surprise, and trust. 
+
+
 
 
 
