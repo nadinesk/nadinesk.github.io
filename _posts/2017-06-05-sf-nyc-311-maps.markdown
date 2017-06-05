@@ -5,7 +5,7 @@ date: 2017-06-05 00:00:00
 categories: r, data, google big data, bigquery, 311, san francisco, new york city
 ---
 
-[Google BigQuery](https://cloud.google.com/bigquery/docs/) has public datasets with up-to-date data on 311 Service Request for both [San Francisco](https://bigquery.cloud.google.com/table/bigquery-public-data:san_francisco.311_service_requests) (starting in 2008) and [NYC](https://bigquery.cloud.google.com/table/bigquery-public-data:new_york.311_service_requests) (starting in 2010).
+[Google BigQuery](https://cloud.google.com/bigquery/docs/) has public datasets with up-to-date data on 311 Service Request for both [San Francisco](https://cloud.google.com/bigquery/public-data/sfo-311) (starting in 2008) and [NYC](https://cloud.google.com/bigquery/public-data/nyc-311) (starting in 2010).
 
 I did some comparisons between the top complaints between both cities, and not surprisingly, they were very different. NYC's top complaints are for heat/hot water, especially in the winter months; and San Francisco's top complaints are for disposal of bulky items, and general cleaning. This post won't go into detail on the differences. Instead here, I map the frequency of complaints for the top complaint in each city in 2016.
 
