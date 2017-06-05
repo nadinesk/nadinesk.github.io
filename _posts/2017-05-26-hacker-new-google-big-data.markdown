@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "A Look at Hacker News Data"
-date: 2018-05-26 00:00:00
+date: 2017-05-26 00:00:00
 categories: r, data, hacker news, google big data
 ---
 
