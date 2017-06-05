@@ -12,10 +12,13 @@ I did some comparisons between the top complaints between both cities, and not s
 Here are the two maps, and below that, explanations of how I created each map.
 
 San Francisco Map of Top Complaint: Bulky Items
+
 ![sf_bi](https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/sf_bi.png)
 
 New York City Map of Top Complaint: Heat/Hot Water
+
 ![ny_hhw](https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/ny_hhw.png)
+
 
 # San Francisco
 ## Top Complaints
