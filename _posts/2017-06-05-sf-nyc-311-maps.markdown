@@ -269,7 +269,7 @@ chart2 <- ggplot(sfba, aes(longitude, latitude))  + #"id" is col in your df, not
 
 {% endhighlight %}
 
-![sf_bi](https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/sf_bi.png)
+![sf_bi](https://raw.githubusercontent.com/nadinesk/sf_nyc_311_data_maps/master/plots/sf_bi.png)
 
 The downtown SF areas had a high density of calls, and Bayview had specific locations with several bulky item complaints, as shown with the larger, darker circles.
 
@@ -331,6 +331,6 @@ Here are the results of the same queries and tables created with R, for NYC.
 
 ## Map with Locations of 2016 Complaints for Heat/Hot WATER
 
-![ny_hhw](https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/ny_hhw.png)
+![ny_hhw](https://raw.githubusercontent.com/nadinesk/sf_nyc_311_data_maps/master/plots/ny_hhw.png)
 
 The coordinates with hundreds of heat/hot water complaints are pretty clearly shown in the map above with the much larger, dark circles. There are a couple of locations in Queens, a few in the Bronx, a couple in Manhattan, and several in the lower portion of Brooklyn.
