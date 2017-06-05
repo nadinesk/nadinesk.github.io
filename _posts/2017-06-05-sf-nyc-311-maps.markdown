@@ -180,7 +180,7 @@ Here is sample of the `sfba` dataframe:
 # ... with 60,035 more rows
 {% endhighlight %}
 
-#### Create Map
+### Create Map
 
 The next step is map the the complaints and show areas where complaints are more frequent.
 
