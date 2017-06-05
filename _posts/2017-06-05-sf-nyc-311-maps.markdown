@@ -13,11 +13,11 @@ Here are the two maps, and below that, explanations of how I created each map.
 
 San Francisco Map of Top Complaint: Bulky Items
 
-![sf_bi](https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/sf_bi.png)
+![sf_bi](https://raw.githubusercontent.com/nadinesk/sf_nyc_311_data_maps/master/plots/sf_bi.png)
 
 New York City Map of Top Complaint: Heat/Hot Water
 
-![ny_hhw](https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/ny_hhw.png)
+![ny_hhw](https://raw.githubusercontent.com/nadinesk/sf_nyc_311_data_maps/master/plots/ny_hhw.png)
 
 
 # San Francisco
