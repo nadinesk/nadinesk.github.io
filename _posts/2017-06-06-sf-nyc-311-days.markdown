@@ -1,0 +1,345 @@
+---
+layout: post
+title: "BigRQuery and SFF and NYC 311 Complaints Comparison"
+date: 2017-06-06 00:00:00
+categories: r, data, google big data, bigquery, 311, san francisco, new york city
+---
+
+Previously, I created maps showing locations and frequencies of the top 311 complaint in NYC and San Francisco during 2016, using [Google BigQuery](https://cloud.google.com/bigquery/docs/) public data. I created a map for each city and plotted the complaint locations and frequencies.
+
+Google BigQuery would not allow downloads of more than 16,000 rows, so I had to break them up into smaller results in the SQL queries, and then download them all, read them all into R, and then combine them: pretty tedious. Someone then told me that there is an R Library for Google BigQuery, [`bigrquery`](https://github.com/rstats-db/bigrquery), which cuts out that entire process. You can run the queries in R, and the results are stored as dataframes.
+
+I used that today to run SQL queries on the NYC and SF 311 datasets, and to much more quickly analyze the data. Plus, I now have no external files, and everything is much easier.
+
+I looked at differences in frequencies and types of complaints on different days of the week.
+
+What I found was that complaint counts for both NYC and SF sort of follow a bell curve, where there are fewer complaints at the beginning of the week but they increase, peaking in number on Wednesday, and then decrease every day from Thursday to Sunday.
+
+The most interesting take-away I got from this data is that the highest complaint in NYC on Sundays and Mondays has been "Noise/Residential" every year since 2012, which is different from the top complaint on every other day of the week during the same time period, which was pretty consisitently, "Heat/Hot Water." Either people are noisier on Sundays and Mondays, or people are more sensitive to it during those days of the week, when they are preparing to go back to work for the week.
+
+First, I'll show the NYC and SF 311 data for :
+
+* Top complaint by day of the week for each year from 2010 to YTD 2017.
+* Total number of complaints by day of the week and year.
+
+Then, I combine the NYC and SF total complaints for each day from 2010 to 2016, and compare those.
+
+# NYC
+## Top Complaint by Day of the Week per Year
+
+This SQL, run with the query_exec function from `bigrquery`, will obtain all of the data we need:
+
+{% highlight r %}
+nd_sql <- "SELECT complaint_type, year(created_date), DAYOFWEEK(created_date), COUNT(complaint_type) AS total_count FROM [bigquery-public-data.new_york.311_service_requests] GROUP BY 1,2,3 ORDER BY 2 DESC"
+
+s1 <- query_exec(nd_sql, project = PROJECT_NAME)
+
+{% endhighlight}
+
+Here is a sampling of the results:
+
+{% highlight r %}
+> tbl_df(s1)
+
+# A tibble: 11,342 x 4
+                 complaint_type   f0_   f1_ total_count
+                          <chr> <int> <int>       <int>
+ 1                 Damaged Tree  2017     4        1128
+ 2   Fire Safety Director - F58  2017     5          51
+ 3           Food Establishment  2017     7         431
+ 4             Industrial Waste  2017     3         110
+ 5                   Poison Ivy  2017     7           2
+ 6                      LinkNYC  2017     6          10
+ 7              Ferry Complaint  2017     1          13
+ 8                        Plant  2017     4           5
+ 9 DOF Property - Payment Issue  2017     4         290
+10                        Noise  2017     7        4226
+# ... with 11,332 more rows
+
+{% endhighlight}
+
+I then group by  year and day of the week and get the top complaint for that grouping:
+
+{% highlight r %}
+s2 <- s1 %>%
+        mutate(cym = paste(complaint_type, f0_, f1_, sep="-")) %>%
+        arrange(f0_, f1_, desc(total_count)) %>%
+        group_by(f0_, f1_) %>%
+        top_n(1, total_count)
+{% endhighlight}
+
+The results show that for Monday (1) and Sunday(7) beginning in 2012, the top complaint is "Noise-Residential", whereas it is largely consistely "Heating/Hot Water" during the other days of the week.
+
+{% highlight r %}
+> print(tbl_df(s2), n=56)
+
+# A tibble: 56 x 5
+        complaint_type   f0_   f1_ total_count                        cym
+                 <chr> <int> <int>       <int>                      <chr>
+ 1             HEATING  2010     1       29160             HEATING-2010-1
+ 2             HEATING  2010     2       34734             HEATING-2010-2
+ 3             HEATING  2010     3       33045             HEATING-2010-3
+ 4             HEATING  2010     4       30956             HEATING-2010-4
+ 5             HEATING  2010     5       27747             HEATING-2010-5
+ 6             HEATING  2010     6       29174             HEATING-2010-6
+ 7             HEATING  2010     7       29402             HEATING-2010-7
+ 8             HEATING  2011     1       24864             HEATING-2011-1
+ 9             HEATING  2011     2       29677             HEATING-2011-2
+10             HEATING  2011     3       27235             HEATING-2011-3
+11             HEATING  2011     4       26253             HEATING-2011-4
+12             HEATING  2011     5       27191             HEATING-2011-5
+13             HEATING  2011     6       27587             HEATING-2011-6
+14             HEATING  2011     7       27377             HEATING-2011-7
+15 Noise - Residential  2012     1       32400 Noise - Residential-2012-1
+16             HEATING  2012     2       28025             HEATING-2012-2
+17             HEATING  2012     3       25276             HEATING-2012-3
+18             HEATING  2012     4       27923             HEATING-2012-4
+19             HEATING  2012     5       26317             HEATING-2012-5
+20             HEATING  2012     6       26203             HEATING-2012-6
+21 Noise - Residential  2012     7       30270 Noise - Residential-2012-7
+22 Noise - Residential  2013     1       38456 Noise - Residential-2013-1
+23             HEATING  2013     2       32165             HEATING-2013-2
+24             HEATING  2013     3       31246             HEATING-2013-3
+25             HEATING  2013     4       29833             HEATING-2013-4
+26             HEATING  2013     5       32682             HEATING-2013-5
+27             HEATING  2013     6       28091             HEATING-2013-6
+28 Noise - Residential  2013     7       36744 Noise - Residential-2013-7
+29 Noise - Residential  2014     1       50036 Noise - Residential-2014-1
+30      HEAT/HOT WATER  2014     2       20734      HEAT/HOT WATER-2014-2
+31    Street Condition  2014     3       20053    Street Condition-2014-3
+32      HEAT/HOT WATER  2014     4       19279      HEAT/HOT WATER-2014-4
+33      HEAT/HOT WATER  2014     5       19271      HEAT/HOT WATER-2014-5
+34 Noise - Residential  2014     6       24421 Noise - Residential-2014-6
+35 Noise - Residential  2014     7       48885 Noise - Residential-2014-7
+36 Noise - Residential  2015     1       52779 Noise - Residential-2015-1
+37      HEAT/HOT WATER  2015     2       37312      HEAT/HOT WATER-2015-2
+38      HEAT/HOT WATER  2015     3       33060      HEAT/HOT WATER-2015-3
+39      HEAT/HOT WATER  2015     4       28973      HEAT/HOT WATER-2015-4
+40      HEAT/HOT WATER  2015     5       29407      HEAT/HOT WATER-2015-5
+41      HEAT/HOT WATER  2015     6       32200      HEAT/HOT WATER-2015-6
+42 Noise - Residential  2015     7       51648 Noise - Residential-2015-7
+43 Noise - Residential  2016     1       55379 Noise - Residential-2016-1
+44      HEAT/HOT WATER  2016     2       37537      HEAT/HOT WATER-2016-2
+45      HEAT/HOT WATER  2016     3       38391      HEAT/HOT WATER-2016-3
+46      HEAT/HOT WATER  2016     4       30225      HEAT/HOT WATER-2016-4
+47      HEAT/HOT WATER  2016     5       28654      HEAT/HOT WATER-2016-5
+48      HEAT/HOT WATER  2016     6       31800      HEAT/HOT WATER-2016-6
+49 Noise - Residential  2016     7       54153 Noise - Residential-2016-7
+50 Noise - Residential  2017     1       24804 Noise - Residential-2017-1
+51      HEAT/HOT WATER  2017     2       17701      HEAT/HOT WATER-2017-2
+52      HEAT/HOT WATER  2017     3       15634      HEAT/HOT WATER-2017-3
+53      HEAT/HOT WATER  2017     4       12801      HEAT/HOT WATER-2017-4
+54      HEAT/HOT WATER  2017     5       14418      HEAT/HOT WATER-2017-5
+55      HEAT/HOT WATER  2017     6       14366      HEAT/HOT WATER-2017-6
+56 Noise - Residential  2017     7       22302 Noise - Residential-2017-7
+
+{% endhighlight %}
+
+## Total Complaints by Day of the Week and Year
+
+I then looked at the total number of complaints, rather than the top complaint, for each day of the week per year.
+
+{% highlight r %}
+
+s3 <- s1 %>%
+        select(-complaint_type) %>%
+        group_by(f0_, f1_) %>%
+        summarise_each(funs(sum)) %>%
+        mutate(year = factor(f0_)) %>%
+        mutate(day = factor(f1_))
+{% endhighlight %}
+
+Here is a sample of the results:  
+
+{% highlight r %}
+> tbl_df(s3)
+
+# A tibble: 56 x 5
+     f0_   f1_ total_count   year    day
+   <int> <int>       <int> <fctr> <fctr>
+ 1  2010     1      171751   2010      1
+ 2  2010     2      338640   2010      2
+ 3  2010     3      343900   2010      3
+ 4  2010     4      334366   2010      4
+ 5  2010     5      318032   2010      5
+ 6  2010     6      306296   2010      6
+ 7  2010     7      192773   2010      7
+ 8  2011     1      159876   2011      1
+ 9  2011     2      313916   2011      2
+10  2011     3      331515   2011      3
+# ... with 46 more rows
+{% endhighlight %}
+
+I then plotted those results, revealing the sort of bell curve created because of a larger pattern in which the number of complaints slowly increases from Monday to Wednesday, peaking at Wednesday, and then decreasing each day until Sunday.
+
+{% highlight r %}
+nyd <- ggplot(s3, aes(day, total_count)) +   
+  geom_bar(aes(fill = year), position = "dodge", stat="identity")
+{% endhighlight %}
+
+![nyd](https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/nyd.png)
+
+To verify that this increase, peak, and decrease is actually occuring, I made a dataframe of the total count of complaints by day, from 2010 to YTD 2017.
+
+{% highlight r %}
+s4 <- s3 %>%
+        group_by(day) %>%
+        summarise(total = sum(total_count))
+{% endhighlight %}
+
+The results show this trend is happening (1=Mon, 2=Tues, 3=Wed, 4=Thurs, 5=Fri, 6=Sat, 7=Sun):
+
+{% highlight r %}
+> tbl_df(s4)
+
+# A tibble: 7 x 2
+     day   total
+  <fctr>   <int>
+1      1 1534279
+2      2 2462982
+3      3 2520101
+4      4 2468865
+5      5 2394441
+6      6 2291121
+7      7 1663317
+{% endhighlight %}
+
+# SF
+
+I will present this in less detail because it's the same code as above, just with different data.
+
+## Top Complaint by Day of the Week per Year
+
+Get the data:
+
+{% highlight r %}
+sf_sql <- "SELECT complaint_type, year(created_date), DAYOFWEEK(created_date), COUNT(complaint_type) AS total_count FROM [bigquery-public-data.san_francisco.311_service_requests] GROUP BY 1,2,3 ORDER BY 2 DESC"
+sf1 <- query_exec(sf_sql, project = PROJECT_ID)
+{% endhighlight %}
+
+
+## Top Complaint per day of the week by year
+
+{% highlight r %}
+sf2 <- sf1 %>%
+  mutate(cym = paste(complaint_type, f0_, f1_, sep="-")) %>%
+  arrange(f0_, f1_, desc(total_count)) %>%
+  group_by(f0_, f1_) %>%
+  top_n(1, total_count)
+{% endhighlight %}
+
+Sample of the results:
+
+{% highlight r %}
+> tbl_df(sf2)
+
+# A tibble: 71 x 5
+     complaint_type   f0_   f1_ total_count                     cym
+              <chr> <int> <int>       <int>                   <chr>
+ 1   CansLeftOut247  2007     2           1   CansLeftOut247-2007-2
+ 2 General Cleaning  2008     1         912 General Cleaning-2008-1
+ 3 General Cleaning  2008     2        2104 General Cleaning-2008-2
+ 4 General Cleaning  2008     3        1807 General Cleaning-2008-3
+ 5 General Cleaning  2008     4        1609 General Cleaning-2008-4
+ 6 General Cleaning  2008     5        1465 General Cleaning-2008-5
+ 7 General Cleaning  2008     6        1462 General Cleaning-2008-6
+ 8 General Cleaning  2008     7         950 General Cleaning-2008-7
+ 9 General Cleaning  2009     1        2072 General Cleaning-2009-1
+10 General Cleaning  2009     2        4166 General Cleaning-2009-2
+# ... with 61 more rows
+{% endhighlight %}
+
+## Total count of complaints by day of the week and year
+
+{% highlight r %}
+sf3 <- sf1 %>%
+        select(-complaint_type) %>%
+        group_by(f0_, f1_) %>%
+        summarise_each(funs(sum)) %>%
+        mutate(year = factor(f0_)) %>%
+        mutate(day = factor(f1_))
+{% endhighlight %}
+
+A sample of the results:
+
+{% highlight r %}
+> tbl_df(sf3)
+
+# A tibble: 71 x 5
+     f0_   f1_ total_count   year    day
+   <int> <int>       <int> <fctr> <fctr>
+ 1  2007     2           1   2007      2
+ 2  2008     1        5761   2008      1
+ 3  2008     2       12964   2008      2
+ 4  2008     3       11645   2008      3
+ 5  2008     4       11292   2008      4
+ 6  2008     5        9932   2008      5
+ 7  2008     6        9994   2008      6
+ 8  2008     7        6312   2008      7
+ 9  2009     1       16320   2009      1
+10  2009     2       30789   2009      2
+# ... with 61 more rows
+
+{% endhighlight %}
+
+
+Plot the data:
+
+{% highlight r %}
+sfd <- ggplot(sf3, aes(day, total_count)) +   
+  geom_bar(aes(fill = year), position = "dodge", stat="identity")
+{% endhighlight %}
+
+![sfd](https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/sfd.png)
+
+## Combine the data
+
+I combined the NYC and SF aggegrate daily data, to compare the total number of complaints per day, from 2010 to YTD 2017.
+
+{% highlight r %}
+
+sn <- s3 %>%
+        rename(NYC=total_count) %>%
+        inner_join(sf3, by=c("year", "day")) %>%
+        rename(SF = total_count)
+
+names(sn)[8] <- "SF"
+
+sn1 <- sn[c(5,3,8)]
+
+### Total for each day
+tbl_df(sn1)
+
+sn2 <- sn1 %>%
+          group_by(day) %>%
+          summarise_each(funs(sum))
+
+{% endhighlight %}
+
+The results:
+
+{% highlight r %}
+> tbl_df(sn2  )
+
+# A tibble: 7 x 3
+    day total_count.x total_count.y
+  <chr>         <int>         <int>
+1     1       1534279        200161
+2     2       2462982        373913
+3     3       2520101        373125
+4     4       2468865        361050
+5     5       2394441        346809
+6     6       2291121        319549
+7     7       1663317        218492
+{% endhighlight %}
+
+
+Plot the results:
+
+{% highlight r %}
+sn3 <- melt(sn2, id=c("day"))
+snp <- ggplot(sn3, aes(day, value)) +   
+  geom_bar(aes(fill = variable), position = "dodge", stat="identity")
+{% endhighlight %}
+
+![snp](https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/snp.png)
