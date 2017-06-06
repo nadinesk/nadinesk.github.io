@@ -9,13 +9,13 @@ Previously, I [created maps](http://khasachi.com/r,/data,/google/big/bigquery,/3
 
 Google BigQuery would not allow downloads of more than 16,000 rows, so I had to break them up into smaller results in the SQL queries, and then download them all, read them all into R, and then combine them: pretty tedious. Someone then told me that there is an R Library for Google BigQuery, [`bigrquery`](https://github.com/rstats-db/bigrquery), which cuts out that entire process. You can run the queries in R, and the results are stored as dataframes.
 
-I used that today to run SQL queries on the NYC and SF 311 datasets, and to much more quickly analyze the data. Plus, I now have no external files, and everything is much easier.
+I used that today to run SQL queries on the NYC and SF 311 datasets, and to much more quickly analyze the data. Repo [here](https://github.com/nadinesk/sf_nyc_311_days). Plus, I now have no external files, and everything is much easier.
 
 I looked at differences in frequencies and types of complaints on different days of the week.
 
 What I found was that complaint counts for both NYC and SF sort of follow a bell curve, where there are fewer complaints at the beginning of the week but they increase, peaking in number on Wednesday, and then decrease every day from Thursday to Sunday.
 
-The most interesting take-away I got from this data is that the highest complaint in NYC on Sundays and Mondays has been "Noise/Residential" every year since 2012, which is different from the top complaint on every other day of the week during the same time period, which was pretty consisitently, "Heat/Hot Water." Either people are noisier on Sundays and Mondays, or people are more sensitive to it during those days of the week, when they are preparing to go back to work for the week.
+The most interesting take-away I got from this data is that the highest complaint in NYC on Sundays and Mondays has been "Noise/Residential" every year since 2012, which is different from the top complaint on every other day of the week during the same time period, which was pretty consistently, "Heat/Hot Water." Either people are noisier on Sundays and Mondays, or people are more sensitive to it during those days of the week, when they are preparing to go back to work for the week.
 
 First, I'll show the NYC and SF 311 data for :
 
