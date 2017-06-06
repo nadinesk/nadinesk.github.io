@@ -27,7 +27,7 @@ Then, I combine the NYC and SF total complaints for each day from 2010 to 2016, 
 # NYC
 ## Top Complaint by Day of the Week per Year
 
-This SQL, run with the query_exec function from `bigrquery`, will obtain all of the data we need:
+This SQL query, run with the `query_exec` function from `bigrquery`, will obtain all of the data we need:
 
 {% highlight r %}
 nd_sql <- "SELECT complaint_type, year(created_date), DAYOFWEEK(created_date), COUNT(complaint_type) AS total_count FROM [bigquery-public-data.new_york.311_service_requests] GROUP BY 1,2,3 ORDER BY 2 DESC"
@@ -58,7 +58,7 @@ Here is a sampling of the results:
 
 {% endhighlight %}
 
-I then group by  year and day of the week and get the top complaint for that grouping:
+I then group by year and day of the week and get the top complaint for that grouping:
 
 {% highlight r %}
 s2 <- s1 %>%
@@ -68,7 +68,7 @@ s2 <- s1 %>%
         top_n(1, total_count)
 {% endhighlight %}
 
-The results show that for Monday (1) and Sunday(7) beginning in 2012, the top complaint is "Noise-Residential", whereas it is largely consistely "Heating/Hot Water" during the other days of the week.
+The results show that for Monday (1) and Sunday(7) beginning in 2012, the top complaint is "Noise-Residential", whereas it is largely and consistely "Heating/Hot Water" during the other days of the week.
 
 {% highlight r %}
 > print(tbl_df(s2), n=56)
