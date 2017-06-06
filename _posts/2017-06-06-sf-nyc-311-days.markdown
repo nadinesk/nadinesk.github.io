@@ -34,7 +34,7 @@ nd_sql <- "SELECT complaint_type, year(created_date), DAYOFWEEK(created_date), C
 
 s1 <- query_exec(nd_sql, project = PROJECT_NAME)
 
-{% endhighlight}
+{% endhighlight %}
 
 Here is a sampling of the results:
 
@@ -56,7 +56,7 @@ Here is a sampling of the results:
 10                        Noise  2017     7        4226
 # ... with 11,332 more rows
 
-{% endhighlight}
+{% endhighlight %}
 
 I then group by  year and day of the week and get the top complaint for that grouping:
 
@@ -66,7 +66,7 @@ s2 <- s1 %>%
         arrange(f0_, f1_, desc(total_count)) %>%
         group_by(f0_, f1_) %>%
         top_n(1, total_count)
-{% endhighlight}
+{% endhighlight %}
 
 The results show that for Monday (1) and Sunday(7) beginning in 2012, the top complaint is "Noise-Residential", whereas it is largely consistely "Heating/Hot Water" during the other days of the week.
 
