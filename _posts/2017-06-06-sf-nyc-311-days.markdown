@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "BigRQuery and SFF and NYC 311 Complaints Comparison"
+title: "BigRQuery and SF and NYC 311 Complaints Comparison"
 date: 2017-06-06 00:00:00
 categories: r, data, google big data, bigquery, 311, san francisco, new york city
 ---
