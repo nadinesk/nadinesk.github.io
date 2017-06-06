@@ -5,7 +5,7 @@ date: 2017-06-06 00:00:00
 categories: r, data, google big data, bigquery, 311, san francisco, new york city
 ---
 
-Previously, I created maps showing locations and frequencies of the top 311 complaint in NYC and San Francisco during 2016, using [Google BigQuery](https://cloud.google.com/bigquery/docs/) public data. I created a map for each city and plotted the complaint locations and frequencies.
+Previously, I [created maps](http://khasachi.com/r,/data,/google/big/bigquery,/311,/san/francisco,/new/york/city/2017/06/05/sf-nyc-311-maps.html) showing locations and frequencies of the top 311 complaint in NYC and San Francisco during 2016, using [Google BigQuery](https://cloud.google.com/bigquery/docs/) public data. I created a map for each city and plotted the complaint locations and frequencies.
 
 Google BigQuery would not allow downloads of more than 16,000 rows, so I had to break them up into smaller results in the SQL queries, and then download them all, read them all into R, and then combine them: pretty tedious. Someone then told me that there is an R Library for Google BigQuery, [`bigrquery`](https://github.com/rstats-db/bigrquery), which cuts out that entire process. You can run the queries in R, and the results are stored as dataframes.
 
