@@ -115,13 +115,13 @@ The `moods/3/tvshows/new` route allows a user to create a new TV show for the mo
 # Class level ActiveRecord Scope Method
 A class level ActiveRecord scope method is within the Stats_Controller.rb file, and at the `stats/admin` link in the header section of the app. It shows the app's number of users, the number of TV shows, and the least expensive TV show. 
 
-<% highlight ruby %> 
+``` Ruby
 
 namespace :admin do
     resources :stats, only: [:index]
   end
   
- <% endhighlight %> 
+```
  
 
 
