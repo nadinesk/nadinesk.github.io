@@ -6,7 +6,7 @@ categories: ruby, rails, app
 ---
 
 # Overview
-The [Playlister app](https://github.com/nadinesk/playlister) Ruby on Rails app I created allows users to add TV shows to playlists, and determines if the user has enough time and spare stress, to add tv shows to a playlist. 
+The [Playlister](https://github.com/nadinesk/playlister) Ruby on Rails app I created allows users to add TV shows to playlists, and determines if the user has enough time and spare stress, to add tv shows to a playlist. 
 
 Users can create new TV shows within a specific mood, and they can create new moods and an associated TV show at the same time. 
 
