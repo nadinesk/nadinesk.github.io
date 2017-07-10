@@ -89,7 +89,7 @@ To summarize:
 
 ## Tables
 
-The User database table is created with Derive, with additional fields that I added: 
+The User database table is created with Devise, with additional fields that I added: 
 - name
 - happiness (default 11)
 - free time (default 11) 
@@ -116,9 +116,11 @@ The `moods/3/tvshows/new` route allows a user to create a new TV show for the mo
 A class level ActiveRecord scope method is within the Stats_Controller.rb file, and at the `stats/admin` link in the header section of the app. It shows the app's number of users, the number of TV shows, and the least expensive TV show. 
 
 <% highlight ruby %> 
+
 namespace :admin do
     resources :stats, only: [:index]
   end
+  
  <% endhighlight %> 
  
 
