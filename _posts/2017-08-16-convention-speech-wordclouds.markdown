@@ -8,10 +8,10 @@ categories: r, data, twitter, twitter data, trump, clinton, election, convention
 Word Clouds created with R, for Clinton's and Trump's 2016 convention speeches accepting their parties' nominations. Following along with [this](https://www.r-bloggers.com/building-wordclouds-in-r/) blog post. 
 
 Clinton's 2016 Convention Speech Word Cloud
-![Clinton Word Cloud](http://khasachi.com/images/c_wc1.png)
+![Clinton Word Cloud](http://nadinesk.github.io/images/c_wc1.png)
 
 Trump's 2016 Convention Speech Word Cloud
-![Trump Word Cloud](http://khasachi.com/images/twc.png)
+![Trump Word Cloud](http://nadinesk.github.io/images/twc.png)
 
 
      library(tm)
