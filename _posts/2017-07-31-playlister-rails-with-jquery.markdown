@@ -5,9 +5,6 @@ date:   2017-07-31 00:00:00
 categories: ruby, rails, app, jquery, ajax
 ---
 
-
-Rails App with JQuery Front-End
-
 I updated my [Playlister App](www.github.com/nadinesk/playlister) to include a JQuery front-end. 
 
 **The Moods index page that lists all of the mood categories -- Mood.all :) -- is rendered with JQuery and an Active Model Serialization backend.** The route, moods.json, displays something like this JSON: 
