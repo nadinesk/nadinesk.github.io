@@ -11,7 +11,39 @@ I updated my [Playlister App](http://www.github.com/nadinesk/playlister) to incl
 
 ``` Javascript
 
-SHOW JSON
+{
+id: 5,
+title: "90's",
+tvshows: [
+	{
+	id: 5,
+	title: "Antigone",
+	price: 1416,
+	suspense_level: 8,
+	time_commitment: 6
+	}
+	]
+},
+{
+id: 6,
+title: "helvetica",
+tvshows: [
+	{
+	id: 6,
+	title: "Amphitryon",
+	price: 3337,
+	suspense_level: 3,
+	time_commitment: 5
+	},
+	{
+	id: 59,
+	title: "blahblahblah",
+	price: 3,
+	suspense_level: 1,
+	time_commitment: 2
+	}
+	]
+},
 
 ```
 
@@ -66,8 +98,26 @@ $(".js-next").on("click", function() {
 
 ``` Javascript
 
-SHOW JSON 
-
+{
+id: 6,
+title: "helvetica",
+tvshows: [
+	{
+	id: 6,
+	title: "Amphitryon",
+	price: 3337,
+	suspense_level: 3,
+	time_commitment: 5
+	},
+	{
+	id: 59,
+	title: "blahblahblah",
+	price: 3,
+	suspense_level: 1,
+	time_commitment: 2
+	}
+	]
+}
 ```
 
 **The Moods show page includes a form to create a TV show for that mood, and the response to submitting that form is submitted with an AJAX POST request; the new TV show is  rendered on the same page without a page refresh.** For example, the new TV show that is submitted on this form is appended to the DOM with Javascript.
