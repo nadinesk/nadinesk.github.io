@@ -37,7 +37,7 @@ $.get("/moods.json", function(data) {
 
 ```
  
-**Each Moods show page can be sifted through via a “Next” link, and each show page rendered in this way uses AJAX/JQuery to display the next Mood, and its associated TV shows.**The get request uses a Javascript Model Object to translate the JSON. The object created calls the showTvshows() Mood prototype method to create HTML that will be appended to the page: 
+**Each Moods show page can be sifted through via a “Next” link, and each show page rendered in this way uses AJAX/JQuery to display the next Mood, and its associated TV shows.** The get request uses a Javascript Model Object to translate the JSON. The object created calls the showTvshows() Mood prototype method to create HTML that will be appended to the page: 
 
 ``` Javascript
 
