@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "BookCrowd - with React, Redux, Rails"
-date:   2017-07-31 00:00:00
+date:   2017-09-09 00:00:00
 categories: react, redux, ruby, rails, app, coding
 ---
 
