@@ -5,13 +5,7 @@ date:   2017-09-09 00:00:00
 categories: react, redux, ruby, rails, app, coding
 ---
 
-I created a web app, [The Book Crowd](https://glacial-atoll-99448.herokuapp.com/), using React and Redux for the front-end, and Rails for the backend, [here](https://dry-peak-34989.herokuapp.com/api/v1/books). The repo for the client is here[https://github.com/nadinesk/book-client]; the repo for the backend is [here](https://github.com/nadinesk/book-api). This app crowdsources book ideas by allowing users to add books to a list, and to search for books with Google Books API results. 
-
-## Process
-
-When I began this project, I had intended to use JWT auth, and had intended to do...a completely different web app. I got JWT auth working [here](https://github.com/nadinesk/good_decision_client) and [here](https://github.com/nadinesk/good_decision), but it took so much out of me and was confusing enough at the time that I just had to scrap it and start over. 
-
-I had to start from scratch with something simpler and try to build up, rather than something complex and build upon that. The result was that I feel like I have a pretty strong handle, or at least have significantly learned a lot, about React and Redux, enough to use it to create my own app. When I go over it in my head to simplify the flow so I can program what needs to happen, it goes something like the following. 
+I created a web app, [The Book Crowd](https://glacial-atoll-99448.herokuapp.com/), using React and Redux for the front-end, and Rails for the backend, [here](https://dry-peak-34989.herokuapp.com/api/v1/books). The repo for the client is [here](https://github.com/nadinesk/book-client); the repo for the backend is [here](https://github.com/nadinesk/book-api). This app crowdsources book ideas by allowing users to add books to a list, and to search for books with Google Books API results. 
 
 ## React and Redux Flow 
 
@@ -31,6 +25,7 @@ const rootReducer =  combineReducers({
 
 * The store calls the rootReducer to set the state. For example: 
 
+``` Javascript
 export default createStore(
   rootReducer,
   compose(
@@ -39,11 +34,16 @@ export default createStore(
   )
 )
 
+```
+
 * The store is passed to other containers with the `<Provider store={store}>`, in the main index.js file, to whatever is included within the Provider.
 
+``` Javascript
 <Provider store={store}>       
       <Router history={browserHistory} routes={Routes} />           
   </Provider>,
+
+```
 
 * The Router allows CRUD routing, and also allows included containers to access the store. The store enables the components to access the state and actions through `mapStateToProps` and `mapDispatchToProps`. For example, when I add
 
@@ -89,9 +89,6 @@ export function addBook(book) {
       .then(responseJson => {             
           browserHistory.push('/books')          
       })
-
-
-
   }
 }
 
@@ -151,8 +148,5 @@ export default function booksReducer(state = {}, action) {
 
 
 ```
-
-It was a good idea for me to really understand everything I was coding. I feel that now, I have rehearsed this flow enough that I can move onto my next app, feeling confident I can add more functionality and complexity. But first, pizza. 
-
 
 
