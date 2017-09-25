@@ -62,11 +62,11 @@ and
  - Renders the `App.js` page
   - `App` (within the components directory)
     - Renders the forms to add pro items (`AddProItem.js`), add con items, (`AddConItem.js`), and shows the items added (`ItemList.js`).
-    - `AddProItem` and `AddConItem` (within the src/containers directory) are connected components, so they have access to the store, which combines the actions and reducers to hold the application state. Both of these components call mapDispatchToProps, to merge the actions into the component props.
-      - When the pro and con forms are submitted (separately), they call their respective actions -- `addProItem()`, `addConItem()` -- with the text and weight arguments from the form.
-      - These actions (within the actions directory), use the arguments to set the action properties (type, id, text, weight, category), which are passed to the reducers, which set the state, depending on the action type.
+    - `AddProItem` and `AddConItem` (within the src/containers directory) are connected components, so they have access to the store, which combines the actions and reducers to hold the application state. Both of these components call `mapDispatchToProps`, to merge the actions into the component props.
+    - When the pro and con forms are submitted (separately), they call their respective actions, `addProItem()` or `addConItem()`,  with the text and weight arguments from the form
+    - These actions (within the actions directory), use the arguments to set the action properties (type, id, text, weight, category), which are passed to the reducers, which set the state, depending on the action type.
 
-      actions/index.js
+     actions/index.js  
 
       ```
       let nextItemId = 0
@@ -80,7 +80,8 @@ and
      		category: 'pro'
      	}
      }
-
+     
+     
       export const addConItem = (text, weight) => {
      	return {
      		type: 'ADD_CON_ITEM',
@@ -150,9 +151,9 @@ It is also a connected component, and uses mapStateToProps to get the state of t
 
 The items props are mapped to the `Item.js` component, which displays each item's text and weight.
 
-The `makeSum()`` function is called after rendering the items submitted: it adds up the pros and cons, and subtracts the pros from the con weight totals.
+The `makeSum()` function is called after rendering the items submitted: it adds up the pros and cons, and subtracts the pros from the con weight totals.
 
-The `makeSomething()`` function is then called, using `makeSum()` as an argument, and depending on that total, either advises that the user make or not make the decison (positive = "go for it"; negative = "don't go for it!").
+The `makeSomething()` function is then called, using `makeSum()` as an argument, and depending on that total, either advises that the user make or not make the decison (positive = "go for it"; negative = "don't go for it!").
 
 
 ## Next Steps
