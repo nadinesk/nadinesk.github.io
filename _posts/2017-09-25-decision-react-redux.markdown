@@ -14,6 +14,7 @@ Should I eat ice cream?
 Pros:
 * tastes good, weight: 8
 * Get out of the house, weight: 4
+
 Cons:
 * unhealthy, weight: 4
 * will feel tired aftewards, weight: 3
