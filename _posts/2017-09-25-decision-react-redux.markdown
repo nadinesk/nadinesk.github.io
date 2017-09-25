@@ -10,7 +10,9 @@ categories: react, redux, javascript, coding
 I created two apps, both that essentially do the same things: one uses only React, and the other uses React, Redux, and React-Redux. The purpose of the apps are to facilitate decision-making for users. It allows users to enter pros and cons to a decision, along with weights for each item. If the pros outweigh the cons, the app will suggest that the user should make the decision in the affirmative, and that they should not if the cons outweight the pros.
 
 For example:
+
 Should I eat ice cream?
+
 Pros:
 * tastes good, weight: 8
 * Get out of the house, weight: 4
