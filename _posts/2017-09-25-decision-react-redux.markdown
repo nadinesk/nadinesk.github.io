@@ -9,6 +9,9 @@ categories: react, redux, javascript, coding
 
 I created two apps, both that essentially do the same things: one uses only React, and the other uses React, Redux, and React-Redux. The purpose of the apps are to facilitate decision-making for users. It allows users to enter pros and cons to a decision, along with weights for each item. If the pros outweigh the cons, the app will suggest that the user should make the decision in the affirmative, and that they should not if the cons outweight the pros.
 
+The app with only React can be used here: http://radiant-lake-94362.herokuapp.com/
+The app with React and Redux can be used here: https://secret-taiga-75554.herokuapp.com/
+
 For example:
 
 Should I eat ice cream?
@@ -24,6 +27,11 @@ Cons:
 Pros (12) - cons (7) = 5
 
 You should eat ice cream!
+
+Here's an image of the React and Redux app: 
+
+![app image](https://nadinesk.github.io/images/Screen%20Shot%202017-09-25%20at%2010.44.36%20PM.png)
+
 
 ## The [React Decision App](http://radiant-lake-94362.herokuapp.com/)
 
