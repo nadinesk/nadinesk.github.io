@@ -19,7 +19,7 @@ What I found to be really fun about building this app was the flow of the state 
 
 For example, when a user adds a decision, the following flow occurs to update state:
 
-DecisionForm.js
+### DecisionForm.js
 
 * The Form:
 
@@ -51,9 +51,9 @@ handleOnSubmit(event){
 }
 ```
 
-The included `mapDispatchToProps()` to returns the callback prop, `addDecision()`, which is called within `handleOnSubmit()`.
+* The included `mapDispatchToProps()` to returns the callback prop, `addDecision()`, which is called within `handleOnSubmit()`.
 
-* actions/decisionActions.js
+### actions/decisionActions.js
 
 The `addDecision(user_id, decision)` function makes a post request to the backend, to post the decision to the current user. It receives the response as JSON, and sends that information to the store with the dispatch function.
 
@@ -77,7 +77,7 @@ export function addDecision(user_id, decision) {
   }
 }
 ```
-* reducers/decision_reducer.js
+### reducers/decision_reducer.js
 
 The state is updated in this case, with POST_SUCCESS:
 
