@@ -6,13 +6,14 @@ body {
   color: #3d334c;
 }
 
-#blog-main {
-  
+#blog-main {  
   background-color: white;
 }
 
 #blog-main p {
   font-family: 'Lora', serif;
+  font-size: 18.5px;
+  line-height: 1.5;
 }
 
 /* Header */
@@ -232,10 +233,7 @@ figure > img {
 #fullpost {
   margin-bottom: 100px;
 }
-.blog-main {
-  font-size: 18px;
-  line-height: 1.5;
-}
+
 
 .blog-post {
   margin-bottom: 60px;
