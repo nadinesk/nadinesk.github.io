@@ -162,7 +162,7 @@ house_senate_113_to_115_graph <- ggplot(hs_113_to_115_4, aes(x=congress, y=value
 
 ![111th Congress, Introduced Bills' Titles Wordcloud: Top 50 Words](http://nadinesk.github.io/images/wordcloud_111.png)
 
-**110th Congress, Introduced Bills' Titles Wordcloud: Top 50 Words** 
+**112th Congress, Introduced Bills' Titles Wordcloud: Top 50 Words** 
 
 ![112th Congress, Introduced Bills' Titles Wordcloud: Top 50 Words](http://nadinesk.github.io/images/wordcloud_112.png)
 
