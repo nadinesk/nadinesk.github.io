@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "My First R Package"
-date:   2017-11-1p 00:00:00
+date:   2017-11-19 00:00:00
 categories: r, package, propublica, congress, bills, politics
 ---
 
