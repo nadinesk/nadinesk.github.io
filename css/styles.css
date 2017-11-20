@@ -11,6 +11,11 @@ body {
   background-color: white;
 }
 
+#blog-main p {
+  font-family: 'Lora', serif;
+
+}
+
 /* Header */
  #page_title {  
   margin: 100px 0px 25px 70px;
