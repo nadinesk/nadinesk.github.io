@@ -10,7 +10,7 @@ body {
   background-color: white;
 }
 
-#blog-main p {
+#blog-main p, #blog-main li {
   font-family: 'Lora', serif;
   font-size: 18.5px;
   line-height: 1.5;
