@@ -7,7 +7,7 @@ categories: r, package, propublica, congress, bills, politics
 
 # Overview
 
-I built my first R package, [ProPubBills](https://cran.r-project.org/web/packages/proPubBills/index.html), and code [here](https://github.com/nadinesk/proPubBills) on Github. It is an API wrapper around the [ProPublica API](https://projects.propublica.org/apidocs/congress-api/) for U.S. Congressional Bills. Users can include their API key, U.S. Congress, branch, and offset ranges, to return a dataframe of all results within those parameters.  
+I built my first R package, [ProPubBills](https://cran.r-project.org/web/packages/proPubBills/index.html), and code [here](https://github.com/nadinesk/proPubBills) on Github. It is an API wrapper around the [ProPublica API](https://projects.propublica.org/api-docs/congress-api/) for U.S. Congressional Bills. Users can include their API key, U.S. Congress, branch, and offset ranges, to return a dataframe of all results within those parameters.  
 
 I used this [R Package primer](http://kbroman.org/pkg_primer/) to learn how to create the package. 
 
