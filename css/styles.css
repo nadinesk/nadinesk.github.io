@@ -69,25 +69,25 @@ hr {
   margin: 5px;
 }
 
-h1, h4 {  
-  color: #337ab7;
+h1 {  
+  font-size: 1.5em;  
+  color: #C34F4A;
  }
-
-h1 {
-  font-size: 1.5em;
-}
-
 
 h2 {
   font-size: 1.4em;
-  color: #337ab7;
+  color: #2FAECE;
  }
 
 h3 {
   font-size: 1.3em;
-  color: #337ab7;
+  color: #0F2537;
 }
 
+h4 {
+  
+  color: #3782C4;
+}
 
 #textpara {  
   margin: 20px;
