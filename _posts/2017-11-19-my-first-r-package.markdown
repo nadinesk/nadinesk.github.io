@@ -30,7 +30,7 @@ returns a dataframe with all bills and info from the API within the arguments’
 
 # Examples
 
-These examples (code on Github [here](https://github.com/nadinesk/proPubBillsAnalysis/blob/master/h_stuff1.R) compare the number of enacted legislations by political party, from the 116th Congress (current) to the 113th Congress. I stopped at the 113th Congress because the data for the 112th Congress and earlier doesn't include the enacted dates, so...for those from 112 to 110, I created word clouds for the top 50 words all introduced bills. I plan on doing some sort of join with enacted dates from another source on house/senate bill numbers. I stopped doing any analysis at the 110th Congress because, before that, the JSON returned returns errors. I plan on documenting those errors and asking the maintainer of they can be fixed. 
+These examples (code on Github [here](https://github.com/nadinesk/proPubBillsAnalysis/blob/master/h_stuff1.R)) compare the number of enacted legislations by political party, from the 116th Congress (current) to the 113th Congress. I stopped at the 113th Congress because the data for the 112th Congress and earlier doesn't include the enacted dates, so...for those from 112 to 110, I created word clouds for the top 50 words all introduced bills. I plan on doing some sort of join with enacted dates from another source on house/senate bill numbers. I stopped doing any analysis at the 110th Congress because, before that, the JSON returned returns errors. I plan on documenting those errors and asking the maintainer of they can be fixed. 
 
 ## Graphs
 
@@ -164,7 +164,7 @@ house_senate_113_to_115_graph <- ggplot(hs_113_to_115_4, aes(x=congress, y=value
 
 **110th Congress, Introduced Bills' Titles Wordcloud: Top 50 Words** 
 
-![112th Congress, Introduced Bills' Titles Wordcloud: Top 50 Words](http://nadinesk.github.io/images/wordcloud_110.png)
+![112th Congress, Introduced Bills' Titles Wordcloud: Top 50 Words](http://nadinesk.github.io/images/wordcloud_112.png)
 
 
 #### Code
