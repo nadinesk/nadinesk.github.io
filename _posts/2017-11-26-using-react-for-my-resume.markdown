@@ -7,7 +7,7 @@ categories: react, resume, javascript
 
 # Overview
 
-I used React to create an online resume, inspired by [this example](https://github.com/freaksauce/React-Resume-ES6).
+I used React to create an online resume (code on Github [here](https://github.com/nadinesk/resume)), inspired by [this example](https://github.com/freaksauce/React-Resume-ES6).
 
 # Single Source of JSON
 
