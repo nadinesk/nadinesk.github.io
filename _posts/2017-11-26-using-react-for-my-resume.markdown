@@ -7,11 +7,11 @@ categories: react, resume, javascript
 
 # Overview
 
-I got away from React and Javascript for a couple weeks while creating my [first R package](https://cran.r-project.org/web/packages/proPubBills/index.html). I eased back into it by creating my resume with React, inspired by [this example](https://github.com/freaksauce/React-Resume-ES6).
+I used React to create an online resume, inspired by [this example](https://github.com/freaksauce/React-Resume-ES6).
 
 # Single Source of JSON
 
-I created the data for my resume with JSON, using the structure from [JSON Resume](https://jsonresume.org/) as an example and tailoring it to my own needs. This JSON file was the single source of data that was loaded with index.js, which then fed the data as a prop to App.js, and App.js fed the pertinent pieces of the resume JSON to the other components through props. So clean! 
+The data for my resume had to be put in JSON format, and I used the structure from [JSON Resume](https://jsonresume.org/) as an example and tailored it to my own needs. This JSON file was the single source of data that was loaded with index.js, which then fed the data as a prop to App.js, and App.js fed the pertinent pieces of the resume JSON to the other components through props. So clean! 
 
 
 App.js
