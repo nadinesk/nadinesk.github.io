@@ -52,7 +52,7 @@ The code in the App.js files shows the sections and how the data is passed to th
     ...
 ```
 
-The Profile componenet uses the data passed to it from App.js to render the information (relevant pieces of code below).
+The Profile component uses the data passed to it from App.js to render the information (relevant pieces of code below).
 
 ```
 const Profile = props => {
@@ -73,7 +73,7 @@ const Profile = props => {
 
 The work and projects sections were a little more complicated, and I used two additional components to keep the code cleaner. I had to use some if/else logic to render the correct information, and to not include commas for the last elements in a list. 
 
-For example, the Project component is passed all of the project JSON from App.js. This Project component then maps through each project and passes each one to a ProjectItem component, and then this ProjectItem Component is rendered with Project.js: 
+For example, the Project component is passed all of the project JSON objects from App.js. This Project component then maps through each project and passes each one to a ProjectItem component, and then this ProjectItem Component is rendered with Project.js: 
 
 Project.js
 
@@ -117,7 +117,7 @@ return (
 
 ### Next Steps
 
-This was a nice and simple project that clear shows the passage of data from one component to another in a linear way. Now that I have all of the information structured in the way I want (and React makes this so easy to rearrange even if I didn't), I will work on laying out the page and doing some styling to it. 
+This was a nice and simple project that clearly shows the passage of data from one component to another in a linear way. Now that I have all of the information structured in the way I want (and React makes this so easy to rearrange even if I didn't), I will work on laying out the page and doing some styling to it. 
 
 
 
