@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Using React and Javascript to Show My Resume"
+title:  "Using React and Javascript to Display My Resume"
 date:   2017-11-26 00:00:00
 categories: react, resume, javascript
 ---
