@@ -29,10 +29,10 @@ body {
 
 #blog-main {  
   background-color: white;
+  font-family: 'Lora', serif;
 }
 
-#blog-main p, #blog-main li {
-  font-family: 'Lora', serif;
+#blog-main p, #blog-main li {  
   font-size: 18.5px;
   line-height: 1.5;
 }
