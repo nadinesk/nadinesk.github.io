@@ -189,18 +189,6 @@ h4 {
   	color: #424c33;
 }
 
-.footer {
-    font-size: 80%;
-    border-top: 4px solid #eee;
-    margin-top: 2em;
-    overflow: hidden;
-    background-color: #FFFFFF;
-  }
-
-  
-
-
-
 
 @media only screen and (max-width: 768px) {
     #page_title {  
