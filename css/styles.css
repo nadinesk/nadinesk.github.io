@@ -28,8 +28,7 @@ body {
 }
 
 #blog-main {  
-  background-color: white;
-  font-family: 'Lora', serif;
+  background-color: white;  
 }
 
 #blog-main p, #blog-main li {  
@@ -224,7 +223,8 @@ figure > img {
 
 
 .blog-post {
-  margin-bottom: 60px;
+  font-family: 'Lora', serif;
+  margin-bottom: 60px;	
 }
 .blog-post-title {
   margin-bottom: 5px;
