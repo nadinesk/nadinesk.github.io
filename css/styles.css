@@ -221,9 +221,10 @@ figure > img {
   margin-bottom: 100px;
 }
 
-
-.blog-post {
-  font-family: 'Lora', serif;
+.blog-post p, blog-post ul {
+	font-family: 'Lora', serif;
+}
+.blog-post {  
   margin-bottom: 60px;	
 }
 .blog-post-title {
