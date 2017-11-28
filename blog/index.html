@@ -3,44 +3,48 @@ layout: master1
 
 ---
 
-
-    
-      <div class="row">
-        <div class="col-xs-12">
-          <h3 class="text-center" id="page-title">POSTS</h3>
-        </div>
-      </div>
+<div class="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="text-center" id="page-title">Blog Posts</h2>
+         </div>
+    </div>
       
-      
-        <div class="row">
-          <div class="col-md-3 col-sm-2"></div>
-          <div class="col-md-6 col-sm-8 col-xs-12">
-            <ul class="bl-list">
-              {% for post in paginator.posts %}
-              <li>
-              <span>{{ post.date | date:"%m/%d/%Y" }}</span>
+    <div class="row">
+        <div class="col-md-3 col-sm-2"></div>
+        <div class="col-md-6 col-sm-8 col-xs-12">
+            <ul id="post-list">
+             {% for post in paginator.posts %}
+             <li>
+                <span>{{ post.date | date:"%m/%d/%Y" }} -- </span>
                 <a href="{{ post.url }}">{{ post.title }}</a>
-              </li>
-              <hr id="line">
-              {% endfor %}
+             </li>              
+             {% endfor %}
             </ul>
-          </div>
-          <div class="col-md-3 col-sm-2"></div>
+         </div>
+        <div class="col-md-3 col-sm-2"></div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-3 col-sm-2"></div>
+        <div class="col-md-6 col-sm-8 col-xs-12">
+        <ul>    
+            <div class="pagination">
+                {% if paginator.previous_page %}
+                    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+                {% else %}
+                    <span class="previous">Previous</span>
+                {% endif %}
+                <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+                {% if paginator.next_page %}
+                    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+                {% else %}
+                    <span class="next ">Next</span>
+                {% endif %}
+            </div>
+         </ul>
         </div>
-        
-       
-    <!-- Pagination links -->
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
-  {% else %}
-    <span class="previous">Previous</span>
-  {% endif %}
-  <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-  {% else %}
-    <span class="next ">Next</span>
-  {% endif %}
+    </div>
 </div>
+<hr>
  
