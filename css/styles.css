@@ -6,6 +6,28 @@ body {
   color: #3d334c;
 }
 
+
+#post-list {
+  padding-top: 2em;
+  list-style-type: none;
+}
+
+#post-list li {
+  margin-top: 2em;
+}
+
+.nav-list {
+  margin-top: 2em; 
+}
+
+.nav-list li {
+    display: inline;
+}
+
+.content {
+  padding-bottom: 20em;
+}
+
 #blog-main {  
   background-color: white;
 }
