@@ -223,6 +223,7 @@ figure > img {
 
 .blog-post p, blog-post ul {
 	font-family: 'Lora', serif;
+	line-height: 1.5;
 }
 .blog-post {  
   margin-bottom: 60px;	
