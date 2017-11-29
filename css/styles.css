@@ -17,6 +17,7 @@ body {
 
 .nav-list {
   margin-top: 2em; 
+  padding: 0px;
 }
 
 .nav-list li {
