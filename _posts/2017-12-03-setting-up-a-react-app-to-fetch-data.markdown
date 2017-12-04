@@ -70,7 +70,7 @@ You can access your API Key with this code:
 
 # Fetch and Redux
 
-Now that this is set up, I move on to including [isomorphic fetch](npm install --save isomorphic-fetch es6-promise), [Redux](https://redux.js.org/) and [React-Redux](https://github.com/reactjs/react-redux), and [Redux-Thunk](https://github.com/gaearon/redux-thunk): 
+Now that this is set up, I move on to including [isomorphic fetch](https://github.com/matthew-andrews/isomorphic-fetch), [Redux](https://redux.js.org/) and [React-Redux](https://github.com/reactjs/react-redux), and [Redux-Thunk](https://github.com/gaearon/redux-thunk): 
 
 ```
 npm install --save isomorphic-fetch es6-promise
