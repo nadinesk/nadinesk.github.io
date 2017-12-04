@@ -10,7 +10,7 @@ It can take me a while to just get set up with building a new app, so I'm outlin
 
 # Create React App
 
-[Create React App] makes it really easy to start on a React app, with no-build configuration. 
+[Create React App](https://github.com/facebookincubator/create-react-app) makes it really easy to start on a React app, with no-build configuration. 
 
 From their documentation: 
 
