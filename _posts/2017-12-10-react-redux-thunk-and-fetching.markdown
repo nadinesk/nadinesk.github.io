@@ -48,7 +48,6 @@ const receivedBills = bills => {
 The function: 
 
 ```
-
 export function getBills(chamber, type,offset) {      
   return function(dispatch){                    
     return fetch(`https://api.propublica.org/congress/v1/115/${chamber}/bills/${type}.json?offset=${offset}`, {
@@ -64,7 +63,6 @@ export function getBills(chamber, type,offset) {
      })   
   }
 }
-
 ```
 
 The getBills() function gets called in the [componentDidMount()](https://reactjs.org/docs/react-component.html#componentdidmount) mounting lifecycle method. The data will get fetched and loaded once the component is mounted. 
@@ -87,7 +85,6 @@ The action creator, `receivedBills`, provides the source of information for the 
 The next step is to add the [reducer](https://redux.js.org/docs/basics/Reducers.html), which tells the application how to update the state. 
 
 ```
-
 export default function billReducer(state = [], action) {
   
   switch(action.type) {
@@ -97,7 +94,6 @@ export default function billReducer(state = [], action) {
       return state;
   }  
 }
-
 ``` 
 
 I added another index reducer with a [combineReducer](https://redux.js.org/docs/api/combineReducers.html) in anticipation of my app growing, to manage different parts of the state. From the documentation, 'The combineReducers helper function turns an object whose values are different reducing functions into a single reducing function you can pass to createStore.'
@@ -112,7 +108,6 @@ const store = createStore(
     window.devToolsExtension ? window.devToolsExtension() : f => f
   )
 )
-
 ```
 
 # Next Steps
