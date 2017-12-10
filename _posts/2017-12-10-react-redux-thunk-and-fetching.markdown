@@ -12,21 +12,19 @@ After the packages for Redux, React-Redux, isomorphic-fetch, and Redux Thunk hav
 My test fetch looks something like this: 
 
 ```	
-		var apiURLbills = 'https://api.propublica.org/congress/v1/bills/search.json?query=megahertz';
-		var apiKey = process.env.REACT_APP_SECRET_CODE
-		console.log('apiKey', apiKey)
-    	
-    	const test = fetch(apiURLbills, {
-    		 headers: {
-        		Accept: 'application/json',
-        		'X-API-KEY': apiKey
-      		}
-      	})
-		      .then(res =>  res.json())
-		      .then(billsFound => {
-        			return billsFound.results[0].bills                	
-    			})
-
+var apiURLbills = 'https://api.propublica.org/congress/v1/bills/search.json?query=megahertz';
+var apiKey = process.env.REACT_APP_SECRET_CODE
+console.log('apiKey', apiKey)    	
+const test = fetch(apiURLbills, {
+	headers: {
+        	Accept: 'application/json',
+        	'X-API-KEY': apiKey
+	}
+})
+	.then(res =>  res.json())
+	.then(billsFound => {
+        	return billsFound.results[0].bills                	
+	})
 ```
 
 I console.log everything out, so I know the structure of the JSON response, and how to get the data that I need. This step requires a lot of debugging and examining the responses; when the fetch request is moved to a separate action creator, you will know how to get the data you need. 
@@ -38,12 +36,12 @@ After the test fetch is working, it's time to move the fetch to a new actions fo
 The action creator: 
 
 ```
-	const receivedBills = bills => {  
-	  	return {
-	    	type: 'RECEIVED_BILLS',
+const receivedBills = bills => {  
+	return {
+		type: 'RECEIVED_BILLS',
 	    	bills
-	  	}
 	}
+}
 
 ```
 
@@ -54,16 +52,16 @@ The function:
 export function getBills(chamber, type,offset) {      
   return function(dispatch){                    
     return fetch(`https://api.propublica.org/congress/v1/115/${chamber}/bills/${type}.json?offset=${offset}`, {
-    		 headers: {
-        		Accept: 'application/json',
-        		'X-API-KEY': apiKey
-      		 }
-      		 })     
-	 .then(res =>  res.json())
-	 .then(billsFound => {     	     	
+	headers: {
+        	Accept: 'application/json',
+        	'X-API-KEY': apiKey
+	}
+    })     
+    .then(res =>  res.json())
+    .then(billsFound => {     	     	
      	dispatch(receivedBills(billsFound.results[0].bills))
      	console.log((receivedBills(billsFound.results[0].bills)))
-	  })   
+     })   
   }
 }
 
