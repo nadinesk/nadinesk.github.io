@@ -7,7 +7,7 @@ categories: react, fetch, javascript, redux, api
 
 # Testing Fetch
 
-After the packages for Redux, React-Redux, isomorphic-fetch, and Redux Thunk have been installed, I create a test fetch within the App component. The test allows me to make sure that the basic request with API key are correct, before I move the call to an [action creator that will return an action](https://redux.js.org/docs/basics/Actions.html), that will then update the store. 
+After the packages for Redux, React-Redux, isomorphic-fetch, and Redux Thunk have been installed, discussed [here](https://nadinesk.github.io/react,/setup,/javascript,/redux,/api/2017/12/03/setting-up-a-react-app-to-fetch-data.html), I create a test fetch within the App component. The test allows me to make sure that the basic request with API key are correct, before I move the call to an [action creator that will return an action](https://redux.js.org/docs/basics/Actions.html), that will then update the store. 
 
 My test fetch looks something like this: 
 
