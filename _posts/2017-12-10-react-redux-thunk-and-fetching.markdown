@@ -21,10 +21,10 @@ const test = fetch(apiURLbills, {
         	'X-API-KEY': apiKey
 	}
 })
-	.then(res =>  res.json())
-	.then(billsFound => {
-        	return billsFound.results[0].bills                	
-	})
+.then(res =>  res.json())
+.then(billsFound => {
+	return billsFound.results[0].bills                	
+})
 ```
 
 I console.log everything out, so I know the structure of the JSON response, and how to get the data that I need. This step requires a lot of debugging and examining the responses; when the fetch request is moved to a separate action creator, you will know how to get the data you need. 
