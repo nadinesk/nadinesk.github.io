@@ -1,6 +1,1 @@
----
-layout: 
-title:  
-date:   
-categories: 
----
+
