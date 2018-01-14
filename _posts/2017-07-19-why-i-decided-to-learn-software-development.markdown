@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: 
 title:  "Why I Decided to Learn Software Development"
 date:   2017-07-19 00:00:00
 categories: software development, thoughts
