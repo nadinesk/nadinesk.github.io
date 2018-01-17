@@ -52,11 +52,6 @@ Trump spoke much more than Clinton in the first two debates but she spoke more t
 
 ![Clinton and Trump Total Words](https://nadinesk.github.io/images/twLine.png)
 
-And finally, here is Trump displaying more negativity and craziness/scariness at his last debate performance. 
-
-<blockquote class="twitter-tweet" data-lang="en"><p lang="und" dir="ltr">Yup <a href="https://t.co/vDf6G8bRmZ">pic.twitter.com/vDf6G8bRmZ</a></p>&mdash; Chris Cillizza (@TheFix) <a href="https://twitter.com/TheFix/status/789090575249125376">October 20, 2016</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 **R Code**
 
 TOTAL WORDS
