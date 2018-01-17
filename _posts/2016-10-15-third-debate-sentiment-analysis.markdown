@@ -8,7 +8,7 @@ categories: r, data, graphs, politics, debates, clinton, trump, general election
 
 **Clinton Clearly More Positive, and Why That's Important**
 
-Sentiment Analyses comparisons, using R (code at the end of post), between Clinton and Trump between their convention party acceptance speeches and the three debates show that Clinton is by far the more positive candidate. Trump spoke more in the first two debates, but Clinton, fighting back and being more aggressive in the third debate, spoke more words than Trump did. 
+I used R (code at the end of post) and transcripts of the three debates between Trump and Clinton to perform a sentiment analysis. The analysis show that Clinton is by far the more positive candidate. Trump spoke more in the first two debates, but Clinton, fighting back and being more aggressive in the third debate, spoke more words than Trump did. 
 
 ![Second Debates Comparison Chart](https://nadinesk.github.io/images/positiveNegativesum1.png)
 
