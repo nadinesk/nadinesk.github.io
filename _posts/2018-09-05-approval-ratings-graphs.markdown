@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Presidential Approval Ratings August 2018"
-date:   2087-09-05 11:40:00
+date:   2018-09-05 11:40:00
 categories: r, politics, polls
 ---
 
