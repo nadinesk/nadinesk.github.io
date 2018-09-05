@@ -10,19 +10,19 @@ Here are some graphs from the [Washington Post-ABC News](https://www.washingtonp
 
 Net Approval Ratings
 
-![net_approval](https://github.com/nadinesk/data_tables/blob/master/approval_trends/p_net.png)
+![net_approval](https://nadinesk.github.io/images/p_net.png)
 
 All Approval Ratings Results
 
-![net_approval](https://github.com/nadinesk/data_tables/blob/master/approval_trends/p_long.png)
+![all_approval]https://nadinesk.github.io/images/p_long.png)
 
 Approval Ratings Results
 
-![net_approval](https://github.com/nadinesk/data_tables/blob/master/approval_trends/p_approve.png)
+![approval_ratings](https://nadinesk.github.io/images/p_approve.png)
 
 Disapproval Ratings Results
 
-![net_approval](https://github.com/nadinesk/data_tables/blob/master/approval_trends/p_disapprove.png)
+![disapproval_ratings](https://nadinesk.github.io/images/p_disapprove.png)
 
 
 The data is [here](https://github.com/nadinesk/data_tables/blob/master/approval_trends/approvaltrend.csv). 
