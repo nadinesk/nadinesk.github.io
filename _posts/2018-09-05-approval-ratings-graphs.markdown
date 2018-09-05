@@ -14,7 +14,7 @@ Net Approval Ratings
 
 All Approval Ratings Results
 
-![all_approval]https://nadinesk.github.io/images/p_long.png)
+![all_approval](https://nadinesk.github.io/images/p_long.png)
 
 Approval Ratings Results
 
