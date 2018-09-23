@@ -69,7 +69,7 @@ This bar chart shows the percentage of positive articles for Republicans and Dem
 
 # Code
 
-The repo for this analysis is [here](link)
+The repo for this analysis is [here](https://github.com/nadinesk/data_tables/blob/master/nyt_api/nyt_api_parse3.R)
 
 The function to retrieve the articles is below, with credit to [this article](http://www.storybench.org/working-with-the-new-york-times-api-in-r/)
 )
