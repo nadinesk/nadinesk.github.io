@@ -9,61 +9,61 @@ categories: r, nytimes api, politics, journalism, data
 The New York Times has [several APIs](https://developer.nytimes.com/). I used their [Article Search API](https://developer.nytimes.com/article_search_v2.json) to see if there was a difference in the sentiments expressed in articles and headlines, between Democrats and Republicans. 
 
 # R and Sentiment Analysis
-I used R and the [tidytext package](https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html) to perform the sentiment analysis on the snippets/summaries for articles (the full article is not returned), and headlines. I used the [NRC Emotion Lexicon](https://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm): 'The NRC Emotion Lexicon is a list of English words and their associations with eight basic emotions (anger, fear, anticipation, trust, surprise, sadness, joy, and disgust) and two sentiments (negative and positive). The annotations were manually done by crowdsourcing.'
+I used R and the [tidytext package](https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html) to perform the sentiment analysis on the snippets/summaries for articles (full articles is not returned, so when I refer to 'articles,' I'm referring to the article snippets), and headlines. I used the [NRC Emotion Lexicon](https://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm): 'The NRC Emotion Lexicon is a list of English words and their associations with eight basic emotions (anger, fear, anticipation, trust, surprise, sadness, joy, and disgust) and two sentiments (negative and positive). The annotations were manually done by crowdsourcing.'
 
 ## Limitations
-The API request limit prevented me from examining as much data as I wanted, because the number of results returned for 'democrat' and 'republican' is, not surprisingly, large. Instead of examining data for full years, I compared data between August 2016 (just before the most recent presidential election), August 2017, and August 2018 (the strange state of politics and current events since then). 
+The API request limit prevented me from examining as much data as I wanted, because the number of results returned for 'democrat' and 'republican' is, not surprisingly, large. Instead of examining data for full years, I compared data from August 2016 (just before the most recent presidential election), August 2017, and August 2018 (the strange state of politics and current events since the 2016 election). 
 
-A first run of results in the search showed that there wasn't a huge difference between sentiments and emotions expressed between both search terms. I then ran search results for coffee, which should have fairly neutral sentiments; and for love and hate, which should show stronger differences in emotions. There were differences between sentiments in articles with love and hate, but they weren't very dramatic. The comparison made gave me a sort of benchmark of percentage differences that might be notable. 
+A first run of results in the search showed that there wasn't a huge difference between sentiments and emotions expressed between both search terms. (Side note: I then ran search results for coffee, which should have fairly neutral sentiments; and for love and hate, which should show stronger differences in emotions. There were sentiment and emotion differences in articles with love and hate, but they weren't very dramatic. The comparison gave me a sort of benchmark of percentage differences that might be notable.)
 
-The two pieces of data I compared were differences in sentiments in the snippets, for articles returned for 'democrat' and 'republican' searches (and coffee, love, and hate for comparison); and differences in sentiments in headlines for the articles returned for each search term. 
+The two pieces of data I compare are sentiments for articles about 'democrats' and 'republicans'; and differences in sentiments in headlines for the articles returned for each search term. 
 
 # Take-Aways
 
-Here are some of the differences I thought were interesting between the sentiment differences in sentiments: 
+Here are some of the interesting differences between the sentiments for 'republican' and 'democrat' articles: 
 
 ## Democrats vs Republicans
 
-* August 2018: Sadness was expressed 1% more in articles about Republicans than Democrats
+* August 2018: Sadness was expressed 1% more in articles about Republicans than Democrats. 
 
-* August 2017: Fear was expressed 0.9% more in articles about Democrats than Republicans
+* August 2017: Fear was expressed 0.9% more in articles about Democrats than Republicans. 
 
 * August 2016: 
 
-  * Articles about Democrats were 1% more negative than those about Republicans
+  * Articles about Democrats were 1% more negative than those about Republicans. 
 
   * Articles about Republicans were 0.8% more positive than those about Democrats. 
 
-* Articles about Democrats were more negative than those about Republicans by 1% in 2016 and 2017
+* Articles about Democrats were more negative than those about Republicans by 1% in both Aug 2016 and Aug 2017. 
 
-* Articls about Democrats were less positive in 2016, and more positve in 2017 and 2018, than those about the Republican party. 
+* Articles about Democrats were less positive in 2016, and more positve in 2017 and 2018, than those about the Republican party. 
 
-This bar chart shows the percentage of negative articles for Republicans and Democrats for August of each year from 2016-18. The article snippets were more negative for Democrats than Republicans for all time periods. 
+This bar chart shows the percentage of negative articles for Republicans and Democrats for August of each year from 2016-18. The articles were more negative for Democrats than Republicans for all time periods. 
 
 **Percent of Words with Negative Sentiments by Year and Party**
 ![neg_bar_chart](https://nadinesk.github.io/images/bar_neg.png)
 
-This bar chart shows the percentage of positive articles for Republicans and Democrats for August of each year from 2016-18.The article snippets were more negative for Republicans in 2016 (right before the election?!) and more positive for Democrats in the following to Augusts looked at. 
+This bar chart shows the percentage of positive articles for Republicans and Democrats for August of each year from 2016-18.The article were more positive for Republicans in 2016 (right before the election?!) and more positive for Democrats in Aug 2017 and Aug 2018. 
 
 **Percent of Words with Positive Sentiments by Year and Party**
 ![pos_bar_chart](https://nadinesk.github.io/images/bar_pos.png)
 
-(Side note: The colors are reversed for colors associated with Dems and Republicans but...details.)
+(Note: The colors are reversed for colors associated with Dems and Republicans but...details.)
 
 ## Republicans: Comparisons Across Time
 
-* Articles about Republicans showed more disgust by 1.5%, in August 2018 compared to August 2017.
+* Articles about Republicans expressed more disgust by 1.5%, in August 2018 compared to August 2017.
 
 ## Democrats: Comparisons Across Time
 
-* Articles about Democrats were sadder and more negative, by 1% each, in August 2016 compared to August 2018. 
+* Articles about Democrats were sadder and more negative, by 1% each, in August 2016 than August 2018. 
 
-* Articles about Democrats were more negative in 2016 than in 2017 and 2018. 
+* Articles about Democrats were more negative in August 2016 than in August 2017 and August 2018. 
 
 ## Number of Articles
 
 * There were more articles about Democrats than Republicans for each time period compared.
-* There were significantly more stories about both parties in August 2016, before the election, in than in Aug 2017 and Aug 2018
+* There were significantly more stories about both parties in August 2016, before the election, in than in August 2017 and August 2018
 
 **Number of Articles by Year and Party**
 
