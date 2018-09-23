@@ -65,41 +65,6 @@ Percent of Words with Positive Sentiments by Year and Party
 * There were more articles about Democrats than Republicans for each time period compared.
 * There were significantly more stories about both parties in August 2016, before the election, in than in Aug 2017 and Aug 2018
 
-<table>
-  <tr>
-    <th>Category</th>
-    <th>2018</th>
-    <th>2017</th>  
-    <th>2016</th>
-    <th>% Change, 8/18 vs 8/16</th>
-    <th>% Change, 8/18 vs 8/17</th>
-  </tr>
-  <tr>
-    <td>Democrat</td>
-    <td>718</td>
-    <td>539</td>
-    <td>1,930</td>  
-    <td>-169%</td>    
-    <td>33.2%</td>
-  </tr>
-  <tr>
-    <td>Republican</td>
-    <td>617</td>
-    <td>500</td>
-    <td>1,677</td>  
-    <td>-172%</td>    
-    <td>23.4%</td>
-  </tr>
-  <tr>
-    <td>Percent Difference</td>
-    <td>15%</td>
-    <td>8%</td>
-    <td>14%</td>  
-    <td>-NA</td>    
-    <td>NA</td>
-  </tr>
-</table>
-
 Number of Articles by Year and Party
 
 ![articles_count](https://nadinesk.github.io/images/artCt.png)
