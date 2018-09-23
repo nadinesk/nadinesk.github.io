@@ -40,12 +40,12 @@ Here are some of the differences I thought were interesting between the sentimen
 
 This bar chart shows the percentage of negative articles for Republicans and Democrats for August of each year from 2016-18. The article snippets were more negative for Democrats than Republicans for all time periods. 
 
-Percent of Words with Negative Sentiments by Year and Party
+**Percent of Words with Negative Sentiments by Year and Party**
 ![neg_bar_chart](https://nadinesk.github.io/images/bar_neg.png)
 
 This bar chart shows the percentage of positive articles for Republicans and Democrats for August of each year from 2016-18.The article snippets were more negative for Republicans in 2016 (right before the election?!) and more positive for Democrats in the following to Augusts looked at. 
 
-Percent of Words with Positive Sentiments by Year and Party
+**Percent of Words with Positive Sentiments by Year and Party**
 ![pos_bar_chart](https://nadinesk.github.io/images/bar_pos.png)
 
 (Side note: The colors are reversed for colors associated with Dems and Republicans but...details.)
@@ -65,7 +65,7 @@ Percent of Words with Positive Sentiments by Year and Party
 * There were more articles about Democrats than Republicans for each time period compared.
 * There were significantly more stories about both parties in August 2016, before the election, in than in Aug 2017 and Aug 2018
 
-Number of Articles by Year and Party
+**Number of Articles by Year and Party**
 
 ![articles_count](https://nadinesk.github.io/images/artCt.png)
 
