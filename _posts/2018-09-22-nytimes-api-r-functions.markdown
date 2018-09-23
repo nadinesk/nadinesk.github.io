@@ -38,13 +38,17 @@ Here are some of the differences I thought were interesting between the sentimen
 
 * Articls about Democrats were less positive in 2016, and more positve in 2017 and 2018, than those about the Republican party. 
 
-This bar chart shows the percentage of negative articles for Republicans and Democrats for August of each year from 2016-18.
+This bar chart shows the percentage of negative articles for Republicans and Democrats for August of each year from 2016-18. The article snippets were more negative for Democrats than Republicans for all time periods. 
 
-Negative bar chart here
+Percent of Words with Negative Sentiments by Year and Party
+![neg_bar_chart](https://nadinesk.github.io/images/bar_neg.png)
 
-This bar chart shows the percentage of positive articles for Republicans and Democrats for August of each year from 2016-18.
+This bar chart shows the percentage of positive articles for Republicans and Democrats for August of each year from 2016-18.The article snippets were more negative for Republicans in 2016 (right before the election?!) and more positive for Democrats in the following to Augusts looked at. 
 
-Positive bar chart here
+Percent of Words with Positive Sentiments by Year and Party
+![pos_bar_chart](https://nadinesk.github.io/images/bar_pos.png)
+
+(Side note: The colors are reversed for colors associated with Dems and Republicans but...details.)
 
 ## Republicans: Comparisons Across Time
 
@@ -96,8 +100,9 @@ Positive bar chart here
   </tr>
 </table>
 
+Number of Articles by Year and Party
 
-Article Counts Bar Graph
+![articles_count](https://nadinesk.github.io/images/artCt.png)
 
 # Code
 
@@ -141,7 +146,6 @@ nyt_df <- function(term,begin_date,end_date, apiKey) {
 ```
 
 The function to do the sentiment anaysis is here, with credit to [this article](http://www.sthda.com/english/wiki/text-mining-and-word-cloud-fundamentals-in-r-5-simple-steps-you-should-know) for the text mining portion. 
-
 
 ```
 
