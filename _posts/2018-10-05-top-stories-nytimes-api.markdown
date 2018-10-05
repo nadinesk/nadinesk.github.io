@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Top Stories and Most Viewed Stories from the New York Times, with NYTimes API and React"
+title:  "New York Times Top and Most Viewed Stories: NYTimes API and React"
 date:   2018-10-05 00:00:00
 categories: r, nytimes api, politics, journalism, data, top stories, news
 ---
