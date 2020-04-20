@@ -1,6 +1,13 @@
 ---
 layout: post
-title: Some Added Code
-date: 2020-04-17 14:48:50.000000000 -04:00
+title:  "Some New Code"
+date:   2020-04-17 00:00:00
+categories: SQL, Python
 ---
-<p>I added a [new repo](https://github.com/nadinesk/w_code) with more recent code </p>
+
+I've added some new code, [here](https://github.com/nadinesk/w_code). 
+
+
+
+
+
