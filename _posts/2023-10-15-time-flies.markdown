@@ -1,9 +1,10 @@
 ---
 layout: post
-title:  "Some New Code"
-date:   2020-04-17 12:00:00
-categories: SQL, Python
+title:  "Time Flies"
+date:   2023-10-15 00:00:00
+categories: miscellaneous
 ---
 
-I've added some new code, [here](https://github.com/nadinesk/w_code). 
+Time flies when you are...<u>fill in the blank</u>
 
+Getting old
