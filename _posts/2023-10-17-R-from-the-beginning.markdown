@@ -5,7 +5,7 @@ date:   2023-10-17 00:00:00
 categories: R
 ---
 
-From [R for Data Science](https://duckduckgo.com](https://r4ds.hadley.nz/data-visualize)
+From [R for Data Science](https://r4ds.hadley.nz/data-visualize)
 
 <b>How many rows are in penguins? How many columns?</b>
 
