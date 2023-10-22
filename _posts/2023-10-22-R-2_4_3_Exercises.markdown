@@ -16,7 +16,9 @@ It's fun to have fun but you have to know how. ~The Cat in the Hat
 
 
 ```
-    ggplot(penguins, aes(y=species))+ geom_bar()
+
+ggplot(penguins, aes(y=species))  +  geom_bar()
+
 
 ```
 
@@ -28,10 +30,10 @@ The x and y axes are reversed, and the bars are horizontal instead of vertical
 
 ```
 
-    ggplot(penguins, aes(x = species)) +
+ggplot(penguins, aes(x = species)) +
       geom_bar(color = "red")
 
-    ggplot(penguins, aes(x = species)) +
+ggplot(penguins, aes(x = species)) +
       geom_bar(fill = "red")
 
 ```
