@@ -12,13 +12,10 @@ Exercises [2.4.3](https://r4ds.hadley.nz/data-visualize)
 It's fun to have fun but you have to know how. ~ The Cat in the Hat
 
 <ol>
+      
 <li>Make a bar plot of species of penguins, where you assign species to the y aesthetic. How is this plot different? </li>
 
-
-```
-ggplot(penguins, aes(y=species))  +  geom_bar()
-
-```
+    > ggplot(penguins, aes(y=species))  +  geom_bar()
 
 <img src="https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/Screen%20Shot%202023-10-22%20at%207.23.15%20AM.png" />
 
@@ -26,13 +23,11 @@ The x and y axes are reversed, and the bars are horizontal instead of vertical
 
 <li>How are the following two plots different? Which aesthetic, color or fill, is more useful for changing the color of bars?</li>
 
-```
-ggplot(penguins, aes(x = species)) +
-      geom_bar(color = "red")
+    > ggplot(penguins, aes(x = species)) +
+          geom_bar(color = "red")
 
-ggplot(penguins, aes(x = species)) +
-      geom_bar(fill = "red")
-```
+    > ggplot(penguins, aes(x = species)) +
+          geom_bar(fill = "red")
 
 The color="red" code changes the outline of the bars to red; the fill="red" code changes the bar itself to red color. The fill="red" is more useful for changing the color of the bars. 
 
