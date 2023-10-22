@@ -43,3 +43,9 @@ The color="red" code changes the outline of the bars to red; the fill="red" code
 <li>What does the bins argument in geom_histogram() do? </li>
 
  It changes the groupings of data on the x axis, or how the x axis values are divided equally. 
+
+ ```
+function test() {
+  console.log("notice the blank line before this function?");
+}
+```
