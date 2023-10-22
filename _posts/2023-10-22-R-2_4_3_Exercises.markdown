@@ -15,7 +15,7 @@ It's fun to have fun but you have to know how. ~The Cat in the Hat
 <li>Make a bar plot of species of penguins, where you assign species to the y aesthetic. How is this plot different? </li>
 
 
-```R
+```
 ggplot(penguins, aes(y=species))+ geom_bar()
 ```
 
@@ -25,7 +25,7 @@ The x and y axes are reversed, and the bars are horizontal instead of vertical
 
 <li>How are the following two plots different? Which aesthetic, color or fill, is more useful for changing the color of bars?</li>
 
-```R
+```
 ggplot(penguins, aes(x = species)) +
   geom_bar(color = "red")
 
