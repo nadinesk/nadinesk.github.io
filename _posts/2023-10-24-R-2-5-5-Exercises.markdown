@@ -9,7 +9,7 @@ From [R for Data Science](https://r4ds.hadley.nz/data-visualize)
 
 Exercises [2.5.5](https://r4ds.hadley.nz/data-visualize)
 
-<b>1-The mpg data frame that is bundled with the ggplot2 package contains 234 observations collected by the US Environmental Protection Agency on 38 car models. Which variables in mpg are categorical? Which variables are numerical? (Hint: Type ?mpg to read the documentation for the dataset.) How can you see this information when you run mpg?</b>
+**1-The mpg data frame that is bundled with the ggplot2 package contains 234 observations collected by the US Environmental Protection Agency on 38 car models. Which variables in mpg are categorical? Which variables are numerical? (Hint: Type ?mpg to read the documentation for the dataset.) How can you see this information when you run mpg?**
 
 ```
 > glimpse(mpg)
@@ -35,7 +35,7 @@ Categorical: manufacturer, model, year, drv, fl, class
 
 Numerical: displ, cyl, cty, hwy
 
-<b>2-Make a scatterplot of hwy vs. displ using the mpg data frame. Next, map a third, numerical variable to color, then size, then both color and size, then shape. How do these aesthetics behave differently for categorical vs. numerical variables?</b>
+**2-Make a scatterplot of hwy vs. displ using the mpg data frame. Next, map a third, numerical variable to color, then size, then both color and size, then shape. How do these aesthetics behave differently for categorical vs. numerical variables?**
 
 The aesthetics for numerical variables are shown as scales, and separated when both are shown. The aesthetics for categorical variables are determined based on specific values, and different aesthetics, like size and shape, can be combined into one legend for them. 
 
@@ -85,15 +85,15 @@ Run `rlang::last_trace()` to see where the error occurred.
 
 <img src="https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/Screen%20Shot%202023-10-24%20at%206.24.55%20AM.png" />
 
-<b>3-In the scatterplot of hwy vs. displ, what happens if you map a third variable to linewidth?</b>
+**3-In the scatterplot of hwy vs. displ, what happens if you map a third variable to linewidth?**
 
 Nothing is affected
 
-<b>4-What happens if you map the same variable to multiple aesthetics?</b>
+**4-What happens if you map the same variable to multiple aesthetics?**
 
 If it's a numerical value, they get mapped to the aesethtics separately on the legend and combined on the plot itself then. If it's a categorical value, they get combined
 
-<b>5-Make a scatterplot of bill_depth_mm vs. bill_length_mm and color the points by species. What does adding coloring by species reveal about the relationship between these two variables? What about faceting by species?</b>
+**5-Make a scatterplot of bill_depth_mm vs. bill_length_mm and color the points by species. What does adding coloring by species reveal about the relationship between these two variables? What about faceting by species?**
 
 Coloring the points shows that there is a stronger relationship between these variables for Gentoo penguins, then Chinstrap, then Adelie penguins. 
 
@@ -111,7 +111,7 @@ Faceting the species shows the same but more clearly
 
 <img src="https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/Screen%20Shot%202023-10-24%20at%206.45.41%20AM.png" />
 
-<b>6-Why does the following yield two separate legends? How would you fix it to combine the two legends?</b>
+**6-Why does the following yield two separate legends? How would you fix it to combine the two legends?**
 
 ```
 ggplot(
@@ -128,7 +128,7 @@ ggplot(
 It shows two separate legends because of the labs(color="Species") code. The legends are combined if that code is not included
 
 
-<b>7-Create the two following stacked bar plots. Which question can you answer with the first one? Which question can you answer with the second one?</b>
+**7-Create the two following stacked bar plots. Which question can you answer with the first one? Which question can you answer with the second one?**
 
 ```
 ggplot(penguins, aes(x = island, fill = species)) +
