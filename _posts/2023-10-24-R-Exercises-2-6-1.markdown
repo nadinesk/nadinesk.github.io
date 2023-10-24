@@ -1,0 +1,33 @@
+---
+layout: post
+title:  "R for Data Science 2.6.1 Exercises"
+date:   2023-10-24 00:00:00
+categories: R
+---
+
+From [R for Data Science](https://r4ds.hadley.nz/data-visualize)
+
+Exercises [2.6.1](https://r4ds.hadley.nz/data-visualize)
+
+**1-Run the following lines of code. Which of the two plots is saved as mpg-plot.png? Why?**
+
+```
+ggplot(mpg, aes(x = class)) +
+  geom_bar()
+ggplot(mpg, aes(x = cty, y = hwy)) +
+  geom_point()
+ggsave("mpg-plot.png")
+```
+
+The second plot is saved because it has ggsave immediately after it. 
+
+**2-What do you need to change in the code above to save the plot as a PDF instead of a PNG? How could you find out what types of image files would work in ggsave()?**
+
+change 
+```
+ggsave("mpg-lot.png")
+```
+to
+```
+ggsave("mpg-lot.pdf")
+```
