@@ -1,0 +1,101 @@
+---
+layout: post
+title:  "R for Data Science 4.2.5 Exercises"
+date:   2023-10-25 00:00:00
+categories: R
+---
+
+From [R for Data Science](https://r4ds.hadley.nz)
+
+Exercises [4.2.5](https://r4ds.hadley.nz/data-transform#exercises)
+
+**1-In a single pipeline for each condition, find all flights that meet the condition:**
+
+**Had an arrival delay of two or more hours**
+
+```
+> flights |>
++     filter(arr_delay >=120)
+```
+
+**Flew to Houston (IAH or HOU)**
+```
+> flights |>
++     filter(dest %in% c("IAH","HOU"))
+```
+
+Were operated by United, American, or Delta
+```
+> unique(flights$carrier)
+ [1] "UA" "AA" "B6" "DL" "EV" "MQ" "US" "WN" "VX" "FL" "AS" "9E" "F9" "HA" "YV" "OO"
+> flights |>
++     filter(carrier %in% c("UA", "AA", "DL"))
+```
+
+**Departed in summer (July, August, and September)**
+```
+> flights |>
++     filter(month %in% c(7,8,9))
+```
+
+**Arrived more than two hours late, but didn’t leave late**
+```
+> flights |>
++     filter(arr_delay >120 & dep_delay <=0)
+```
+
+**Were delayed by at least an hour, but made up over 30 minutes in flight**
+```
+> flights |>
++     filter(dep_delay >=60 & air_time > 30)
+```
+
+**Sort flights to find the flights with longest departure delays.**
+```
+> flights |>
++     arrange(desc(dep_delay))
+```
+
+Find the flights that left earliest in the morning. **
+```
+> sort(unique(flights$hour))
+ [1]  1  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+
+> q1p1 <- flights |> filter(hour >=1 & hour <=9)
+```
+
+**2-Sort flights to find the fastest flights. (Hint: Try including a 
+math calculation inside of your function.)**
+```
+> q1p2 <- flights |> arrange(air_time/distance)
+```
+
+**3-Was there a flight on every day of 2013?**
+Yes 
+```
+> flights |> count(year,month,day)
+# A tibble: 365 × 4
+```
+
+**4-Which flights traveled the farthest distance? Which traveled the least distance?**
+
+```
+> sort(unique(flights$distance))
+  [1]   17   80   94   96  116  143  160  169  173  184  185  187  195  198  199  200  209  212  213  214  228  229
+ [23]  246  254  258  264  266  269  273  277  282  284  288  290  292  296  301  305  319  335  340  378  397  404
+ [45]  416  419  425  427  431  444  445  461  463  479  483  488  500  502  509  529  533  541  544  549  550  563
+ [67]  569  583  585  589  594  599  602  604  605  610  617  618  628  631  636  637  641  642  644  645  647  651
+ [89]  655  659  660  662  665  708  711  719  722  725  733  738  740  745  746  748  760  762  764  765  799  812
+[111]  820  828  833  865  866  872  888  892  937  944  946  950  963  964  997 1005 1008 1010 1017 1020 1023 1028
+[133] 1029 1031 1035 1041 1047 1065 1068 1069 1074 1076 1080 1085 1089 1092 1096 1107 1113 1131 1134 1147 1148 1167
+[155] 1182 1183 1207 1215 1325 1372 1389 1391 1400 1411 1416 1417 1428 1504 1521 1569 1576 1585 1587 1598 1605 1608
+[177] 1617 1620 1623 1626 1634 1725 1726 1728 1746 1747 1795 1826 1874 1882 1894 1969 1990 2133 2153 2227 2248 2378
+[199] 2402 2422 2425 2434 2446 2454 2465 2475 2521 2565 2569 2576 2586 3370 4963 4983
+> flights |> 
++     filter(distance >=1000) |>
++     arrange(desc(distance))
+```
+
+**5-Does it matter what order you used filter() and arrange() if you’re using both? Why/why not? Think about the results and how much work the functions would have to do.**
+
+Yes, because if using arrange first, more time would be spent sorting more data, whereas using filter first would take less time because less data is being arranged
