@@ -18,6 +18,8 @@ Exercises [4.2.5](https://r4ds.hadley.nz/data-transform#exercises-1)
 > flights |>
 +     select(dep_time, dep_delay, arr_time, arr_delay)
 ```
+
+```
 > flights |>
 +     select(dep_time, dep_delay, arr_time, arr_delay)
 ```
