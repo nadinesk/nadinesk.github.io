@@ -1,0 +1,121 @@
+---
+layout: post
+title:  "R for Data Science 4.3.5 Exercises"
+date:   2023-10-26 00:00:00
+categories: R
+---
+
+From [R for Data Science](https://r4ds.hadley.nz)
+
+Exercises [4.2.5](https://r4ds.hadley.nz/data-transform#exercises-1)
+
+
+**1-Compare dep_time, sched_dep_time, and dep_delay. How would you expect those three numbers to be related?**
+
+`dep_delay` is the difference between `dep_time` and `sched_dep_time`. `dep_time` - `sched_dep_time`
+
+
+**2-Brainstorm as many ways as possible to select dep_time, dep_delay, arr_time, and arr_delay from flights.**
+
+```
+> flights |>
++     select(dep_time, dep_delay, arr_time, arr_delay)
+```
+> flights |>
++     select(dep_time, dep_delay, arr_time, arr_delay)
+```
+
+
+**3-What happens if you specify the name of the same variable multiple times in a select() call?**
+
+It only is shown one time
+
+**4-What does the any_of() function do? Why might it be helpful in conjunction with this vector?**
+
+```
+variables <- c("year", "month", "day", "dep_delay", "arr_delay")
+```
+
+`any_of()` selects any of the columns listed. It's helpful with the `variables` vector because `variables` might be used multiple times, and would be useful instead of writing them out.
+
+From the documentation:
+any_of() doesn't check for missing variables. It is especially useful with negative selections, when you would like to make sure a variable is removed.
+
+My example
+```
+> flights |>
++     select(any_of(variables))
+# A tibble: 336,776 × 5
+    year month   day dep_delay arr_delay
+   <int> <int> <int>     <dbl>     <dbl>
+ 1  2013     1     1         2        11
+ 2  2013     1     1         4        20
+ 3  2013     1     1         2        33
+ 4  2013     1     1        -1       -18
+ 5  2013     1     1        -6       -25
+ 6  2013     1     1        -4        12
+ 7  2013     1     1        -5        19
+ 8  2013     1     1        -3       -14
+ 9  2013     1     1        -3        -8
+10  2013     1     1        -2         8
+# ℹ 336,766 more rows
+# ℹ Use `print(n = ...)` to see more rows
+```
+
+
+**5-Does the result of running the following code surprise you? How do the select helpers deal with upper and lower case by default? How can you change that default?**
+
+```
+flights |> select(contains("TIME"))
+```
+
+The results are all columns that contain the word "time" in them. 
+
+The default is to ignore case. You can change that with changing `ignore.case=FALSE`
+
+```
+contains(match, ignore.case = FALSE, vars = NULL)
+```
+
+**6-Rename air_time to air_time_min to indicate units of measurement and move it to the beginning of the data frame.**
+
+```
+> flights |>
++     rename(air_time_min=air_time) %>%
++     relocate(air_time_min)
+# A tibble: 336,776 × 19
+   air_time_min  year month   day dep_time sched_dep_time
+          <dbl> <int> <int> <int>    <int>          <int>
+ 1          227  2013     1     1      517            515
+ 2          227  2013     1     1      533            529
+ 3          160  2013     1     1      542            540
+ 4          183  2013     1     1      544            545
+ 5          116  2013     1     1      554            600
+ 6          150  2013     1     1      554            558
+ 7          158  2013     1     1      555            600
+ 8           53  2013     1     1      557            600
+ 9          140  2013     1     1      557            600
+10          138  2013     1     1      558            600
+# ℹ 336,766 more rows
+# ℹ 13 more variables: dep_delay <dbl>, arr_time <int>,
+#   sched_arr_time <int>, arr_delay <dbl>, carrier <chr>,
+#   flight <int>, tailnum <chr>, origin <chr>, dest <chr>,
+#   distance <dbl>, hour <dbl>, minute <dbl>, time_hour <dttm>
+# ℹ Use `print(n = ...)` to see more rows
+```
+
+
+
+**7-Why doesn’t the following work, and what does the error mean?**
+
+```
+flights |> 
+  select(tailnum) |> 
+  arrange(arr_delay)
+#> Error in `arrange()`:
+#> ℹ In argument: `..1 = arr_delay`.
+#> Caused by error:
+#> ! object 'arr_delay' not found
+```
+
+It doesn't work because `select(tailnum)` changes flights to only include the `tailnum` column, and `arrange` is trying to sort a column that no longer exists in the flights dataframe.
