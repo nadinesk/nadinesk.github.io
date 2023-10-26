@@ -9,11 +9,8 @@ From [R for Data Science](https://r4ds.hadley.nz)
 
 Exercises [4.2.5](https://r4ds.hadley.nz/data-transform#exercises-1)
 
-
 **1-Compare dep_time, sched_dep_time, and dep_delay. How would you expect those three numbers to be related?**
-
 `dep_delay` is the difference between `dep_time` and `sched_dep_time`. `dep_time` - `sched_dep_time`
-
 
 **2-Brainstorm as many ways as possible to select dep_time, dep_delay, arr_time, and arr_delay from flights.**
 
@@ -24,7 +21,6 @@ Exercises [4.2.5](https://r4ds.hadley.nz/data-transform#exercises-1)
 > flights |>
 +     select(dep_time, dep_delay, arr_time, arr_delay)
 ```
-
 
 **3-What happens if you specify the name of the same variable multiple times in a select() call?**
 
@@ -62,15 +58,12 @@ My example
 # ℹ Use `print(n = ...)` to see more rows
 ```
 
-
 **5-Does the result of running the following code surprise you? How do the select helpers deal with upper and lower case by default? How can you change that default?**
 
 ```
 flights |> select(contains("TIME"))
 ```
-
 The results are all columns that contain the word "time" in them. 
-
 The default is to ignore case. You can change that with changing `ignore.case=FALSE`
 
 ```
@@ -103,8 +96,6 @@ contains(match, ignore.case = FALSE, vars = NULL)
 #   distance <dbl>, hour <dbl>, minute <dbl>, time_hour <dttm>
 # ℹ Use `print(n = ...)` to see more rows
 ```
-
-
 
 **7-Why doesn’t the following work, and what does the error mean?**
 
