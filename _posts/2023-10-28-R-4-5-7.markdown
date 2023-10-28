@@ -10,7 +10,7 @@ From [R for Data Science](https://r4ds.hadley.nz)
 Exercises [4.5.7](https://r4ds.hadley.nz/data-transform#exercises-2)
 
 
-**1-Which carrier has the worst average delays? Challenge-can you disentangle the effects of bad airports vs bad carriers? Why or why not? (Hint: think about flights |> group_by(carrier, dest) |> summarize(n()))**
+**1-Which carrier has the worst average delays? Challenge-can you disentangle the effects of bad airports vs bad carriers? Why or why not? (Hint: think about `flights |> group_by(carrier, dest) |> summarize(n()))`**
 
 ```
 flights |> 
