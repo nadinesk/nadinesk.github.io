@@ -1,0 +1,47 @@
+---
+layout: post
+title:  "R for Data Science 5.6 Exercises"
+date:   2023-10-30 00:00:00
+categories: R
+---
+
+From [R for Data Science](https://r4ds.hadley.nz)
+
+Exercises [5.6](https://r4ds.hadley.nz/workflow-style#exercises)
+
+**1-Restyle the following pipelines following the guidelines above.**
+
+```
+flights|>filter(dest=="IAH")|>group_by(year,month,day)|>summarize(n=n(),
+delay=mean(arr_delay,na.rm=TRUE))|>filter(n>10)
+
+flights|>filter(carrier=="UA",dest%in%c("IAH","HOU"),sched_dep_time>
+0900,sched_arr_time<2000)|>group_by(flight)|>summarize(delay=mean(
+arr_delay,na.rm=TRUE),cancelled=sum(is.na(arr_delay)),n=n())|>filter(n>10)
+```
+
+```
+flights |>
+    filter(dest == "IAH") |>
+    group_by(year, month, day) |>
+    summarize(
+        n = n(),
+        delay = mean(arr_delay, na.rm = TRUE)
+    ) |>
+    filter(n > 10)
+
+
+ flights|>
+    filter(
+        carrier == "UA",
+        dest %in% c("IAH", "HOU"),
+        sched_dep_time > 0900,
+        sched_arr_time < 2000
+    )|>
+    group_by(flight) |>
+    summarize(
+        delay=mean(arr_delay, na.rm=TRUE),
+        cancelled = sum(is.na(arr_delay)), n = n()
+    ) |>
+    filter(n > 10)   
+```
