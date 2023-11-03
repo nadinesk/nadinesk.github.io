@@ -1,0 +1,171 @@
+---
+layout: post
+title:  "R for Data Science 8.2.4 Exercises"
+date:   2023-11-03 00:00:00
+categories: R
+---
+
+From [R for Data Science](https://r4ds.hadley.nz)
+
+Exercises [8.2.4](https://r4ds.hadley.nz/data-import#exercises)
+
+
+**1-What function would you use to read a file where fields were separated with “|”?**
+
+```
+read_delim(delim="|")
+```
+  
+**2-Apart from file, skip, and comment, what other arguments do read_csv() and read_tsv() have in common?**
+
+They have all arguments in common - [documentation](https://readr.tidyverse.org/reference/read_delim.html)
+
+```
+read_csv(
+  file,
+  col_names = TRUE,
+  col_types = NULL,
+  col_select = NULL,
+  id = NULL,
+  locale = default_locale(),
+  na = c("", "NA"),
+  quoted_na = TRUE,
+  quote = "\"",
+  comment = "",
+  trim_ws = TRUE,
+  skip = 0,
+  n_max = Inf,
+  guess_max = min(1000, n_max),
+  name_repair = "unique",
+  num_threads = readr_threads(),
+  progress = show_progress(),
+  show_col_types = should_show_types(),
+  skip_empty_rows = TRUE,
+  lazy = should_read_lazy()
+)
+
+read_tsv(
+  file,
+  col_names = TRUE,
+  col_types = NULL,
+  col_select = NULL,
+  id = NULL,
+  locale = default_locale(),
+  na = c("", "NA"),
+  quoted_na = TRUE,
+  quote = "\"",
+  comment = "",
+  trim_ws = TRUE,
+  skip = 0,
+  n_max = Inf,
+  guess_max = min(1000, n_max),
+  progress = show_progress(),
+  name_repair = "unique",
+  num_threads = readr_threads(),
+  show_col_types = should_show_types(),
+  skip_empty_rows = TRUE,
+  lazy = should_read_lazy()
+)
+```
+
+  
+**3-What are the most important arguments to read_fwf()?**
+
+file and col_positions -> either fwf_empty(), fwf_widths(), fwf_position(), or fwf_cols()
+[documentation](https://readr.tidyverse.org/reference/read_fwf.html) 
+
+**4-Sometimes strings in a CSV file contain commas. To prevent them from causing problems, they need to be surrounded by a quoting character, like " or '. By default, read_csv() assumes that the quoting character will be ". To read the following text into a data frame, what argument to read_csv() do you need to specify?**
+
+```
+  "x,y\n1,'a,b'"
+```
+
+```
+read_csv("x,y\n1,'a,b'", quote = "\'")
+```
+
+**5-Identify what is wrong with each of the following inline CSV files. What happens when you run the code?**
+  
+```{r}
+read_csv("a,b\n1,2,3\n4,5,6")
+#correction - add enough column names
+read_csv("a,b,c\n1,2,3\n4,5,6")
+
+read_csv("a,b,c\n1,2\n1,2,3,4")
+#correction - add enough column names and provide values for NA
+read_csv("a,b,c,d\n1,2,,\n1,2,3,4", na = c("", "NA"))
+
+read_csv("a,b\n\"1")
+#not enough values, and additional backslash included
+read_csv("a,b\n1,")
+
+read_csv("a,b\n1,2\na,b")
+#there is nothing wrong with that one
+
+read_csv("a;b\n1;3", delim=";")
+#change read_csv to read_delim
+read_delim("a;b\n1;3", delim=";")
+
+```
+
+**6-Practice referring to non-syntactic names in the following data frame by:**
+
+```
+annoying <- tibble(
+  `1` = 1:10,
+  `2` = `1` * 2 + rnorm(length(`1`))
+)
+```
+  
+**Extracting the variable called 1.**
+
+```
+> annoying |>
++     select(1)
+# A tibble: 10 × 1
+     `1`
+   <int>
+ 1     1
+ 2     2
+ 3     3
+ 4     4
+ 5     5
+ 6     6
+ 7     7
+ 8     8
+ 9     9
+10    10
+```
+
+**Plotting a scatterplot of 1 vs. 2.**
+```
+ggplot(data=annoying, aes(x = `1`, y = `2`)) + geom_point()
+```
+
+**Creating a new column called 3, which is 2 divided by 1.**
+```
+annoying |>
+     mutate("3"=`2`/`1`)
+# A tibble: 10 × 3
+     `1`   `2`   `3`
+   <int> <dbl> <dbl>
+ 1     1  2.49  2.49
+ 2     2  5.47  2.73
+ 3     3  5.89  1.96
+ 4     4  7.97  1.99
+ 5     5  9.18  1.84
+ 6     6 11.9   1.98
+ 7     7 14.7   2.09
+ 8     8 15.8   1.98
+ 9     9 17.1   1.90
+10    10 19.1   1.91
+```
+**Renaming the columns to one, two, and three.**
+
+```
+annoying |>
+        rename(
+               "one" = `1`
+               "two" = `2`,
+               "three"=`3`)
+```
