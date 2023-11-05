@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "R for Data Science 10.2.1 Exercises"
+date:   2023-11-05 00:00:00
+categories: R
+---
+
+From [R for Data Science](https://r4ds.hadley.nz)
+Exercises [8.2.4](https://r4ds.hadley.nz/data-import#exercises)
+
+**1-Create a scatterplot of hwy vs. displ where the points are pink filled in triangles.**
+
+```
+ggplot(mpg, aes(x=displ, y= hwy)) +
+  geom_point(color="pink")
+```
+
+<img src="https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r_10_2_1_q1.png"/>
+
+**2-Why did the following code not result in a plot with blue points?**
+
+```
+ggplot(mpg) + 
+  geom_point(aes(x = displ, y = hwy, color = "blue"))
+```
+
+The color argument is within aes, but should be outside of it like
+
+```
+ggplot(mpg, aes(x = displ, y = hwy)) + 
+  geom_point(  color = "blue")
+```
+
+**3-What does the stroke aesthetic do? What shapes does it work with? (Hint: use ?geom_point)**
+
+```
+ggplot(mpg, aes(x = displ, y = hwy)) + 
+  geom_point(shape = 21, stroke = 2)
+```
+
+It provides the width of border of the point, and works with [shapes](https://ggplot2.tidyverse.org/reference/geom_point.html) that have borders.
+
+<img src="https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r_10_2_1_q3.png"/>
+
+**4-What happens if you map an aesthetic to something other than a variable name, like aes(color = displ < 5)? Note, you’ll also need to specify x and y.**
+
+```
+ggplot(mpg, aes(x = displ, y = hwy)) + 
+  geom_point(aes(colour = displ < 5))    
+```
+
+It provides the color based on if the point is > < 5 then. 
+
+<img src="https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r_10_2_1_q4.png"/>
+
