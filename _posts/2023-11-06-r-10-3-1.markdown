@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "R for Data Science 10.3.1 Exercises"
+date:   2023-11-06 00:00:00
+categories: R
+---
+
+From [R for Data Science](https://r4ds.hadley.nz)
+
+Exercises [10.3.1](https://r4ds.hadley.nz/layers#exercises-1)
+
+10.3.1 Exercises
+
+##### 1.What geom would you use to draw a line chart? A boxplot? A histogram? An area chart?
+
+- Line chart would be geom_smooth()
+- Box plot is geom_boxplot()
+- Histogram is geom_histogram()
+- Area chart geom_area()
+
+##### 2.Earlier in this chapter we used show.legend without explaining it:
+
+```
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_smooth(aes(color = drv), show.legend = FALSE)
+```
+###### What does show.legend = FALSE do here? What happens if you remove it? Why do you think we used it earlier?
+
+It removes the legend. I think it was used earlier to conserve space for the chart
+
+##### 3.What does the se argument to geom_smooth() do?
+
+It [sets](https://ggplot2.tidyverse.org/reference/geom_smooth.html) the confidence interval around smooth, and is TRUE by default 
+
+##### 4.Recreate the R code necessary to generate the following graphs. Note that wherever a categorical variable is used in the plot, it’s drv.
+
+```
+ggplot(mpg, aes(x = displ, y= hwy)) + 
+  geom_point(size = 3) + 
+  geom_smooth()
+```
+<img src = "https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r10-3-1-p1.png" />
+
+```
+ggplot(mpg, aes(x = displ, y= hwy)) + 
+  geom_point(size = 3) + 
+  geom_smooth(aes(group = drv))
+```
+
+<img src = "https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r10-3-1-p2.png" />
+
+```
+ggplot(mpg, aes(x = displ, y= hwy)) + 
+  geom_point(size = 3, aes(color=drv)) + 
+  geom_smooth(aes(group = drv, color = drv))
+```
+
+<img src = "https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r10-3-1-p3.png" />
+
+```
+ggplot(mpg, aes(x = displ, y= hwy)) + 
+  geom_point(size = 3, aes(color=drv)) + 
+  geom_smooth()
+```
+
+<img src = "https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r10-3-1-p4.png" />
+
+```
+ggplot(mpg, aes(x = displ, y= hwy)) + 
+  geom_point(size = 3, aes(color=drv)) + 
+  geom_smooth(aes(linetype = drv))
+```
+
+<img src = "https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r10-3-1-p5.png" />
+
+```
+ggplot(mpg, aes(x = displ, y= hwy)) + 
+  geom_point(size = 7, color="white") +
+  geom_point(size = 3, aes(color=drv)) 
+```
+<img src = "https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r10-3-1-p6.png" />
+
+
