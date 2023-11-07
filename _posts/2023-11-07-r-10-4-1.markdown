@@ -1,0 +1,118 @@
+---
+layout: post
+title:  "R for Data Science 10.4.1 Exercises"
+date:   2023-11-07 00:00:00
+categories: R
+---
+
+From [R for Data Science](https://r4ds.hadley.nz)
+
+Exercises [10.4.1](https://r4ds.hadley.nz/layers#exercises-2)
+
+#### 1-What happens if you facet on a continuous variable?
+
+A new graph is shown for each value in the continous variable
+```
+ggplot(mpg) + 
+  geom_point(aes(x = drv, y = cyl)) +
+  facet_wrap(~hwy)
+
+#ggsave("r-10-4-1-q1.png")
+```
+<img src = "https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-10-4-1-q1.png?raw=true" />
+
+#### 2- What do the empty cells in the plot above with facet_grid(drv ~ cyl) mean? Run the following code. How do they relate to the resulting plot?
+
+It means there are no data points for the drv and cyl combinations 
+
+The resulting plot from the code below is related to the empty points because they show there are no combinations of the drv and cyl where the empty cells in the other plot. For example, there are no combinations of cyl =5 and drv = 4 in the dataset
+
+```
+ggplot(mpg) + 
+  geom_point(aes(x = drv, y = cyl))
+  
+#ggsave("r-10-4-1-q2.png")
+```
+<img src = "https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-10-4-1-q2.png?raw=true" />
+
+### 3-What plots does the following code make? What does . do?
+
+```
+ggplot(mpg) + 
+  geom_point(aes(x = displ, y = hwy)) +
+  facet_grid(drv ~ .)
+
+ggsave("r-10-4-1-q3_1.png")
+
+ggplot(mpg) + 
+  geom_point(aes(x = displ, y = hwy)) +
+  facet_grid(. ~ cyl)
+
+ggsave("r-10-4-1-q3_2.png")
+```
+`drv ~ .` makes the facets as rows, with no columns, so that the `.` means cols = 0 
+`. ~ cyl` makes the facets as columns, with no rows, so that the `.` means rows = 0 
+
+<img src = "https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-10-4-1-q3_1.png?raw=true" />
+
+<img src = "https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-10-4-1-q3_2.png?raw=true" />
+
+### 4-Take the first faceted plot in this section:
+
+```
+ggplot(mpg) + 
+  geom_point(aes(x = displ, y = hwy)) + 
+  facet_wrap(~ class, nrow = 2)
+```
+### What are the advantages to using faceting instead of the color aesthetic? What are the disadvantages? How might the balance change if you had a larger dataset?
+
+The color aesthetic shows overlapping data and can provide more insights into small changes; but it can be difficult to separate the groups to see differences. The facets show differences between groups very clearly, but do not as clearly show small differences between the groups. I think that if there are larger datasets, faceting might be better because there would be several data points, and the overlapping data could be more difficult to decipher with color aesthetics instead of separating out the groups 
+
+### 5-Read ?facet_wrap. What does nrow do? What does ncol do? What other options control the layout of the individual panels? Why doesn’t facet_grid() have nrow and ncol arguments?
+
+`nrow` and `ncol` provide the number of rows and columns, respectively. `scales` also has control over the layout of the individual panels. 
+
+`facet_grid()` does not have `nrow` and `ncol` arguments because those are determined by the data
+
+### 6-Which of the following plots makes it easier to compare engine size (displ) across cars with different drive trains? What does this say about when to place a faceting variable across rows or columns?
+
+```
+ggplot(mpg, aes(x = displ)) + 
+  geom_histogram() + 
+  facet_grid(drv ~ .)
+  
+ggsave("r-10-4-1-q6_1.png")
+
+ggplot(mpg, aes(x = displ)) + 
+  geom_histogram() +
+  facet_grid(. ~ drv)
+  
+ggsave("r-10-4-1-q6_2.png")
+```
+The first plot, with the facets as rows, makes it easier to compare engine size (displ) with cars across different drive trains. When comparing data as histograms, it might be better to view them across rows; and when comparing scatter plots, it might be better to view them as columns. 
+
+<img src = "https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-10-4-1-q6_1.png?raw=true" />
+
+<img src = "https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-10-4-1-q6_2.png?raw=true" />
+
+### 7-Recreate the following plot using facet_wrap() instead of facet_grid(). How do the positions of the facet labels change?
+
+```
+ggplot(mpg) + 
+  geom_point(aes(x = displ, y = hwy)) +
+  facet_grid(drv ~ .)
+
+ggsave("r-10-4-1-q7_1.png")
+
+ggplot(mpg) + 
+  geom_point(aes(x = displ, y = hwy)) +
+  facet_wrap(drv ~ .)  
+  
+ggsave("r-10-4-1-q7_2.png")
+```
+
+The facet labels on facet_grid are on the right as rows. The facet labels on the facet wrap are on the top as columns. 
+
+<img src = "https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-10-4-1-q7_1.png?raw=true" />
+
+<img src = "https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-10-4-1-q7_2.png?raw=true" />
