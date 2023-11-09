@@ -1,0 +1,82 @@
+---
+layout: post
+title:  "R for Data Science 10.5.1 Exercises"
+date:   2023-11-09 00:00:00
+categories: R
+---
+
+From [R for Data Science](https://r4ds.hadley.nz)
+
+Exercises [10.5.1](https://r4ds.hadley.nz/layers#exercises-3)
+
+### 1-What is the default geom associated with stat_summary()? How could you rewrite the previous plot to use that geom function instead of the stat function?
+
+```
+ggplot(diamonds) + 
+  stat_summary(
+    aes(x = cut, y = depth),
+    fun.min = min,
+    fun.max = max,
+    fun = median
+  )
+  
+ggplot(diamonds) +
+  geom_pointrange(
+    aes(x = cut, y = depth),
+    stat = "summary",
+    fun.min = min,
+    fun.max = max,
+    fun = median
+  )
+
+```
+
+### 2-What does geom_col() do? How is it different from geom_bar()?
+
+[`geom_col`](https://ggplot2.tidyverse.org/reference/geom_bar.html) uses the bar heights to represent the data. `geom_bar` uses bar heights to show the proportion of the data to the number of cases in each group. `geom_bar()` uses `stat_count()` by default and counts the number of cases at each x position; `geom_col()` uses `stat_identity()` and leaves the data as is. 
+
+### 3-Most geoms and stats come in pairs that are almost always used in concert. Make a list of all the pairs. What do they have in common? (Hint: Read through the documentation.)
+
+Here is the [reference guide](https://ggplot2.tidyverse.org/reference/index.html#layers)
+
+- geom_bar() -> stat_count()
+- geom_bin_2d() -> stat_bin_2d()
+- geom_boxplot() -> stat_boxplot()
+- geom_contour() -> stat_contour(); geom_contour_filled() -> stat_contour_filled()
+- geom_count() -> stat_sum()
+- geom_density() -> stat_density()
+- geom_density_2d() -> stat_density_2d(); geom_density_2d_filled() -> stat_density_2d_filled()
+- geom_function() -> stat_function()
+- geom_hex() -> stat_bin_hex()
+- geom_freqpoly(), geom_histogram() -> stat_bin()
+- geom_crossbar() geom_errorbar() geom_linerange() geom_pointrange()
+- geom_qq_line() -> stat_qq_line(); geom_qq() -> stat_qq()
+- geom_quantile() -> stat_quantile()
+- geom_area() -> stat_align()
+- geom_smooth() -> stat_smooth()
+- geom_violin() -> stat_ydensity()
+- geom_sf(), geom_sf_label(), geom_sf_text() stat_sf()
+- geom_function() -> stat_function()
+
+### 4-What variables does stat_smooth() compute? What arguments control its behavior?
+
+`stat_smooth()` calculates `geom_smooth()`. The `method` and `formula` arguments determine its behavior. 
+
+### 5-In our proportion bar chart, we need to set group = 1. Why? In other words, what is the problem with these two graphs?
+
+```
+ggplot(diamonds, aes(x = cut, y = after_stat(prop))) + 
+  geom_bar()
+ggplot(diamonds,  aes(x = cut, y = after_stat(prop), fill=color)) + 
+  geom_bar()
+```
+These two graphs show the proportion of each cut to itself, so that all are 100%. The group = 1 combines all cut values so that each bar is a proportion of all cuts as a whole group. 
+
+These graphs could be fixed with: 
+```
+ggplot(diamonds, aes(x = cut, y = after_stat(prop), group = 1)) + 
+  geom_bar()
+ggplot(diamonds,  aes(x = cut, y = after_stat(prop), group=1, fill = after_stat(prop))) + 
+  geom_bar()
+```
+
