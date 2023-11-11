@@ -1,0 +1,81 @@
+---
+layout: post
+title:  "R for Data Science 9.6.1 Exercises"
+date:   2023-11-11 00:00:00
+categories: R
+---
+
+From [R for Data Science](https://r4ds.hadley.nz)
+
+Exercises [9.6.1](https://r4ds.hadley.nz/layers#exercises-4)
+
+
+#### 1-What is the problem with the following plot? How could you improve it?
+
+```
+ggplot(mpg, aes(x = cty, y = hwy)) + 
+  geom_point()
+
+ggplot(mpg, aes(x = cty, y = hwy)) + 
+  geom_point(position = "jitter")
+
+```
+
+<img src="https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-10-6-1-q4_1.png?raw=true"/>
+
+<img src="https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-10-6-1-q4_2.png?raw=true"/>
+
+The problem with that plot is that there are several overlapping points, causing overplotting, that obscures the distribution of data, and makes it hard to see how data is distributed throughout the graph. 
+
+The plot can be improvied with `geom_point(position = "jitter"), which creates random noise that moves the plots slightly to better display the data distribution
+
+#### 2-What, if anything, is the difference between the two plots? Why?
+
+```
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point()
+  
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point(position = "identity")
+```
+There is nothing different between these two charts because the default of geom_point's position argument is identity
+
+#### 3-What parameters to geom_jitter() control the amount of jittering?
+
+width and height parameters 
+
+From the documentation: 
+width and height: Amount of vertical and horizontal jitter. The jitter is added in both positive and negative directions, so the total spread is twice the value specified here.
+
+#### 4-Compare and contrast geom_jitter() with geom_count().
+
+Both geom_jitter() and geom_count() show overlapping data, where multiple data points are on the same point on the plot. Geom_jitter() provides random noise to plot each point and show where the multiple points are; geom_count() uses the sum stat to alter the size of the point to show where more points are, with the bigger circles showing more points. 
+
+```
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_jitter()
+  
+```
+<img src="https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-10-6-1-q4_1.png?raw=true"/>
+
+```
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_count()
+
+```
+
+<img src = "https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-10-6-1-q4_2.png?raw=true"/>
+
+#### 5-What’s the default position adjustment for geom_boxplot()? Create a visualization of the mpg dataset that demonstrates it.
+
+The default position adjustment for geom_boxplot() is dodge2. From the documentation for position_dodge2(), dodging preserves the vertical position of a geom while adjusting the horizontal position. `position_dodge2()` works with bars and rectangles, but is particularly useful for arranging box plots, which can have variable widths. When the color is added for "fl", the widths are dodged, next to each other. 
+
+```
+ggplot(mpg, aes(x = class, y = hwy, color= fl)) +
+  geom_boxplot()
+  
+ggsave("r-10-6-1-q5.png")
+```
+
+<img src = "https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-10-6-1-q5.png?raw=true"/>
+
