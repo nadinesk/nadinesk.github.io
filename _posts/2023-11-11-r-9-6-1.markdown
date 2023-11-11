@@ -21,9 +21,9 @@ ggplot(mpg, aes(x = cty, y = hwy)) +
 
 ```
 
-<img src="https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-10-6-1-q4_1.png?raw=true"/>
+<img src="https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-10-6-1-q1_1.png?raw=true"/>
 
-<img src="https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-10-6-1-q4_2.png?raw=true"/>
+<img src="https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-10-6-1-q1_2.png?raw=true"/>
 
 The problem with that plot is that there are several overlapping points, causing overplotting, that obscures the distribution of data, and makes it hard to see how data is distributed throughout the graph. 
 
