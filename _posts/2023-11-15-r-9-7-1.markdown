@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "R for Data Science 9.7.1 Exercises"
+date:   2023-11-13 00:00:00
+categories: R
+---
+
+From [R for Data Science](https://r4ds.hadley.nz)
+
+Exercises [9.7.1](https://r4ds.hadley.nz/layers#the-layered-grammar-of-graphics)
+
+
+### 1-Turn a stacked bar chart into a pie chart using coord_polar().
+
+```
+bar_mpg <- ggplot(mpg) +
+  geom_bar(aes(x = class, fill = class)) 
+
+bar_mpg + coord_polar()
+```
+
+<img src="https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r-9-7-1-q1_1.png"/>
+
+<img src="https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r-9-7-1-q1_2.png"/>
+
+### 2-What’s the difference between coord_quickmap() and coord_map()?
+
+coord_map() projects a portion of the earth, which is approximately spherical, onto a flat 2D plane using any projection defined by the mapproj package. Map projections do not, in general, preserve straight lines, so this requires considerable computation. coord_quickmap() is a quick approximation that does preserve straight lines. It works best for smaller areas closer to the equator.
+
+### 3-What does the following plot tell you about the relationship between city and highway mpg? Why is coord_fixed() important? What does geom_abline() do?
+
+```
+ggplot(data = mpg, mapping = aes(x = cty, y = hwy)) +
+  geom_point() + 
+  geom_abline() +
+  coord_fixed()
+```  
+
+coord_fixed() is a fixed scale coordinate system that forces a specified ration between the physical representation of data units on the axes. It is important because it ensures that one unit on the x-axis is teh same lenght as one unit on the y-axis, and makes ratios higher than one longer on the y axis than units on the x-axis and vice versa also. 
+
+geom_abline() adds a reference line that is diagonal (specified by slope and intercept). It is useful for annotating plots. 
