@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "R for Data Science 9.7.1 Exercises"
+title:  "R for Data Science Coordinate Systems Exercises"
 date:   2023-11-13 00:00:00
 categories: R
 ---
 
 From [R for Data Science](https://r4ds.hadley.nz)
 
-Exercises [9.7.1](https://r4ds.hadley.nz/layers#the-layered-grammar-of-graphics)
+[Coordinate Systems](https://r4ds.hadley.nz/layers#the-layered-grammar-of-graphics)
 
 
 ### 1-Turn a stacked bar chart into a pie chart using coord_polar().
