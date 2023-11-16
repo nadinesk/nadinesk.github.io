@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "R for Data Science 10.5.1 Exercises"
+title:  "R for Data Science Statistical Transformations"
 date:   2023-11-09 00:00:00
 categories: R
 ---
 
 From [R for Data Science](https://r4ds.hadley.nz)
 
-Exercises [10.5.1](https://r4ds.hadley.nz/layers#exercises-3)
+[Statistical Transformations](https://r4ds.hadley.nz/layers#exercises-3)
 
 ### 1-What is the default geom associated with stat_summary()? How could you rewrite the previous plot to use that geom function instead of the stat function?
 
