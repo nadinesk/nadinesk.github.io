@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "R for Data Science 9.6.1 Exercises"
+title:  "R for Data Science Position Adjustments Exercises"
 date:   2023-11-11 00:00:00
 categories: R
 ---
 
 From [R for Data Science](https://r4ds.hadley.nz)
 
-Exercises [9.6.1](https://r4ds.hadley.nz/layers#exercises-4)
+[Position Adjustments](https://r4ds.hadley.nz/layers#exercises-4)
 
 
 #### 1-What is the problem with the following plot? How could you improve it?
