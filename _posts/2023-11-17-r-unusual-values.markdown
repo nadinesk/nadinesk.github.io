@@ -40,7 +40,7 @@ ggsave("r-10-3-3-q1_3.png")
 
 <img src="https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r-10-3-3-q1_2.png"/>
 
-<img src="https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r-10-3-3-q1_1.png"/>
+<img src="https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r-10-3-3-q1_3.png"/>
 
 #### 2-Explore the distribution of price. Do you discover anything unusual or surprising? (Hint: Carefully think about the binwidth and make sure you try a wide range of values.)
 
