@@ -1,0 +1,50 @@
+---
+layout: post
+title:  "R for Data Science Unusual Values"
+date:   2023-11-19 00:00:00
+categories: R
+---
+
+From [R for Data Science](https://r4ds.hadley.nz)
+
+[Unusual Values](https://r4ds.hadley.nz/eda#exercises-1)
+
+
+10.4.1 Exercises
+
+### 1-What happens to missing values in a histogram? What happens to missing values in a bar chart? Why is there a difference in how missing values are handled in histograms and bar charts?
+
+The NA values are dropped in a histogram because they cannot be put in a particular bin. The NA valus in a bar chart are included as their own category.  
+
+### 2-What does na.rm = TRUE do in mean() and sum()?
+
+It removes the missing values ("NA") from the calculations. 
+
+### 3-Recreate the frequency plot of scheduled_dep_time colored by whether the flight was cancelled or not. Also facet by the cancelled variable. Experiment with different values of the scales variable in the faceting function to mitigate the effect of more non-cancelled flights than cancelled flights.
+
+When faceting the plot by canceled vs non-canceled flights to mitigate the effect of non-cancelled flights and changing the scale to "free_y", it becomes more apparent that there flights are less likely to be canceled between 5 am and 12 pm, and after that, and around 8 pm. The number of canceled flights trends upwards as the day progresses, where as teh number of non-canceled flights has two peaks, between 5 and 10 am, and again from 3 to 8 pm then. 
+
+```
+flights2 <- nycflights13::flights |>
+  mutate(canceled = is.na(dep_time), 
+  sched_hour = sched_dep_time %/% 100, 
+  sched_min = sched_dep_time %% 100, 
+  sched_dep_time = sched_hour + (sched_min / 60)
+  ) 
+  
+ggplot(flights2, aes(x = sched_dep_time)) +
+  geom_freqpoly(aes(color = canceled), binwidth = 1/4)
+  
+ggplot("r-unusual-values-q3_1.png")  
+
+ggplot(flights2, aes(x = sched_dep_time)) +
+  geom_freqpoly(aes(color = canceled), binwidth = 1/4)  +
+  facet_wrap(~ canceled, scale="free_y")
+
+ggplot("r-unusual-values-q3_2.png")  
+```  
+
+<img src = "https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-unusual-values-q3_1.png?raw=true"/>
+
+<img src = "https://github.com/nadinesk/nadinesk.github.io/blob/master/images/r-unusual-values-q3_2.png?raw=true"/>
+  
