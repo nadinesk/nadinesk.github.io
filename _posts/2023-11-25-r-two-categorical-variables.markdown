@@ -57,29 +57,18 @@ This bar chart shows that the color G has the most diamonds; the largest amount 
 
 #### 3-Use geom_tile() together with dplyr to explore how average flight departure delays vary by destination and month of year. What makes the plot difficult to read? How could you improve it?
 
-The plot with average departure delay by destination and month has too many values on the x axis to show the tiles, because each one is too small. When separating out the variables, it is easier to see the tiles on the chart, but the destination average delay still has too many x-axis variables. The plot with average departure delays by month is clearer to see which months have larger delays on average
-
-<img src = "https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r-10-5-2-1-q3_1.png" />
-
-<img src = "https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r-10-5-2-1-q3_2.png" />
+The plot with average departure delay by destination and month is difficult to read because there are too many destination values. The plot could be improved by filtering only to certain ranges of average delays, arranging the plot by average delays, or only selecting destinations with a certain number of flights.
 
 ```
 nycflights13::flights |>
-#  filter(str_detect(dest, "^A")) |>
-  group_by(dest) |>
-  summarize(avg_delay = mean(dep_delay, na.rm = TRUE)) |>
-  ggplot(aes(x = dest, y = avg_delay)) +
-  geom_tile(aes(fill = avg_delay))
-
-ggsave("r-10-5-2-1-q3_1.png")
-
-nycflights13::flights |>
-  mutate(month_name = as.factor(month)) |>
-  group_by(month_name) |>
+ #filter(str_detect(dest, "^A")) |>
+  group_by(dest, month) |>
   summarize(avg_delay = mean(dep_delay, na.rm = TRUE), na.rm = TRUE) |>
-  ggplot(aes(x = month_name, y = avg_delay)) +
+  ggplot(aes(x = dest, y = factor(month))) +
   geom_tile(aes(fill = avg_delay))
 
-ggsave("r-10-5-2-1-q3_2.png")
+ggsave("r-10-5-2-1-q3_1_rev.png")
+
 ```
+<img src = "https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r-10-5-2-1-q3_1_rev.png" />
 
