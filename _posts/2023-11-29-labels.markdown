@@ -10,7 +10,7 @@ From [R for Data Science](https://r4ds.hadley.nz)
 [Two Numerical Variables](https://r4ds.hadley.nz/communication#exercises)
 
 
-#### 1-Create one plot on the fuel economy data with customized title, subtitle, caption, x, y, and color labels.
+**1-Create one plot on the fuel economy data with customized title, subtitle, caption, x, y, and color labels.**
 
 
 ```
@@ -34,7 +34,7 @@ ggsave("r-11-2-1-q1.png")
 <img src = "https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r-11-2-1-q1.png" />
 
 
-#### 2-Recreate the following plot using the fuel economy data. Note that both the colors and shapes of points vary by type of drive train.
+**2-Recreate the following plot using the fuel economy data. Note that both the colors and shapes of points vary by type of drive train.**
 
 ```
 
@@ -53,7 +53,7 @@ ggsave("r-11-2-1-q2.png")
 
 <img src = "https://raw.githubusercontent.com/nadinesk/nadinesk.github.io/master/images/r-11-2-1-q2.png" />
 
-#### 3-Take an exploratory graphic that you’ve created in the last month, and add informative titles to make it easier for others to understand.
+**3-Take an exploratory graphic that you’ve created in the last month, and add informative titles to make it easier for others to understand.**
 
 ```
 
