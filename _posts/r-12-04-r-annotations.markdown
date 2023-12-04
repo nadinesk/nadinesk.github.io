@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "R for Data Science - Annotations"
+title:  "R for Data Science: Annotations"
 date:   2023-12-04 00:00:00
 categories: R
 ---
 
 From [R for Data Science](https://r4ds.hadley.nz)
 
-[Annotations](https://r4ds.hadley.nz/communication#exercises-1)
+- [Annotations](https://r4ds.hadley.nz/communication#exercises-1)
 
 **1-Use geom_text() with infinite positions to place text at the four corners of the plot.**
 
