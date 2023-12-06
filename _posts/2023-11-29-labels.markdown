@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "R for Data Science Labels"
+title:  "R for Data Science: Labels"
 date:   2023-11-29 00:00:00
 categories: R
 ---
 
 From [R for Data Science](https://r4ds.hadley.nz)
 
-[Two Numerical Variables](https://r4ds.hadley.nz/communication#exercises)
+[Labels](https://r4ds.hadley.nz/communication#exercises)
 
 
 **1-Create one plot on the fuel economy data with customized title, subtitle, caption, x, y, and color labels.**
