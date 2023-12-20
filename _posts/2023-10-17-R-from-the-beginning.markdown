@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "R from the Beginning"
+title:  "Data Visualize - R for Data Science"
 date:   2023-10-17 00:00:00
 categories: R
 ---
