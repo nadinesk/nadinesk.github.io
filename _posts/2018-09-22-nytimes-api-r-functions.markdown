@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Dems vs Republicans, the New York Times API, and R"
+title:  "The New York Times API, and R"
 date:   2018-09-21 00:00:00
 categories: r, nytimes api, politics, journalism, data
 ---
