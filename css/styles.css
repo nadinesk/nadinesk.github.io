@@ -39,8 +39,7 @@ body {
 
 /* Header */
  #page_title {  
-  margin: 100px 0px 25px 70px;
-  text-transform: uppercase;
+  margin: 50px 50px 50px 50px;
   letter-spacing: 2.9px;
   padding-top: 20px;
   
@@ -57,13 +56,11 @@ body {
 
 
 #main-list {
-  
   padding: 0px;
   margin: 0px 0px 0px 70px;
 }
 #main-list li {
   list-style-type: none;
-  text-transform: uppercase;
   margin=left: 0px;
   
   font-size: 1.2em;
