@@ -1,6 +1,6 @@
 	
 body {
-  font-size: 12px;
+  font-size: 12.5px;
   font-family: American Typewriter, serif;  
 }
 
@@ -38,7 +38,7 @@ body {
 
 /* Header */
  #page_title {  
-  margin: 50px 50px 50px 50px;
+  margin: 75px 75px 75px 75px;
   letter-spacing: 2.9px;
   padding-top: 20px;
   
