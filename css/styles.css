@@ -61,10 +61,8 @@ body {
 #main-list li {
   list-style-type: none;
   margin=left: 0px;
-  
-  font-size: 1.2em;
-  letter-spacing: 3.0px;
-  
+  font-size: 1.0em;
+   
 }
 
 #main-list li span {
